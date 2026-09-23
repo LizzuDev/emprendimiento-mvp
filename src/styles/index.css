@@ -1,0 +1,148 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --color-principal: #003b81;
+  --color-background: #ffffff;
+  --color-secundario: #00a8cc;
+  --color-titulos: #1e293b;
+  --color-subtitulos: #334155;
+  --color-textos: #475569;
+  --color-botones: #00a8cc;
+  --color-dorado: #d4af37;
+}
+
+body {
+  font-family: 'Open Sans', Arial, sans-serif;
+  color: #334155;
+  background-color: #ffffff;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Open Sans', sans-serif;
+  color: #0f172a;
+  font-weight: 600;
+}
+
+/* PUCE Container Standard (Divi Engine) */
+.puce-container {
+  width: 90%;
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+  position: relative;
+}
+
+/* PUCE Button Standard (Divi et_pb_button) */
+.et_pb_button {
+  font-family: 'Open Sans', Arial, sans-serif;
+  font-size: 13px;
+  font-weight: 600;
+  padding: 0.7em 1.6em;
+  line-height: 1.5;
+  border-radius: 2px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  transition: all 0.2s ease;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.et_pb_button_cyan {
+  background-color: #00a8cc;
+  color: #ffffff;
+  border: 2px solid #00a8cc;
+}
+
+.et_pb_button_cyan:hover {
+  background-color: #008fae;
+  border-color: #008fae;
+  color: #ffffff;
+}
+
+.et_pb_button_primary {
+  background-color: #003b81;
+  color: #ffffff;
+  border: 2px solid #003b81;
+}
+
+.et_pb_button_primary:hover {
+  background-color: #002756;
+  border-color: #002756;
+  color: #ffffff;
+}
+
+.et_pb_button_secondary {
+  background-color: #00a8cc;
+  color: #ffffff;
+  border: 2px solid #00a8cc;
+}
+
+.et_pb_button_secondary:hover {
+  background-color: #003b81;
+  border-color: #003b81;
+  color: #ffffff;
+}
+
+.et_pb_button_outline {
+  background-color: transparent;
+  color: #00a8cc;
+  border: 2px solid #00a8cc;
+}
+
+.et_pb_button_outline:hover {
+  background-color: #00a8cc;
+  color: #ffffff;
+}
+
+.et_pb_button_gold {
+  background-color: #d4af37;
+  color: #002756;
+  border: 2px solid #d4af37;
+}
+
+.et_pb_button_gold:hover {
+  background-color: #b8932b;
+  border-color: #b8932b;
+  color: #ffffff;
+}
+
+/* PUCE Blurb Card (Editorial Row Block) */
+.et_pb_blurb_institutional {
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-left: 4px solid #003b81;
+  padding: 1.25rem 1.5rem;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.et_pb_blurb_institutional:hover {
+  border-color: #cbd5e1;
+  border-left-color: #1aa9df;
+  box-shadow: 0 4px 12px rgba(0, 59, 129, 0.06);
+}
+
+/* Scrollbar styling */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f5f9;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #94a3b8;
+}
