@@ -92,7 +92,33 @@ function MainContent({ initialTab = 'hub' }) {
   );
 }
 
+import AdminDashboard from './admin/AdminDashboard';
+import Facultades from './admin/Facultades';
+import Estudiantes from './admin/Estudiantes';
+import Preguntas from './admin/Preguntas';
+
 export default function App() {
+  // Aislamiento total: si la URL incluye /admin, cargamos solo el módulo administrativo
+  if (window.location.pathname.startsWith('/admin')) {
+    const path = window.location.pathname;
+    
+    let AdminComponent = AdminDashboard;
+    if (path.includes('/admin/facultades')) {
+      AdminComponent = Facultades;
+    } else if (path.includes('/admin/estudiantes')) {
+      AdminComponent = Estudiantes;
+    } else if (path.includes('/admin/preguntas')) {
+      AdminComponent = Preguntas;
+    }
+
+    return (
+      <AuthProvider>
+        <AdminComponent />
+      </AuthProvider>
+    );
+  }
+
+  // De lo contrario, cargamos la aplicación normal del estudiante
   return (
     <AuthProvider>
       <WellnessProvider>
