@@ -38,10 +38,42 @@ Todos los integrantes programan, incluidos el Product Owner y el Scrum Master.
 
 ## Tecnología
 
-**En definición.** El equipo está adaptando el stack a los lineamientos tecnológicos indicados por la Dirección de TI de la PUCE. Esta sección se actualizará en el Sprint 1.
+El producto es una **aplicación web con HTTPS** construida con **HTML5, CSS3 y JavaScript puro**, sin frameworks ni paso de compilación. Elegimos esta opción porque el sitio de la PUCE funciona sobre WordPress, así que el código se integra sin instalaciones complejas y todo el equipo lo domina.
 
-- Tipo de producto: **aplicación web con HTTPS**.
-- Despliegue final previsto: Hostinger (RDA 3).
+| Capa | Tecnología |
+| --- | --- |
+| Estructura | HTML5 |
+| Estilos | CSS3 con la paleta y tipografías institucionales de la PUCE (Rubik y Open Sans) |
+| Interacción | JavaScript puro (módulos nativos del navegador) |
+| Despliegue final | Hostinger (RDA 3) |
+
+> Las demás capas (base de datos, inicio de sesión e IA para AurelioBot) se definirán con los lineamientos de la Dirección de TI de la PUCE.
+
+## Estructura del repositorio
+
+```
+├── index.html                 Landing page
+├── css/styles.css             Estilos globales (paleta PUCE)
+├── js/
+│   ├── main.js                Comportamiento de la landing
+│   └── data/vocationalData.js Banco de preguntas y macroáreas del test
+├── assets/
+│   ├── img/aurelio/           Ilustraciones de Aurelio (SVG)
+│   └── diseno/                Archivo fuente del diseño de Aurelio
+└── docs/
+    └── estructura-sitio-puce.md  Referencia de la estructura del sitio de la PUCE
+```
+
+## Cómo ver el proyecto
+
+No se necesita instalar nada:
+
+1. Clonar el repositorio: `git clone https://github.com/LizzuDev/emprendimiento-mvp.git`
+2. Abrir `index.html` en el navegador, o usar la extensión **Live Server** de VS Code para ver los cambios al instante.
+
+### Versión anterior (React)
+
+Hasta el Sprint 0 el prototipo estaba hecho en React + Vite + Supabase. Esa versión quedó guardada en la rama [`archivo/react-v0`](https://github.com/LizzuDev/emprendimiento-mvp/tree/archivo/react-v0) como referencia, junto con la rama `gestion` (módulo de administración). Ninguna de las dos se une a `main`: sus funciones se reescribirán en HTML, CSS y JavaScript dentro del backlog.
 
 ## Gestión del proyecto
 
