@@ -1,0 +1,238 @@
+/* =========================================================
+   Orienta PUCE · Estilos base (HTML + CSS puro)
+   Paleta y tipografía institucional de la PUCE
+   ========================================================= */
+
+:root {
+  --color-principal: #003b81;   /* azul PUCE */
+  --color-secundario: #00a8cc;  /* cian PUCE */
+  --color-oscuro: #001f44;
+  --color-titulos: #1e293b;
+  --color-textos: #475569;
+  --color-borde: #e2e8f0;
+  --color-fondo: #ffffff;
+  --color-fondo-alt: #f8fafc;
+
+  --font-titulos: "Rubik", system-ui, sans-serif;
+  --font-textos: "Open Sans", system-ui, sans-serif;
+
+  --ancho-max: 1140px;
+  --radio: 4px;
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  font-family: var(--font-textos);
+  color: var(--color-textos);
+  background: var(--color-fondo);
+  line-height: 1.6;
+}
+
+img { max-width: 100%; height: auto; }
+
+h1, h2, h3 {
+  font-family: var(--font-titulos);
+  color: var(--color-titulos);
+  line-height: 1.2;
+  margin: 0 0 .5em;
+}
+
+a { color: var(--color-principal); }
+
+.container {
+  max-width: var(--ancho-max);
+  margin: 0 auto;
+  padding: 0 16px;
+}
+
+/* ---------- Encabezado ---------- */
+.site-header {
+  border-bottom: 1px solid var(--color-borde);
+  background: var(--color-fondo);
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+.header-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  min-height: 68px;
+}
+.logo img { display: block; height: 40px; width: auto; }
+.nav { display: flex; gap: 24px; }
+.nav a {
+  text-decoration: none;
+  font-weight: 600;
+  font-size: .95rem;
+  color: var(--color-titulos);
+}
+.nav a:hover { color: var(--color-secundario); }
+.nav-toggle { display: none; }
+
+/* ---------- Botones ---------- */
+.btn {
+  display: inline-block;
+  padding: 12px 22px;
+  border-radius: var(--radio);
+  font-weight: 700;
+  font-size: .85rem;
+  letter-spacing: .04em;
+  text-transform: uppercase;
+  text-decoration: none;
+  text-align: center;
+  border: 2px solid var(--color-secundario);
+  transition: background .2s, color .2s;
+}
+.btn-primary { background: var(--color-secundario); color: #fff; }
+.btn-primary:hover { background: #008fae; border-color: #008fae; }
+.btn-outline { background: transparent; color: var(--color-secundario); }
+.btn-outline:hover { background: var(--color-secundario); color: #fff; }
+
+/* ---------- Hero ---------- */
+.hero {
+  background: linear-gradient(120deg, var(--color-oscuro), var(--color-principal));
+  color: #fff;
+  padding: 72px 0;
+}
+.hero-grid {
+  display: grid;
+  grid-template-columns: 1.4fr 1fr;
+  gap: 40px;
+  align-items: center;
+}
+.hero-text {
+  border-left: 6px solid var(--color-secundario);
+  padding-left: 24px;
+}
+.hero h1 { color: #fff; font-size: clamp(2.2rem, 5vw, 3.6rem); }
+.hero p { color: #e2e8f0; font-size: 1.1rem; max-width: 560px; }
+.hero-actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 24px; }
+.hero .btn-outline { color: #fff; }
+.hero-mascot { justify-self: center; max-height: 300px; }
+
+/* ---------- Secciones ---------- */
+.section { padding: 64px 0; border-bottom: 1px solid var(--color-borde); }
+.section-alt { background: var(--color-fondo-alt); }
+.section h2 { font-size: clamp(1.6rem, 3vw, 2rem); }
+.eyebrow {
+  display: block;
+  font-size: .75rem;
+  font-weight: 700;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  color: var(--color-principal);
+  margin-bottom: 6px;
+}
+.note { font-size: .9rem; font-style: italic; margin-top: 24px; }
+
+/* ---------- Pasos ---------- */
+.steps {
+  list-style: none;
+  padding: 0;
+  margin: 32px 0 0;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+.step {
+  border: 1px solid var(--color-borde);
+  border-radius: var(--radio);
+  padding: 24px;
+}
+.step-number {
+  display: inline-grid;
+  place-items: center;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: var(--color-secundario);
+  color: #fff;
+  font-weight: 700;
+  margin-bottom: 12px;
+}
+
+/* ---------- Macroáreas ---------- */
+.areas {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 24px;
+  margin-top: 32px;
+}
+.area {
+  background: #fff;
+  border: 1px solid var(--color-borde);
+  border-radius: var(--radio);
+  padding: 24px;
+}
+.area h3 { color: var(--color-principal); font-size: 1.15rem; }
+.area-number { font-size: .75rem; text-transform: uppercase; color: #94a3b8; }
+.area a { font-size: .9rem; font-weight: 600; }
+.tags {
+  list-style: none;
+  padding: 0;
+  margin: 12px 0 16px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+.tags li {
+  font-size: .8rem;
+  background: var(--color-fondo-alt);
+  border: 1px solid var(--color-borde);
+  border-radius: 2px;
+  padding: 2px 10px;
+}
+
+/* ---------- Aurelio ---------- */
+.aurelio {
+  display: grid;
+  grid-template-columns: 160px 1fr;
+  gap: 32px;
+  align-items: center;
+}
+
+/* ---------- Pie de página ---------- */
+.site-footer {
+  background: #001733;
+  color: #a0aec0;
+  font-size: .85rem;
+  padding: 32px 0;
+  text-align: center;
+}
+.site-footer strong { color: #fff; }
+
+/* ---------- Celulares ---------- */
+@media (max-width: 768px) {
+  .hero { padding: 48px 0; }
+  .hero-grid, .aurelio { grid-template-columns: 1fr; }
+  .hero-mascot { max-height: 200px; }
+  .steps { grid-template-columns: 1fr; }
+  .aurelio img { justify-self: center; }
+
+  .nav-toggle {
+    display: block;
+    background: none;
+    border: 1px solid var(--color-borde);
+    border-radius: var(--radio);
+    padding: 8px 14px;
+    font: inherit;
+    font-weight: 600;
+    cursor: pointer;
+  }
+  .nav {
+    display: none;
+    position: absolute;
+    top: 68px;
+    left: 0;
+    right: 0;
+    flex-direction: column;
+    gap: 0;
+    background: #fff;
+    border-bottom: 1px solid var(--color-borde);
+  }
+  .nav.open { display: flex; }
+  .nav a { padding: 14px 16px; border-top: 1px solid var(--color-borde); }
+}

@@ -1,58 +1,23 @@
-# Dependencies
-node_modules/
-.pnp
-.pnp.js
-
-# Environment variables & secrets
+# Variables de entorno y claves (nunca se suben)
 .env
-.env.local
-.env.*.local
-.env.development.local
-.env.test.local
-.env.production.local
+.env.*
+*.key
+*.pem
 
-# Build output
-dist/
-dist-ssr/
-build/
-*.local
+# Sistema operativo
+.DS_Store
+Thumbs.db
+desktop.ini
 
-# Vite / cache
-.vite/
-.cache/
-
-# Logs
-logs/
-*.log
-npm-debug.log*
-yarn-debug.log*
-yarn-error.log*
-pnpm-debug.log*
-
-# Coverage / test output
-coverage/
-.nyc_output/
-
-# Editor & IDE
+# Editores
 .vscode/*
 !.vscode/extensions.json
 .idea/
-*.suo
-*.ntvs*
-*.njsproj
-*.sln
-*.sw?
+*.swp
 
-# OS files
-.DS_Store
-.DS_Store?
-._*
-.Spotlight-V100
-.Trashes
-ehthumbs.db
-Thumbs.db
+# Dependencias (si en algún momento se usan herramientas con npm)
+node_modules/
 
-# Supabase local dev (CLI)
-.branches/
-.temp/
-supabase/.temp/
+# Archivos temporales y registros
+*.log
+*.tmp

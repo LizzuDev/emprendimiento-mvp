@@ -1,18 +1,155 @@
 <!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🦦</text></svg>" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Orienta PUCE | Diseña tu futuro profesional</title>
-    <meta name="description" content="¿Estás listo para iniciar tu futuro profesional? Descubre la carrera universitaria que hace match con tu potencial real en la PUCE." />
-    <!-- Google Fonts: Rubik & Open Sans (Official PUCE Fonts) -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400&family=Rubik:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400&display=swap" rel="stylesheet">
-  </head>
-  <body class="bg-white text-slate-800 min-h-screen font-body antialiased selection:bg-puce-secundario selection:text-white">
-    <div id="root"></div>
-    <script type="module" src="/src/main.jsx"></script>
-  </body>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Orienta PUCE | Descubre tu futuro profesional</title>
+  <meta name="description" content="Plataforma de orientación vocacional de la PUCE: un test corto, tu Top 3 de carreras y mini-retos con materias reales de primer semestre.">
+  <link rel="icon" type="image/svg+xml" href="assets/img/aurelio/bienvenido.svg">
+
+  <!-- Tipografías institucionales PUCE: Rubik (títulos) y Open Sans (textos) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&family=Rubik:wght@500;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+  <!-- Encabezado -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="index.html" class="logo" aria-label="Orienta PUCE, inicio">
+        <img src="https://www.puce.edu.ec/wp-content/uploads/2026/05/horizontal_color.png" alt="PUCE" height="40">
+      </a>
+      <button class="nav-toggle" aria-expanded="false" aria-controls="menu">Menú</button>
+      <nav id="menu" class="nav">
+        <a href="#como-funciona">Cómo funciona</a>
+        <a href="#macroareas">Macroáreas</a>
+        <a href="#aurelio">Aurelio</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <!-- 1. Hero -->
+    <section class="hero">
+      <div class="container hero-grid">
+        <div class="hero-text">
+          <h1>Descubre tu futuro</h1>
+          <p>Encuentra la carrera ideal para ti en 10 minutos: responde un test corto, mira tu Top 3 de carreras y prueba un mini-reto con materias reales de primer semestre.</p>
+          <div class="hero-actions">
+            <a href="#como-funciona" class="btn btn-primary">Conoce cómo funciona</a>
+            <a href="https://landing.puce.edu.ec/pucegradogeneral" class="btn btn-outline" target="_blank" rel="noopener">Más información de grado</a>
+          </div>
+        </div>
+        <img class="hero-mascot" src="assets/img/aurelio/signo-explora-decide-futuro.svg" alt="Aurelio con un letrero que dice: explora y decide tu futuro">
+      </div>
+    </section>
+
+    <!-- 2. Cómo funciona -->
+    <section id="como-funciona" class="section">
+      <div class="container">
+        <span class="eyebrow">Orientación vocacional</span>
+        <h2>Cómo funciona</h2>
+        <ol class="steps">
+          <li class="step">
+            <span class="step-number">1</span>
+            <h3>Test corto</h3>
+            <p>Máximo 15 preguntas sobre tus intereses, en menos de 5 minutos.</p>
+          </li>
+          <li class="step">
+            <span class="step-number">2</span>
+            <h3>Tu Top 3</h3>
+            <p>Las tres carreras de la PUCE con mayor afinidad para ti.</p>
+          </li>
+          <li class="step">
+            <span class="step-number">3</span>
+            <h3>Mini-reto</h3>
+            <p>Un ejercicio de 2 minutos de una materia real de primer semestre.</p>
+          </li>
+        </ol>
+        <p class="note">El test estará disponible en la primera versión del producto (Sprint 1).</p>
+      </div>
+    </section>
+
+    <!-- 3. Macroáreas -->
+    <section id="macroareas" class="section section-alt">
+      <div class="container">
+        <span class="eyebrow">Oferta académica</span>
+        <h2>Macroáreas vocacionales evaluadas</h2>
+
+        <div class="areas">
+          <article class="area">
+            <span class="area-number">Área 01</span>
+            <h3>Hábitat, Infraestructura y Creatividad</h3>
+            <ul class="tags">
+              <li>Arquitectura</li><li>Diseño Gráfico</li><li>Artes Visuales</li>
+              <li>Ingeniería Civil</li><li>Sistemas de Información</li>
+            </ul>
+            <a href="https://www.puce.edu.ec/facultad-de-habitat-infraestructura-y-creatividad/" target="_blank" rel="noopener">Ver en el portal PUCE</a>
+          </article>
+
+          <article class="area">
+            <span class="area-number">Área 02</span>
+            <h3>Salud y Bienestar</h3>
+            <ul class="tags">
+              <li>Medicina</li><li>Enfermería</li><li>Fisioterapia</li>
+              <li>Nutrición y Dietética</li><li>Psicología Clínica</li>
+            </ul>
+            <a href="https://www.puce.edu.ec/facultad-de-salud-y-bienestar/" target="_blank" rel="noopener">Ver en el portal PUCE</a>
+          </article>
+
+          <article class="area">
+            <span class="area-number">Área 03</span>
+            <h3>Ciencias Exactas, Naturales y Ambientales</h3>
+            <ul class="tags">
+              <li>Biología</li><li>Microbiología</li><li>Ciencias Biomédicas</li><li>Ciencia de Datos</li>
+            </ul>
+            <a href="https://www.puce.edu.ec/facultad-de-ciencias-exactas-naturales-y-ambientales/" target="_blank" rel="noopener">Ver en el portal PUCE</a>
+          </article>
+
+          <article class="area">
+            <span class="area-number">Área 04</span>
+            <h3>Derecho, Sociedad y Humanidades</h3>
+            <ul class="tags">
+              <li>Derecho</li><li>Relaciones Internacionales</li><li>Comunicación</li><li>Educación Inicial</li>
+            </ul>
+            <a href="https://www.puce.edu.ec/facultad-de-derecho-y-sociedad/" target="_blank" rel="noopener">Ver en el portal PUCE</a>
+          </article>
+
+          <article class="area">
+            <span class="area-number">Área 05</span>
+            <h3>Economía y Gestión Empresarial</h3>
+            <ul class="tags">
+              <li>Administración de Empresas</li><li>Economía</li><li>Finanzas</li><li>Marketing</li>
+            </ul>
+            <a href="https://www.puce.edu.ec/facultad-de-economia-y-gestion-empresarial/" target="_blank" rel="noopener">Ver en el portal PUCE</a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- 4. Aurelio -->
+    <section id="aurelio" class="section">
+      <div class="container aurelio">
+        <img src="assets/img/aurelio/presenta-opciones.svg" alt="Aurelio, el orientador virtual" width="160" height="160">
+        <div>
+          <span class="eyebrow">Acompañamiento permanente</span>
+          <h2>Aurelio, tu orientador virtual</h2>
+          <p>Inspirado en el oso de anteojos andino y en honor al Padre Aurelio Espinosa Pólit, S.J. Aurelio te acompaña durante el test y responde tus dudas sobre materias, requisitos de ingreso y campo laboral.</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Pie de página -->
+  <footer class="site-footer">
+    <div class="container">
+      <p>Proyecto académico del equipo <strong>Developers CARF</strong> · Emprendimiento Tecnológico · Ingeniería en Sistemas de Información · PUCE · <span id="year">2026</span></p>
+    </div>
+  </footer>
+
+  <script src="js/main.js" defer></script>
+</body>
 </html>
