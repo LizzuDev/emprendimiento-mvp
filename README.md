@@ -53,9 +53,13 @@ El producto es una **aplicación web con HTTPS** construida con **HTML5, CSS3 y 
 
 ```
 ├── index.html                 Landing page
-├── css/styles.css             Estilos globales (paleta PUCE)
+├── test.html                  Aplicación del test vocacional interactivo
+├── css/
+│   ├── styles.css             Estilos globales (paleta PUCE)
+│   └── test.css               Estilos del test vocacional y componentes
 ├── js/
 │   ├── main.js                Comportamiento de la landing
+│   ├── test.js                Lógica del test, scoring, mini-retos y chatbot
 │   └── data/vocationalData.js Banco de preguntas y macroáreas del test
 ├── assets/
 │   ├── img/aurelio/           Ilustraciones de Aurelio (SVG)

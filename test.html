@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Test Vocacional Oficial | Orienta PUCE</title>
+  <meta name="description" content="Descubre tu carrera ideal en la Pontificia Universidad Católica del Ecuador en 10 minutos con mini-retos de materias reales.">
+  <link rel="icon" type="image/svg+xml" href="assets/img/aurelio/bienvenido.svg">
+
+  <!-- Tipografías institucionales PUCE -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&family=Rubik:wght@500;700;800;900&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="css/test.css">
+</head>
+<body class="test-body">
+
+  <!-- Header Institucional del Test -->
+  <header class="test-header">
+    <div class="test-header-inner">
+      <a href="index.html" class="test-brand" aria-label="Volver al inicio">
+        <img src="https://www.puce.edu.ec/wp-content/uploads/2026/05/horizontal_color.png" alt="PUCE">
+        <span class="test-badge">Test Vocacional OVP</span>
+      </a>
+      <a href="index.html" class="btn-ghost">
+        ← Volver al inicio
+      </a>
+    </div>
+  </header>
+
+  <!-- Contenedor Principal del Test Dinámico -->
+  <main class="test-main-container">
+    <div id="test-app">
+      <!-- El contenido dinámico de las fases se renderiza aquí mediante js/test.js -->
+    </div>
+  </main>
+
+  <!-- MODAL: Malla Curricular Semestre a Semestre -->
+  <div id="syllabus-modal" class="modal-overlay" style="display: none;">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h3 id="syllabus-career-title">Malla Curricular</h3>
+        <button id="btn-close-syllabus" class="close-btn" aria-label="Cerrar modal">&times;</button>
+      </div>
+      <div id="syllabus-body" class="modal-body">
+        <!-- Renderizado dinámico de materias -->
+      </div>
+      <div class="modal-footer">
+        <button class="btn btn-primary" onclick="document.getElementById('syllabus-modal').style.display='none'">
+          Entendido, cerrar
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- MODAL: Asesoría / Lead Form ("Quiero más información") -->
+  <div id="lead-modal" class="modal-overlay" style="display: none;">
+    <div class="modal-content" style="max-width: 480px;">
+      <div class="modal-header">
+        <div>
+          <span class="results-eyebrow" style="margin-bottom: 2px;">Admisiones PUCE</span>
+          <h3 style="font-size: 1.25rem;">Asegura tu Acompañamiento</h3>
+        </div>
+        <button id="btn-close-lead" class="close-btn" aria-label="Cerrar modal">&times;</button>
+      </div>
+      <div class="modal-body">
+        <p style="font-size: 0.88rem; color: var(--color-muted); margin-bottom: 20px;">
+          Ingresa tus datos y un asesor vocacional se contactará contigo para brindarte información sobre becas, descuentos y fechas de postulación.
+        </p>
+        <form id="lead-form" style="display: flex; flex-direction: column; gap: 14px;">
+          <div>
+            <label style="display: block; font-size: 0.78rem; font-weight: 700; color: var(--color-primary-dark); margin-bottom: 4px;">
+              Nombre Completo *
+            </label>
+            <input type="text" required placeholder="Ej. Ana Morales" style="width: 100%; padding: 10px 12px; border: 1px solid var(--color-border); border-radius: 4px; font-size: 0.88rem;">
+          </div>
+          <div>
+            <label style="display: block; font-size: 0.78rem; font-weight: 700; color: var(--color-primary-dark); margin-bottom: 4px;">
+              WhatsApp o Celular *
+            </label>
+            <input type="tel" required placeholder="099 123 4567" style="width: 100%; padding: 10px 12px; border: 1px solid var(--color-border); border-radius: 4px; font-size: 0.88rem;">
+          </div>
+          <div>
+            <label style="display: block; font-size: 0.78rem; font-weight: 700; color: var(--color-primary-dark); margin-bottom: 4px;">
+              Correo Electrónico *
+            </label>
+            <input type="email" required placeholder="tuemail@ejemplo.com" style="width: 100%; padding: 10px 12px; border: 1px solid var(--color-border); border-radius: 4px; font-size: 0.88rem;">
+          </div>
+          <button type="submit" class="btn btn-primary" style="margin-top: 8px; padding: 12px; width: 100%;">
+            Solicitar Asesoría Gratuita
+          </button>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <!-- WIDGET FLOTANTE: Chat con Aurelio -->
+  <div id="chat-panel" class="chat-panel" style="display: none;">
+    <div class="chat-header">
+      <div class="chat-header-info">
+        <img class="chat-avatar" src="assets/img/aurelio/neutro.svg" alt="Aurelio">
+        <div>
+          <div class="chat-header-title">Aurelio Bot</div>
+          <div class="chat-header-sub">Orientador Vocacional PUCE</div>
+        </div>
+      </div>
+      <button id="btn-close-chat" class="close-btn" style="color: #fff;" aria-label="Cerrar chat">&times;</button>
+    </div>
+    <div id="chat-messages-container" class="chat-messages">
+      <!-- Mensajes dinámicos -->
+    </div>
+    <div class="chat-suggested-queries">
+      <button class="query-chip">¿Cuánto cuesta la carrera?</button>
+      <button class="query-chip">¿Es difícil?</button>
+      <button class="query-chip">¿Dónde puedo trabajar?</button>
+    </div>
+    <form id="chat-form" class="chat-form">
+      <input id="chat-input" type="text" class="chat-input" placeholder="Escribe tu pregunta a Aurelio...">
+      <button type="submit" class="chat-send-btn">Enviar</button>
+    </form>
+  </div>
+
+  <script type="module" src="js/test.js"></script>
+</body>
+</html>
