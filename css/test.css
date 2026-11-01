@@ -1100,3 +1100,76 @@ body.test-body {
     border-bottom: 1px solid #f1f5f9;
   }
 }
+
+/* ==========================================================
+   v0.3.0 · Ajustes por las pruebas con usuarios (U1 a U5)
+   ========================================================== */
+
+/* Nota orientadora y botón de reintento de los mini-retos */
+.react-challenge-note {
+  font-size: 12px;
+  color: #475569;
+  line-height: 1.5;
+  margin: 0 0 12px;
+  padding-left: 10px;
+  border-left: 3px solid #00a8cc;
+}
+
+.react-retry-btn {
+  background: none;
+  border: none;
+  min-height: 44px;
+  padding: 8px 0;
+  font-size: 12px;
+  font-weight: 700;
+  color: #00a8cc;
+  text-transform: uppercase;
+  cursor: pointer;
+  font-family: inherit;
+}
+
+/* Área táctil mínima de 44 px en botones de respuesta, retos y chat */
+.react-answer-btn,
+.react-challenge-opt-btn,
+.react-skill-chip,
+.chat-send-btn {
+  min-height: 44px;
+}
+
+/* Evita el zoom automático de iOS al escribir en el chat */
+@media (max-width: 600px) {
+  .chat-input {
+    font-size: 16px;
+    min-height: 44px;
+  }
+  .chat-panel {
+    right: 8px;
+    left: 8px;
+    bottom: 8px;
+    width: auto;
+    max-width: none;
+  }
+}
+
+/* Celulares de pantalla pequeña (menos de 380 px) */
+@media (max-width: 380px) {
+  .react-answers-grid {
+    gap: 12px;
+  }
+  .react-answer-btn {
+    min-height: 56px;
+    padding: 16px;
+  }
+  .react-answer-btn span.btn-label {
+    font-size: 16px;
+  }
+  .react-challenge-opt-btn {
+    min-height: 52px;
+    padding: 14px 16px;
+    font-size: 14px;
+    margin-bottom: 10px;
+  }
+  .react-question-panel {
+    padding: 24px 12px;
+  }
+}

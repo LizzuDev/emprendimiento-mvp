@@ -63,6 +63,12 @@ const syllabusModal = document.getElementById('syllabus-modal');
 const leadModal = document.getElementById('lead-modal');
 const chatPanel = document.getElementById('chat-panel');
 
+// Mensaje fijo bajo cada resultado de mini-reto: el reto orienta, no evalúa (cambio por pruebas U1-U5)
+const NOTA_ORIENTADORA = `
+  <p class="react-challenge-note">
+    Esto no es un examen: el reto te muestra cómo se piensa en esta carrera. Equivocarte también te ayuda a decidir.
+  </p>`;
+
 // SVGs de Aurelio
 const AURELIO_IMG = {
   entusiasmadoBrazos: 'assets/img/aurelio/entusiasmado-brazos-arriba.svg',
@@ -674,7 +680,8 @@ function renderInteractiveChallenge(career) {
             ${isSuccess ? challenge.feedback?.success : challenge.feedback?.failure}
           </p>
         </div>
-        <button id="btn-retry-challenge" style="background: none; border: none; font-size: 11px; font-weight: 700; color: #00a8cc; text-transform: uppercase; cursor: pointer;">
+        ${NOTA_ORIENTADORA}
+        <button id="btn-retry-challenge" class="react-retry-btn">
           Volver a intentar →
         </button>
       `;
@@ -723,7 +730,8 @@ function renderInteractiveChallenge(career) {
             ${isSuccess ? challenge.feedback?.success : challenge.feedback?.failure}
           </p>
         </div>
-        <button id="btn-retry-challenge" style="background: none; border: none; font-size: 11px; font-weight: 700; color: #00a8cc; text-transform: uppercase; cursor: pointer;">
+        ${NOTA_ORIENTADORA}
+        <button id="btn-retry-challenge" class="react-retry-btn">
           Volver a intentar →
         </button>
       `;
@@ -749,15 +757,16 @@ function renderInteractiveChallenge(career) {
       challengeHTML += `
         <div style="padding: 14px; border-radius: 2px; border: 1px solid ${isCorrect ? '#bbf7d0' : '#fed7aa'}; background: ${isCorrect ? '#f0fdf4' : '#fffbeb'}; margin-bottom: 12px;">
           <p style="font-size: 12px; font-weight: 600; color: ${isCorrect ? '#166534' : '#9a3412'}; margin: 0 0 4px;">
-            ${isCorrect ? '¡Excelente decisión!' : 'No es la mejor alternativa'}
+            ${isCorrect ? '¡Excelente decisión!' : 'Buen intento: así se piensa en esta carrera'}
           </p>
           <p style="font-size: 11px; color: ${isCorrect ? '#166534' : '#9a3412'}; margin: 0;">
             ${isCorrect 
               ? 'Un buen profesional de esta área siempre busca soluciones basadas en evidencia y planificación.' 
-              : 'En esta carrera, es vital analizar las variables y buscar soluciones estructuradas en lugar de improvisar.'}
+              : 'En esta carrera se analizan las variables y se buscan soluciones estructuradas antes de decidir. Es algo que se aprende desde el primer semestre.'}
           </p>
         </div>
-        <button id="btn-retry-challenge" style="background: none; border: none; font-size: 11px; font-weight: 700; color: #00a8cc; text-transform: uppercase; cursor: pointer;">
+        ${NOTA_ORIENTADORA}
+        <button id="btn-retry-challenge" class="react-retry-btn">
           Volver a intentar →
         </button>
       `;
@@ -915,7 +924,22 @@ function openChat() {
   if (chatPanel) {
     chatPanel.style.display = 'flex';
     renderChatMessages();
+    ajustarChatAlTeclado();
   }
+}
+
+// Con el teclado abierto en el celular, el panel del chat se ajusta al alto visible
+// para que la caja de texto y el botón de envío no queden tapados (cambio por pruebas U1-U5).
+function ajustarChatAlTeclado() {
+  if (!chatPanel || !window.visualViewport || window.innerWidth > 600) return;
+  const vv = window.visualViewport;
+  const tecladoAlto = Math.max(window.innerHeight - vv.height - vv.offsetTop, 0);
+  chatPanel.style.bottom = `${tecladoAlto + 8}px`;
+  chatPanel.style.maxHeight = `${vv.height - 16}px`;
+}
+if (window.visualViewport) {
+  window.visualViewport.addEventListener('resize', ajustarChatAlTeclado);
+  window.visualViewport.addEventListener('scroll', ajustarChatAlTeclado);
 }
 
 function closeChat() {
@@ -946,15 +970,22 @@ function sendAurelioQuestion(questionText) {
     const activeCareer = state.rankedCareers.find(c => c.key === state.activeCareerKey);
     const cName = activeCareer?.name || 'tu carrera elegida';
 
-    let reply = `En la PUCE, la carrera de ${cName} cuenta con mallas curriculares actualizadas, laboratorios equipados y docentes con alta trayectoria académica y profesional.`;
-
     const lower = questionText.toLowerCase();
-    if (lower.includes('matemática') || lower.includes('número') || lower.includes('difícil')) {
-      reply = `Es comprensible sentir respeto por asignaturas cuantitativas. En la PUCE cuentas con tutorías académicas personalizadas, grupos de acompañamiento y docentes comprometidos para apoyarte desde el primer ciclo.`;
-    } else if (lower.includes('trabajo') || lower.includes('empleo') || lower.includes('sueldo') || lower.includes('dinero') || lower.includes('campo')) {
-      reply = `La PUCE lidera la empleabilidad universitaria en Ecuador gracias al prestigio ético de sus egresados y a la red de convenios con empresas, organismos internacionales y el sector público.`;
-    } else if (lower.includes('beca') || lower.includes('costo') || lower.includes('financiamiento')) {
-      reply = `La universidad aplica aranceles diferenciados y cuenta con diversos programas de becas socioeconómicas y al mérito para que el factor económico no limite tu vocación.`;
+    const tiene = (...palabras) => palabras.some(p => lower.includes(p));
+
+    // Respuestas breves (máximo dos frases) por pedido de los usuarios U3 y U5
+    let reply = `${cName} en la PUCE tiene malla actualizada y laboratorios propios. ¿Quieres saber de materias, campo laboral o becas?`;
+
+    if (tiene('matemática', 'matematica', 'número', 'numero', 'difícil', 'dificil', 'exigente')) {
+      reply = `Las materias numéricas del primer año son las más exigentes. La PUCE ofrece tutorías gratuitas desde el primer semestre.`;
+    } else if (tiene('materia', 'malla', 'semestre', 'pensum')) {
+      reply = `Puedes ver las materias de ${cName} semestre por semestre en la opción «Malla Curricular» de tus resultados. Las del primer año son la base de toda la carrera.`;
+    } else if (tiene('horario', 'jornada', 'clases')) {
+      reply = `Los horarios dependen de la carrera y del semestre. Admisiones te los confirma al inscribirte.`;
+    } else if (tiene('trabajo', 'empleo', 'sueldo', 'dinero', 'campo')) {
+      reply = `Los egresados de la PUCE tienen alta empleabilidad gracias a sus convenios con empresas y el sector público.`;
+    } else if (tiene('beca', 'costo', 'precio', 'arancel', 'financiamiento')) {
+      reply = `La PUCE tiene aranceles diferenciados y becas socioeconómicas y por mérito. Un asesor de Admisiones te da el valor exacto.`;
     }
 
     state.chatHistory.push({ sender: 'aurelio', text: reply });
