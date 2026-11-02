@@ -77,9 +77,19 @@ export function initTest() {
   setupModalEvents();
 }
 
+// Lleva la vista al inicio. Safari de iOS antiguo no acepta scrollTo con opciones (#18),
+// así que en ese caso se usa la forma clásica scrollTo(0, 0).
+function irArriba() {
+  if ('scrollBehavior' in document.documentElement.style) {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  } else {
+    window.scrollTo(0, 0);
+  }
+}
+
 function renderCurrentStep() {
   if (!appContainer) return;
-  window.scrollTo({ top: 0, behavior: 'smooth' });
+  irArriba();
 
   switch (state.step) {
     case 'phase1':
