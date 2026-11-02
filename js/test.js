@@ -833,22 +833,27 @@ function renderInteractiveChallenge(career) {
 function openSyllabusModal(career) {
   if (!syllabusModal) return;
 
-  const syllabus = career.syllabus || {
-    semesters: [
-      ['Fundamentos de Investigación', 'Matemática I', 'Contabilidad Básica', 'Fundamentos de Administración'],
-      ['Estadística I', 'Pensamiento Creativo e Innovación', 'Introducción a la Macroeconomía', 'Ética e Interculturalidad'],
-      ['Investigación de Operaciones', 'Marketing y Ecosistema Digital', 'Jesucristo y Aprendizajes Vitales'],
-      ['Gestión de Proyectos', 'Integración Curricular', 'Seminario de Titulación']
-    ],
-    subjectDetails: {}
-  };
+  const syllabus = career.syllabus;
 
   const modalCareerTitle = document.getElementById('syllabus-career-title');
   const modalBody = document.getElementById('syllabus-body');
 
   if (modalCareerTitle) modalCareerTitle.textContent = career.name || 'Carrera Universitaria';
 
-  if (modalBody) {
+  // Si la carrera aún no tiene su malla cargada, se avisa en lugar de mostrar
+  // una malla que no le corresponde (#21).
+  if (modalBody && !syllabus) {
+    modalBody.innerHTML = `
+      <p style="font-size: 14px; color: #334155; line-height: 1.6; margin: 0 0 16px;">
+        Todavía estamos preparando la malla de <strong>${career.name || 'esta carrera'}</strong> en esta plataforma.
+      </p>
+      <p style="font-size: 14px; color: #334155; line-height: 1.6; margin: 0;">
+        Mientras tanto, puedes revisarla en el
+        <a href="https://landing.puce.edu.ec/pucegradogeneral" target="_blank" rel="noopener" style="color: #003b81; font-weight: 700;">portal de grado de la PUCE</a>
+        o preguntarle a Aurelio por las materias de primer año.
+      </p>
+    `;
+  } else if (modalBody) {
     modalBody.innerHTML = `
       <p style="font-size: 13px; color: #64748b; margin-bottom: 24px;">
         Pasa el cursor o pulsa sobre cualquier materia para conocer más información formativa.
