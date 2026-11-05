@@ -21,3 +21,7 @@ node_modules/
 # Archivos temporales y registros
 *.log
 *.tmp
+
+# Carpetas temporales de herramientas (Vite, Supabase CLI)
+.vite/
+supabase/.temp/
