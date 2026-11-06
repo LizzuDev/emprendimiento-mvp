@@ -40,14 +40,15 @@ Todos los integrantes programan, incluidos el Product Owner y el Scrum Master.
 
 El producto es una **aplicación web con HTTPS** construida con **HTML5, CSS3 y JavaScript puro**, sin frameworks ni paso de compilación. Elegimos esta opción porque el sitio de la PUCE funciona sobre WordPress, así que el código se integra sin instalaciones complejas y todo el equipo lo domina.
 
-| Capa | Tecnología |
-| --- | --- |
-| Estructura | HTML5 |
-| Estilos | CSS3 con la paleta y tipografías institucionales de la PUCE (Rubik y Open Sans) |
-| Interacción | JavaScript puro (módulos nativos del navegador) |
-| Despliegue final | Hostinger (RDA 3) |
+| Capa | Tecnología | Por qué |
+| --- | --- | --- |
+| Frontend y landing | HTML5, CSS3 y JavaScript puro | Se integra con el WordPress de la PUCE y todo el equipo la domina |
+| Base de datos y login | Supabase (plan gratuito) | Guarda resultados del test y contactos para Admisiones, directo desde JavaScript |
+| Backend o API | Supabase Edge Functions | Protege las claves de la IA sin un servidor propio |
+| IA (AurelioBot) | Groq o Gemini (API) | Se elegirá uno con una prueba de 10 preguntas reales |
+| Hosting | Render (Sprint 1) → Hostinger (RDA 3) | Publicación con HTTPS |
 
-> Las demás capas (base de datos, inicio de sesión e IA para AurelioBot) se definirán con los lineamientos de la Dirección de TI de la PUCE.
+> Stack preliminar del Sprint 0: puede ajustarse según los lineamientos de la Dirección de TI de la PUCE.
 
 ## Estructura del repositorio
 
