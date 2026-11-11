@@ -4,6 +4,7 @@
 // =========================================================
 
 import { MACROAREAS, FASE_1_QUESTIONS, DOMAIN_DATA } from './data/vocationalData.js';
+import { getAurelioContextualAnswer, queryGroqAurelio } from './aurelioBot.js';
 
 // --- ESTADO GLOBAL Y PERSISTENCIA (MISMAS CLAVES QUE EN REACT) ---
 const STORAGE_PREFIX = 'puce_test_';
@@ -1010,6 +1011,17 @@ function closeLeadModal() {
 
 function openChat() {
   if (chatPanel) {
+    const activeCareer = state.rankedCareers.find(c => c.key === state.activeCareerKey);
+    // Si el chat es nuevo o tiene el saludo genérico previo, contextualizar con la carrera activa
+    if (activeCareer && (!state.chatHistory || state.chatHistory.length === 0 || state.chatHistory[0]?.text?.includes('¿cómo es el campo ocupacional'))) {
+      state.chatHistory = [
+        {
+          sender: 'aurelio',
+          text: `¡Hola! Soy Aurelio, orientador y mascota de la PUCE. Ahora que estás explorando ${activeCareer.name}, pregúntame con confianza: ¿cuánto cuesta?, ¿es difícil?, ¿dónde puedes trabajar?, o sobre sus materias.`
+        }
+      ];
+      saveStorage('chatHistory', state.chatHistory);
+    }
     chatPanel.style.display = 'flex';
     renderChatMessages();
     ajustarChatAlTeclado();
@@ -1047,39 +1059,52 @@ function renderChatMessages() {
   msgContainer.scrollTop = msgContainer.scrollHeight;
 }
 
-function sendAurelioQuestion(questionText) {
+async function sendAurelioQuestion(questionText) {
   if (!questionText || !questionText.trim()) return;
 
-  state.chatHistory.push({ sender: 'user', text: questionText });
+  const userQuery = questionText.trim();
+  state.chatHistory.push({ sender: 'user', text: userQuery });
   saveStorage('chatHistory', state.chatHistory);
   renderChatMessages();
 
-  setTimeout(() => {
-    const activeCareer = state.rankedCareers.find(c => c.key === state.activeCareerKey);
-    const cName = activeCareer?.name || 'tu carrera elegida';
+  // Mostrar indicador de "Aurelio está escribiendo..."
+  const msgContainer = document.getElementById('chat-messages-container');
+  let typingEl = null;
+  if (msgContainer) {
+    typingEl = document.createElement('div');
+    typingEl.className = 'chat-typing';
+    typingEl.id = 'chat-typing-indicator';
+    typingEl.innerHTML = `
+      <span class="chat-typing-dot"></span>
+      <span class="chat-typing-dot"></span>
+      <span class="chat-typing-dot"></span>
+    `;
+    msgContainer.appendChild(typingEl);
+    msgContainer.scrollTop = msgContainer.scrollHeight;
+  }
 
-    const lower = questionText.toLowerCase();
-    const tiene = (...palabras) => palabras.some(p => lower.includes(p));
+  const activeCareer = state.rankedCareers.find(c => c.key === state.activeCareerKey);
 
-    // Respuestas breves (máximo dos frases) por pedido de los usuarios U3 y U5
-    let reply = `${cName} en la PUCE tiene malla actualizada y laboratorios propios. ¿Quieres saber de materias, campo laboral o becas?`;
+  try {
+    // Si la pregunta coincide con preguntas clave o si Groq está activo, resuelve
+    const reply = await queryGroqAurelio(activeCareer, userQuery, state.chatHistory);
 
-    if (tiene('matemática', 'matematica', 'número', 'numero', 'difícil', 'dificil', 'exigente')) {
-      reply = `Las materias numéricas del primer año son las más exigentes. La PUCE ofrece tutorías gratuitas desde el primer semestre.`;
-    } else if (tiene('materia', 'malla', 'semestre', 'pensum')) {
-      reply = `Puedes ver las materias de ${cName} semestre por semestre en la opción «Malla Curricular» de tus resultados. Las del primer año son la base de toda la carrera.`;
-    } else if (tiene('horario', 'jornada', 'clases')) {
-      reply = `Los horarios dependen de la carrera y del semestre. Admisiones te los confirma al inscribirte.`;
-    } else if (tiene('trabajo', 'empleo', 'sueldo', 'dinero', 'campo')) {
-      reply = `Los egresados de la PUCE tienen alta empleabilidad gracias a sus convenios con empresas y el sector público.`;
-    } else if (tiene('beca', 'costo', 'precio', 'arancel', 'financiamiento')) {
-      reply = `La PUCE tiene aranceles diferenciados y becas socioeconómicas y por mérito. Un asesor de Admisiones te da el valor exacto.`;
-    }
+    const existingTyping = document.getElementById('chat-typing-indicator');
+    if (existingTyping) existingTyping.remove();
 
     state.chatHistory.push({ sender: 'aurelio', text: reply });
     saveStorage('chatHistory', state.chatHistory);
     renderChatMessages();
-  }, 400);
+  } catch (err) {
+    console.error('Error al generar respuesta en AurelioBot:', err);
+    const existingTyping = document.getElementById('chat-typing-indicator');
+    if (existingTyping) existingTyping.remove();
+
+    const fallbackReply = getAurelioContextualAnswer(activeCareer, userQuery);
+    state.chatHistory.push({ sender: 'aurelio', text: fallbackReply });
+    saveStorage('chatHistory', state.chatHistory);
+    renderChatMessages();
+  }
 }
 
 // =========================================================
