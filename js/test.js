@@ -373,11 +373,36 @@ function renderPhase2b() {
 }
 
 // =========================================================
-// FASE 2A: PREGUNTAS DE DOMINIO (IDÉNTICO A REACT)
+// FASE 2A: PREGUNTAS DE DOMINIO EQUITATIVAS Y BALANCEADAS
 // =========================================================
+
+// Obtiene una selección balanceada y equitativa de preguntas por dominio (12 a 22 preguntas)
+// garantizando que cada carrera tenga exactamente la misma cantidad de reactivos evaluados.
+function getBalancedQuestionsForDomain(macroareaKey) {
+  const domain = DOMAIN_DATA[macroareaKey] || DOMAIN_DATA.economia;
+  if (!domain || !domain.careers || !domain.questions) return [];
+
+  const careers = Object.values(domain.careers);
+  const totalCareers = careers.length;
+
+  let questionsPerCareer = 2;
+  if (totalCareers <= 2) questionsPerCareer = 6;
+  else if (totalCareers <= 6) questionsPerCareer = 3;
+  else questionsPerCareer = 2;
+
+  const selectedQuestionIds = new Set();
+  careers.forEach(career => {
+    const careerItems = career.items || [];
+    const chosen = careerItems.slice(0, questionsPerCareer);
+    chosen.forEach(id => selectedQuestionIds.add(id));
+  });
+
+  return domain.questions.filter(q => selectedQuestionIds.has(q.id));
+}
+
 function renderPhase2a() {
   const domain = DOMAIN_DATA[state.selectedMacro] || DOMAIN_DATA.economia;
-  const questions = (domain.questions || []).slice(0, 15);
+  const questions = getBalancedQuestionsForDomain(state.selectedMacro);
   const currentQ = questions[state.p2aIndex] || questions[0];
   const progressPercent = Math.round(((state.p2aIndex + 1) / questions.length) * 100);
 
@@ -435,8 +460,7 @@ function handlePhase2aAnswer(question, isYes) {
   state.p2aAnswers[question.id] = isYes;
   saveStorage('p2aans', state.p2aAnswers);
 
-  const domain = DOMAIN_DATA[state.selectedMacro] || DOMAIN_DATA.economia;
-  const questions = (domain.questions || []).slice(0, 15);
+  const questions = getBalancedQuestionsForDomain(state.selectedMacro);
 
   if (state.p2aIndex + 1 < questions.length) {
     state.p2aIndex++;
@@ -462,7 +486,7 @@ function calculateFinalResults() {
   const domain = DOMAIN_DATA[state.selectedMacro] || DOMAIN_DATA.economia;
   if (!domain || !domain.careers) return;
 
-  const questions = (domain.questions || []).slice(0, 15);
+  const questions = getBalancedQuestionsForDomain(state.selectedMacro);
   const askedIds = new Set(questions.map(q => q.id));
 
   const results = Object.entries(domain.careers).map(([cKey, cData]) => {
@@ -1074,8 +1098,7 @@ function setupKeyboardListeners() {
         handlePhase1Back();
       }
     } else if (state.step === 'phase2a') {
-      const domain = DOMAIN_DATA[state.selectedMacro] || DOMAIN_DATA.economia;
-      const questions = (domain.questions || []).slice(0, 15);
+      const questions = getBalancedQuestionsForDomain(state.selectedMacro);
       const currentQ = questions[state.p2aIndex];
       if (e.key === '1' || e.key === 's' || e.key === 'S') {
         handlePhase2aAnswer(currentQ, true);
