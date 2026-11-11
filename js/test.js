@@ -8,6 +8,47 @@ import { MACROAREAS, FASE_1_QUESTIONS, DOMAIN_DATA } from './data/vocationalData
 // --- ESTADO GLOBAL Y PERSISTENCIA (MISMAS CLAVES QUE EN REACT) ---
 const STORAGE_PREFIX = 'puce_test_';
 
+function clearTestStorage() {
+  const keys = ['step', 'qindex', 'p1ans', 'scores', 'macro', 'skills', 'qindex_p2', 'p2aans', 'careers', 'selcareer', 'chatHistory'];
+  keys.forEach(k => {
+    try {
+      localStorage.removeItem(STORAGE_PREFIX + k);
+    } catch (e) {
+      console.warn('LocalStorage remove error:', e);
+    }
+  });
+}
+
+// Si la URL contiene el parámetro ?nuevo=1 o ?reset=1, se inicia un test limpio desde cero
+try {
+  const urlParams = typeof window !== 'undefined' && window.location ? new URLSearchParams(window.location.search) : null;
+  if (urlParams && (urlParams.get('nuevo') === '1' || urlParams.get('reset') === '1')) {
+    clearTestStorage();
+    if (window.history && window.history.replaceState) {
+      window.history.replaceState({}, document.title, window.location.pathname);
+    }
+  }
+} catch (e) {
+  console.warn('Error al verificar parámetros de inicio:', e);
+}
+
+function getStorage(key, fallback) {
+  try {
+    const val = localStorage.getItem(STORAGE_PREFIX + key);
+    return val !== null ? JSON.parse(val) : fallback;
+  } catch (e) {
+    return fallback;
+  }
+}
+
+function saveStorage(key, val) {
+  try {
+    localStorage.setItem(STORAGE_PREFIX + key, JSON.stringify(val));
+  } catch (e) {
+    console.warn('LocalStorage error:', e);
+  }
+}
+
 const state = {
   step: getStorage('step', 'phase1'), // 'phase1' | 'transition' | 'phase2b' | 'phase2a' | 'results'
   p1Index: Number(getStorage('qindex', 0)),
@@ -34,28 +75,6 @@ const state = {
     selectedOption: null
   }
 };
-
-function getStorage(key, fallback) {
-  try {
-    const val = localStorage.getItem(STORAGE_PREFIX + key);
-    return val !== null ? JSON.parse(val) : fallback;
-  } catch (e) {
-    return fallback;
-  }
-}
-
-function saveStorage(key, val) {
-  try {
-    localStorage.setItem(STORAGE_PREFIX + key, JSON.stringify(val));
-  } catch (e) {
-    console.warn('LocalStorage error:', e);
-  }
-}
-
-function clearTestStorage() {
-  const keys = ['step', 'qindex', 'p1ans', 'scores', 'macro', 'skills', 'qindex_p2', 'p2aans', 'careers', 'selcareer', 'chatHistory'];
-  keys.forEach(k => localStorage.removeItem(STORAGE_PREFIX + k));
-}
 
 // Elementos de la vista
 const appContainer = document.getElementById('test-app');
@@ -202,15 +221,9 @@ function handlePhase1Answer(question, isYes) {
     state.macroScores = scores;
     saveStorage('scores', scores);
 
-    // Encontrar la macroárea ganadora
-    let bestKey = 'economia';
-    let maxVal = -1;
-    Object.entries(scores).forEach(([key, val]) => {
-      if (val > maxVal) {
-        maxVal = val;
-        bestKey = key;
-      }
-    });
+    // Encontrar la macroárea con mayor puntaje (desempate equitativo)
+    const sortedScores = Object.entries(scores).sort((a, b) => b[1] - a[1]);
+    const bestKey = sortedScores[0] ? sortedScores[0][0] : 'sostenibilidad';
 
     state.selectedMacro = bestKey;
     saveStorage('macro', bestKey);
@@ -233,7 +246,7 @@ function handlePhase1Back() {
 // PANTALLA DE TRANSICIÓN (IDÉNTICO A REACT)
 // =========================================================
 function renderTransition() {
-  const macroName = MACROAREAS[state.selectedMacro]?.name || 'Economía y Gestión Empresarial';
+  const macroName = MACROAREAS[state.selectedMacro]?.name || 'Área Seleccionada';
 
   appContainer.innerHTML = `
     <div class="react-transition-wrap">
@@ -247,11 +260,34 @@ function renderTransition() {
         Ahora queremos conocerte un poco más a fondo para descubrir qué carrera específica dentro de esta área es tu match perfecto.
       </p>
 
+      <div style="margin: 0 auto 24px auto; max-width: 400px; text-align: left;">
+        <label for="change-macro-select" style="display: block; font-size: 12px; font-weight: 600; color: #475569; margin-bottom: 6px;">
+          ¿Deseas explorar otra área? Puedes cambiarla aquí:
+        </label>
+        <select id="change-macro-select" style="width: 100%; padding: 10px 12px; border: 1px solid #cbd5e1; border-radius: 4px; font-size: 13px; color: #1e293b; background: #fff;">
+          ${Object.entries(MACROAREAS).map(([key, m]) => `
+            <option value="${key}" ${key === state.selectedMacro ? 'selected' : ''}>${m.name}</option>
+          `).join('')}
+        </select>
+      </div>
+
       <button id="btn-continue-transition" class="react-btn-cyan">
         Continuar a Fase 2 →
       </button>
     </div>
   `;
+
+  const selectEl = document.getElementById('change-macro-select');
+  if (selectEl) {
+    selectEl.onchange = (e) => {
+      state.selectedMacro = e.target.value;
+      saveStorage('macro', state.selectedMacro);
+      state.selectedSkills = [];
+      saveStorage('skills', []);
+      const titleEl = document.querySelector('.react-transition-title');
+      if (titleEl) titleEl.textContent = MACROAREAS[state.selectedMacro]?.name || '';
+    };
+  }
 
   document.getElementById('btn-continue-transition').onclick = () => {
     state.step = 'phase2b';
@@ -426,34 +462,47 @@ function calculateFinalResults() {
   const domain = DOMAIN_DATA[state.selectedMacro] || DOMAIN_DATA.economia;
   if (!domain || !domain.careers) return;
 
-  const results = Object.entries(domain.careers).map(([cKey, cData]) => {
-    let score = 0;
-    if (cData.items) {
-      cData.items.forEach(qId => {
-        if (state.p2aAnswers[qId] === true) score += 2;
-      });
-    }
+  const questions = (domain.questions || []).slice(0, 15);
+  const askedIds = new Set(questions.map(q => q.id));
 
+  const results = Object.entries(domain.careers).map(([cKey, cData]) => {
+    // 1. Preguntas efectivamente formuladas al usuario que corresponden a esta carrera
+    const askedItems = (cData.items || []).filter(qId => askedIds.has(qId));
+    let questionsScore = 0;
+    askedItems.forEach(qId => {
+      if (state.p2aAnswers[qId] === true) questionsScore += 2;
+    });
+
+    // 2. Habilidades de la carrera seleccionadas por el usuario
+    let skillsScore = 0;
     if (cData.skills) {
       cData.skills.forEach(skill => {
-        if (state.selectedSkills.includes(skill)) score += 1;
+        if (state.selectedSkills.includes(skill)) skillsScore += 1;
       });
     }
 
-    const maxPossibleScore = (cData.items?.length || 0) * 2 + (cData.skills?.length || 0);
-    const calculatedPct = Math.round((score / Math.max(maxPossibleScore, 1)) * 100);
+    // 3. Puntaje máximo realista basado en lo que realmente se evaluó en la prueba
+    const maxQuestions = askedItems.length * 2;
+    const maxSkills = (cData.skills?.length || 0);
+    const maxPossibleScore = maxQuestions + maxSkills;
+
+    const totalScore = questionsScore + skillsScore;
+    const calculatedPct = maxPossibleScore > 0 
+      ? Math.round((totalScore / maxPossibleScore) * 100) 
+      : 0;
     const matchPct = Math.min(calculatedPct, 100);
 
     return {
       key: cKey,
       ...cData,
       faculty: domain.faculty,
-      score,
+      score: totalScore,
       matchPct
     };
   });
 
-  results.sort((a, b) => b.score - a.score || b.matchPct - a.matchPct);
+  // Ordenar prioritariamente por porcentaje de afinidad y desempate por puntos absolutos
+  results.sort((a, b) => b.matchPct - a.matchPct || b.score - a.score);
 
   state.rankedCareers = results.slice(0, 3);
   state.activeCareerKey = state.rankedCareers[0]?.key || null;
@@ -1094,11 +1143,20 @@ function resetTest() {
   state.p1Index = 0;
   state.p1Answers = {};
   state.macroScores = {};
+  state.selectedMacro = 'sostenibilidad';
   state.selectedSkills = [];
   state.p2aIndex = 0;
   state.p2aAnswers = {};
   state.rankedCareers = [];
   state.activeCareerKey = null;
+  state.challengeState = {
+    status: 'playing',
+    stepId: 'step1',
+    matchedPairs: [],
+    selectedLeft: null,
+    sliderValues: {},
+    selectedOption: null
+  };
   renderCurrentStep();
 }
 
