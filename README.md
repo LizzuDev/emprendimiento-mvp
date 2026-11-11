@@ -32,7 +32,7 @@ Los estudiantes de 3.° de Bachillerato y aspirantes de 17 a 21 años sufren des
 | Product Owner | Joselyn Cadena | [@LizzuDev](https://github.com/LizzuDev) |
 | Scrum Master | Alejandro Flores | [@AlejandroFloresLu](https://github.com/AlejandroFloresLu) |
 | Desarrollo | Gabriel Aguinaga | [@GAAGUINAGA](https://github.com/GAAGUINAGA) |
-| Desarrollo | Paúl Rosero | por confirmar |
+| Desarrollo | Paúl Rosero | [@alex171215] (https://github.com/@alex171215) |
 
 Todos los integrantes programan, incluidos el Product Owner y el Scrum Master.
 
