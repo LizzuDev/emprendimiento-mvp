@@ -1,0 +1,731 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Panel de Control y Analítica | Orienta PUCE</title>
+  <meta name="robots" content="noindex, nofollow">
+  <link rel="icon" type="image/svg+xml" href="assets/img/aurelio/bienvenido.svg">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&family=Rubik:wght@500;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="css/styles.css">
+  <style>
+    body {
+      background: #f1f5f9;
+      font-family: 'Open Sans', sans-serif;
+      color: #1e293b;
+      margin: 0;
+      padding: 0;
+    }
+
+    .admin-header {
+      background: #003865;
+      color: #fff;
+      padding: 16px 24px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.15);
+    }
+    .admin-brand {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+    }
+    .admin-brand img {
+      height: 38px;
+      background: #fff;
+      padding: 4px 8px;
+      border-radius: 4px;
+    }
+    .admin-title {
+      font-family: 'Rubik', sans-serif;
+      font-size: 1.25rem;
+      font-weight: 700;
+      margin: 0;
+    }
+    .admin-subtitle {
+      font-size: 0.8rem;
+      color: #93c5fd;
+      margin: 0;
+    }
+
+    .admin-container {
+      max-width: 1200px;
+      margin: 28px auto;
+      padding: 0 20px;
+    }
+
+    /* Auth Screen */
+    .auth-card {
+      max-width: 400px;
+      margin: 80px auto;
+      background: #fff;
+      padding: 32px;
+      border-radius: 8px;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+      text-align: center;
+    }
+
+    /* KPI Grid */
+    .kpi-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 16px;
+      margin-bottom: 28px;
+    }
+    .kpi-card {
+      background: #fff;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+      border-left: 4px solid #00a8cc;
+    }
+    .kpi-card.purple { border-left-color: #8b5cf6; }
+    .kpi-card.green { border-left-color: #10b981; }
+    .kpi-card.amber { border-left-color: #f59e0b; }
+    .kpi-card.rose { border-left-color: #f43f5e; }
+
+    .kpi-value {
+      font-family: 'Rubik', sans-serif;
+      font-size: 2rem;
+      font-weight: 700;
+      color: #003865;
+      margin: 6px 0;
+    }
+    .kpi-label {
+      font-size: 0.8rem;
+      font-weight: 600;
+      color: #64748b;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+    .kpi-sub {
+      font-size: 0.75rem;
+      color: #94a3b8;
+    }
+
+    /* Tabs & Content */
+    .panel-card {
+      background: #fff;
+      border-radius: 8px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+      margin-bottom: 28px;
+      overflow: hidden;
+    }
+    .panel-header {
+      padding: 16px 20px;
+      border-bottom: 1px solid #e2e8f0;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+    .panel-title {
+      font-family: 'Rubik', sans-serif;
+      font-size: 1.05rem;
+      font-weight: 700;
+      color: #0f172a;
+      margin: 0;
+    }
+
+    .btn-action {
+      background: #003865;
+      color: #fff;
+      border: none;
+      padding: 8px 16px;
+      border-radius: 4px;
+      font-size: 0.85rem;
+      font-weight: 600;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      text-decoration: none;
+      transition: background 0.2s;
+    }
+    .btn-action:hover {
+      background: #00a8cc;
+    }
+    .btn-outline-action {
+      background: #fff;
+      color: #003865;
+      border: 1px solid #cbd5e1;
+      padding: 8px 14px;
+      border-radius: 4px;
+      font-size: 0.85rem;
+      font-weight: 600;
+      cursor: pointer;
+    }
+    .btn-outline-action:hover {
+      background: #f8fafc;
+    }
+
+    .tab-bar {
+      display: flex;
+      border-bottom: 1px solid #e2e8f0;
+      background: #f8fafc;
+    }
+    .tab-btn {
+      padding: 12px 20px;
+      border: none;
+      background: transparent;
+      font-weight: 600;
+      font-size: 0.85rem;
+      color: #64748b;
+      cursor: pointer;
+      border-bottom: 2px solid transparent;
+      transition: all 0.2s;
+    }
+    .tab-btn.active {
+      color: #003865;
+      background: #fff;
+      border-bottom-color: #00a8cc;
+    }
+
+    /* Tables */
+    .table-wrap {
+      overflow-x: auto;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.85rem;
+      text-align: left;
+    }
+    th {
+      background: #f8fafc;
+      padding: 12px 16px;
+      font-weight: 700;
+      color: #475569;
+      border-bottom: 1px solid #e2e8f0;
+      white-space: nowrap;
+    }
+    td {
+      padding: 12px 16px;
+      border-bottom: 1px solid #f1f5f9;
+      color: #334155;
+    }
+    tr:hover td {
+      background: #f8fafc;
+    }
+
+    .badge {
+      display: inline-block;
+      padding: 3px 8px;
+      border-radius: 12px;
+      font-size: 0.72rem;
+      font-weight: 700;
+      text-transform: uppercase;
+    }
+    .badge-success { background: #dcfce7; color: #166534; }
+    .badge-progress { background: #fef3c7; color: #92400e; }
+    .badge-error { background: #fee2e2; color: #991b1b; }
+    .badge-info { background: #e0f2fe; color: #075985; }
+
+    /* Ranking List */
+    .ranking-list {
+      padding: 16px 20px;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+    .ranking-item {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+    }
+    .ranking-bar-wrap {
+      flex: 1;
+      height: 10px;
+      background: #e2e8f0;
+      border-radius: 6px;
+      overflow: hidden;
+    }
+    .ranking-bar-fill {
+      height: 100%;
+      background: #00a8cc;
+      border-radius: 6px;
+    }
+
+    .loading-spinner {
+      text-align: center;
+      padding: 40px;
+      color: #64748b;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Encabezado del Panel -->
+  <header class="admin-header">
+    <div class="admin-brand">
+      <img src="https://www.puce.edu.ec/wp-content/uploads/2026/05/horizontal_color.png" alt="PUCE">
+      <div>
+        <h1 class="admin-title">Panel de Analítica y Monitoreo</h1>
+        <p class="admin-subtitle">Proyecto Emprendimiento Tecnológico · Validación Fe y Alegría</p>
+      </div>
+    </div>
+    <div style="display: flex; gap: 10px;">
+      <a href="test.html" target="_blank" class="btn-outline-action" style="text-decoration: none;">Ver Test Vocacional ↗</a>
+      <button id="btn-refresh" class="btn-action">↻ Actualizar Datos</button>
+    </div>
+  </header>
+
+  <!-- Pantalla de Autenticación Simple -->
+  <div id="auth-screen" class="auth-card" style="display: none;">
+    <h2 style="font-family: 'Rubik', sans-serif; font-size: 1.25rem; color: #003865; margin-bottom: 8px;">Acceso Administrador</h2>
+    <p style="font-size: 0.85rem; color: #64748b; margin-bottom: 20px;">Ingresa la clave de acceso del equipo para visualizar la telemetría:</p>
+    <form id="admin-auth-form" style="display: flex; flex-direction: column; gap: 12px;">
+      <input type="password" id="admin-password" placeholder="Clave de acceso" required style="padding: 10px 14px; border: 1px solid #cbd5e1; border-radius: 4px; font-size: 0.9rem;">
+      <button type="submit" class="btn-action" style="justify-content: center; padding: 10px;">Ingresar al Panel</button>
+      <div id="auth-error" style="color: #ef4444; font-size: 0.8rem; display: none;">Clave incorrecta. Intenta nuevamente.</div>
+    </form>
+  </div>
+
+  <!-- Dashboard Principal -->
+  <main id="dashboard-content" class="admin-container" style="display: none;">
+    
+    <!-- Fila de KPIs -->
+    <div class="kpi-grid">
+      <div class="kpi-card">
+        <div class="kpi-label">Sesiones Totales</div>
+        <div id="kpi-total-sessions" class="kpi-value">-</div>
+        <div class="kpi-sub">Estudiantes que iniciaron</div>
+      </div>
+      <div class="kpi-card green">
+        <div class="kpi-label">Test Completados</div>
+        <div id="kpi-completed-sessions" class="kpi-value">-</div>
+        <div id="kpi-completion-rate" class="kpi-sub">Tasa de finalización: -%</div>
+      </div>
+      <div class="kpi-card purple">
+        <div class="kpi-label">Duración Promedio</div>
+        <div id="kpi-avg-duration" class="kpi-value">-</div>
+        <div class="kpi-sub">Minutos por test completado</div>
+      </div>
+      <div class="kpi-card amber">
+        <div class="kpi-label">Preguntas a AurelioBot</div>
+        <div id="kpi-total-queries" class="kpi-value">-</div>
+        <div class="kpi-sub">Consultas orientadoras IA</div>
+      </div>
+      <div class="kpi-card rose">
+        <div class="kpi-label">Leads Interesados</div>
+        <div id="kpi-total-leads" class="kpi-value">-</div>
+        <div class="kpi-sub">Contactos para admisiones</div>
+      </div>
+    </div>
+
+    <!-- Carreras y Gráficos -->
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 20px; margin-bottom: 28px;">
+      <div class="panel-card" style="margin-bottom: 0;">
+        <div class="panel-header">
+          <h2 class="panel-title">Top 5 Carreras con Mayor Afinidad</h2>
+        </div>
+        <div id="ranking-container" class="ranking-list">
+          <div class="loading-spinner">Cargando carreras...</div>
+        </div>
+      </div>
+
+      <div class="panel-card" style="margin-bottom: 0;">
+        <div class="panel-header">
+          <h2 class="panel-title">Distribución por Macroárea</h2>
+        </div>
+        <div id="macro-distribution-container" class="ranking-list">
+          <div class="loading-spinner">Cargando macroáreas...</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Tablas Detalladas -->
+    <div class="panel-card">
+      <div class="panel-header">
+        <h2 class="panel-title">Registros Detallados de Telemetría</h2>
+        <button id="btn-export-csv" class="btn-action">📥 Exportar Todo a CSV (Formato 2)</button>
+      </div>
+
+      <div class="tab-bar">
+        <button class="tab-btn active" data-tab="sessions">Sesiones de Usuario</button>
+        <button class="tab-btn" data-tab="queries">Preguntas a AurelioBot</button>
+        <button class="tab-btn" data-tab="leads">Estudiantes Interesados (Leads)</button>
+        <button class="tab-btn" data-tab="errors">Registro de Errores (Crashlytics)</button>
+      </div>
+
+      <!-- Tab: Sesiones -->
+      <div id="tab-content-sessions" class="table-wrap">
+        <table id="table-sessions">
+          <thead>
+            <tr>
+              <th>ID Sesión</th>
+              <th>Fecha / Hora</th>
+              <th>Dispositivo</th>
+              <th>Macroárea</th>
+              <th>Carrera Match #1</th>
+              <th>Duración</th>
+              <th>Estado</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td colspan="7" class="loading-spinner">Cargando sesiones...</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <!-- Tab: Aurelio Queries -->
+      <div id="tab-content-queries" class="table-wrap" style="display: none;">
+        <table id="table-queries">
+          <thead>
+            <tr>
+              <th>Fecha</th>
+              <th>Sesión</th>
+              <th>Carrera</th>
+              <th>Pregunta del Estudiante</th>
+              <th>Respuesta Generada</th>
+              <th>Fuente</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td colspan="6" class="loading-spinner">Cargando preguntas...</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <!-- Tab: Leads -->
+      <div id="tab-content-leads" class="table-wrap" style="display: none;">
+        <table id="table-leads">
+          <thead>
+            <tr>
+              <th>Fecha</th>
+              <th>Nombre Completo</th>
+              <th>Colegio</th>
+              <th>Celular / WhatsApp</th>
+              <th>Correo</th>
+              <th>Carrera de Interés</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td colspan="6" class="loading-spinner">Cargando contactos...</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <!-- Tab: Errors -->
+      <div id="tab-content-errors" class="table-wrap" style="display: none;">
+        <table id="table-errors">
+          <thead>
+            <tr>
+              <th>Fecha</th>
+              <th>Sesión</th>
+              <th>Mensaje de Error</th>
+              <th>URL</th>
+              <th>Detalle / Stack</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td colspan="5" class="loading-spinner">Cargando registro de errores...</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </main>
+
+  <script type="module">
+    import { supabaseSelect } from './js/supabaseClient.js';
+
+    // Clave de acceso administrativa para el equipo
+    const ADMIN_PASS = 'fya2026';
+
+    const authScreen = document.getElementById('auth-screen');
+    const dashboardContent = document.getElementById('dashboard-content');
+    const authForm = document.getElementById('admin-auth-form');
+    const authError = document.getElementById('auth-error');
+    const btnRefresh = document.getElementById('btn-refresh');
+    const btnExport = document.getElementById('btn-export-csv');
+
+    // Estado local de datos cargados
+    let cachedSessions = [];
+    let cachedQueries = [];
+    let cachedLeads = [];
+    let cachedErrors = [];
+
+    // Verificar si ya está autenticado en la sesión del navegador
+    function checkAuth() {
+      if (sessionStorage.getItem('fya_admin_logged') === '1') {
+        authScreen.style.display = 'none';
+        dashboardContent.style.display = 'block';
+        loadDashboardData();
+      } else {
+        authScreen.style.display = 'block';
+        dashboardContent.style.display = 'none';
+      }
+    }
+
+    authForm.onsubmit = (e) => {
+      e.preventDefault();
+      const val = document.getElementById('admin-password').value;
+      if (val === ADMIN_PASS || val === 'puceadmin2026') {
+        sessionStorage.setItem('fya_admin_logged', '1');
+        authError.style.display = 'none';
+        checkAuth();
+      } else {
+        authError.style.display = 'block';
+      }
+    };
+
+    // Tabs
+    document.querySelectorAll('.tab-btn').forEach(btn => {
+      btn.onclick = () => {
+        document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        const tab = btn.dataset.tab;
+        ['sessions', 'queries', 'leads', 'errors'].forEach(t => {
+          const el = document.getElementById(`tab-content-${t}`);
+          if (el) el.style.display = (t === tab) ? 'block' : 'none';
+        });
+      };
+    });
+
+    btnRefresh.onclick = () => {
+      btnRefresh.textContent = '↻ Actualizando...';
+      loadDashboardData().finally(() => {
+        btnRefresh.textContent = '↻ Actualizar Datos';
+      });
+    };
+
+    // Cargar datos desde Supabase
+    async function loadDashboardData() {
+      try {
+        const [resSessions, resQueries, resLeads, resErrors] = await Promise.all([
+          supabaseSelect('test_sessions', 'order=started_at.desc&limit=200'),
+          supabaseSelect('aurelio_queries', 'order=created_at.desc&limit=200'),
+          supabaseSelect('student_leads', 'order=created_at.desc&limit=200'),
+          supabaseSelect('error_logs', 'order=created_at.desc&limit=200')
+        ]);
+
+        cachedSessions = resSessions.data || [];
+        cachedQueries = resQueries.data || [];
+        cachedLeads = resLeads.data || [];
+        cachedErrors = resErrors.data || [];
+
+        renderKPIs();
+        renderRankings();
+        renderTables();
+      } catch (err) {
+        console.error('Error al cargar métricas de Supabase:', err);
+      }
+    }
+
+    function renderKPIs() {
+      const total = cachedSessions.length;
+      const completed = cachedSessions.filter(s => s.status === 'completed');
+      const rate = total > 0 ? Math.round((completed.length / total) * 100) : 0;
+
+      // Calcular promedio de duración
+      let avgSec = 0;
+      if (completed.length > 0) {
+        const sumSec = completed.reduce((acc, s) => acc + (s.total_duration_seconds || 0), 0);
+        avgSec = Math.round(sumSec / completed.length);
+      }
+      const avgMin = Math.floor(avgSec / 60);
+      const remSec = avgSec % 60;
+
+      document.getElementById('kpi-total-sessions').textContent = total;
+      document.getElementById('kpi-completed-sessions').textContent = completed.length;
+      document.getElementById('kpi-completion-rate').textContent = `Tasa de finalización: ${rate}%`;
+      document.getElementById('kpi-avg-duration').textContent = `${avgMin}m ${remSec}s`;
+      document.getElementById('kpi-total-queries').textContent = cachedQueries.length;
+      document.getElementById('kpi-total-leads').textContent = cachedLeads.length;
+    }
+
+    function renderRankings() {
+      // 1. Top Carreras
+      const careerCounts = {};
+      cachedSessions.forEach(s => {
+        if (s.top_career && s.top_career !== 'No definida') {
+          careerCounts[s.top_career] = (careerCounts[s.top_career] || 0) + 1;
+        }
+      });
+
+      const sortedCareers = Object.entries(careerCounts).sort((a, b) => b[1] - a[1]).slice(0, 5);
+      const totalCareers = Object.values(careerCounts).reduce((a, b) => a + b, 0) || 1;
+
+      const rankingContainer = document.getElementById('ranking-container');
+      if (sortedCareers.length === 0) {
+        rankingContainer.innerHTML = '<div style="color: #94a3b8; font-size: 0.85rem;">Aún no hay carreras registradas.</div>';
+      } else {
+        rankingContainer.innerHTML = sortedCareers.map(([name, count]) => {
+          const pct = Math.round((count / totalCareers) * 100);
+          return `
+            <div class="ranking-item">
+              <span style="font-size: 0.82rem; font-weight: 600; min-width: 130px;">${name}</span>
+              <div class="ranking-bar-wrap">
+                <div class="ranking-bar-fill" style="width: ${pct}%;"></div>
+              </div>
+              <span style="font-size: 0.8rem; font-weight: 700; color: #003865;">${count} (${pct}%)</span>
+            </div>
+          `;
+        }).join('');
+      }
+
+      // 2. Macroáreas
+      const macroCounts = {};
+      cachedSessions.forEach(s => {
+        if (s.selected_domain) {
+          macroCounts[s.selected_domain] = (macroCounts[s.selected_domain] || 0) + 1;
+        }
+      });
+      const sortedMacros = Object.entries(macroCounts).sort((a, b) => b[1] - a[1]);
+      const totalMacros = Object.values(macroCounts).reduce((a, b) => a + b, 0) || 1;
+
+      const macroContainer = document.getElementById('macro-distribution-container');
+      if (sortedMacros.length === 0) {
+        macroContainer.innerHTML = '<div style="color: #94a3b8; font-size: 0.85rem;">Sin macroáreas registradas aún.</div>';
+      } else {
+        macroContainer.innerHTML = sortedMacros.map(([macro, count]) => {
+          const pct = Math.round((count / totalMacros) * 100);
+          return `
+            <div class="ranking-item">
+              <span style="font-size: 0.82rem; font-weight: 600; min-width: 130px; text-transform: capitalize;">${macro}</span>
+              <div class="ranking-bar-wrap">
+                <div class="ranking-bar-fill" style="width: ${pct}%; background: #003865;"></div>
+              </div>
+              <span style="font-size: 0.8rem; font-weight: 700; color: #003865;">${count} (${pct}%)</span>
+            </div>
+          `;
+        }).join('');
+      }
+    }
+
+    function renderTables() {
+      // 1. Tabla Sesiones
+      const tbodySessions = document.querySelector('#table-sessions tbody');
+      if (cachedSessions.length === 0) {
+        tbodySessions.innerHTML = '<tr><td colspan="7" style="text-align:center; color:#94a3b8;">No hay sesiones registradas.</td></tr>';
+      } else {
+        tbodySessions.innerHTML = cachedSessions.map(s => {
+          const isComp = s.status === 'completed';
+          const dateStr = s.started_at ? new Date(s.started_at).toLocaleString('es-EC') : '-';
+          const durStr = s.total_duration_seconds ? `${Math.round(s.total_duration_seconds / 60)} min` : '-';
+          return `
+            <tr>
+              <td><code>${s.session_id}</code></td>
+              <td>${dateStr}</td>
+              <td><span class="badge badge-info">${s.device_type || 'Desktop'}</span></td>
+              <td style="text-transform: capitalize;">${s.selected_domain || '-'}</td>
+              <td><strong>${s.top_career || '-'}</strong></td>
+              <td>${durStr}</td>
+              <td>
+                <span class="badge ${isComp ? 'badge-success' : 'badge-progress'}">
+                  ${isComp ? 'Completado' : 'En Progreso'}
+                </span>
+              </td>
+            </tr>
+          `;
+        }).join('');
+      }
+
+      // 2. Tabla Preguntas Aurelio
+      const tbodyQueries = document.querySelector('#table-queries tbody');
+      if (cachedQueries.length === 0) {
+        tbodyQueries.innerHTML = '<tr><td colspan="6" style="text-align:center; color:#94a3b8;">No se han realizado preguntas aún.</td></tr>';
+      } else {
+        tbodyQueries.innerHTML = cachedQueries.map(q => {
+          const dateStr = q.created_at ? new Date(q.created_at).toLocaleString('es-EC') : '-';
+          return `
+            <tr>
+              <td>${dateStr}</td>
+              <td><code>${q.session_id || '-'}</code></td>
+              <td><strong>${q.career_key || 'General'}</strong></td>
+              <td>${q.query_text}</td>
+              <td style="max-width: 300px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;" title="${q.answer_preview || ''}">
+                ${q.answer_preview || '-'}
+              </td>
+              <td><span class="badge ${q.source === 'groq_ai' ? 'badge-info' : 'badge-progress'}">${q.source || 'local'}</span></td>
+            </tr>
+          `;
+        }).join('');
+      }
+
+      // 3. Tabla Leads
+      const tbodyLeads = document.querySelector('#table-leads tbody');
+      if (cachedLeads.length === 0) {
+        tbodyLeads.innerHTML = '<tr><td colspan="6" style="text-align:center; color:#94a3b8;">Aún no hay estudiantes registrados como prospectos.</td></tr>';
+      } else {
+        tbodyLeads.innerHTML = cachedLeads.map(l => {
+          const dateStr = l.created_at ? new Date(l.created_at).toLocaleString('es-EC') : '-';
+          return `
+            <tr>
+              <td>${dateStr}</td>
+              <td><strong>${l.full_name}</strong></td>
+              <td>${l.institution || 'Fe y Alegría'}</td>
+              <td><a href="tel:${l.phone}">${l.phone || '-'}</a></td>
+              <td><a href="mailto:${l.email}">${l.email || '-'}</a></td>
+              <td><span class="badge badge-success">${l.preferred_career || 'Por definir'}</span></td>
+            </tr>
+          `;
+        }).join('');
+      }
+
+      // 4. Tabla Errores
+      const tbodyErrors = document.querySelector('#table-errors tbody');
+      if (cachedErrors.length === 0) {
+        tbodyErrors.innerHTML = '<tr><td colspan="5" style="text-align:center; color:#166534; font-weight:600;">✓ Cero errores registrados en el sistema.</td></tr>';
+      } else {
+        tbodyErrors.innerHTML = cachedErrors.map(e => {
+          const dateStr = e.created_at ? new Date(e.created_at).toLocaleString('es-EC') : '-';
+          return `
+            <tr>
+              <td>${dateStr}</td>
+              <td><code>${e.session_id || '-'}</code></td>
+              <td style="color: #dc2626; font-weight: 600;">${e.error_message}</td>
+              <td><small>${e.url || '-'}</small></td>
+              <td><pre style="margin:0; font-size: 0.7rem; max-width: 250px; overflow: hidden;">${(e.error_stack || '').substring(0, 150)}</pre></td>
+            </tr>
+          `;
+        }).join('');
+      }
+    }
+
+    // Exportar datos consolidado a CSV
+    btnExport.onclick = () => {
+      let csvContent = 'data:text/csv;charset=utf-8,';
+      csvContent += '--- REPORTE DE TELEMETRÍA Y USO - ORIENTA PUCE ---\r\n';
+      csvContent += 'Fecha de exportación,' + new Date().toISOString() + '\r\n\r\n';
+
+      csvContent += '--- SESIONES DE EVALUACIÓN ---\r\n';
+      csvContent += 'Session ID,Fecha Inicio,Fecha Fin,Dispositivo,Navegador,Macroárea,Carrera Match,Duración (s),Estado\r\n';
+      cachedSessions.forEach(s => {
+        csvContent += `"${s.session_id}","${s.started_at || ''}","${s.completed_at || ''}","${s.device_type || ''}","${s.browser || ''}","${s.selected_domain || ''}","${s.top_career || ''}","${s.total_duration_seconds || 0}","${s.status || ''}"\r\n`;
+      });
+
+      csvContent += '\r\n--- CONSULTAS A AURELIOBOT ---\r\n';
+      csvContent += 'Fecha,Session ID,Carrera,Pregunta,Fuente\r\n';
+      cachedQueries.forEach(q => {
+        csvContent += `"${q.created_at || ''}","${q.session_id || ''}","${q.career_key || ''}","${(q.query_text || '').replace(/"/g, '""')}","${q.source || ''}"\r\n`;
+      });
+
+      csvContent += '\r\n--- ESTUDIANTES INTERESADOS (LEADS) ---\r\n';
+      csvContent += 'Fecha,Nombre,Institución,Celular,Correo,Carrera de Interés\r\n';
+      cachedLeads.forEach(l => {
+        csvContent += `"${l.created_at || ''}","${l.full_name || ''}","${l.institution || ''}","${l.phone || ''}","${l.email || ''}","${l.preferred_career || ''}"\r\n`;
+      });
+
+      const encodedUri = encodeURI(csvContent);
+      const link = document.createElement('a');
+      link.setAttribute('href', encodedUri);
+      link.setAttribute('download', `reporte_telemetria_fya_${new Date().toISOString().slice(0,10)}.csv`);
+      document.body.appendChild(link);
+      link.click();
+      document.body.removeChild(link);
+    };
+
+    // Iniciar verificación
+    checkAuth();
+  </script>
+</body>
+</html>
+

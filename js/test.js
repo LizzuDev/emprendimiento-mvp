@@ -5,6 +5,7 @@
 
 import { MACROAREAS, FASE_1_QUESTIONS, DOMAIN_DATA } from './data/vocationalData.js';
 import { getAurelioContextualAnswer, queryGroqAurelio } from './aurelioBot.js';
+import { telemetry } from './telemetry.js';
 
 // --- ESTADO GLOBAL Y PERSISTENCIA (MISMAS CLAVES QUE EN REACT) ---
 const STORAGE_PREFIX = 'puce_test_';
@@ -98,6 +99,7 @@ const AURELIO_IMG = {
 
 // --- RENDERIZADOR PRINCIPAL ---
 export function initTest() {
+  telemetry.trackSessionStart();
   renderCurrentStep();
   setupKeyboardListeners();
   setupModalEvents();
@@ -116,6 +118,12 @@ function irArriba() {
 function renderCurrentStep() {
   if (!appContainer) return;
   irArriba();
+
+  telemetry.trackStep(state.step, {
+    p1Index: state.p1Index,
+    p2aIndex: state.p2aIndex,
+    selectedMacro: state.selectedMacro
+  });
 
   switch (state.step) {
     case 'phase1':
@@ -536,6 +544,9 @@ function calculateFinalResults() {
   saveStorage('careers', state.rankedCareers);
   saveStorage('selcareer', state.activeCareerKey);
   saveStorage('step', 'results');
+
+  // Registrar finalización y carreras recomendadas en telemetría
+  telemetry.trackCompletion(state.rankedCareers, state.selectedMacro, state.selectedSkills);
 
   renderCurrentStep();
 }
@@ -1095,6 +1106,8 @@ async function sendAurelioQuestion(questionText) {
     state.chatHistory.push({ sender: 'aurelio', text: reply });
     saveStorage('chatHistory', state.chatHistory);
     renderChatMessages();
+
+    telemetry.trackAurelioQuery(activeCareer?.key || 'general', userQuery, reply, 'groq_ai');
   } catch (err) {
     console.error('Error al generar respuesta en AurelioBot:', err);
     const existingTyping = document.getElementById('chat-typing-indicator');
@@ -1104,6 +1117,8 @@ async function sendAurelioQuestion(questionText) {
     state.chatHistory.push({ sender: 'aurelio', text: fallbackReply });
     saveStorage('chatHistory', state.chatHistory);
     renderChatMessages();
+
+    telemetry.trackAurelioQuery(activeCareer?.key || 'general', userQuery, fallbackReply, 'local_fallback');
   }
 }
 
@@ -1155,9 +1170,34 @@ function setupModalEvents() {
 
   const leadForm = document.getElementById('lead-form');
   if (leadForm) {
-    leadForm.onsubmit = (e) => {
+    leadForm.onsubmit = async (e) => {
       e.preventDefault();
-      alert('¡Gracias! Tus datos han sido enviados. Un asesor te contactará pronto.');
+      const submitBtn = document.getElementById('btn-submit-lead') || leadForm.querySelector('button[type="submit"]');
+      if (submitBtn) {
+        submitBtn.disabled = true;
+        submitBtn.textContent = 'Enviando...';
+      }
+
+      const name = document.getElementById('lead-name')?.value || '';
+      const institution = document.getElementById('lead-institution')?.value || 'Fe y Alegría';
+      const phone = document.getElementById('lead-phone')?.value || '';
+      const email = document.getElementById('lead-email')?.value || '';
+      const activeCareer = state.rankedCareers.find(c => c.key === state.activeCareerKey);
+
+      await telemetry.submitStudentLead({
+        name,
+        institution,
+        phone,
+        email,
+        career: activeCareer?.name || ''
+      });
+
+      if (submitBtn) {
+        submitBtn.disabled = false;
+        submitBtn.textContent = 'Solicitar Asesoría Gratuita';
+      }
+
+      alert('¡Gracias! Tus datos han sido enviados a Admisiones PUCE. Un asesor te contactará pronto.');
       closeLeadModal();
     };
   }
