@@ -350,6 +350,7 @@
 
       <div class="tab-bar">
         <button class="tab-btn active" data-tab="sessions">Sesiones de Usuario</button>
+        <button class="tab-btn" data-tab="events">Embudo y Clics (Respaldo)</button>
         <button class="tab-btn" data-tab="queries">Preguntas a AurelioBot</button>
         <button class="tab-btn" data-tab="leads">Estudiantes Interesados (Leads)</button>
         <button class="tab-btn" data-tab="errors">Registro de Errores (Crashlytics)</button>
@@ -371,6 +372,24 @@
           </thead>
           <tbody>
             <tr><td colspan="7" class="loading-spinner">Cargando sesiones...</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <!-- Tab: Eventos y Clics (Respaldo Mapa de Calor) -->
+      <div id="tab-content-events" class="table-wrap" style="display: none;">
+        <table id="table-events">
+          <thead>
+            <tr>
+              <th>Fecha / Hora</th>
+              <th>Sesión</th>
+              <th>Evento / Paso</th>
+              <th>Acción / Botón Presionado</th>
+              <th>Coordenadas Pantalla (X, Y)</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td colspan="5" class="loading-spinner">Cargando eventos de interacción...</td></tr>
           </tbody>
         </table>
       </div>
@@ -448,6 +467,7 @@
 
     // Estado local de datos cargados
     let cachedSessions = [];
+    let cachedEvents = [];
     let cachedQueries = [];
     let cachedLeads = [];
     let cachedErrors = [];
@@ -482,7 +502,7 @@
         document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
         btn.classList.add('active');
         const tab = btn.dataset.tab;
-        ['sessions', 'queries', 'leads', 'errors'].forEach(t => {
+        ['sessions', 'events', 'queries', 'leads', 'errors'].forEach(t => {
           const el = document.getElementById(`tab-content-${t}`);
           if (el) el.style.display = (t === tab) ? 'block' : 'none';
         });
@@ -499,14 +519,16 @@
     // Cargar datos desde Supabase
     async function loadDashboardData() {
       try {
-        const [resSessions, resQueries, resLeads, resErrors] = await Promise.all([
+        const [resSessions, resEvents, resQueries, resLeads, resErrors] = await Promise.all([
           supabaseSelect('test_sessions', 'order=started_at.desc&limit=200'),
+          supabaseSelect('telemetry_events', 'order=created_at.desc&limit=200'),
           supabaseSelect('aurelio_queries', 'order=created_at.desc&limit=200'),
           supabaseSelect('student_leads', 'order=created_at.desc&limit=200'),
           supabaseSelect('error_logs', 'order=created_at.desc&limit=200')
         ]);
 
         cachedSessions = resSessions.data || [];
+        cachedEvents = resEvents.data || [];
         cachedQueries = resQueries.data || [];
         cachedLeads = resLeads.data || [];
         cachedErrors = resErrors.data || [];
@@ -628,6 +650,34 @@
         }).join('');
       }
 
+      // 1b. Tabla Eventos y Clics (Respaldo Mapa de Calor)
+      const tbodyEvents = document.querySelector('#table-events tbody');
+      if (tbodyEvents) {
+        if (cachedEvents.length === 0) {
+          tbodyEvents.innerHTML = '<tr><td colspan="5" style="text-align:center; color:#94a3b8;">No hay eventos de interacción registrados.</td></tr>';
+        } else {
+          tbodyEvents.innerHTML = cachedEvents.map(ev => {
+            const dateStr = ev.created_at ? new Date(ev.created_at).toLocaleString('es-EC') : '-';
+            const payload = ev.payload || {};
+            const actionText = payload.label || payload.topCareer || payload.step || ev.step || '-';
+            const coordText = (payload.xPct !== undefined && payload.yPct !== undefined) 
+              ? `X: ${payload.xPct}%, Y: ${payload.yPct}%` 
+              : '-';
+            const badgeClass = ev.event_name === 'ui_click' ? 'badge-info' : 'badge-success';
+
+            return `
+              <tr>
+                <td>${dateStr}</td>
+                <td><code>${ev.session_id}</code></td>
+                <td><span class="badge ${badgeClass}">${ev.event_name}</span></td>
+                <td><strong>${actionText}</strong> <small style="color:#64748b;">(${ev.step || '-'})</small></td>
+                <td><code>${coordText}</code></td>
+              </tr>
+            `;
+          }).join('');
+        }
+      }
+
       // 2. Tabla Preguntas Aurelio
       const tbodyQueries = document.querySelector('#table-queries tbody');
       if (cachedQueries.length === 0) {
@@ -712,6 +762,15 @@
       csvContent += 'Fecha,Nombre,Institución,Celular,Correo,Carrera de Interés\r\n';
       cachedLeads.forEach(l => {
         csvContent += `"${l.created_at || ''}","${l.full_name || ''}","${l.institution || ''}","${l.phone || ''}","${l.email || ''}","${l.preferred_career || ''}"\r\n`;
+      });
+
+      csvContent += '\r\n--- EVENTOS DE INTERACCIÓN Y CLICS (RESPALDO DE MAPA DE CALOR) ---\r\n';
+      csvContent += 'Fecha,Session ID,Evento,Paso,Detalle/Botón,Coordenadas\r\n';
+      cachedEvents.forEach(ev => {
+        const p = ev.payload || {};
+        const detail = p.label || p.topCareer || p.step || '-';
+        const coords = (p.xPct !== undefined) ? `X:${p.xPct}% Y:${p.yPct}%` : '-';
+        csvContent += `"${ev.created_at || ''}","${ev.session_id || ''}","${ev.event_name || ''}","${ev.step || ''}","${detail.replace(/"/g, '""')}","${coords}"\r\n`;
       });
 
       const encodedUri = encodeURI(csvContent);

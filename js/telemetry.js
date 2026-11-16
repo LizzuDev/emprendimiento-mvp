@@ -1,5 +1,5 @@
 // js/telemetry.js
-// Módulo de telemetría y monitoreo directo con Supabase y Microsoft Clarity
+// Módulo de telemetría, monitoreo directo con Supabase y sincronización multi-herramienta (Microsoft Clarity + Google Analytics)
 
 import { supabaseInsert, supabaseUpdate } from './supabaseClient.js';
 
@@ -8,7 +8,13 @@ class TelemetryTracker {
     this.sessionId = this.getOrCreateSessionId();
     this.sessionStartTime = Date.now();
     this.isSessionStarted = false;
+    this.currentStep = 'init';
+    this.lastClickTime = 0;
+    this.offlineQueue = [];
+
     this.initGlobalErrorLogging();
+    this.initClickTracking();
+    this.initNetworkRecovery();
   }
 
   getOrCreateSessionId() {
@@ -41,17 +47,44 @@ class TelemetryTracker {
   }
 
   /**
+   * Envía evento a las herramientas de analítica activas (Clarity + Google Analytics)
+   */
+  dispatchExternalAnalytics(eventName, params = {}) {
+    // 1. Microsoft Clarity
+    try {
+      if (typeof window.clarity === 'function') {
+        window.clarity("event", eventName);
+      }
+    } catch (e) {
+      console.warn('[Clarity Event Warn]:', e);
+    }
+
+    // 2. Google Analytics 4 (GA4) - Respaldo
+    try {
+      if (typeof window.gtag === 'function') {
+        window.gtag("event", eventName, params);
+      }
+    } catch (e) {
+      console.warn('[GA4 Event Warn]:', e);
+    }
+  }
+
+  /**
    * Registra el inicio formal de una sesión de test
    */
   async trackSessionStart() {
     if (this.isSessionStarted) return;
     this.isSessionStarted = true;
 
-    // Vincular sesión en Microsoft Clarity si está disponible
+    // Vincular sesión en Clarity y GA4
     if (typeof window.clarity === 'function') {
       window.clarity("identify", this.sessionId);
       window.clarity("set", "device_type", this.detectDevice());
     }
+    this.dispatchExternalAnalytics("session_start", {
+      session_id: this.sessionId,
+      device: this.detectDevice()
+    });
 
     const sessionData = {
       session_id: this.sessionId,
@@ -62,16 +95,20 @@ class TelemetryTracker {
       status: 'in_progress'
     };
 
-    return await supabaseInsert('test_sessions', sessionData);
+    return await this.safeInsert('test_sessions', sessionData);
   }
 
   /**
    * Registra el avance de un paso en el test (Funnel)
    */
   async trackStep(stepName, payload = {}) {
+    this.currentStep = stepName;
+
     if (!this.isSessionStarted) {
       await this.trackSessionStart();
     }
+
+    this.dispatchExternalAnalytics(stepName, payload);
 
     const eventData = {
       session_id: this.sessionId,
@@ -81,7 +118,7 @@ class TelemetryTracker {
       created_at: new Date().toISOString()
     };
 
-    return await supabaseInsert('telemetry_events', eventData);
+    return await this.safeInsert('telemetry_events', eventData);
   }
 
   /**
@@ -90,6 +127,12 @@ class TelemetryTracker {
   async trackCompletion(topCareers = [], selectedDomain = '', skillsSelected = []) {
     const totalDuration = Math.round((Date.now() - this.sessionStartTime) / 1000);
     const topCareerName = topCareers[0]?.name || topCareers[0]?.title || 'No definida';
+
+    this.dispatchExternalAnalytics("test_completed", {
+      top_career: topCareerName,
+      domain: selectedDomain,
+      duration: totalDuration
+    });
 
     const updateData = {
       completed_at: new Date().toISOString(),
@@ -120,6 +163,11 @@ class TelemetryTracker {
    * Registra una pregunta realizada al orientador AurelioBot
    */
   async trackAurelioQuery(careerKey, queryText, answerPreview = '', source = 'local') {
+    this.dispatchExternalAnalytics("aurelio_query", {
+      career: careerKey,
+      source: source
+    });
+
     const queryData = {
       session_id: this.sessionId,
       career_key: careerKey || 'general',
@@ -129,13 +177,18 @@ class TelemetryTracker {
       created_at: new Date().toISOString()
     };
 
-    return await supabaseInsert('aurelio_queries', queryData);
+    return await this.safeInsert('aurelio_queries', queryData);
   }
 
   /**
    * Registra un lead interesado en la PUCE (Formulario final opcional)
    */
   async submitStudentLead(lead) {
+    this.dispatchExternalAnalytics("lead_submitted", {
+      career: lead.career,
+      institution: lead.institution
+    });
+
     const leadData = {
       session_id: this.sessionId,
       full_name: lead.name || 'Anónimo',
@@ -146,13 +199,17 @@ class TelemetryTracker {
       created_at: new Date().toISOString()
     };
 
-    return await supabaseInsert('student_leads', leadData);
+    return await this.safeInsert('student_leads', leadData);
   }
 
   /**
    * Registra un error o excepción de JavaScript (Crashlytics)
    */
   async trackError(errorMessage, errorStack = '') {
+    this.dispatchExternalAnalytics("app_error", {
+      error: (errorMessage || '').substring(0, 100)
+    });
+
     const errorData = {
       session_id: this.sessionId,
       error_message: (errorMessage || '').substring(0, 500),
@@ -161,7 +218,80 @@ class TelemetryTracker {
       created_at: new Date().toISOString()
     };
 
-    return await supabaseInsert('error_logs', errorData);
+    return await this.safeInsert('error_logs', errorData);
+  }
+
+  /**
+   * Sistema de inserción segura con soporte ante caídas de red
+   */
+  async safeInsert(tableName, data) {
+    try {
+      const res = await supabaseInsert(tableName, data);
+      if (res.error) {
+        this.queueOffline(tableName, data);
+      }
+      return res;
+    } catch (e) {
+      this.queueOffline(tableName, data);
+      return { data: null, error: e.message };
+    }
+  }
+
+  queueOffline(tableName, data) {
+    this.offlineQueue.push({ table: tableName, data: data, timestamp: Date.now() });
+    try {
+      sessionStorage.setItem('fya_offline_queue', JSON.stringify(this.offlineQueue.slice(-50)));
+    } catch (e) {}
+  }
+
+  initNetworkRecovery() {
+    window.addEventListener('online', async () => {
+      console.log('[Telemetría]: Conexión recuperada. Vaciando cola offline...');
+      if (this.offlineQueue.length > 0) {
+        const queueToFlush = [...this.offlineQueue];
+        this.offlineQueue = [];
+        for (const item of queueToFlush) {
+          await supabaseInsert(item.table, item.data);
+        }
+        try {
+          sessionStorage.removeItem('fya_offline_queue');
+        } catch (e) {}
+      }
+    });
+  }
+
+  /**
+   * Captura automática de clics clave en botones (Respaldo directo de mapa de calor)
+   */
+  initClickTracking() {
+    document.addEventListener('click', (e) => {
+      const target = e.target.closest('button, a, .query-chip, .react-skill-chip, .react-challenge-opt-btn');
+      if (!target) return;
+
+      const now = Date.now();
+      // Throttle de clics rápidos (máx 1 cada 400ms para no saturar la red)
+      if (now - this.lastClickTime < 400) return;
+      this.lastClickTime = now;
+
+      const label = (target.innerText || target.value || target.id || 'btn').trim().substring(0, 40);
+      const clickPayload = {
+        element: target.tagName,
+        id: target.id || '',
+        label: label,
+        xPct: Math.round((e.clientX / window.innerWidth) * 100),
+        yPct: Math.round((e.clientY / window.innerHeight) * 100),
+        step: this.currentStep
+      };
+
+      // Guardar evento de interacción en Supabase
+      this.safeInsert('telemetry_events', {
+        session_id: this.sessionId,
+        event_name: 'ui_click',
+        step: this.currentStep,
+        payload: clickPayload,
+        created_at: new Date().toISOString()
+      });
+    }, { passive: true });
   }
 
   /**
@@ -169,6 +299,9 @@ class TelemetryTracker {
    */
   initGlobalErrorLogging() {
     window.addEventListener('error', (event) => {
+      // Ignorar errores no críticos de extensiones del navegador
+      if (event.filename && event.filename.includes('chrome-extension')) return;
+
       this.trackError(
         event.message || 'Error desconocido',
         event.error?.stack || `${event.filename}:${event.lineno}`
@@ -185,4 +318,3 @@ class TelemetryTracker {
 }
 
 export const telemetry = new TelemetryTracker();
-
