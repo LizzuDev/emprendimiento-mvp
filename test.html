@@ -112,6 +112,20 @@
             </label>
             <input id="lead-email" type="email" required placeholder="tuemail@ejemplo.com" style="width: 100%; padding: 10px 12px; border: 1px solid var(--color-border); border-radius: 4px; font-size: 0.88rem;">
           </div>
+
+          <!-- Aviso de Privacidad / Disclaimer y Consentimiento Obligatorio -->
+          <div style="background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 4px; padding: 10px 12px; margin-top: 4px;">
+            <p style="font-size: 0.72rem; color: #64748b; line-height: 1.4; margin: 0 0 8px 0;">
+              <strong>Aviso de Privacidad:</strong> Tus datos personales serán tratados exclusivamente por la Pontificia Universidad Católica del Ecuador (PUCE) como medio de contacto institucional para brindarte orientación vocacional personalizada, información de carreras y opciones de becas. No serán compartidos con terceros.
+            </p>
+            <div style="display: flex; align-items: flex-start; gap: 8px;">
+              <input type="checkbox" id="lead-consent" required style="margin-top: 2px; accent-color: var(--color-primary);">
+              <label for="lead-consent" style="font-size: 0.75rem; color: var(--color-primary-dark); font-weight: 600; cursor: pointer;">
+                Acepto que mis datos sean utilizados para recibir orientación y acompañamiento vocacional de la PUCE. *
+              </label>
+            </div>
+          </div>
+
           <button type="submit" id="btn-submit-lead" class="btn btn-primary" style="margin-top: 8px; padding: 12px; width: 100%;">
             Solicitar Asesoría Gratuita
           </button>

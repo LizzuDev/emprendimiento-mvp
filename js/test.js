@@ -394,10 +394,10 @@ function getBalancedQuestionsForDomain(macroareaKey) {
   const careers = Object.values(domain.careers);
   const totalCareers = careers.length;
 
-  let questionsPerCareer = 2;
-  if (totalCareers <= 2) questionsPerCareer = 6;
-  else if (totalCareers <= 6) questionsPerCareer = 3;
-  else questionsPerCareer = 2;
+  // Selección balanceada según bancos de Psicología (16 a 24 preguntas por dominio)
+  let questionsPerCareer = 3;
+  if (totalCareers <= 4) questionsPerCareer = 4; // Sostenibilidad (4 carreras * 4 = 16 preguntas)
+  else questionsPerCareer = 3; // Habitat (18), Sociales (18), Economía (21), Salud (24)
 
   const selectedQuestionIds = new Set();
   careers.forEach(career => {
@@ -570,6 +570,47 @@ function renderResults() {
         </button>
       </div>
 
+      <!-- PODIO TOP 3 DE CARRERAS RECOMENDADAS -->
+      <section class="react-podium-section">
+        <div class="react-podium-header">
+          <div>
+            <h2 class="react-podium-title">Tu Top 3 de Carreras con Mayor Afinidad</h2>
+            <p class="react-podium-sub">Compara las 3 opciones vocacionales con mayor compatibilidad según tus respuestas:</p>
+          </div>
+          <button id="btn-header-lead-modal" class="react-podium-cta-btn">
+            📋 Solicitar Asesoría y Recibir mi Informe
+          </button>
+        </div>
+
+        <div class="react-podium-grid">
+          ${state.rankedCareers.map((career, idx) => {
+            const isSelected = state.activeCareerKey === career.key;
+            const rankNum = idx + 1;
+            const rankBadge = rankNum === 1 
+              ? `<span class="react-podium-badge badge-gold">🥇 1º Match Principal</span>` 
+              : rankNum === 2 
+                ? `<span class="react-podium-badge badge-silver">🥈 2º Alternativa Afín</span>` 
+                : `<span class="react-podium-badge badge-bronze">🥉 3º Alternativa Afín</span>`;
+
+            return `
+              <div class="react-podium-card rank-${rankNum} ${isSelected ? 'active' : ''}" data-key="${career.key}">
+                <div class="react-podium-card-top">
+                  ${rankBadge}
+                  <span class="react-podium-pct">${career.matchPct}%</span>
+                </div>
+                <div>
+                  <h3 class="react-podium-name">${career.name}</h3>
+                  <div class="react-podium-faculty">${career.faculty || 'PUCE'}</div>
+                </div>
+                <button class="react-podium-btn-select" data-key="${career.key}">
+                  ${isSelected ? '✓ Explorando esta carrera' : 'Ver detalle y mini-reto →'}
+                </button>
+              </div>
+            `;
+          }).join('')}
+        </div>
+      </section>
+
       <div class="react-results-grid">
         <!-- SIDEBAR: LISTA DE CARRERAS -->
         <div class="react-results-sidebar">
@@ -691,6 +732,30 @@ function renderResults() {
       </div>
     </div>
   `;
+
+  // Selector de carrera en el Podio Top 3
+  document.querySelectorAll('.react-podium-card, .react-podium-btn-select').forEach(el => {
+    el.onclick = (e) => {
+      e.stopPropagation();
+      const key = el.dataset.key || el.closest('.react-podium-card')?.dataset.key;
+      if (key && key !== state.activeCareerKey) {
+        state.activeCareerKey = key;
+        saveStorage('selcareer', key);
+        state.challengeState = {
+          status: 'playing',
+          stepId: 'step1',
+          matchedPairs: [],
+          selectedLeft: null,
+          sliderValues: {},
+          selectedOption: null
+        };
+        renderResults();
+      }
+    };
+  });
+
+  const btnHeaderLead = document.getElementById('btn-header-lead-modal');
+  if (btnHeaderLead) btnHeaderLead.onclick = openLeadModal;
 
   // Selector de carrera en sidebar
   document.querySelectorAll('.react-career-item-btn').forEach(btn => {
@@ -1172,6 +1237,13 @@ function setupModalEvents() {
   if (leadForm) {
     leadForm.onsubmit = async (e) => {
       e.preventDefault();
+
+      const consentBox = document.getElementById('lead-consent');
+      if (consentBox && !consentBox.checked) {
+        alert('Por favor, acepta el aviso de privacidad y consentimiento para poder enviar tus datos.');
+        return;
+      }
+
       const submitBtn = document.getElementById('btn-submit-lead') || leadForm.querySelector('button[type="submit"]');
       if (submitBtn) {
         submitBtn.disabled = true;

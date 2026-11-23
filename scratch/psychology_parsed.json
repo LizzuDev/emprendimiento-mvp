@@ -1,0 +1,1117 @@
+{
+  "habitat": {
+    "questions": [
+      {
+        "id": 1,
+        "text": "¿Te interesa integrar conocimientos de mecánica, electricidad, materiales y procesos para optimizar sistemas productivos e industriales complejos?"
+      },
+      {
+        "id": 2,
+        "text": "¿Te apasiona proyectar y concebir espacios habitables equilibrando la funcionalidad, la estética, la luz y el confort ambiental?"
+      },
+      {
+        "id": 3,
+        "text": "¿Sientes vocación por la expresión plástica y conceptual a través de la pintura, la escultura, el grabado o el arte contemporáneo?"
+      },
+      {
+        "id": 4,
+        "text": "¿Te atrae la comunicación visual mediante la tipografía, la composición cromática, la identidad de marca (branding) y el diseño editorial?"
+      },
+      {
+        "id": 5,
+        "text": "¿Te motiva el cálculo estructural, la mecánica de suelos y el diseño técnico de grandes obras como puentes, presas, carreteras y túneles?"
+      },
+      {
+        "id": 6,
+        "text": "¿Te interesa estructurar bases de datos, modelar flujos de información empresarial y diseñar la arquitectura tecnológica en organizaciones?"
+      },
+      {
+        "id": 7,
+        "text": "¿Te gustaría liderar proyectos técnicos interdisciplinarios que articulen automatización, eficiencia energética y manufactura avanzada?"
+      },
+      {
+        "id": 8,
+        "text": "¿Te resulta estimulante trabajar con planos, maquetas y modelos digitales 3D (software BIM/CAD) para diseñar edificaciones urbanas o rurales?"
+      },
+      {
+        "id": 9,
+        "text": "¿Disfrutas experimentar con técnicas visuales, materiales no convencionales y propuestas discursivas para exhibiciones o galerías de arte?"
+      },
+      {
+        "id": 10,
+        "text": "¿Te interesa diseñar interfaces digitales (UI), iconografía y sistemas visuales interactivos centrados en la experiencia del usuario?"
+      },
+      {
+        "id": 11,
+        "text": "¿Te visualizas supervisando obras de construcción en campo, fiscalizando el uso de hormigón armado, acero y normas sismorresistentes?"
+      },
+      {
+        "id": 12,
+        "text": "¿Te atrae la implementación de sistemas ERP, la gobernanza de datos y la ciberseguridad corporativa para la toma de decisiones estratégicas?"
+      },
+      {
+        "id": 13,
+        "text": "¿Te resulta atractivo analizar cadenas de suministro y líneas de producción para resolver fallas operativas y reducir el impacto ambiental?"
+      },
+      {
+        "id": 14,
+        "text": "¿Te preocupa el impacto del entorno construido en la calidad de vida urbana, la sostenibilidad bioclimática y la regeneración del paisaje?"
+      },
+      {
+        "id": 15,
+        "text": "¿Te apasiona el estudio de la historia del arte, la teoría estética y la crítica cultural para fundamentar obras plásticas de autoría propia?"
+      },
+      {
+        "id": 16,
+        "text": "¿Te gusta sintetizar ideas abstractas en logotipos, piezas publicitarias, señalética y diseño de empaques funcionales (packaging)?"
+      },
+      {
+        "id": 17,
+        "text": "¿Te entusiasma el análisis de redes de agua potable, alcantarillado, obras hidráulicas y la estabilidad de taludes y cimentaciones?"
+      },
+      {
+        "id": 18,
+        "text": "¿Te gustaría liderar la transformación digital de organizaciones mediante analítica de datos, servicios en la nube e integración de software?"
+      },
+      {
+        "id": 19,
+        "text": "¿Te motiva diseñar soluciones tecnológicas que armonicen la robótica, los sistemas térmicos y la gestión estratégica de operaciones?"
+      },
+      {
+        "id": 20,
+        "text": "¿Posees o te gustaría perfeccionar una visión espacial tridimensional para modular la escala, la volumetría y la circulación interna de un edificio?"
+      },
+      {
+        "id": 21,
+        "text": "¿Te visualizas participando en curadurías, bienales de arte, residencias artísticas y proyectos de conservación del patrimonio visual?"
+      },
+      {
+        "id": 22,
+        "text": "¿Te resulta estimulante dominar herramientas de ilustración vectorial, retoque fotográfico digital y maquetación visual multiplataforma?"
+      },
+      {
+        "id": 23,
+        "text": "¿Te atrae realizar estudios geotécnicos, levantamientos topográficos y modelados numéricos para garantizar la estabilidad de megaproyectos?"
+      },
+      {
+        "id": 24,
+        "text": "¿Te motiva modelar procesos de negocio (BPMN), auditar sistemas de información y diseñar almacenes de datos (data warehouses)?"
+      },
+      {
+        "id": 25,
+        "text": "¿Te gustaría coordinar a especialistas de diversas ramas de la ingeniería bajo una visión global, sistémica y holística del proyecto?"
+      },
+      {
+        "id": 26,
+        "text": "¿Te interesa la planificación y el ordenamiento territorial para diseñar ciudades inteligentes, accesibles y ambientalmente responsables?"
+      },
+      {
+        "id": 27,
+        "text": "¿Te motiva la creación de instalaciones artísticas inmersivas, muralismo contemporáneo, arte performático o fotografía de autor?"
+      },
+      {
+        "id": 28,
+        "text": "¿Te interesa investigar la psicología del color, la semiótica de la imagen y las tendencias visuales para campañas de alto impacto?"
+      },
+      {
+        "id": 29,
+        "text": "¿Te gustaría gestionar la logística de maquinaria pesada, el presupuesto, los plazos de entrega y la seguridad técnica en obras civiles?"
+      },
+      {
+        "id": 30,
+        "text": "¿Te atrae resolver la interoperabilidad entre diferentes plataformas de software, APIs y sistemas de información corporativos?"
+      },
+      {
+        "id": 31,
+        "text": "¿Te atrae la modelación matemática de sistemas físicos complejos para optimizar el ciclo de vida completo de una planta industrial?"
+      },
+      {
+        "id": 32,
+        "text": "¿Te entusiasma la restauración arquitectónica, la rehabilitación de edificios históricos y su reinterpretación contemporánea?"
+      },
+      {
+        "id": 33,
+        "text": "¿Tienes interés en desarrollar un lenguaje artístico personal mediante la experimentación continua con medios tradicionales o digitales?"
+      },
+      {
+        "id": 34,
+        "text": "¿Te atrae la animación visual (motion graphics), el diseño de portadas editoriales y la dirección de arte en medios digitales?"
+      },
+      {
+        "id": 35,
+        "text": "¿Te motiva diseñar infraestructuras resilientes capaces de mitigar desastres naturales (inundaciones, sismos, deslizamientos)?"
+      },
+      {
+        "id": 36,
+        "text": "¿Te visualizas como el puente estratégico entre las necesidades operativas de un negocio y los equipos de desarrollo tecnológico?"
+      }
+    ],
+    "careers": [
+      {
+        "name": "Ingeniería Integral",
+        "items": [
+          1,
+          7,
+          13,
+          19,
+          25,
+          31
+        ]
+      },
+      {
+        "name": "Arquitectura",
+        "items": [
+          2,
+          8,
+          14,
+          20,
+          26,
+          32
+        ]
+      },
+      {
+        "name": "Artes Visuales",
+        "items": [
+          3,
+          9,
+          15,
+          21,
+          27,
+          33
+        ]
+      },
+      {
+        "name": "Diseño Gráfico",
+        "items": [
+          4,
+          10,
+          16,
+          22,
+          28,
+          34
+        ]
+      },
+      {
+        "name": "Ingeniería Civil",
+        "items": [
+          5,
+          11,
+          17,
+          23,
+          29,
+          35
+        ]
+      },
+      {
+        "name": "Sistemas de Información",
+        "items": [
+          6,
+          12,
+          18,
+          24,
+          30,
+          36
+        ]
+      }
+    ]
+  },
+  "sociales": {
+    "questions": [
+      {
+        "id": 1,
+        "text": "¿Te atrae la creación de contenidos mediáticos, el periodismo de investigación y la producción de narrativas audiovisuales o transmedia?"
+      },
+      {
+        "id": 2,
+        "text": "¿Sientes curiosidad por analizar la estructura formal del lenguaje, la fonética y la evolución histórica de las lenguas?"
+      },
+      {
+        "id": 3,
+        "text": "¿Te apasiona diseñar actividades lúdicas y pedagógicas orientadas al neurodesarrollo y estimulación temprana en la primera infancia (0 a 6 años)?"
+      },
+      {
+        "id": 4,
+        "text": "¿Te motiva examinar problemas sociales complejos integrando la reflexión ética y filosófica con el análisis político y económico?"
+      },
+      {
+        "id": 5,
+        "text": "¿Te resulta estimulante el estudio de las leyes, la argumentación jurídica y la defensa técnica de derechos ante tribunales o instituciones?"
+      },
+      {
+        "id": 6,
+        "text": "¿Te atrae el análisis de la geopolítica mundial, el funcionamiento de organismos multilaterales y la diplomacia entre Estados?"
+      },
+      {
+        "id": 7,
+        "text": "¿Te gustaría planificar estrategias de comunicación corporativa, relaciones públicas y gestión de imagen institucional?"
+      },
+      {
+        "id": 8,
+        "text": "¿Te interesa investigar cómo los factores socioculturales, dialectales y regionales modifican el uso cotidiano del idioma?"
+      },
+      {
+        "id": 9,
+        "text": "¿Te visualizas evaluando y acompañando el desarrollo socioafectivo, motriz y cognitivo de niños pequeños en sus primeros años de vida?"
+      },
+      {
+        "id": 10,
+        "text": "¿Te gustaría diseñar y evaluar políticas públicas analizando tanto su viabilidad económica como su fundamentación ética e institucional?"
+      },
+      {
+        "id": 11,
+        "text": "¿Te atrae litigar en audiencias judiciales, redactar instrumentos jurídicos formales y fundamentar casos con base en la jurisprudencia?"
+      },
+      {
+        "id": 12,
+        "text": "¿Te proyectas trabajando en misiones diplomáticas, consulados u ONG internacionales gestionando convenios de cooperación global?"
+      },
+      {
+        "id": 13,
+        "text": "¿Disfrutas analizando audiencias digitales, métricas de interacción y tendencias narrativas en plataformas y redes sociales?"
+      },
+      {
+        "id": 14,
+        "text": "¿Te llama la atención el estudio de la psicolingüística, los procesos cognitivos del habla o el procesamiento del lenguaje natural (PLN)?"
+      },
+      {
+        "id": 15,
+        "text": "¿Consideras gratificante crear ambientes de aprendizaje inclusivos que potencien la autonomía, la creatividad y la curiosidad infantil?"
+      },
+      {
+        "id": 16,
+        "text": "¿Te apasiona debatir sobre teorías de la justicia distributiva, el origen del poder estatal y los dilemas morales del libre mercado?"
+      },
+      {
+        "id": 17,
+        "text": "¿Te interesa la resolución técnica de conflictos a través del derecho civil, penal, constitucional, laboral o administrativo?"
+      },
+      {
+        "id": 18,
+        "text": "¿Te resulta estimulante estudiar los tratados comerciales internacionales, los bloques de integración regional y el comercio exterior?"
+      },
+      {
+        "id": 19,
+        "text": "¿Te atrae el análisis crítico del discurso mediático y la influencia de las noticias y la propaganda en la formación de la opinión pública?"
+      },
+      {
+        "id": 20,
+        "text": "¿Te motivaría trabajar en la documentación, rescate y revitalización de lenguas originarias o idiomas en peligro de extinción?"
+      },
+      {
+        "id": 21,
+        "text": "¿Te gustaría asesorar a familias y cuidadores en pautas de crianza positiva, hábitos saludables y detección temprana de dificultades del desarrollo?"
+      },
+      {
+        "id": 22,
+        "text": "¿Te atrae la investigación académica que conecta el pensamiento filosófico clásico con el análisis institucional y económico moderno?"
+      },
+      {
+        "id": 23,
+        "text": "¿Sientes interés por velar por el cumplimiento de los derechos humanos, las garantías constitucionales y el debido proceso legal?"
+      },
+      {
+        "id": 24,
+        "text": "¿Te interesa el derecho internacional público, los mecanismos de seguridad global, la resolución pacífica de controversias y el desarme?"
+      },
+      {
+        "id": 25,
+        "text": "¿Te gustaría dirigir proyectos de realización audiovisual, guionismo, producción sonora o periodismo de datos?"
+      },
+      {
+        "id": 26,
+        "text": "¿Te resultaría atractivo el peritaje lingüístico judicial, la traducción especializada o la elaboración técnica de diccionarios (lexicografía)?"
+      },
+      {
+        "id": 27,
+        "text": "¿Disfrutas utilizar el juego, la expresión corporal, la música y la literatura infantil como vehículos esenciales para la enseñanza?"
+      },
+      {
+        "id": 28,
+        "text": "¿Te motiva desempeñarte en centros de pensamiento (think tanks), consultorías estratégicas o asesoría legislativa y de gobierno?"
+      },
+      {
+        "id": 29,
+        "text": "¿Te atrae el cumplimiento normativo corporativo (compliance), el asesoramiento legal empresarial y la mediación extrajudicial?"
+      },
+      {
+        "id": 30,
+        "text": "¿Te gustaría participar en cumbres climáticas mundiales, negociaciones comerciales multinacionales o asambleas de la ONU y OEA?"
+      },
+      {
+        "id": 31,
+        "text": "¿Te interesa gestionar la comunicación de crisis, la vocería institucional y el manejo de información en situaciones de emergencia?"
+      },
+      {
+        "id": 32,
+        "text": "¿Te resulta atractivo analizar la pragmática conversacional, los significados implícitos y las reglas del diálogo en la interacción humana?"
+      },
+      {
+        "id": 33,
+        "text": "¿Te motiva diseñar programas de intervención pedagógica temprana en centros infantiles, guarderías o aulas de educación inicial?"
+      },
+      {
+        "id": 34,
+        "text": "¿Te atrae examinar críticamente los modelos socioeconómicos contemporáneos, la automatización del trabajo y los retos de la democracia?"
+      },
+      {
+        "id": 35,
+        "text": "¿Tienes vocación por la reforma legal, la técnica legislativa y la lucha contra la impunidad y las injusticias estructurales?"
+      },
+      {
+        "id": 36,
+        "text": "¿Te entusiasma realizar análisis de riesgo político internacional y prospectiva geopolítica para instituciones públicas o empresas globales?"
+      }
+    ],
+    "careers": [
+      {
+        "name": "Comunicación",
+        "items": [
+          1,
+          7,
+          13,
+          19,
+          25,
+          31
+        ]
+      },
+      {
+        "name": "Lingüística",
+        "items": [
+          2,
+          8,
+          14,
+          20,
+          26,
+          32
+        ]
+      },
+      {
+        "name": "Educación Inicial (Presencial)",
+        "items": [
+          3,
+          9,
+          15,
+          21,
+          27,
+          33
+        ]
+      },
+      {
+        "name": "Filosofía, Política y Economía (FPE)",
+        "items": [
+          4,
+          10,
+          16,
+          22,
+          28,
+          34
+        ]
+      },
+      {
+        "name": "Derecho",
+        "items": [
+          5,
+          11,
+          17,
+          23,
+          29,
+          35
+        ]
+      },
+      {
+        "name": "Relaciones Internacionales",
+        "items": [
+          6,
+          12,
+          18,
+          24,
+          30,
+          36
+        ]
+      }
+    ]
+  },
+  "economia": {
+    "questions": [
+      {
+        "id": 1,
+        "text": "¿Te interesa planificar estrategias de crecimiento corporativo, optimizar recursos operativos y liderar la toma de decisiones gerenciales?"
+      },
+      {
+        "id": 2,
+        "text": "¿Te atrae gestionar operaciones en cadenas hoteleras, complejos turísticos o empresas de eventos garantizando altos estándares de servicio?"
+      },
+      {
+        "id": 3,
+        "text": "¿Sientes interés por registrar, estructurar y emitir estados financieros formales bajo normas contables internacionales (NIIF/IFRS)?"
+      },
+      {
+        "id": 4,
+        "text": "¿Te motiva analizar variables macroeconómicas (inflación, desempleo, tasas de interés, PIB) para proyectar el comportamiento de los mercados?"
+      },
+      {
+        "id": 5,
+        "text": "¿Te resulta estimulante estructurar portafolios de inversión, operar en mercados bursátiles y analizar activos de renta fija y variable?"
+      },
+      {
+        "id": 6,
+        "text": "¿Te apasiona investigar las motivaciones, hábitos de consumo y la psicología del comprador para lanzar nuevos productos al mercado?"
+      },
+      {
+        "id": 7,
+        "text": "¿Te atrae negociar acuerdos comerciales transfronterizos, contratos de compraventa internacional e interpretar términos Incoterms?"
+      },
+      {
+        "id": 8,
+        "text": "¿Te gustaría coordinar diferentes áreas de una empresa (talento humano, operaciones, ventas) alineándolas hacia objetivos estratégicos comunes?"
+      },
+      {
+        "id": 9,
+        "text": "¿Te motiva diseñar circuitos turísticos sostenibles, rutas patrimoniales y experiencias de viaje enfocadas en la cultura y la naturaleza?"
+      },
+      {
+        "id": 10,
+        "text": "¿Te visualizas fiscalizando y auditando balances contables para verificar la exactitud de los datos y prevenir fraudes o contingencias fiscales?"
+      },
+      {
+        "id": 11,
+        "text": "¿Te interesa aplicar modelos matemáticos y econométricos para medir el impacto de políticas públicas y reformas tributarias en la sociedad?"
+      },
+      {
+        "id": 12,
+        "text": "¿Te atrae realizar valoraciones de empresas (valuation), análisis de flujos de caja y estructuración de deuda corporativa?"
+      },
+      {
+        "id": 13,
+        "text": "¿Disfrutas diseñando campañas de posicionamiento de marca (branding), planes de comunicación comercial y estrategias publicitarias?"
+      },
+      {
+        "id": 14,
+        "text": "¿Te interesa gestionar operaciones aduaneras, regímenes arancelarios y trámites de comercio exterior para importaciones y exportaciones?"
+      },
+      {
+        "id": 15,
+        "text": "¿Te gustaría diseñar modelos de negocio escalables, reestructurar procesos empresariales y liderar proyectos de innovación corporativa?"
+      },
+      {
+        "id": 16,
+        "text": "¿Te parece estimulante planificar la logística, el protocolo y la operación de convenciones internacionales, congresos y banquetes?"
+      },
+      {
+        "id": 17,
+        "text": "¿Te atrae implementar sistemas de control interno que garanticen el cumplimiento riguroso de normativas tributarias y societarias?"
+      },
+      {
+        "id": 18,
+        "text": "¿Te apasiona el estudio de las estructuras de mercado (monopolios, oligopolios, libre competencia) y la teoría de la formación de precios?"
+      },
+      {
+        "id": 19,
+        "text": "¿Te gustaría cuantificar y mitigar riesgos financieros (crediticio, de mercado, cambiario y de liquidez) mediante modelos analíticos?"
+      },
+      {
+        "id": 20,
+        "text": "¿Te atrae la gestión de marketing digital, la analítica web, la pauta programática y la optimización del embudo de conversión (CRO)?"
+      },
+      {
+        "id": 21,
+        "text": "¿Te motiva optimizar la logística de cadenas de suministro globales, el transporte de carga multimodal (marítimo, aéreo) y fletes?"
+      },
+      {
+        "id": 22,
+        "text": "¿Te resulta interesante analizar la estructura organizativa de una empresa para resolver cuellos de botella y mejorar la productividad?"
+      },
+      {
+        "id": 23,
+        "text": "¿Te gustaría liderar planes de desarrollo turístico comunitario o regional para dinamizar la economía local de forma responsable?"
+      },
+      {
+        "id": 24,
+        "text": "¿Te atrae calcular con precisión la estructura de costos de producción y gastos operativos para determinar márgenes de utilidad reales?"
+      },
+      {
+        "id": 25,
+        "text": "¿Te resulta estimulante investigar cómo la escasez de recursos, la distribución del ingreso y la política monetaria influyen en el bienestar social?"
+      },
+      {
+        "id": 26,
+        "text": "¿Te interesa diseñar esquemas de financiamiento corporativo, rondas de capital de riesgo (venture capital) o fusiones y adquisiciones (M&A)?"
+      },
+      {
+        "id": 27,
+        "text": "¿Te gusta definir estrategias de fijación de precios, distribución comercial (trade marketing) y propuestas de valor diferenciadas?"
+      },
+      {
+        "id": 28,
+        "text": "¿Te interesa analizar tratados de libre comercio, acuerdos bilaterales y barreras no arancelarias para internacionalizar empresas?"
+      },
+      {
+        "id": 29,
+        "text": "¿Te motiva formular planes de contingencia, gestión del cambio y adaptación competitiva frente a entornos económicos volátiles?"
+      },
+      {
+        "id": 30,
+        "text": "¿Te llama la atención evaluar la experiencia del huésped (guest experience) y supervisar la gestión de alimentos y bebidas en hostelería?"
+      },
+      {
+        "id": 31,
+        "text": "¿Te gustaría realizar peritajes contables y auditorías forenses para esclarecer litigios financieros en entidades públicas o privadas?"
+      },
+      {
+        "id": 32,
+        "text": "¿Te interesa trabajar en organismos multilaterales (BM, FMI, CEPAL) o bancos centrales elaborando prospectiva económica y análisis de desarrollo?"
+      },
+      {
+        "id": 33,
+        "text": "¿Te gustaría calcular la rentabilidad y el riesgo de proyectos de inversión mediante métricas como VAN, TIR y periodos de recuperación?"
+      },
+      {
+        "id": 34,
+        "text": "¿Te motiva analizar métricas de fidelización y valor de vida del cliente (Customer Lifetime Value) para retener audiencias?"
+      },
+      {
+        "id": 35,
+        "text": "¿Te proyectas diseñando planes de penetración a mercados foráneos mediante franquicias internacionales, filiales o joint ventures?"
+      },
+      {
+        "id": 36,
+        "text": "¿Te visualizas supervisando indicadores clave de rendimiento (KPIs), cuadros de mando integral y la rentabilidad global de una organización?"
+      },
+      {
+        "id": 37,
+        "text": "¿Te gustaría dirigir estrategias de promoción y posicionamiento de destinos turísticos a escala nacional e internacional (destination marketing)?"
+      },
+      {
+        "id": 38,
+        "text": "¿Disfrutas del trabajo metódico y riguroso que exige el cierre fiscal anual, las conciliaciones bancarias y los libros contables?"
+      },
+      {
+        "id": 39,
+        "text": "¿Te entusiasma el uso de software estadístico (R, Stata, Python) para modelar fenómenos socioeconómicos y series temporales complejas?"
+      },
+      {
+        "id": 40,
+        "text": "¿Te atrae la administración de tesorería corporativa, la gestión de dividendos y la maximización del valor patrimonial de los accionistas?"
+      },
+      {
+        "id": 41,
+        "text": "¿Te resultaría estimulante liderar el desarrollo conceptual de productos innovadores identificando tendencias y necesidades no resueltas?"
+      },
+      {
+        "id": 42,
+        "text": "¿Te sientes cómodo(a) interactuando en negociaciones interculturales, adaptando estrategias comerciales a normativas de diversos países?"
+      }
+    ],
+    "careers": [
+      {
+        "name": "Administración de Empresas",
+        "items": [
+          1,
+          8,
+          15,
+          22,
+          29,
+          36
+        ]
+      },
+      {
+        "name": "Administración en Turismo y Hospitalidad",
+        "items": [
+          2,
+          9,
+          16,
+          23,
+          30,
+          37
+        ]
+      },
+      {
+        "name": "Contabilidad y Auditoría",
+        "items": [
+          3,
+          10,
+          17,
+          24,
+          31,
+          38
+        ]
+      },
+      {
+        "name": "Economía",
+        "items": [
+          4,
+          11,
+          18,
+          25,
+          32,
+          39
+        ]
+      },
+      {
+        "name": "Finanzas",
+        "items": [
+          5,
+          12,
+          19,
+          26,
+          33,
+          40
+        ]
+      },
+      {
+        "name": "Marketing",
+        "items": [
+          6,
+          13,
+          20,
+          27,
+          34,
+          41
+        ]
+      },
+      {
+        "name": "Negocios Internacionales",
+        "items": [
+          7,
+          14,
+          21,
+          28,
+          35,
+          42
+        ]
+      }
+    ]
+  },
+  "sostenibilidad": {
+    "questions": [
+      {
+        "id": 1,
+        "text": "¿Te apasiona el estudio de la biodiversidad, la ecología de poblaciones y la conservación de ecosistemas terrestres o marinos?"
+      },
+      {
+        "id": 2,
+        "text": "¿Sientes fascinación por el cultivo, aislamiento e identificación de microorganismos (bacterias, hongos, virus y microalgas)?"
+      },
+      {
+        "id": 3,
+        "text": "¿Te atrae investigar las bases moleculares, genéticas y celulares que originan enfermedades complejas en el ser humano?"
+      },
+      {
+        "id": 4,
+        "text": "¿Te resulta estimulante programar algoritmos matemáticos y modelos estadísticos para extraer patrones a partir de grandes volúmenes de datos (Big Data)?"
+      },
+      {
+        "id": 5,
+        "text": "¿Te entusiasma realizar trabajo de campo en reservas naturales recolectando especímenes botánicos o monitoreando fauna silvestre?"
+      },
+      {
+        "id": 6,
+        "text": "¿Te interesa el uso de microorganismos en biotecnología industrial, fermentaciones, biorremediación de suelos o tratamiento de aguas residuales?"
+      },
+      {
+        "id": 7,
+        "text": "¿Te gustaría trabajar en laboratorios de investigación médica diseñando terapias génicas, vacunas recombinantes o nuevos fármacos?"
+      },
+      {
+        "id": 8,
+        "text": "¿Disfrutas estructurar bases de datos complejas, entrenar redes neuronales y aplicar técnicas de aprendizaje automático (Machine Learning)?"
+      },
+      {
+        "id": 9,
+        "text": "¿Te motiva analizar procesos evolutivos, dinámicas de cadenas tróficas y el impacto del cambio climático en los hábitats naturales?"
+      },
+      {
+        "id": 10,
+        "text": "¿Te llama la atención el estudio de la resistencia a los antimicrobianos, los mecanismos de patogenicidad microbiana y la virología ambiental?"
+      },
+      {
+        "id": 11,
+        "text": "¿Te resulta fascinante desentrañar rutas de señalización celular, epigenética y marcadores moleculares para el diagnóstico temprano de patologías?"
+      },
+      {
+        "id": 12,
+        "text": "¿Te visualizas creando paneles de visualización interactiva y modelos predictivos para la toma de decisiones basada en evidencia cuantitativa?"
+      },
+      {
+        "id": 13,
+        "text": "¿Te interesa la taxonomía, la fisiología vegetal y animal, y la gestión de planes de manejo para especies amenazadas?"
+      },
+      {
+        "id": 14,
+        "text": "¿Te atrae la aplicación del control de calidad microbiológico en la industria alimentaria, farmacéutica y biotecnológica?"
+      },
+      {
+        "id": 15,
+        "text": "¿Te motiva la investigación traslacional que conecta los descubrimientos bioquímicos de laboratorio con ensayos preclínicos?"
+      },
+      {
+        "id": 16,
+        "text": "¿Te atrae limpiar, transformar y analizar conjuntos masivos de datos no estructurados utilizando lenguajes como Python, R o SQL?"
+      },
+      {
+        "id": 17,
+        "text": "¿Te gustaría evaluar el impacto ambiental en cuerpos hídricos y bosques para formular políticas de restauración ecológica?"
+      },
+      {
+        "id": 18,
+        "text": "¿Te apasiona la manipulación genética de cepas bacterianas o levaduras para optimizar la producción de biofertilizantes y biocombustibles?"
+      },
+      {
+        "id": 19,
+        "text": "¿Sientes interés por el cultivo de tejidos celulares humanos, la edición genética (CRISPR) y la inmunología avanzada?"
+      },
+      {
+        "id": 20,
+        "text": "¿Te resultaría estimulante modelar simulaciones computacionales de fenómenos complejos (dinámicas genómicas, dispersión climática o redes)?"
+      },
+      {
+        "id": 21,
+        "text": "¿Disfrutas del estudio comparativo de la morfología, la etología (comportamiento animal) y la biogeografía de las especies?"
+      },
+      {
+        "id": 22,
+        "text": "¿Te ves trabajando bajo normas estrictas de bioseguridad en el análisis de metagenómica y microbioma ambiental o clínico?"
+      },
+      {
+        "id": 23,
+        "text": "¿Te gustaría investigar los mecanismos de acción toxicológica y farmacodinámica de compuestos bioactivos en modelos celulares?"
+      },
+      {
+        "id": 24,
+        "text": "¿Te interesa el diseño de arquitecturas analíticas y el despliegue de soluciones de inteligencia artificial aplicada a problemas científicos o productivos?"
+      }
+    ],
+    "careers": [
+      {
+        "name": "Biología",
+        "items": [
+          1,
+          5,
+          9,
+          13,
+          17,
+          21
+        ]
+      },
+      {
+        "name": "Microbiología",
+        "items": [
+          2,
+          6,
+          10,
+          14,
+          18,
+          22
+        ]
+      },
+      {
+        "name": "Ciencias Biomédicas",
+        "items": [
+          3,
+          7,
+          11,
+          15,
+          19,
+          23
+        ]
+      },
+      {
+        "name": "Ciencia de Datos",
+        "items": [
+          4,
+          8,
+          12,
+          16,
+          20,
+          24
+        ]
+      }
+    ]
+  },
+  "salud": {
+    "questions": [
+      {
+        "id": 1,
+        "text": "¿Te motiva brindar atención directa, continua y asistencial a personas en entornos hospitalarios o comunitarios durante su proceso de recuperación?"
+      },
+      {
+        "id": 2,
+        "text": "¿Te apasiona el estudio de la biomecánica, la anatomía funcional y la recuperación del movimiento corporal humano?"
+      },
+      {
+        "id": 3,
+        "text": "¿Te interesa evaluar el estado nutricional y diseñar planes de alimentación terapéutica según el perfil metabólico de las personas?"
+      },
+      {
+        "id": 4,
+        "text": "¿Prefieres un entorno técnico enfocado en el procesamiento de muestras biológicas (sangre, orina, tejidos) antes que la consulta clínica directa?"
+      },
+      {
+        "id": 5,
+        "text": "¿Sientes una fuerte curiosidad por estudiar a profundidad la fisiopatología, el diagnóstico diferencial de enfermedades y la farmacología humana?"
+      },
+      {
+        "id": 6,
+        "text": "¿Te interesa diagnosticar y tratar patologías médicas o quirúrgicas en animales domésticos, de producción o fauna silvestre?"
+      },
+      {
+        "id": 7,
+        "text": "¿Posees o te gustaría desarrollar una alta destreza y precisión motriz fina para intervenir en la cavidad oral y las piezas dentales?"
+      },
+      {
+        "id": 8,
+        "text": "¿Te genera un interés genuino comprender el origen de los trastornos mentales, los conflictos emocionales y los patrones de conducta desadaptativa?"
+      },
+      {
+        "id": 9,
+        "text": "¿Te sentirías con vocación para monitorear signos vitales, canalizar vías, administrar esquemas de medicación y cuidar a pacientes vulnerables?"
+      },
+      {
+        "id": 10,
+        "text": "¿Te gustaría diseñar y aplicar programas de ejercicio terapéutico, electroterapia y masoterapia para rehabilitar lesiones musculoesqueléticas?"
+      },
+      {
+        "id": 11,
+        "text": "¿Sientes curiosidad por el impacto de los macronutrientes, micronutrientes y la suplementación en el rendimiento deportivo y la prevención patológica?"
+      },
+      {
+        "id": 12,
+        "text": "¿Te fascina el uso de microscopios, reactivos químicos y tecnología automatizada para la identificación de bacterias, parásitos y virus?"
+      },
+      {
+        "id": 13,
+        "text": "¿Te visualizas tomando decisiones clínicas de alta complejidad respecto a tratamientos médicos invasivos, farmacológicos o de urgencia?"
+      },
+      {
+        "id": 14,
+        "text": "¿Estarías dispuesto(a) a realizar procedimientos clínicos, curaciones y cirugías en animales de diversa complexión y temperamento?"
+      },
+      {
+        "id": 15,
+        "text": "¿Te atrae el diagnóstico, prevención y tratamiento de caries, enfermedades periodontales y anomalías de la oclusión dental?"
+      },
+      {
+        "id": 16,
+        "text": "¿Te sentirías cómodo(a) escuchando y analizando problemáticas personales complejas para guiar a individuos mediante psicoterapia?"
+      },
+      {
+        "id": 17,
+        "text": "¿Te interesa la educación para la salud comunitaria, orientando a pacientes y familias en pautas de autocuidado y prevención primaria?"
+      },
+      {
+        "id": 18,
+        "text": "¿Te motiva ayudar a personas con secuelas neurológicas (como ACV o parálisis) a recuperar su autonomía motora y funcionalidad física?"
+      },
+      {
+        "id": 19,
+        "text": "¿Te gustaría calcular requerimientos energéticos y formular esquemas de soporte nutricional enteral o parenteral en pacientes hospitalizados?"
+      },
+      {
+        "id": 20,
+        "text": "¿Disfrutas del rigor analítico, el control de calidad estricto y la verificación de parámetros bioquímicos, hematológicos e inmunológicos?"
+      },
+      {
+        "id": 21,
+        "text": "¿Te atrae realizar exploraciones físicas sistemáticas, interpretar exámenes complementarios (tomografías, ecografías) e integrar cuadros clínicos?"
+      },
+      {
+        "id": 22,
+        "text": "¿Te motiva la vigilancia epidemiológica de enfermedades zoonóticas (transmisibles de animales a humanos) y la salud pública pecuaria?"
+      },
+      {
+        "id": 23,
+        "text": "¿Te resulta atractivo utilizar instrumental rotatorio, materiales restauradores estéticos y tecnologías de reconstrucción bucal?"
+      },
+      {
+        "id": 24,
+        "text": "¿Te atrae la aplicación e interpretación de pruebas psicométricas y entrevistas clínicas para evaluar funciones cognitivas y personalidad?"
+      },
+      {
+        "id": 25,
+        "text": "¿Consideras gratificante brindar acompañamiento y soporte integral en unidades de cuidados intensivos, emergencias o cuidados paliativos?"
+      },
+      {
+        "id": 26,
+        "text": "¿Te gustaría intervenir en el ámbito deportivo para prevenir lesiones musculares y optimizar el rendimiento biomecánico de atletas?"
+      },
+      {
+        "id": 27,
+        "text": "¿Te motiva intervenir en políticas de salud pública, seguridad alimentaria y programas comunitarios contra la malnutrición y la obesidad?"
+      },
+      {
+        "id": 28,
+        "text": "¿Te resultaría estimulante interpretar frotis sanguíneos, cultivos microbiológicos y marcadores moleculares para apoyar el diagnóstico médico?"
+      },
+      {
+        "id": 29,
+        "text": "¿Te apasiona la investigación biomédica y el abordaje terapéutico de enfermedades agudas o crónicas que amenazan la vida humana?"
+      },
+      {
+        "id": 30,
+        "text": "¿Te atrae el estudio de la zootecnia, la nutrición y reproducción animal, y el manejo técnico en granjas pecuarias o reservas naturales?"
+      },
+      {
+        "id": 31,
+        "text": "¿Te motiva el impacto directo que tiene la salud bucodental en la fonación, masticación, armonía facial y autoestima del paciente?"
+      },
+      {
+        "id": 32,
+        "text": "¿Te motiva acompañar a individuos en situaciones de crisis vital, depresión, ansiedad, duelo o trauma psicológico?"
+      },
+      {
+        "id": 33,
+        "text": "¿Te atrae coordinar planes de cuidados integrales que prioricen la seguridad, el confort y la dignidad del paciente encamado?"
+      },
+      {
+        "id": 34,
+        "text": "¿Preferirías un ejercicio profesional donde tu principal herramienta de trabajo sea la interacción corporal directa y la reeducación del movimiento?"
+      },
+      {
+        "id": 35,
+        "text": "¿Te resulta atractivo analizar la composición bromatológica de los alimentos, su etiquetado nutricional y la inocuidad alimentaria?"
+      },
+      {
+        "id": 36,
+        "text": "¿Te sentirías cómodo(a) siguiendo protocolos rigurosos de bioseguridad en el manejo de sustancias químicas, reactivos y agentes patógenos?"
+      },
+      {
+        "id": 37,
+        "text": "¿Te proyectas cumpliendo guardias hospitalarias, realizando procedimientos quirúrgicos y coordinando esquemas médicos complejos?"
+      },
+      {
+        "id": 38,
+        "text": "¿Te visualizas administrando clínicas veterinarias, centros de rescate o plantas de inspección de alimentos de origen animal?"
+      },
+      {
+        "id": 39,
+        "text": "¿Te interesa ejecutar procedimientos minuciosos como endodoncias, extracciones complejas o colocación de prótesis fijas e implantes?"
+      },
+      {
+        "id": 40,
+        "text": "¿Te apasiona la investigación en neurociencias del comportamiento, procesos cognitivos y modelos psicoterapéuticos basados en evidencia?"
+      },
+      {
+        "id": 41,
+        "text": "¿Te ves desempeñando un rol asistencial y de vigilancia clínica continua en el triaje, curaciones complejas y postoperatorios?"
+      },
+      {
+        "id": 42,
+        "text": "¿Te interesa la rehabilitación respiratoria, cardiovascular o pediátrica para mejorar la capacidad funcional en patologías crónicas?"
+      },
+      {
+        "id": 43,
+        "text": "¿Te ves asesorando a individuos en la modificación de hábitos dietéticos, conducta alimentaria y adherencia a estilos de vida saludables?"
+      },
+      {
+        "id": 44,
+        "text": "¿Te interesa la gestión de bancos de sangre, pruebas de compatibilidad transfusional y tipificación serológica especializada?"
+      },
+      {
+        "id": 45,
+        "text": "¿Te motiva el razonamiento lógico-deductivo necesario para encontrar la causa raíz de síntomas atípicos en cuadros clínicos complejos?"
+      },
+      {
+        "id": 46,
+        "text": "¿Te apasiona la medicina preventiva en animales, planes de inmunización, desparasitación y control sanitario de rodeos o mascotas?"
+      },
+      {
+        "id": 47,
+        "text": "¿Te visualizas diseñando sonrisas mediante ortodoncia, rehabilitación oral o cirugía maxilofacial en un consultorio odontológico?"
+      },
+      {
+        "id": 48,
+        "text": "¿Te ves trabajando en consultorios o unidades de salud mental realizando diagnósticos psicopatológicos y planes de tratamiento psicológico?"
+      }
+    ],
+    "careers": [
+      {
+        "name": "Enfermería",
+        "items": [
+          1,
+          9,
+          17,
+          25,
+          33,
+          41
+        ]
+      },
+      {
+        "name": "Fisioterapia",
+        "items": [
+          2,
+          10,
+          18,
+          26,
+          34,
+          42
+        ]
+      },
+      {
+        "name": "Nutrición y Dietética",
+        "items": [
+          3,
+          11,
+          19,
+          27,
+          35,
+          43
+        ]
+      },
+      {
+        "name": "Laboratorio Clínico",
+        "items": [
+          4,
+          12,
+          20,
+          28,
+          36,
+          44
+        ]
+      },
+      {
+        "name": "Medicina",
+        "items": [
+          5,
+          13,
+          21,
+          29,
+          37,
+          45
+        ]
+      },
+      {
+        "name": "Medicina Veterinaria",
+        "items": [
+          6,
+          14,
+          22,
+          30,
+          38,
+          46
+        ]
+      },
+      {
+        "name": "Odontología",
+        "items": [
+          7,
+          15,
+          23,
+          31,
+          39,
+          47
+        ]
+      },
+      {
+        "name": "Psicología Clínica",
+        "items": [
+          8,
+          16,
+          24,
+          32,
+          40,
+          48
+        ]
+      }
+    ]
+  }
+}
