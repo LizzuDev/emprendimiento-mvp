@@ -1,0 +1,995 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Orienta PUCE (Stand 050) · War Room & Pitch Ganador PUCEmprende 2026</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --puce-navy: #071930;
+      --puce-blue: #003b81;
+      --puce-cyan: #009fe3;
+      --puce-teal: #06b2b3;
+    }
+    body {
+      font-family: 'Inter', sans-serif;
+      background-color: #f1f5f9;
+      color: #0f172a;
+    }
+    .mono { font-family: 'JetBrains Mono', monospace; }
+    .tab-btn.active {
+      background-color: #003b81;
+      color: #ffffff;
+      box-shadow: 0 4px 12px rgba(0, 59, 129, 0.25);
+    }
+    .tab-panel { display: none; }
+    .tab-panel.active { display: block; animation: fadeIn 0.25s ease-out; }
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(6px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    .speaker-paul { border-left: 5px solid #003b81; }
+    .speaker-joselyn { border-left: 5px solid #06b2b3; }
+    .speaker-gabriel { border-left: 5px solid #f59e0b; }
+    .card-flip-answer { display: none; }
+    .card-flip-answer.open { display: block; animation: fadeIn 0.2s ease; }
+
+    @media print {
+      .no-print { display: none !important; }
+      .tab-panel { display: block !important; page-break-inside: avoid; margin-bottom: 24px; }
+      .card-flip-answer { display: block !important; }
+      body { background: #ffffff; }
+    }
+  </style>
+</head>
+<body class="pb-16">
+
+  <!-- ENCABEZADO PRINCIPAL -->
+  <header class="bg-gradient-to-r from-[#071930] via-[#003b81] to-[#0077b6] text-white border-b-4 border-[#06b2b3] shadow-lg">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 py-6 flex flex-wrap items-center justify-between gap-4">
+      <div>
+        <div class="flex flex-wrap items-center gap-2 mb-2">
+          <span class="bg-[#06b2b3] text-white text-xs font-extrabold px-2.5 py-1 rounded-md uppercase tracking-wide">XXXVII PUCEmprende 2026</span>
+          <span class="bg-white/15 border border-white/25 text-xs font-bold px-2.5 py-1 rounded-md">Stand 050 · Orienta PUCE</span>
+          <span class="bg-amber-400 text-slate-950 text-xs font-extrabold px-2.5 py-1 rounded-md">Top 5 PMV de 77 Ideas</span>
+        </div>
+        <h1 class="text-2xl sm:text-3xl font-black tracking-tight">War Room & Guion Ganador · Orienta PUCE</h1>
+        <p class="text-sky-100 text-sm mt-1">Miércoles 25 de noviembre de 2026 · 08h00–13h00 · Hall Planta Baja Torre 1 · Meta: 55/55 puntos</p>
+      </div>
+
+      <!-- Acciones rápidas -->
+      <div class="no-print flex flex-wrap gap-2">
+        <button onclick="exportGuionWord()" class="bg-white text-[#003b81] hover:bg-sky-50 font-bold text-xs sm:text-sm px-4 py-2.5 rounded-lg shadow transition flex items-center gap-2 cursor-pointer">
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/></svg>
+          Descargar Dossier en Word (.doc)
+        </button>
+        <button onclick="window.print()" class="bg-[#06b2b3] hover:bg-[#059697] text-white font-bold text-xs sm:text-sm px-4 py-2.5 rounded-lg shadow transition flex items-center gap-2 cursor-pointer">
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M17 17h2a2 2 0 002-2v-4a2 2 0 00-2-2H5a2 2 0 00-2 2v4a2 2 0 002 2h2m2 4h6a2 2 0 002-2v-4a2 2 0 00-2-2H9a2 2 0 00-2 2v4a2 2 0 002 2zm8-12V5a2 2 0 00-2-2H9a2 2 0 00-2 2v4h10z"/></svg>
+          Imprimir Tarjetas
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main class="max-w-7xl mx-auto px-4 sm:px-6 mt-6">
+
+    <!-- ALERTA ESTRATÉGICA DE TIEMPO Y EQUIPO -->
+    <div class="bg-amber-50 border-l-4 border-amber-500 rounded-r-xl p-4 mb-6 shadow-sm">
+      <div class="flex flex-col md:flex-row md:items-center justify-between gap-3">
+        <div>
+          <h2 class="text-sm font-extrabold text-amber-900 uppercase tracking-wide flex items-center gap-2">
+            <span>⚠️ Ajuste Crítico de Tiempo para No Perder Puntos (Regla Oficial)</span>
+          </h2>
+          <p class="text-xs sm:text-sm text-amber-900/90 mt-1">
+            La ronda total dura <strong>4 minutos</strong>, pero se divide en: <strong>3:00 min máx. de pitch (ensayado en 2:50)</strong> + <strong>1:00 min de preguntas (Carta del Jurado)</strong>. <em>Pasarse de 3 minutos resta puntos en el criterio Tiempo.</em> Por eso incrustamos la <strong>demo vivencial de 45s dentro de los 2:50</strong>, dejando el 4.º minuto libre para rematar con las preguntas del jurado.
+          </p>
+        </div>
+        <div class="flex-shrink-0 bg-white border border-amber-200 rounded-lg px-3 py-2 text-xs text-slate-700">
+          <div class="font-extrabold text-[#003b81]">Inscritos Stand 050:</div>
+          <div>1. Paúl Rosero (Líder)</div>
+          <div>2. Joselyn Cadena</div>
+          <div>3. Gabriel Aguinaga</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- NAVEGACIÓN POR PESTAÑAS -->
+    <nav class="no-print flex flex-wrap gap-2 mb-6 bg-white p-2 rounded-xl border border-slate-200 shadow-sm">
+      <button onclick="switchTab('tab-guion', this)" class="tab-btn active px-4 py-2.5 rounded-lg text-xs sm:text-sm font-bold text-slate-600 hover:bg-slate-100 transition cursor-pointer">1. Guion 2:50 + Cronómetro</button>
+      <button onclick="switchTab('tab-datos', this)" class="tab-btn px-4 py-2.5 rounded-lg text-xs sm:text-sm font-bold text-slate-600 hover:bg-slate-100 transition cursor-pointer">2. Datos & Fuentes Citables</button>
+      <button onclick="switchTab('tab-jurado', this)" class="tab-btn px-4 py-2.5 rounded-lg text-xs sm:text-sm font-bold text-slate-600 hover:bg-slate-100 transition cursor-pointer">3. Cartas del Jurado (Q&A)</button>
+      <button onclick="switchTab('tab-ip', this)" class="tab-btn px-4 py-2.5 rounded-lg text-xs sm:text-sm font-bold text-slate-600 hover:bg-slate-100 transition cursor-pointer">4. Legal, PI, IA, ODS & Visión</button>
+      <button onclick="switchTab('tab-rubrica', this)" class="tab-btn px-4 py-2.5 rounded-lg text-xs sm:text-sm font-bold text-slate-600 hover:bg-slate-100 transition cursor-pointer">5. Rúbrica 55 pts & Stand</button>
+    </nav>
+
+    <div id="export-content">
+
+      <!-- ========================================================= -->
+      <!-- TAB 1: GUION CRONOMETRADO + TEMPORIZADOR EN VIVO          -->
+      <!-- ========================================================= -->
+      <section id="tab-guion" class="tab-panel active">
+
+        <!-- Cronómetro interactivo de ensayo -->
+        <div class="no-print bg-[#071930] text-white rounded-2xl p-5 mb-6 shadow-md flex flex-wrap items-center justify-between gap-4">
+          <div>
+            <div class="text-xs uppercase tracking-widest text-sky-300 font-bold">Simulador de Cronómetro en Vivo · Meta Pitch: 02:50</div>
+            <div class="flex items-baseline gap-4 mt-1">
+              <span id="timer-display" class="mono text-4xl sm:text-5xl font-black text-white">00:00</span>
+              <span id="timer-phase" class="text-xs sm:text-sm font-bold px-3 py-1 rounded-full bg-white/15 text-sky-200">Listo para ensayar</span>
+            </div>
+          </div>
+          <div class="flex flex-wrap gap-2">
+            <button onclick="startTimer()" class="bg-[#06b2b3] hover:bg-[#049596] text-white font-bold text-sm px-4 py-2.5 rounded-lg cursor-pointer">▶ Iniciar</button>
+            <button onclick="pauseTimer()" class="bg-amber-500 hover:bg-amber-600 text-slate-950 font-bold text-sm px-4 py-2.5 rounded-lg cursor-pointer">⏸ Pausar</button>
+            <button onclick="resetTimer()" class="bg-white/15 hover:bg-white/25 text-white font-bold text-sm px-4 py-2.5 rounded-lg cursor-pointer">↺ Reiniciar</button>
+          </div>
+        </div>
+
+        <!-- Comparativa de estructura optimizada -->
+        <div class="bg-white rounded-2xl border border-slate-200 p-5 mb-6 shadow-sm">
+          <h2 class="text-lg font-extrabold text-[#003b81] mb-2">Arquitectura Optimizada de tu Pitch (6 Bloques en 2:50)</h2>
+          <p class="text-xs sm:text-sm text-slate-600 mb-4">
+            Tomé tu estructura base de 5 pasos y la optimicé para cubrir <strong>los 11 criterios de la rúbrica oficial</strong> sin pasarte del reloj: integré la <strong>Demo Vivencial</strong> justo después del problema (para que el jurado pruebe el producto), agregué <strong>ODS + Ecología Integral</strong> y <strong>Visión de Escalamiento</strong> antes del pedido, y repartí el habla entre los <strong>3 integrantes</strong> para asegurar 10/10 en Cohesión.
+          </p>
+          <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-2 text-center text-xs">
+            <div class="bg-sky-50 border border-sky-200 rounded-lg p-2.5">
+              <div class="mono font-bold text-[#003b81]">0:00 – 0:25</div>
+              <div class="font-extrabold mt-0.5">1. Gancho & Dolor</div>
+              <div class="text-slate-500">Joselyn</div>
+            </div>
+            <div class="bg-teal-50 border border-teal-200 rounded-lg p-2.5">
+              <div class="mono font-bold text-teal-800">0:25 – 0:55</div>
+              <div class="font-extrabold mt-0.5">2. Evidencia PUCE</div>
+              <div class="text-slate-500">Joselyn → Gabriel</div>
+            </div>
+            <div class="bg-amber-50 border border-amber-200 rounded-lg p-2.5">
+              <div class="mono font-bold text-amber-800">0:55 – 1:40</div>
+              <div class="font-extrabold mt-0.5">3. Demo Vivencial</div>
+              <div class="text-slate-500">Gabriel (45s)</div>
+            </div>
+            <div class="bg-indigo-50 border border-indigo-200 rounded-lg p-2.5">
+              <div class="mono font-bold text-indigo-800">1:40 – 2:10</div>
+              <div class="font-extrabold mt-0.5">4. Modelo & Dinero</div>
+              <div class="text-slate-500">Paúl</div>
+            </div>
+            <div class="bg-emerald-50 border border-emerald-200 rounded-lg p-2.5">
+              <div class="mono font-bold text-emerald-800">2:10 – 2:35</div>
+              <div class="font-extrabold mt-0.5">5. Visión, IP & ODS</div>
+              <div class="text-slate-500">Paúl</div>
+            </div>
+            <div class="bg-slate-900 text-white rounded-lg p-2.5">
+              <div class="mono font-bold text-[#06b2b3]">2:35 – 2:50</div>
+              <div class="font-extrabold mt-0.5">6. Pedido & Cierre</div>
+              <div class="text-sky-200">Paúl / Todos</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- GUION DETALLADO POR BLOQUE Y VOCERO -->
+        <div class="space-y-4">
+
+          <!-- BLOQUE 1 -->
+          <div class="bg-white rounded-xl border border-slate-200 p-5 shadow-sm speaker-joselyn">
+            <div class="flex flex-wrap items-center justify-between gap-2 mb-3">
+              <div class="flex items-center gap-2">
+                <span class="mono bg-teal-100 text-teal-900 font-bold text-xs px-2.5 py-1 rounded">0:00 – 0:25 (25s)</span>
+                <h3 class="font-extrabold text-slate-900">BLOQUE 1 · GANCHO CON HISTORIA REAL Y DATO OFICIAL</h3>
+              </div>
+              <span class="text-xs font-bold bg-teal-600 text-white px-3 py-1 rounded-full">Habla: Joselyn Cadena</span>
+            </div>
+            <div class="bg-slate-50 rounded-lg p-4 text-sm sm:text-base leading-relaxed text-slate-800 italic border border-slate-200">
+              «Eligió su carrera leyendo una malla en PDF que no entendía. Al primer semestre, su familia pagó cuatro tutores particulares de Álgebra para que no se retire. Se llama Camila, tiene 19 años y estudia aquí, en la PUCE. Su historia no es rara: según la <strong>SENESCYT</strong>, el <strong>20,46% de los universitarios en Ecuador abandona sus estudios</strong> —cerca de <strong>150.000 jóvenes cada año</strong>— y la propia Dirección de Admisiones de la PUCE nos confirmó que <strong>más del 50% de los aspirantes llega sin saber qué elegir</strong>.»
+            </div>
+            <div class="mt-3 text-xs text-slate-500 flex flex-wrap gap-4">
+              <span><strong>🎯 Acción escénica:</strong> Joselyn sostiene un impreso pequeño con la cita de SENESCYT (20,46%) o señala el póster con la fuente visible.</span>
+              <span><strong>✅ Rúbrica:</strong> Gancho &lt; 10s · Dato con fuente verificable · Idea.</span>
+            </div>
+          </div>
+
+          <!-- BLOQUE 2 -->
+          <div class="bg-white rounded-xl border border-slate-200 p-5 shadow-sm speaker-joselyn">
+            <div class="flex flex-wrap items-center justify-between gap-2 mb-3">
+              <div class="flex items-center gap-2">
+                <span class="mono bg-teal-100 text-teal-900 font-bold text-xs px-2.5 py-1 rounded">0:25 – 0:55 (30s)</span>
+                <h3 class="font-extrabold text-slate-900">BLOQUE 2 · EVIDENCIA DE CAMPO, PSICOLOGÍA Y PROPUESTA DE VALOR</h3>
+              </div>
+              <span class="text-xs font-bold bg-teal-600 text-white px-3 py-1 rounded-full">Habla: Joselyn Cadena (pasa a Gabriel)</span>
+            </div>
+            <div class="bg-slate-50 rounded-lg p-4 text-sm sm:text-base leading-relaxed text-slate-800 italic border border-slate-200">
+              «El test web actual de la universidad es de 2019, tiene 70 preguntas infinitas y solo entrega áreas genéricas que no orientan a nada. En nuestras <strong>12 entrevistas Mom Test</strong>, 8 de 12 estudiantes confirmaron que esos tests los confunden más. Por eso creamos <strong>Orienta PUCE</strong>, un embudo vocacional inteligente en 3 etapas: primero identifica los <strong>intereses</strong> y orienta al estudiante hacia un dominio específico; segundo, aplica una <strong>evaluación psicométrica ágil de 16 a 24 preguntas</strong> desarrollada y validada con la <strong>Escuela de Psicología de la PUCE</strong>; y tercero, entrega un <strong>Podio interactivo con su Top 3 de carreras exactas (Oro, Plata y Bronce)</strong>. En cada carrera, el estudiante compara su malla oficial, aranceles con descuento, el acompañamiento de <strong>AurelioBot</strong> y un <strong>micro-reto práctico de primer semestre ya implementado para cada carrera</strong>. En nuestra validación con <strong>40 estudiantes de 3.° de Bachillerato del Colegio Suyana</strong>, el <strong>85% la calificó como útil o muy útil</strong> y el <strong>80% dejó su contacto real</strong> para usarla. Gabriel les muestra en vivo cómo funciona.»
+            </div>
+            <div class="mt-3 text-xs text-slate-500 flex flex-wrap gap-4">
+              <span><strong>🎯 Relevo limpio:</strong> Joselyn da un paso al costado y señala la tablet/celular abierto que ya sostiene Gabriel.</span>
+              <span><strong>✅ Rúbrica:</strong> Propuesta de valor · Creatividad e innovación · Cohesión.</span>
+            </div>
+          </div>
+
+          <!-- BLOQUE 3 -->
+          <div class="bg-white rounded-xl border border-slate-200 p-5 shadow-sm speaker-gabriel">
+            <div class="flex flex-wrap items-center justify-between gap-2 mb-3">
+              <div class="flex items-center gap-2">
+                <span class="mono bg-amber-100 text-amber-900 font-bold text-xs px-2.5 py-1 rounded">0:55 – 1:40 (45s)</span>
+                <h3 class="font-extrabold text-slate-900">BLOQUE 3 · DEMO VIVENCIAL EN VIVO (EL JURADO USA EL PMV)</h3>
+              </div>
+              <span class="text-xs font-bold bg-amber-500 text-slate-950 px-3 py-1 rounded-full">Habla: Gabriel Aguinaga (pasa a Paúl)</span>
+            </div>
+            <div class="bg-slate-50 rounded-lg p-4 text-sm sm:text-base leading-relaxed text-slate-800 italic border border-slate-200">
+              «Imaginen que hoy tienen 17 años y van a elegir carrera —<em>[entrega el celular/laptop con la app abierta al jurado]</em>—. En lugar de un cuestionario eterno, miren el embudo: en la <strong>Fase 1</strong> seleccionan su área de mayor interés; el sistema los orienta a su dominio y en la <strong>Fase 2</strong> responden entre 16 y 24 preguntas balanceadas de la Escuela de Psicología PUCE. En menos de 5 minutos llegan a la <strong>Fase 3: su Podio interactivo con el Top 3 de carreras recomendadas (Oro, Plata y Bronce)</strong>. Toquen la carrera que quieran comparar: ven su porcentaje de compatibilidad, su malla por semestres, aranceles con descuento institucional y aquí está nuestro diferencial: toquen <strong>"Resolver micro-reto"</strong>. En 2 minutos experimentan un caso real de primer año con retroalimentación formativa inmediata. Y ante cualquier duda de materias o costos, <strong>AurelioBot</strong> —nuestro orientador con IA ultrarrápida— responde en menos de un segundo con datos oficiales de la PUCE y costo casi cero. Si el estudiante desea asesoría formal, el modal con <strong>consentimiento LOPDP</strong> lo conecta con Admisiones. Todo esto ya está implementado para las 39 carreras y auditado con <strong>Microsoft Clarity en 15 sesiones reales en Ecuador</strong>: el <strong>100% ingresó desde su celular</strong>, con <strong>4,3 minutos de tiempo en la app</strong>, <strong>63,6% de profundidad de scroll</strong>, <strong>cero clics de frustración</strong> y <strong>cero errores de código</strong>. Paúl les cuenta cómo se sostiene el negocio.»
+            </div>
+            <div class="mt-3 text-xs text-slate-500 flex flex-wrap gap-4">
+              <span><strong>🎯 Regla de oro del Stand:</strong> Tener el PMV abierto en <strong>2 pantallas</strong> (laptop + celular) y una versión <strong>local sin internet</strong> lista por si colapsa el Wi-Fi del hall.</span>
+              <span><strong>✅ Rúbrica:</strong> Validación vivencial · Factibilidad (PMV terminado) · Dominio del tema.</span>
+            </div>
+          </div>
+
+          <!-- BLOQUE 4 -->
+          <div class="bg-white rounded-xl border border-slate-200 p-5 shadow-sm speaker-paul">
+            <div class="flex flex-wrap items-center justify-between gap-2 mb-3">
+              <div class="flex items-center gap-2">
+                <span class="mono bg-sky-100 text-[#003b81] font-bold text-xs px-2.5 py-1 rounded">1:40 – 2:10 (30s)</span>
+                <h3 class="font-extrabold text-slate-900">BLOQUE 4 · MODELO DE NEGOCIO, CIFRAS ECONÓMICAS Y ROI</h3>
+              </div>
+              <span class="text-xs font-bold bg-[#003b81] text-white px-3 py-1 rounded-full">Habla: Paúl Rosero</span>
+            </div>
+            <div class="bg-slate-50 rounded-lg p-4 text-sm sm:text-base leading-relaxed text-slate-800 italic border border-slate-200">
+              «Solo el 12,5% de los bachilleres pagaría por un test. Por eso nuestro modelo es <strong>SaaS B2B2C</strong>: 100% gratuito para el estudiante; <strong>paga la universidad</strong>.
+              ¿Qué gana Admisiones? Tres beneficios directos:
+              Primero, <strong>reduce drásticamente su Costo de Adquisición (CAC)</strong> —que hoy le cuesta entre <strong>$300 y $500 por alumno</strong> en ferias y publicidad— entregando prospectos con vocación comprobada y consentimiento legal.
+              Segundo, <strong>protege sus aranceles</strong>: cada estudiante que deserta le cuesta entre <strong>$1.800 y $2.600 por semestre</strong>.
+              Y tercero, <strong>telemetría en tiempo real</strong> de la demanda vocacional.
+              Por esta solución integral cobramos una suscripción de <strong>$300 al mes</strong> ($1.800 por ciclo semestral). Nuestra tecnología ligera en la nube nos cuesta menos de <strong>$5 al mes y fracciones de centavo en IA</strong>, dándonos un <strong>margen bruto superior al 75%</strong> para financiar soporte continuo, actualización de mallas con directores de carrera y sostenibilidad.
+              El retorno es contundente: <strong>retener a UN solo estudiante en primer semestre ya paga el 100% de la plataforma</strong>, y retener a 10 alumnos al año <strong>preserva más de $20.000 dólares netos</strong> para la universidad.»
+            </div>
+            <div class="mt-3 text-xs text-slate-500 flex flex-wrap gap-4">
+              <span><strong>🎯 Estrategia de valor antes de precio:</strong> Anclar primero los 3 beneficios (CAC $300-$500 + arancel $2.000 + telemetría) antes de soltar la cifra de $300/mes para que el jurado la perciba como una inversión mínima con ROI inmediato.</span>
+              <span><strong>✅ Rúbrica:</strong> Modelo de negocio · Factibilidad económica · CAC ($300-$500) y LTV.</span>
+            </div>
+          </div>
+
+          <!-- BLOQUE 5 -->
+          <div class="bg-white rounded-xl border border-slate-200 p-5 shadow-sm speaker-paul">
+            <div class="flex flex-wrap items-center justify-between gap-2 mb-3">
+              <div class="flex items-center gap-2">
+                <span class="mono bg-sky-100 text-[#003b81] font-bold text-xs px-2.5 py-1 rounded">2:10 – 2:35 (25s)</span>
+                <h3 class="font-extrabold text-slate-900">BLOQUE 5 · VISIÓN DE ESCALAMIENTO, ODS, ECOLOGÍA INTEGRAL Y ÉTICA</h3>
+              </div>
+              <span class="text-xs font-bold bg-[#003b81] text-white px-3 py-1 rounded-full">Habla: Paúl Rosero</span>
+            </div>
+            <div class="bg-slate-50 rounded-lg p-4 text-sm sm:text-base leading-relaxed text-slate-800 italic border border-slate-200">
+              «Nuestra visión a 3 años es: tras consolidar la <strong>PUCE y sus 7 sedes en 2027</strong>, proyectamos llegar a <strong>5 universidades en el año 2</strong> y a <strong>15 instituciones de educación superior en 3 años</strong>. Protegemos el código y la marca Orienta en el <strong>SENADI</strong>, cumplimos la <strong>Ley de Protección de Datos Personales</strong> con un test 100% anónimo para menores, y aportamos directamente al <strong>ODS 4 (Educación de Calidad)</strong>: democratizamos gratis una orientación vocacional personalizada que antes solo pagaban familias de altos ingresos, reduciendo la frustración y el fracaso académico; y a la <strong>Ecología Integral de Laudato Si'</strong>, eliminando miles de folletos de papel y cuidando la economía de las familias ecuatorianas.»
+            </div>
+            <div class="mt-3 text-xs text-slate-500 flex flex-wrap gap-4">
+              <span><strong>🎯 Blindaje total:</strong> Toca en 25 segundos Visión cuantificada + CES + SENADI + LOPDP + ODS 4 + Ecología Integral.</span>
+              <span><strong>✅ Rúbrica:</strong> ODS y Ecología Integral · Propiedad Intelectual y Ética.</span>
+            </div>
+          </div>
+
+          <!-- BLOQUE 6 -->
+          <div class="bg-slate-900 text-white rounded-xl p-5 shadow-md">
+            <div class="flex flex-wrap items-center justify-between gap-2 mb-3">
+              <div class="flex items-center gap-2">
+                <span class="mono bg-[#06b2b3] text-white font-bold text-xs px-2.5 py-1 rounded">2:35 – 2:50 (15s)</span>
+                <h3 class="font-extrabold text-white">BLOQUE 6 · EL PEDIDO CONCRETO Y FRASE DE CIERRE</h3>
+              </div>
+              <span class="text-xs font-bold bg-white/15 text-sky-200 px-3 py-1 rounded-full">Habla: Paúl Rosero (los 3 de pie y firmes)</span>
+            </div>
+            <div class="bg-white/10 rounded-lg p-4 text-sm sm:text-base leading-relaxed text-sky-50 italic border border-white/15">
+              «Hoy buscamos <strong>capital semilla e incubación en PUCEmprende</strong> para registrar nuestra marca y software en el SENADI, y mentores estratégicos que nos conecten con otras universidades e instituciones de educación superior para cumplir nuestra visión. Somos <strong>Orienta PUCE</strong>: <em>porque elegir una carrera no debería ser lanzar una moneda al aire, sino probar tu futuro antes de dar el primer paso.</em> Muchas gracias, quedamos atentos a sus preguntas.»
+            </div>
+            <div class="mt-3 text-xs text-sky-200">
+              <strong>⏱️ Clave de cierre:</strong> Detenerse exactamente en <strong>02:50</strong>. Sonreír, mirar al jurado y esperar la Carta del Jurado (Minuto 3:00 a 4:00).
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+      <!-- ========================================================= -->
+      <!-- TAB 2: BANCO DE DATOS VERIFICADOS CON FUENTES CITABLES    -->
+      <!-- ========================================================= -->
+      <section id="tab-datos" class="tab-panel">
+        <div class="bg-white rounded-2xl border border-slate-200 p-6 shadow-sm mb-6">
+          <h2 class="text-xl font-black text-[#003b81] mb-1">Estadísticas Oficiales Verificadas (Fuentes Externas Citables)</h2>
+          <p class="text-xs sm:text-sm text-slate-500 mb-5">Regla del Cine-Foro (A&R): <em>«Un número sin fuente parece inventado; con fuente visible en pantalla o póster, el jurado lo toma en serio.»</em></p>
+
+          <div class="overflow-x-auto">
+            <table class="w-full text-left border-collapse text-xs sm:text-sm">
+              <thead>
+                <tr class="bg-slate-100 text-[#003b81] border-b-2 border-slate-300">
+                  <th class="p-3 font-extrabold">Cifra Clave</th>
+                  <th class="p-3 font-extrabold">Qué Demuestra en el Pitch</th>
+                  <th class="p-3 font-extrabold">Fuente Oficial Citable</th>
+                </tr>
+              </thead>
+              <tbody class="divide-y divide-slate-200">
+                <tr>
+                  <td class="p-3 font-black text-red-700 text-base">20,46% (~150.000 jóvenes/año)</td>
+                  <td class="p-3">Tasa de deserción universitaria en Ecuador (21,28% hombres; 16,02% mujeres), concentrada en los primeros semestres.</td>
+                  <td class="p-3 font-semibold text-slate-700">Estudio SENESCYT (citado por Teleamazonas, 2023 y reportes 2026)</td>
+                </tr>
+                <tr>
+                  <td class="p-3 font-black text-red-700 text-base">46% en los 2 primeros años</td>
+                  <td class="p-3">En cohortes analizadas en Ecuador (deserción acumulada hasta 40%), casi la mitad abandona al inicio por factores motivacionales y de elección, no solo económicos.</td>
+                  <td class="p-3 font-semibold text-slate-700">Revista científica Redalyc / Ciencia Latina (2024)</td>
+                </tr>
+                <tr>
+                  <td class="p-3 font-black text-[#003b81] text-base">Solo ~40% alineado a vocación</td>
+                  <td class="p-3">Solo 4 de cada 10 estudiantes escoge una carrera acorde a su vocación real; el resto entra con alto riesgo de cambio o abandono.</td>
+                  <td class="p-3 font-semibold text-slate-700">Informes de deserción universitaria Ecuador / SENESCYT (2026)</td>
+                </tr>
+                <tr>
+                  <td class="p-3 font-black text-[#003b81] text-base">280 IES en Ecuador</td>
+                  <td class="p-3">Mercado B2B real: <strong>64 universidades y politécnicas</strong> (36 públicas, 20 particulares autofinanciadas, 8 cofinanciadas) + <strong>216 institutos superiores</strong> (62 públicos, 154 particulares).</td>
+                  <td class="p-3 font-semibold text-slate-700">Consejo de Educación Superior — CES (Estadísticas IES vigentes)</td>
+                </tr>
+                <tr>
+                  <td class="p-3 font-black text-emerald-700 text-base">$395 matrícula + ~$2.600 arancel</td>
+                  <td class="p-3">Respaldo oficial del costo de un desertor en la PUCE: arancel semestral de grado en lista $3.950 / con descuento institucional ~$2.600 (rango conservador $1.500–$2.500).</td>
+                  <td class="p-3 font-semibold text-slate-700">Tabla Oficial de Aranceles, Matrículas y Derechos PUCE (Agosto 2026)</td>
+                </tr>
+                <tr>
+                  <td class="p-3 font-black text-rose-700 text-base">$300 a $500 CAC / estudiante</td>
+                  <td class="p-3">Costo de Adquisición de Cliente (CAC) de una universidad privada en Ecuador (ferias, stands de $2.000, promotores, pauta y folletos). Orienta PUCE reduce este costo entregando prospectos calificados con consentimiento.</td>
+                  <td class="p-3 font-semibold text-slate-700">Métricas de Admisiones Universitarias / Benchmarks EdTech Higher Ed LATAM (2025–2026)</td>
+                </tr>
+                <tr>
+                  <td class="p-3 font-black text-[#003b81] text-base">26.300+ estudiantes · 52 carreras Quito</td>
+                  <td class="p-3">Escala interna del primer cliente: la PUCE tiene 7 sedes nacionales, 10 campus y 135 carreras de grado a nivel país (52 en Quito).</td>
+                  <td class="p-3 font-semibold text-slate-700">Portal Institucional PUCE / Conexión PUCE</td>
+                </tr>
+                <tr>
+                  <td class="p-3 font-black text-sky-700 text-base">&lt; $0,0004 USD / consulta</td>
+                  <td class="p-3">Costo unitario de IA de AurelioBot en Groq Cloud (Llama 3.3 70B Versatile); $0 en modo offline. Orientar a 10.000 aspirantes cuesta menos de $20 USD/año.</td>
+                  <td class="p-3 font-semibold text-slate-700">Tarifario Oficial Groq Cloud LPU (Tokens Pricing 2026)</td>
+                </tr>
+                <tr>
+                  <td class="p-3 font-black text-slate-800 text-base">~300.000 bachilleres/año</td>
+                  <td class="p-3">Volumen anual de graduados de bachillerato en Ecuador (más de 145.000 matriculados en educación superior en Quito).</td>
+                  <td class="p-3 font-semibold text-slate-700">Quito Cómo Vamos / SENESCYT (2024–2025) y Revista Verdad y Derecho (2025)</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <!-- Evidencia propia verificable -->
+        <div class="bg-white rounded-2xl border border-slate-200 p-6 shadow-sm">
+          <h2 class="text-xl font-black text-teal-800 mb-1">Evidencia Propia de Campo (Orienta PUCE · Developers CARF)</h2>
+          <p class="text-xs sm:text-sm text-slate-500 mb-5">Datos auditables de comportamiento real y compromiso, no simples opiniones de compañeros.</p>
+
+          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-3">
+            <div class="bg-sky-50 border border-sky-200 rounded-xl p-4">
+              <div class="text-2xl font-black text-[#003b81]">12 Entrevistas</div>
+              <div class="text-xs font-bold text-sky-900 uppercase mt-1">Método Mom Test</div>
+              <p class="text-xs text-slate-700 mt-2"><strong>8/12 (67%)</strong> reportaron que los tests genéricos confunden. <strong>6/12</strong> pagaron $15–$25/h en tutores o usaron IA sobre 30 PDFs (Camila Nejer).</p>
+            </div>
+
+            <div class="bg-teal-50 border border-teal-200 rounded-xl p-4">
+              <div class="text-2xl font-black text-teal-800">40 Encuestas</div>
+              <div class="text-xs font-bold text-teal-900 uppercase mt-1">100% Segmento Real (Col. Suyana)</div>
+              <p class="text-xs text-slate-700 mt-2"><strong>85%</strong> útil/muy útil (0% negativa). <strong>80% (32/40)</strong> dejó contacto real (meta era 21). <strong>70%</strong> exige ≤15 min. Solo <strong>12,5%</strong> pagaría directo → valida modelo B2B.</p>
+            </div>
+
+            <div class="bg-amber-50 border border-amber-200 rounded-xl p-4">
+              <div class="text-2xl font-black text-amber-800">5 Usuarias (U1–U5)</div>
+              <div class="text-xs font-bold text-amber-900 uppercase mt-1">Pruebas Reales de Usabilidad</div>
+              <p class="text-xs text-slate-700 mt-2"><strong>100% (5/5)</strong> completó el flujo en 3–6,5 min. Iteración demostrada de v0.2.0 → v0.3.0: botones ≥44px, tono formativo y ajuste de teclado móvil.</p>
+            </div>
+
+            <div class="bg-purple-50 border border-purple-200 rounded-xl p-4">
+              <div class="text-2xl font-black text-purple-900">15 Sesiones Clarity</div>
+              <div class="text-xs font-bold text-purple-900 uppercase mt-1">Telemetría en Vivo (Ecuador)</div>
+              <p class="text-xs text-slate-700 mt-2"><strong>100% móvil</strong> (66,7% Android, 33,3% iOS). <strong>4,3 min</strong> tiempo total (2 min activos). <strong>63,6%</strong> scroll depth. <strong>0% rage clicks</strong> y <strong>0 errores JS</strong>. Datos auditados en producción.</p>
+            </div>
+
+            <div class="bg-indigo-50 border border-indigo-200 rounded-xl p-4">
+              <div class="text-2xl font-black text-indigo-900">Aval Admisiones</div>
+              <div class="text-xs font-bold text-indigo-900 uppercase mt-1">Mgs. Ma. Soledad Enderica</div>
+              <p class="text-xs text-slate-700 mt-2">Entregó el banco inicial de preguntas, confirmó que &gt;50% duda y que cuando hay guía (51 citas), el <strong>73% de admitidos se matricula</strong>. Ofreció autoría intelectual.</p>
+            </div>
+          </div>
+
+          <!-- Panel de Auditoría Microsoft Clarity -->
+          <div class="mt-4 p-4 bg-slate-900 text-white rounded-xl text-xs sm:text-sm">
+            <div class="flex flex-wrap items-center justify-between gap-2 border-b border-white/15 pb-2 mb-3">
+              <span class="font-extrabold text-[#06b2b3] uppercase tracking-wider flex items-center gap-1.5">
+                <span>📊 Auditoría Microsoft Clarity en Producción</span>
+                <span class="bg-emerald-500/20 text-emerald-300 text-[11px] px-2 py-0.5 rounded-full font-bold">15 Sesiones · Noviembre 2026</span>
+              </span>
+              <span class="text-slate-400 text-xs">Dominio: emprendimiento-mvp.onrender.com (ID: zejivqnass)</span>
+            </div>
+            <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-3 text-center">
+              <div class="bg-white/5 rounded-lg p-2.5">
+                <div class="text-slate-400 text-[11px]">Dispositivos</div>
+                <div class="font-black text-white text-base mt-0.5">100% Celular</div>
+                <div class="text-sky-300 text-[10px]">67% Chrome · 33% Safari</div>
+              </div>
+              <div class="bg-white/5 rounded-lg p-2.5">
+                <div class="text-slate-400 text-[11px]">Tiempo en App</div>
+                <div class="font-black text-white text-base mt-0.5">4,3 min</div>
+                <div class="text-emerald-300 text-[10px]">2,0 min activos</div>
+              </div>
+              <div class="bg-white/5 rounded-lg p-2.5">
+                <div class="text-slate-400 text-[11px]">Profundidad Scroll</div>
+                <div class="font-black text-white text-base mt-0.5">63,6%</div>
+                <div class="text-sky-300 text-[10px]">Llegan a podio y retos</div>
+              </div>
+              <div class="bg-white/5 rounded-lg p-2.5">
+                <div class="text-slate-400 text-[11px]">Páginas / Sesión</div>
+                <div class="font-black text-white text-base mt-0.5">1,67 págs</div>
+                <div class="text-slate-300 text-[10px]">Flujo completo</div>
+              </div>
+              <div class="bg-white/5 rounded-lg p-2.5">
+                <div class="text-slate-400 text-[11px]">Rage Clicks</div>
+                <div class="font-black text-emerald-400 text-base mt-0.5">0% (0 clics)</div>
+                <div class="text-emerald-300 text-[10px]">Cero frustración UX</div>
+              </div>
+              <div class="bg-white/5 rounded-lg p-2.5">
+                <div class="text-slate-400 text-[11px]">Errores de Código</div>
+                <div class="font-black text-emerald-400 text-base mt-0.5">0 errores</div>
+                <div class="text-emerald-300 text-[10px]">100% estabilidad JS</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ========================================================= -->
+      <!-- TAB 3: SIMULADOR DE CARTAS DEL JURADO (Q&A BLINDADO)      -->
+      <!-- ========================================================= -->
+      <section id="tab-jurado" class="tab-panel">
+        <div class="bg-white rounded-2xl border border-slate-200 p-6 shadow-sm mb-4">
+          <h2 class="text-xl font-black text-[#003b81] mb-1">Las 6 Cartas Oficiales del Jurado + 8 Preguntas Clave Blindadas (Q&A de Alta Precisión)</h2>
+          <p class="text-xs sm:text-sm text-slate-500 mb-4">Haz clic en cualquier carta para practicar la respuesta blindada de 20–30 segundos. Cada integrante debe saber responder <strong>cualquier</strong> carta.</p>
+
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+
+            <!-- CARTA 1 -->
+            <div class="border border-slate-200 rounded-xl overflow-hidden shadow-sm">
+              <button onclick="toggleCard(this)" class="w-full text-left bg-slate-50 hover:bg-sky-50 p-4 flex justify-between items-center cursor-pointer transition">
+                <div>
+                  <span class="text-[11px] font-extrabold uppercase tracking-wider bg-blue-100 text-[#003b81] px-2 py-0.5 rounded">Carta 1 · Empresa Privada</span>
+                  <div class="font-extrabold text-slate-900 mt-1 text-sm sm:text-base">«¿Cuántos clientes necesitan para cubrir sus costos?»</div>
+                </div>
+                <span class="text-xl font-bold text-[#003b81]">+</span>
+              </button>
+              <div class="card-flip-answer p-4 bg-white border-t border-slate-200 text-xs sm:text-sm text-slate-700 leading-relaxed">
+                <strong class="text-[#003b81]">Respuesta exacta (20s):</strong> «Con <strong>un solo cliente institucional</strong> ya somos rentables desde el primer mes. Nuestra arquitectura web ligera cuesta menos de <strong>$5 al mes en servidor</strong> y menos de <strong>$0,0004 por consulta de IA</strong>. Una sola suscripción de <strong>$300 al mes ($1.800 al semestre)</strong> nos da un <strong>margen bruto superior al 75%</strong> para financiar soporte, actualización de mallas y tasas del SENADI. Y para la universidad, considerando que su Costo de Adquisición (CAC) es de $300 a $500 por alumno y su arancel semestral es de $2.000, <strong>evitar que un solo estudiante deserte ya paga el 100% del contrato</strong>.»
+              </div>
+            </div>
+
+            <!-- CARTA 2 -->
+            <div class="border border-slate-200 rounded-xl overflow-hidden shadow-sm">
+              <button onclick="toggleCard(this)" class="w-full text-left bg-slate-50 hover:bg-emerald-50 p-4 flex justify-between items-center cursor-pointer transition">
+                <div>
+                  <span class="text-[11px] font-extrabold uppercase tracking-wider bg-emerald-100 text-emerald-900 px-2 py-0.5 rounded">Carta 2 · Autoridad PUCE</span>
+                  <div class="font-extrabold text-slate-900 mt-1 text-sm sm:text-base">«¿Qué tiene que ver con los ODS y la ecología integral?»</div>
+                </div>
+                <span class="text-xl font-bold text-emerald-700">+</span>
+              </button>
+              <div class="card-flip-answer p-4 bg-white border-t border-slate-200 text-xs sm:text-sm text-slate-700 leading-relaxed">
+                <strong class="text-emerald-800">Respuesta exacta (25s):</strong> «Aportamos directamente al <strong>ODS 4 (Educación de Calidad)</strong> y al <strong>ODS 10 (Reducción de Desigualdades)</strong> porque democratizamos gratuitamente una orientación vocacional práctica que antes solo pagaban familias con $200 para preuniversitarios o psicólogos privados. Y desde la <strong>Ecología Integral de Laudato Si'</strong> —que une lo ambiental y lo humano— eliminamos miles de folletos y trípticos impresos en ferias colegiales (cero papel, software ultraligero de bajo consumo energético) mientras protegemos la dignidad, salud mental y economía familiar de jóvenes que eligen su proyecto de vida.»
+              </div>
+            </div>
+
+            <!-- CARTA 3 -->
+            <div class="border border-slate-200 rounded-xl overflow-hidden shadow-sm">
+              <button onclick="toggleCard(this)" class="w-full text-left bg-slate-50 hover:bg-teal-50 p-4 flex justify-between items-center cursor-pointer transition">
+                <div>
+                  <span class="text-[11px] font-extrabold uppercase tracking-wider bg-teal-100 text-teal-900 px-2 py-0.5 rounded">Carta 3 · Exalumno</span>
+                  <div class="font-extrabold text-slate-900 mt-1 text-sm sm:text-base">«¿Por qué ustedes y no otro equipo (o MiCampus / Skill-Link)?»</div>
+                </div>
+                <span class="text-xl font-bold text-teal-700">+</span>
+              </button>
+              <div class="card-flip-answer p-4 bg-white border-t border-slate-200 text-xs sm:text-sm text-slate-700 leading-relaxed">
+                <strong class="text-teal-800">Respuesta exacta (25s):</strong> «Por tres hechos verificables: primero, <strong>no somos una idea en diapositivas</strong>: estamos entre los <strong>5 equipos de 77</strong> que ya tienen un PMV terminado, publicado en la nube y probado con bachilleres reales. Segundo, a diferencia de simples directorios o portales estáticos, resolvemos el problema con un <strong>embudo estructurado</strong>: exploración de intereses, test psicométrico oficial por dominio con la <strong>Escuela de Psicología PUCE</strong>, y un <strong>Podio Top 3 de carreras</strong> donde cada una cuenta con su <strong>micro-reto formativo ya implementado</strong>, mallas oficiales y tutor inteligente AurelioBot. Y tercero, resolvemos el modelo de negocio: <strong>paga Admisiones de la universidad para evitar deserciones</strong>, no el bachiller.»
+              </div>
+            </div>
+
+            <!-- CARTA 4 -->
+            <div class="border border-slate-200 rounded-xl overflow-hidden shadow-sm">
+              <button onclick="toggleCard(this)" class="w-full text-left bg-slate-50 hover:bg-amber-50 p-4 flex justify-between items-center cursor-pointer transition">
+                <div>
+                  <span class="text-[11px] font-extrabold uppercase tracking-wider bg-amber-100 text-amber-900 px-2 py-0.5 rounded">Carta 4 · Inversionista</span>
+                  <div class="font-extrabold text-slate-900 mt-1 text-sm sm:text-base">«¿Y si una empresa grande o la propia universidad los copia?»</div>
+                </div>
+                <span class="text-xl font-bold text-amber-700">+</span>
+              </button>
+              <div class="card-flip-answer p-4 bg-white border-t border-slate-200 text-xs sm:text-sm text-slate-700 leading-relaxed">
+                <strong class="text-amber-800">Respuesta exacta (25s):</strong> «Cualquiera puede copiar un formulario web, pero no puede copiar nuestra <strong>ventaja injusta</strong>: el <strong>banco curado de micro-retos calibrados con directores de carrera y psicopedagogía</strong> sobre las materias filtro locales —como saber qué temas de Álgebra o Morfofunción generan deserción aquí en Ecuador—, más la trazabilidad de datos hacia los asesores. Además, blindamos el software y base de datos por <strong>derecho de autor ($20)</strong> y la marca <strong>Orienta ($208)</strong> en el <strong>SENADI</strong>, y para una universidad es 10 veces más barato y rápido licenciar nuestra solución validada que mantener un equipo interno de desarrollo.»
+              </div>
+            </div>
+
+            <!-- CARTA 5 -->
+            <div class="border border-slate-200 rounded-xl overflow-hidden shadow-sm">
+              <button onclick="toggleCard(this)" class="w-full text-left bg-slate-50 hover:bg-indigo-50 p-4 flex justify-between items-center cursor-pointer transition">
+                <div>
+                  <span class="text-[11px] font-extrabold uppercase tracking-wider bg-indigo-100 text-indigo-900 px-2 py-0.5 rounded">Carta 5 · Cliente</span>
+                  <div class="font-extrabold text-slate-900 mt-1 text-sm sm:text-base">«Muéstreme cómo lo uso en diez segundos.»</div>
+                </div>
+                <span class="text-xl font-bold text-indigo-700">+</span>
+              </button>
+              <div class="card-flip-answer p-4 bg-white border-t border-slate-200 text-xs sm:text-sm text-slate-700 leading-relaxed">
+                <strong class="text-indigo-800">Coreografía exacta (10s):</strong> <strong>No expliques, entrega el teléfono:</strong> <em>«Escanea este QR —sin registros previos obligatorios—: seleccionas tu área de interés, respondes las preguntas psicométricas de la Escuela de Psicología PUCE y obtienes tu Podio interactivo con el Top 3 de carreras afines. Toca el primer puesto: aquí exploras su malla curricular, resuelves su micro-reto práctico real de la carrera y consultas tus dudas con AurelioBot. Todo en menos de 5 minutos.»</em> (Tener la pantalla precargada en la fase de podio/resultados en el segundo dispositivo para enseñarlo al instante).
+              </div>
+            </div>
+
+            <!-- CARTA 6 -->
+            <div class="border border-slate-200 rounded-xl overflow-hidden shadow-sm">
+              <button onclick="toggleCard(this)" class="w-full text-left bg-slate-50 hover:bg-rose-50 p-4 flex justify-between items-center cursor-pointer transition">
+                <div>
+                  <span class="text-[11px] font-extrabold uppercase tracking-wider bg-rose-100 text-rose-900 px-2 py-0.5 rounded">Carta 6 · Abogada</span>
+                  <div class="font-extrabold text-slate-900 mt-1 text-sm sm:text-base">«¿Cómo cuidan los datos personales de menores de edad?»</div>
+                </div>
+                <span class="text-xl font-bold text-rose-700">+</span>
+              </button>
+              <div class="card-flip-answer p-4 bg-white border-t border-slate-200 text-xs sm:text-sm text-slate-700 leading-relaxed">
+                <strong class="text-rose-800">Respuesta jurídica blindada (25s):</strong> «Cumplimos estrictamente la <strong>Ley Orgánica de Protección de Datos Personales de Ecuador (2021)</strong> bajo principio de minimización y privacidad por diseño: el recorrido central —intereses, test de dominio, Podio Top 3, micro-retos y AurelioBot— es <strong>100% anónimo</strong>, no pide cédula ni contraseñas. Conforme al <strong>Art. 21 de la LOPDP</strong>, los adolescentes desde 15 años pueden otorgar consentimiento; por eso, solo si el joven decide voluntariamente solicitar acompañamiento de la PUCE, abre el modal institucional que cuenta con <strong>aviso de privacidad explícito (disclaimer) y checkbox obligatorio de consentimiento</strong>. Sin marcar dicha casilla, el sistema no almacena ni envía datos a Supabase, garantizando trazabilidad y derecho de revocación.»
+              </div>
+            </div>
+
+            <!-- PREGUNTA EXTRA 7: IA HONESTA -->
+            <div class="border border-slate-200 rounded-xl overflow-hidden shadow-sm">
+              <button onclick="toggleCard(this)" class="w-full text-left bg-slate-50 hover:bg-purple-50 p-4 flex justify-between items-center cursor-pointer transition">
+                <div>
+                  <span class="text-[11px] font-extrabold uppercase tracking-wider bg-purple-100 text-purple-900 px-2 py-0.5 rounded">Pregunta Clave · IA Honesta</span>
+                  <div class="font-extrabold text-slate-900 mt-1 text-sm sm:text-base">«¿Qué hace exactamente la IA hoy y qué pasa si alucina o da un mal consejo vocacional?»</div>
+                </div>
+                <span class="text-xl font-bold text-purple-700">+</span>
+              </button>
+              <div class="card-flip-answer p-4 bg-white border-t border-slate-200 text-xs sm:text-sm text-slate-700 leading-relaxed">
+                <strong class="text-purple-800">Respuesta honesta y técnica (25s):</strong> «Hoy en nuestro PMV, AurelioBot utiliza una arquitectura de <strong>anclaje estricto por contexto (In-Context Grounding)</strong> conectada a <strong>Groq Cloud (Llama 3.3 70B)</strong> y un motor determinista local de respaldo 100% offline. <strong>No alucina</strong> porque sus instrucciones y respuestas se alimentan exclusivamente de las 39 carreras oficiales de la PUCE (mallas, aranceles, duración y salidas laborales). Para la siguiente fase de licenciamiento institucional, el roadmap técnico contempla evolucionar hacia un <strong>RAG (Retrieval-Augmented Generation) sobre Supabase pgvector</strong> para indexar reglamentos, convalidaciones y becas de las 7 sedes PUCE. Y lo más importante: <strong>la IA orienta y explica, pero nunca decide ni reemplaza al psicólogo</strong>; la decisión final es siempre humana.»
+              </div>
+            </div>
+
+            <!-- PREGUNTA EXTRA 8: SOSTENIBILIDAD POST-GRADUACIÓN -->
+            <div class="border border-slate-200 rounded-xl overflow-hidden shadow-sm">
+              <button onclick="toggleCard(this)" class="w-full text-left bg-slate-50 hover:bg-cyan-50 p-4 flex justify-between items-center cursor-pointer transition">
+                <div>
+                  <span class="text-[11px] font-extrabold uppercase tracking-wider bg-cyan-100 text-cyan-900 px-2 py-0.5 rounded">Pregunta Clave · Sostenibilidad</span>
+                  <div class="font-extrabold text-slate-900 mt-1 text-sm sm:text-base">«¿Quién paga el servidor y mantiene el sistema cuando ustedes se gradúen?»</div>
+                </div>
+                <span class="text-xl font-bold text-cyan-700">+</span>
+              </button>
+              <div class="card-flip-answer p-4 bg-white border-t border-slate-200 text-xs sm:text-sm text-slate-700 leading-relaxed">
+                <strong class="text-cyan-800">Respuesta exacta (20s):</strong> «El proyecto está diseñado para sobrevivir sin depender de que seamos estudiantes. Técnicamente corre en <strong>HTML, CSS y JS puro</strong> —sin frameworks pesados que se rompan— con plan de migración listo a <strong>Hostinger o integración directa en el WordPress institucional de la PUCE</strong>. Financieramente, el mantenimiento y el hosting ($5/mes) se cubren directamente con la <strong>cuota de suscripción anual de Admisiones ($1.800/ciclo)</strong> o mediante un convenio de transferencia operativa con la Dirección de Informática de la universidad.»
+              </div>
+            </div>
+
+            <!-- PREGUNTA EXTRA 9: AURELIO BOT & COSTOS DE IA -->
+            <div class="border border-slate-200 rounded-xl overflow-hidden shadow-sm">
+              <button onclick="toggleCard(this)" class="w-full text-left bg-slate-50 hover:bg-sky-50 p-4 flex justify-between items-center cursor-pointer transition">
+                <div>
+                  <span class="text-[11px] font-extrabold uppercase tracking-wider bg-sky-100 text-[#003b81] px-2 py-0.5 rounded">Pregunta Clave · Arquitectura & Costos IA</span>
+                  <div class="font-extrabold text-slate-900 mt-1 text-sm sm:text-base">«¿Cómo funciona Aurelio Bot y cuánto cuesta por consulta?»</div>
+                </div>
+                <span class="text-xl font-bold text-[#003b81]">+</span>
+              </button>
+              <div class="card-flip-answer p-4 bg-white border-t border-slate-200 text-xs sm:text-sm text-slate-700 leading-relaxed space-y-2">
+                <p>
+                  <strong class="text-[#003b81]">1. ¿Cómo funciona técnicamente? (Arquitectura Híbrida 2 Niveles):</strong><br>
+                  • <strong>Nivel Online (Groq Cloud · Llama 3.3 70B):</strong> Cuando hay conexión, el bot envía la consulta a chips LPU de Groq con <em>In-Context Grounding</em>: inyecta en el prompt del sistema la ficha oficial de la carrera activa (mallas, semestres, aranceles con descuento institucional y campo laboral). Responde en <strong>menos de 0,6 segundos</strong> con lenguaje juvenil y empático sin alucinar.<br>
+                  • <strong>Nivel Offline (Motor Determinista Local):</strong> Si el Wi-Fi del colegio o del stand colapsa, un motor semántico en JavaScript en el navegador del alumno responde al instante en <strong>0,01 segundos</strong> con datos oficiales sin consumir red.
+                </p>
+                <p>
+                  <strong class="text-emerald-700">2. ¿Cuánto cuesta por consulta? (Economía Unitaria Real):</strong><br>
+                  • <strong>Costo por consulta en la nube:</strong> En Groq Cloud, el modelo Llama 3.3 70B cuesta $0,59 por millón de tokens. Una consulta con su contexto usa ~500 tokens, lo que equivale a <strong>$0,0003 a $0,0004 USD (cuatro centésimas de centavo de dólar)</strong> por pregunta.<br>
+                  • <strong>Costo por estudiante completo:</strong> Si un bachiller hace 5 preguntas a AurelioBot, el costo total de IA es de apenas <strong>$0,002 USD (dos décimas de un centavo)</strong>.<br>
+                  • <strong>Costo en modo offline:</strong> <strong>$0,0000 USD</strong> (computación local en el dispositivo del usuario).<br>
+                  • <strong>Impacto financiero institucional:</strong> Orientar a <strong>10.000 bachilleres al año en IA cuesta menos de $20 USD</strong>, lo que hace que el margen de la suscripción de Admisiones ($1.800/ciclo) supere el <strong>98% de rentabilidad bruta</strong>.
+                </p>
+              </div>
+            </div>
+
+            <!-- PREGUNTA EXTRA 10: RETENCIÓN Y CÁLCULO DE LOS $20.000 -->
+            <div class="border border-slate-200 rounded-xl overflow-hidden shadow-sm">
+              <button onclick="toggleCard(this)" class="w-full text-left bg-slate-50 hover:bg-emerald-50 p-4 flex justify-between items-center cursor-pointer transition">
+                <div>
+                  <span class="text-[11px] font-extrabold uppercase tracking-wider bg-emerald-100 text-emerald-900 px-2 py-0.5 rounded">Pregunta Clave · Economía & Retención</span>
+                  <div class="font-extrabold text-slate-900 mt-1 text-sm sm:text-base">«¿Cómo ahorra la universidad más de $20.000 y cuál es el valor real de retener estudiantes?»</div>
+                </div>
+                <span class="text-xl font-bold text-emerald-700">+</span>
+              </button>
+              <div class="card-flip-answer p-4 bg-white border-t border-slate-200 text-xs sm:text-sm text-slate-700 leading-relaxed space-y-2">
+                <p>
+                  <strong class="text-emerald-800">1. Aranceles directos preservados (Lucro cesante evitado):</strong><br>
+                  Según la tabla oficial PUCE 2026, el arancel promedio por semestre ronda los <strong>$2.000 a $2.600 USD</strong>. Cuando un estudiante deserta en 1.º o 2.º semestre, ese cupo queda vacío: retener a solo <strong>10 estudiantes al año significa preservar entre $20.000 y $26.000 USD netos cada semestre</strong> ($40.000 a $52.000 al año) que entran a las facultades en lugar de perderse.
+                </p>
+                <p>
+                  <strong class="text-[#003b81]">2. Protección del Costo de Adquisición (CAC):</strong><br>
+                  Captar a cada aspirante mediante stands en ferias colegiales, asesores y pauta digital le cuesta a Admisiones entre <strong>$300 y $500 USD</strong>. Si el estudiante abandona en 3 meses por mala elección vocacional, toda esa inversión publicitaria se pierde al 100%.
+                </p>
+                <p>
+                  <strong class="text-slate-800">3. Eficiencia en costos fijos:</strong><br>
+                  El aula, los laboratorios y el salario del docente ya están pagados. Cada estudiante retenido aporta margen de contribución casi puro a la facultad. Nuestra suscripción de <strong>$300/mes ($1.800/ciclo)</strong> representa menos del <strong>9% del dinero que un solo alumno aporta</strong> a lo largo de su carrera.
+                </p>
+              </div>
+            </div>
+
+            <!-- PREGUNTA EXTRA 11: APORTE CONCRETO AL ODS 4 -->
+            <div class="border border-slate-200 rounded-xl overflow-hidden shadow-sm">
+              <button onclick="toggleCard(this)" class="w-full text-left bg-slate-50 hover:bg-sky-50 p-4 flex justify-between items-center cursor-pointer transition">
+                <div>
+                  <span class="text-[11px] font-extrabold uppercase tracking-wider bg-sky-100 text-[#003b81] px-2 py-0.5 rounded">Pregunta Clave · ODS 4 & Impacto Social</span>
+                  <div class="font-extrabold text-slate-900 mt-1 text-sm sm:text-base">«¿Cómo aporta exactamente Orienta PUCE al ODS 4 (Educación de Calidad)?»</div>
+                </div>
+                <span class="text-xl font-bold text-[#003b81]">+</span>
+              </button>
+              <div class="card-flip-answer p-4 bg-white border-t border-slate-200 text-xs sm:text-sm text-slate-700 leading-relaxed space-y-2">
+                <p>
+                  <strong class="text-[#003b81]">1. Meta 4.3 (Acceso igualitario a formación técnica y universitaria):</strong><br>
+                  Hoy la orientación vocacional personalizada es un privilegio de familias con recursos que pagan $200 a $400 en consultorios privados o preuniversitarios de élite. Orienta PUCE lo democratiza de forma <strong>100% gratuita y sin barreras de registro</strong> para bachilleres de colegios fiscales y fiscomisionales (como Fe y Alegría y Colegio Suyana).
+                </p>
+                <p>
+                  <strong class="text-teal-800">2. Meta 4.4 (Pertinencia formativa y reducción del fracaso académico):</strong><br>
+                  La deserción estudiantil en Ecuador (20,46% SENESCYT) destruye la calidad educativa. Al permitir que el joven resuelva micro-retos de materias reales de primer año antes de inscribirse, se garantiza que ingrese por vocación comprobada y no por confusión publicitaria, disminuyendo la reprobación y el cambio traumático de carrera.
+                </p>
+                <p>
+                  <strong class="text-indigo-800">3. Equidad STEAM sin sesgos de género:</strong><br>
+                  Presenta retos prácticos y neutrales en carreras tecnológicas (Sistemas, Ciencia de Datos, Biotecnología), incentivando vocaciones científicas en mujeres jóvenes desde el bachillerato.
+                </p>
+              </div>
+            </div>
+
+            <!-- PREGUNTA EXTRA 12: SENADI Y CAPITAL SEMILLA -->
+            <div class="border border-slate-200 rounded-xl overflow-hidden shadow-sm">
+              <button onclick="toggleCard(this)" class="w-full text-left bg-slate-50 hover:bg-amber-50 p-4 flex justify-between items-center cursor-pointer transition">
+                <div>
+                  <span class="text-[11px] font-extrabold uppercase tracking-wider bg-amber-100 text-amber-900 px-2 py-0.5 rounded">Pregunta Clave · SENADI & Capital Semilla</span>
+                  <div class="font-extrabold text-slate-900 mt-1 text-sm sm:text-base">«¿Por qué necesitan capital semilla para el SENADI y cuál es el proceso de registro?»</div>
+                </div>
+                <span class="text-xl font-bold text-amber-700">+</span>
+              </button>
+              <div class="card-flip-answer p-4 bg-white border-t border-slate-200 text-xs sm:text-sm text-slate-700 leading-relaxed space-y-2">
+                <p>
+                  <strong class="text-amber-900">1. Proceso oficial ante el SENADI en Ecuador:</strong><br>
+                  • <strong>Paso 1: Búsqueda Fonética previa ($16 USD):</strong> Para comprobar que el signo distintivo "Orienta" o "Orienta PUCE" no tenga identidades fonéticas conflictivas registradas.<br>
+                  • <strong>Paso 2: Solicitud de Marca (Signo Distintivo):</strong> Presentación digital en la plataforma de servicios del SENADI bajo la Clasificación Internacional de Niza: <strong>Clase 9</strong> (software de ordenador descargable) y <strong>Clase 41/42</strong> (servicios de orientación educativa y plataforma SaaS). Tasa oficial: <strong>$208 USD</strong> ($104 con 50% de descuento MIPYME).<br>
+                  • <strong>Paso 3: Examen de forma y publicación en Gaceta:</strong> Tras la revisión técnica, se publica en la Gaceta de Propiedad Intelectual para el periodo legal de oposiciones de 30 días hábiles.<br>
+                  • <strong>Paso 4: Título de Concesión:</strong> Si no hay oposiciones, el SENADI emite el título de registro de marca por <strong>10 años renovables</strong>.<br>
+                  • <strong>Paso 5: Registro de Soporte Lógico (Derecho de Autor):</strong> Registro del código fuente y base de datos (trámite R1.1, tasa oficial <strong>$20 USD</strong>).
+                </p>
+                <p>
+                  <strong class="text-[#003b81]">2. ¿Por qué pedimos capital semilla e incubación en PUCEmprende?</strong><br>
+                  • <strong>El capital semilla (aprox. $500 - $1.000 USD):</strong> Financia las tasas oficiales de las clases SENADI, búsqueda fonética y despliegue del entorno cloud productivo.<br>
+                  • <strong>La incubación en PUCEmprende:</strong> Nos brinda <strong>patrocinio institucional y asesoría jurídica</strong> para redactar el acuerdo formal de titularidad entre cofundadores y, lo más valioso, nos da el <strong>aval institucional para abrir puertas</strong> ante los rectores y comités de admisiones de las 64 universidades y 216 institutos superiores del Ecuador (CES).
+                </p>
+              </div>
+            </div>
+
+            <!-- PREGUNTA EXTRA 13: JUSTIFICACIÓN DE LOS $300 VS $5 DE NUBE -->
+            <div class="border border-slate-200 rounded-xl overflow-hidden shadow-sm">
+              <button onclick="toggleCard(this)" class="w-full text-left bg-slate-50 hover:bg-emerald-50 p-4 flex justify-between items-center cursor-pointer transition">
+                <div>
+                  <span class="text-[11px] font-extrabold uppercase tracking-wider bg-emerald-100 text-emerald-900 px-2 py-0.5 rounded">Pregunta Clave · Finanzas B2B & Margen</span>
+                  <div class="font-extrabold text-slate-900 mt-1 text-sm sm:text-base">«¿Por qué cobran $300 al mes a la universidad si el servidor les cuesta solo $5 al mes?»</div>
+                </div>
+                <span class="text-xl font-bold text-emerald-700">+</span>
+              </button>
+              <div class="card-flip-answer p-4 bg-white border-t border-slate-200 text-xs sm:text-sm text-slate-700 leading-relaxed space-y-2">
+                <p>
+                  <strong class="text-[#003b81]">1. Fijación por valor (Value-Based Pricing) vs costo de procesador:</strong><br>
+                  En software empresarial (B2B SaaS) no se cobra por el costo de electricidad o servidor (cost-plus), sino por el <strong>retorno económico y el riesgo que mitiga</strong>. A la universidad le cuesta entre <strong>$300 y $500 captar a un solo alumno (CAC)</strong> y pierde entre <strong>$1.800 y $2.600 de arancel semestral</strong> si ese alumno deserta. Cobrarle $300 al mes ($1.800/ciclo) es menos de lo que gasta en folletos de una sola feria y se paga al 100% con retener a un solo estudiante.
+                </p>
+                <p>
+                  <strong class="text-emerald-800">2. ¿Qué incluye realmente el servicio integral de $300/mes?</strong><br>
+                  No es solo hosting web: incluye la <strong>calibración pedagógica semestral de los micro-retos con los directores de carrera</strong>, la actualización continua de mallas curriculares, el <strong>panel de telemetría y trazabilidad de prospectos con consentimiento legal (LOPDP)</strong> para los asesores de admisiones, y soporte técnico continuo ante caídas.
+                </p>
+                <p>
+                  <strong class="text-slate-800">3. Margen operativo sano para sostenibilidad:</strong><br>
+                  Tener un costo técnico ultraligero (~$5/mes en nube y fracciones de centavo en IA) nos otorga un <strong>margen bruto superior al 75%</strong>. Este margen es el que permite que la empresa sea rentable desde el primer cliente, financie las tasas legales del SENADI ($208), pague horas de soporte y garantice que el sistema siga vivo cuando nos graduemos.
+                </p>
+              </div>
+            </div>
+
+            <!-- PREGUNTA EXTRA 14: TELEMETRÍA CLARITY EN PRODUCCIÓN -->
+            <div class="border border-slate-200 rounded-xl overflow-hidden shadow-sm">
+              <button onclick="toggleCard(this)" class="w-full text-left bg-slate-50 hover:bg-purple-50 p-4 flex justify-between items-center cursor-pointer transition">
+                <div>
+                  <span class="text-[11px] font-extrabold uppercase tracking-wider bg-purple-100 text-purple-900 px-2 py-0.5 rounded">Pregunta Clave · Métricas Clarity & Producción</span>
+                  <div class="font-extrabold text-slate-900 mt-1 text-sm sm:text-base">«¿Qué datos reales de uso tienen de bachilleres usando el prototipo (Microsoft Clarity)?»</div>
+                </div>
+                <span class="text-xl font-bold text-purple-700">+</span>
+              </button>
+              <div class="card-flip-answer p-4 bg-white border-t border-slate-200 text-xs sm:text-sm text-slate-700 leading-relaxed space-y-2">
+                <p>
+                  <strong class="text-purple-900">1. Datos auditados en producción (Microsoft Clarity · Noviembre 2026):</strong><br>
+                  No venimos con suposiciones: tenemos telemetría de <strong>15 sesiones reales en Ecuador</strong> registradas en nuestro dominio de Render.<br>
+                  • <strong>100% Mobile:</strong> El <strong>66,7% usó ChromeMobile (Android)</strong> y el <strong>33,3% MobileSafari (iOS)</strong>. Los jóvenes no abren computadoras de escritorio; consumen orientación vocacional desde su smartphone personal.<br>
+                  • <strong>Tiempo de retención en la app:</strong> Promedio de <strong>4,3 minutos por sesión</strong> (con 2,0 minutos de atención activa). Esto confirma el hallazgo de Suyana donde el 70% pedía tests de menos de 15 minutos: Orienta PUCE entrega resultados en un tercio de ese tiempo.<br>
+                  • <strong>Profundidad de exploración (Scroll Depth):</strong> Promedio de <strong>63,6%</strong>, lo que demuestra que los estudiantes descienden hasta el Podio Top 3, exploran las materias y abren los micro-retos.
+                </p>
+                <p>
+                  <strong class="text-emerald-800">2. Cero fricción y estabilidad técnica de ingeniería:</strong><br>
+                  • <strong>0% de Rage Clicks (clics de rabia o frustración):</strong> Ningún estudiante golpeó la pantalla por botones rotos o interfaces confusas.<br>
+                  • <strong>0% de Desplazamiento excesivo:</strong> La jerarquía visual guía al estudiante sin que se pierda.<br>
+                  • <strong>0 Errores de JavaScript (Crashlytics):</strong> La arquitectura en vanilla JS y Supabase mantuvo <strong>100% de estabilidad técnica</strong> en todos los navegadores móviles evaluados.
+                </p>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </section>
+
+      <!-- ========================================================= -->
+      <!-- TAB 4: PROPIEDAD INTELECTUAL, LEGAL, IA, ODS Y VISIÓN     -->
+      <!-- ========================================================= -->
+      <section id="tab-ip" class="tab-panel">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+
+          <!-- Propiedad Intelectual SENADI -->
+          <div class="bg-white rounded-2xl border border-slate-200 p-6 shadow-sm">
+            <h2 class="text-lg font-black text-[#003b81] mb-3 flex items-center gap-2">
+              <span>🛡️ Propiedad Intelectual (SENADI · Ecuador)</span>
+            </h2>
+            <ul class="space-y-3 text-xs sm:text-sm text-slate-700">
+              <li class="bg-slate-50 p-3 rounded-lg border border-slate-200">
+                <strong class="text-[#003b81]">1. Código fuente y base de datos (Derecho de Autor):</strong> Se registra como programa de ordenador y base de datos ante el <strong>SENADI</strong> (trámite R1.1, tasa oficial <strong>$20 USD</strong>; $10 con descuento aplicable). Esto otorga <strong>presunción legal de titularidad</strong> ante terceros.
+              </li>
+              <li class="bg-slate-50 p-3 rounded-lg border border-slate-200">
+                <strong class="text-[#003b81]">2. Nombre y Logotipo ("Orienta"):</strong> Registro de marca (signo distintivo) ante el <strong>SENADI</strong> bajo Clasificación de Niza (Clases 9 software, 41 educación y 42 SaaS). Tasa oficial: <strong>$208 USD</strong> ($104 con 50% de descuento para emprendedores/MIPYMES) + $16 búsqueda fonética; protección por <strong>10 años renovables</strong>.
+              </li>
+              <li class="bg-slate-50 p-3 rounded-lg border border-slate-200">
+                <strong class="text-[#003b81]">3. Estrategia de Licencia y Titularidad (Decisión consciente):</strong> El prototipo académico del curso tiene licencia <strong>MIT</strong> (transparente y auditable con copyright de los autores). Antes de escalar comercialmente, se firma un <strong>acuerdo de titularidad entre cofundadores</strong> y se licencia la versión comercial SaaS (motor adaptativo + banco validado de micro-retos) bajo licencia propietaria B2B.
+              </li>
+            </ul>
+          </div>
+
+          <!-- LOPDP + IA Honesta + Sostenibilidad -->
+          <div class="bg-white rounded-2xl border border-slate-200 p-6 shadow-sm">
+            <h2 class="text-lg font-black text-rose-800 mb-3 flex items-center gap-2">
+              <span>⚖️ LOPDP, ODS 4 (Educación de Calidad), IA y Sostenibilidad</span>
+            </h2>
+            <ul class="space-y-3 text-xs sm:text-sm text-slate-700">
+              <li class="bg-rose-50/60 p-3 rounded-lg border border-rose-200">
+                <strong class="text-rose-900">LOPDP (2021) · Protección de Menores:</strong> Art. 21 faculta consentimiento explícito desde los 15 años. Orienta PUCE aplica <strong>privacidad por diseño</strong>: test 100% anónimo sin cédula ni registro previo, y consentimiento expreso con disclaimer legal obligatorio solo si el usuario solicita voluntariamente asesoría formal.
+              </li>
+              <li class="bg-sky-50/60 p-3 rounded-lg border border-sky-200">
+                <strong class="text-[#003b81]">Aporte al ODS 4 (Educación de Calidad):</strong> Cumplimiento de la <strong>Meta 4.3</strong> (acceso igualitario y gratuito a orientación vocacional universitaria para colegios públicos y fiscomisionales) y <strong>Meta 4.4</strong> (pertinencia formativa que combate la deserción del 20,46% mediante micro-retos de materias reales).
+              </li>
+              <li class="bg-emerald-50/60 p-3 rounded-lg border border-emerald-200">
+                <strong class="text-emerald-900">Ecología Integral (Laudato Si') & Ahorro Institucional:</strong> Cero folletos impresos en ferias colegiales (reducción masiva de huella de papel). Cada 10 estudiantes retenidos representan <strong>más de $20.000 USD preservados</strong> en aranceles semestrales directos para la universidad.
+              </li>
+              <li class="bg-purple-50/60 p-3 rounded-lg border border-purple-200">
+                <strong class="text-purple-900">IA Honesta y Arquitectura Cognitiva (AurelioBot):</strong> En el PMV opera con <strong>In-Context Grounding</strong> sobre <strong>Groq Cloud (Llama 3.3 70B)</strong> + fallback determinista local (cero alucinaciones, tiempo de respuesta &lt;0.6s, costo &lt; $0,0004/consulta y operatividad 100% offline). En el roadmap de escalamiento B2B se desplegará un <strong>RAG vectorial (Supabase pgvector + Groq)</strong> para procesar todo el acervo institucional no estructurado de las 7 sedes PUCE. No diagnostica clínicamente; su función es informar con rigor y derivar al asesor humano.
+              </li>
+              <li class="bg-cyan-50/60 p-3 rounded-lg border border-cyan-200">
+                <strong class="text-cyan-900">Sostenibilidad Post-Graduación:</strong> Costo fijo ~$1,25–$5/mes (serverless / Hostinger), financiado con la suscripción institucional ($300/mes) o transferencia operativa al ecosistema WordPress/TI de la universidad.
+              </li>
+            </ul>
+          </div>
+
+          <!-- Visión de Escalamiento 3 años -->
+          <div class="bg-white rounded-2xl border border-slate-200 p-6 shadow-sm lg:col-span-2">
+            <h2 class="text-lg font-black text-[#003b81] mb-3">🚀 Visión y Escalamiento a Instituciones de Educación Superior (CES: 280 IES en Ecuador)</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-4 text-xs sm:text-sm">
+              <div class="bg-sky-50 border border-sky-200 rounded-xl p-4">
+                <div class="text-xs font-extrabold uppercase text-[#003b81]">Año 1 · 2026–2027 (Consolidación)</div>
+                <div class="text-xl font-black text-slate-900 mt-1">1 Universidad · 7 Sedes</div>
+                <p class="text-slate-700 mt-2">Despliegue completo en <strong>PUCE Matriz Quito</strong> (52 carreras de grado) y extensión a las <strong>7 sedes nacionales PUCE</strong>. Validación de tasa de retención del primer semestre y registro SENADI.</p>
+                <div class="mt-2 font-bold text-[#003b81]">Ingreso est.: $3.600 – $10.800/año</div>
+              </div>
+              <div class="bg-teal-50 border border-teal-200 rounded-xl p-4">
+                <div class="text-xs font-extrabold uppercase text-teal-800">Año 2 · 2027–2028 (Expansión Quito/Sierra)</div>
+                <div class="text-xl font-black text-slate-900 mt-1">5 Universidades Particulares</div>
+                <p class="text-slate-700 mt-2">Escalamiento B2B a 5 de las <strong>28 universidades particulares y cofinanciadas del Ecuador</strong> (CES), adaptando los micro-retos a cada catálogo de carreras bajo modelo SaaS multitenant.</p>
+                <div class="mt-2 font-bold text-teal-800">Ingreso est.: $18.000 – $30.000/año</div>
+              </div>
+              <div class="bg-emerald-50 border border-emerald-200 rounded-xl p-4">
+                <div class="text-xs font-extrabold uppercase text-emerald-800">Año 3 · 2029 (Escala Nacional)</div>
+                <div class="text-xl font-black text-slate-900 mt-1">15 a 20 IES (Universidades + IST)</div>
+                <p class="text-slate-700 mt-2">Cobertura en universidades e <strong>institutos superiores tecnológicos</strong> (de los 216 registrados en el CES), orientando a más de <strong>50.000 aspirantes anuales</strong> en todo el país.</p>
+                <div class="mt-2 font-bold text-emerald-800">Ingreso est.: $54.000 – $72.000/año</div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+      <!-- ========================================================= -->
+      <!-- TAB 5: RÚBRICA OFICIAL 55 PTS & CHECKLIST DEL STAND 050   -->
+      <!-- ========================================================= -->
+      <section id="tab-rubrica" class="tab-panel">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+
+          <!-- Rúbrica 55 pts -->
+          <div class="bg-white rounded-2xl border border-slate-200 p-6 shadow-sm">
+            <h2 class="text-lg font-black text-[#003b81] mb-3">Mapa de Conquista · Rúbrica Oficial (55 Puntos)</h2>
+            <table class="w-full text-xs sm:text-sm border-collapse">
+              <thead>
+                <tr class="bg-slate-100 text-left">
+                  <th class="p-2.5 font-extrabold">Bloque (Pts)</th>
+                  <th class="p-2.5 font-extrabold">Cómo aseguramos 5/5</th>
+                </tr>
+              </thead>
+              <tbody class="divide-y divide-slate-200">
+                <tr>
+                  <td class="p-2.5 font-bold text-rose-700">Filtro previo (Sí/No)</td>
+                  <td class="p-2.5">Entregar <strong>2 copias impresas del IPE</strong> sobre la mesa antes de empezar.</td>
+                </tr>
+                <tr>
+                  <td class="p-2.5 font-bold text-[#003b81]">Propuesta (30 pts)<br><span class="text-[11px] font-normal text-slate-500">6 criterios × 5</span></td>
+                  <td class="p-2.5">Idea validada + Embudo en 3 fases (Intereses → Dominio Psicología → Podio Top 3 con micro-retos ya implementados + AurelioBot) + Modelo B2B ($1.800/ciclo, ROI 1 alumno) + PMV funcionando 100% + ODS 4/10 y Ecología Integral Laudato Si'.</td>
+                </tr>
+                <tr>
+                  <td class="p-2.5 font-bold text-teal-800">Equipo (10 pts)<br><span class="text-[11px] font-normal text-slate-500">Cohesión + Compromiso</span></td>
+                  <td class="p-2.5"><strong>Hablan los 3 (Joselyn, Gabriel y Paúl)</strong> con relevos ensayados; todos de pie, atentos, sin leer y listos para respaldarse en preguntas.</td>
+                </tr>
+                <tr>
+                  <td class="p-2.5 font-bold text-amber-800">Pitch (15 pts)<br><span class="text-[11px] font-normal text-slate-500">Estructura + Dominio + Tiempo</span></td>
+                  <td class="p-2.5">Gancho en 10s, datos con fuente (SENESCYT, CES, PUCE), demo vivencial en mano del jurado y cierre exacto en <strong>02:50</strong>.</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <!-- Checklist Martes y Miércoles -->
+          <div class="bg-white rounded-2xl border border-slate-200 p-6 shadow-sm">
+            <h2 class="text-lg font-black text-teal-800 mb-3">Checklist Operativo · Stand 050 (Martes 24 & Miércoles 25)</h2>
+            <div class="space-y-2.5 text-xs sm:text-sm text-slate-700">
+              <label class="flex items-start gap-2.5 cursor-pointer">
+                <input type="checkbox" class="mt-1 accent-[#003b81] w-4 h-4">
+                <span><strong>Dos copias impresas del IPE</strong> (Informe de Proyecto de Emprendimiento) + <strong>BMC impreso</strong> en formato grande/legible.</span>
+              </label>
+              <label class="flex items-start gap-2.5 cursor-pointer">
+                <input type="checkbox" class="mt-1 accent-[#003b81] w-4 h-4">
+                <span><strong>Demo sin internet lista (plan B):</strong> Copia local de los archivos HTML/CSS/JS en la laptop + video de 60s descargado por si el Wi-Fi del Hall de la Torre 1 se satura.</span>
+              </label>
+              <label class="flex items-start gap-2.5 cursor-pointer">
+                <input type="checkbox" class="mt-1 accent-[#003b81] w-4 h-4">
+                <span><strong>Dos pantallas activas y cargadas al 100%:</strong> 1 laptop + 1 celular/tablet con el test abierto + <strong>extensión eléctrica</strong> y cargadores.</span>
+              </label>
+              <label class="flex items-start gap-2.5 cursor-pointer">
+                <input type="checkbox" class="mt-1 accent-[#003b81] w-4 h-4">
+                <span><strong>QR gigante impreso en el stand</strong> apuntando a <code>https://emprendimiento-mvp.onrender.com/</code> (probado en incógnito antes de las 07h30).</span>
+              </label>
+              <label class="flex items-start gap-2.5 cursor-pointer">
+                <input type="checkbox" class="mt-1 accent-[#003b81] w-4 h-4">
+                <span><strong>Póster o Roll-Up visual:</strong> Que muestre en grande el dato <strong>20,46% deserción (SENESCYT)</strong>, <strong>80% conversión (Col. Suyana)</strong> y <strong>ODS 4 + Ecología Integral</strong> en una frase.</span>
+              </label>
+              <label class="flex items-start gap-2.5 cursor-pointer">
+                <input type="checkbox" class="mt-1 accent-[#003b81] w-4 h-4">
+                <span><strong>Pestaña con Microsoft Clarity abierta:</strong> Tener listo el panel de telemetría de producción (15 sesiones, 0% rage clicks, 63,6% scroll, 100% móvil) en la laptop para enseñarlo en vivo si el jurado pregunta por validación técnica y mapas de calor.</span>
+              </label>
+              <label class="flex items-start gap-2.5 cursor-pointer">
+                <input type="checkbox" class="mt-1 accent-[#003b81] w-4 h-4">
+                <span><strong>Ensayo con cronómetro (mínimo 4 veces el martes):</strong> Clavar los relevos entre Joselyn (0:00–0:55), Gabriel (0:55–1:40) y Paúl (1:40–2:50).</span>
+              </label>
+              <label class="flex items-start gap-2.5 cursor-pointer">
+                <input type="checkbox" class="mt-1 accent-[#003b81] w-4 h-4">
+                <span><strong>Llegada puntual 07h30 (Hall Planta Baja Torre 1):</strong> Armar el Stand 050 antes de las 08h00; todos de pie durante toda la feria.</span>
+              </label>
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+    </div>
+  </main>
+
+  <script>
+    // Navegación por pestañas
+    function switchTab(panelId, btn) {
+      document.querySelectorAll('.tab-panel').forEach(p => p.classList.remove('active'));
+      document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+      document.getElementById(panelId).classList.add('active');
+      btn.classList.add('active');
+    }
+
+    // Acordeón Cartas del Jurado
+    function toggleCard(btn) {
+      const answer = btn.nextElementSibling;
+      const icon = btn.querySelector('span:last-child');
+      const isOpen = answer.classList.contains('open');
+      if (isOpen) {
+        answer.classList.remove('open');
+        icon.textContent = '+';
+      } else {
+        answer.classList.add('open');
+        icon.textContent = '−';
+      }
+    }
+
+    // Cronómetro interactivo de ensayo
+    let timerInterval = null;
+    let seconds = 0;
+
+    function updateTimerUI() {
+      const mins = String(Math.floor(seconds / 60)).padStart(2, '0');
+      const secs = String(seconds % 60).padStart(2, '0');
+      const display = document.getElementById('timer-display');
+      const phase = document.getElementById('timer-phase');
+      display.textContent = `${mins}:${secs}`;
+
+      if (seconds === 0) {
+        phase.textContent = 'Listo para ensayar';
+        phase.className = 'text-xs sm:text-sm font-bold px-3 py-1 rounded-full bg-white/15 text-sky-200';
+      } else if (seconds < 25) {
+        phase.textContent = '1. Gancho (Joselyn)';
+        phase.className = 'text-xs sm:text-sm font-bold px-3 py-1 rounded-full bg-teal-500/30 text-teal-200';
+      } else if (seconds < 55) {
+        phase.textContent = '2. Evidencia PUCE (Joselyn)';
+        phase.className = 'text-xs sm:text-sm font-bold px-3 py-1 rounded-full bg-teal-500/30 text-teal-200';
+      } else if (seconds < 100) {
+        phase.textContent = '3. Demo Vivencial (Gabriel)';
+        phase.className = 'text-xs sm:text-sm font-bold px-3 py-1 rounded-full bg-amber-500/30 text-amber-200';
+      } else if (seconds < 130) {
+        phase.textContent = '4. Modelo Económico (Paúl)';
+        phase.className = 'text-xs sm:text-sm font-bold px-3 py-1 rounded-full bg-sky-500/30 text-sky-200';
+      } else if (seconds < 155) {
+        phase.textContent = '5. Visión, IP & ODS (Paúl)';
+        phase.className = 'text-xs sm:text-sm font-bold px-3 py-1 rounded-full bg-emerald-500/30 text-emerald-200';
+      } else if (seconds <= 170) {
+        phase.textContent = '6. Pedido & Cierre (Meta 2:50)';
+        phase.className = 'text-xs sm:text-sm font-bold px-3 py-1 rounded-full bg-[#06b2b3] text-white';
+      } else if (seconds <= 180) {
+        phase.textContent = '⚠️ ¡CERRAR YA! Límite 3:00';
+        phase.className = 'text-xs sm:text-sm font-bold px-3 py-1 rounded-full bg-amber-500 text-slate-950';
+      } else {
+        phase.textContent = '🚨 TIEMPO EXCEDIDO (>3:00 RESTA PUNTOS)';
+        phase.className = 'text-xs sm:text-sm font-bold px-3 py-1 rounded-full bg-red-600 text-white';
+      }
+    }
+
+    function startTimer() {
+      if (timerInterval) return;
+      timerInterval = setInterval(() => {
+        seconds++;
+        updateTimerUI();
+      }, 1000);
+    }
+
+    function pauseTimer() {
+      clearInterval(timerInterval);
+      timerInterval = null;
+    }
+
+    function resetTimer() {
+      pauseTimer();
+      seconds = 0;
+      updateTimerUI();
+    }
+
+    // Exportar todo el dossier a Word (.doc)
+    function exportGuionWord() {
+      const panels = document.querySelectorAll('.tab-panel');
+      let combined = '<h1>ORIENTA PUCE (STAND 050) · DOSSIER Y GUION GANADOR PUCEmprende 2026</h1>';
+      panels.forEach(p => {
+        const clone = p.cloneNode(true);
+        clone.querySelectorAll('.no-print').forEach(el => el.remove());
+        clone.querySelectorAll('.card-flip-answer').forEach(el => el.style.display = 'block');
+        combined += '<div style="margin-bottom:20px;">' + clone.innerHTML + '</div><hr>';
+      });
+
+      const html = `
+        <html xmlns:o='urn:schemas-microsoft-com:office:office' xmlns:w='urn:schemas-microsoft-com:office:word' xmlns='http://www.w3.org/TR/REC-html40'>
+        <head><meta charset='utf-8'><title>Guion Ganador Orienta PUCE 2026</title>
+        <style>
+          body { font-family: Calibri, Arial, sans-serif; font-size: 11pt; color: #1e293b; line-height: 1.45; }
+          h1 { color: #003b81; font-size: 18pt; }
+          h2 { color: #003b81; font-size: 14pt; margin-top: 14pt; }
+          h3 { color: #0f172a; font-size: 12pt; }
+          table { width: 100%; border-collapse: collapse; margin: 10pt 0; }
+          th, td { border: 1px solid #cbd5e1; padding: 6pt; text-align: left; font-size: 10pt; }
+          th { background: #f1f5f9; color: #003b81; }
+        </style></head>
+        <body>${combined}</body></html>`;
+
+      const blob = new Blob(['\ufeff', html], { type: 'application/msword' });
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement('a');
+      a.href = url;
+      a.download = 'Orienta_PUCE_Stand050_Guion_Ganador_PUCEmprende2026.doc';
+      a.click();
+      URL.revokeObjectURL(url);
+    }
+  </script>
+</body>
+</html>

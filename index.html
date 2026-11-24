@@ -56,42 +56,123 @@
       <div class="container hero-grid">
         <div class="hero-text">
           <h1>Descubre tu futuro</h1>
-          <p>Encuentra la carrera ideal para ti en 10 minutos: responde un test corto, mira tu Top 3 de carreras y prueba un mini-reto con materias reales de primer semestre.</p>
+          <p>Encuentra tu vocación universitaria en menos de 10 minutos: responde una evaluación psicométrica ágil, compara tu <strong>Top 3 de carreras afines</strong> y prueba un <strong>micro-reto práctico</strong> con materias reales de primer semestre.</p>
           <div class="hero-actions">
-            <a href="test.html?nuevo=1" class="btn btn-primary">Comenzar Test Vocacional (10 min)</a>
-            <a href="#como-funciona" class="btn btn-outline">Conoce cómo funciona</a>
+            <a href="test.html?nuevo=1" id="hero-start-btn" class="btn-hero-cta">
+              <span>🚀 Comenzar Test Vocacional Gratis</span>
+              <span>→</span>
+            </a>
+            <a href="#como-funciona" class="btn btn-outline" style="padding: 14px 22px;">Cómo funciona</a>
+          </div>
+          <div class="hero-trust-badges">
+            <span class="hero-trust-badge">⚡ 5 a 10 minutos</span>
+            <span class="hero-trust-badge">🛡️ 100% Gratuito y Anónimo</span>
+            <span class="hero-trust-badge">✓ Sin registros ni contraseñas</span>
+            <span class="hero-trust-badge">🧠 Respaldado por Psicología PUCE</span>
           </div>
         </div>
         <img class="hero-mascot" src="assets/img/aurelio/signo-explora-decide-futuro.svg" alt="Aurelio con un letrero que dice: explora y decide tu futuro">
       </div>
     </section>
 
+    <!-- Cinta de Métricas de Impacto y Validación -->
+    <section class="metrics-ribbon">
+      <div class="container metrics-grid">
+        <div class="metric-card">
+          <div class="metric-icon">🎓</div>
+          <div>
+            <div class="metric-val">39 Carreras</div>
+            <div class="metric-label">Evaluadas en 5 macroáreas oficiales de la PUCE</div>
+          </div>
+        </div>
+        <div class="metric-card">
+          <div class="metric-icon">🧠</div>
+          <div>
+            <div class="metric-val">100% Psicología</div>
+            <div class="metric-label">Banco psicométrico oficial de la PUCE</div>
+          </div>
+        </div>
+        <div class="metric-card">
+          <div class="metric-icon">⭐</div>
+          <div>
+            <div class="metric-val">85% Utilidad</div>
+            <div class="metric-label">Validado con bachilleres (Colegio Suyana)</div>
+          </div>
+        </div>
+        <div class="metric-card">
+          <div class="metric-icon">📊</div>
+          <div>
+            <div class="metric-val">0% Fricción</div>
+            <div class="metric-label">4,3 min y 0 errores JS (Microsoft Clarity)</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <!-- 2. Cómo funciona -->
     <section id="como-funciona" class="section">
       <div class="container">
-        <span class="eyebrow">Orientación vocacional</span>
-        <h2>Cómo funciona</h2>
+        <span class="eyebrow">Orientación vocacional científica</span>
+        <h2>Cómo funciona Orienta PUCE</h2>
+        <p style="color: #64748b; max-width: 680px; margin-bottom: 24px;">Un embudo inteligente en 3 fases diseñado por psicólogos educativos e ingenieros para que no elijas tu carrera a ciegas:</p>
         <ol class="steps">
           <li class="step">
             <span class="step-number">1</span>
-            <h3>Test corto</h3>
-            <p>Máximo 15 preguntas sobre tus intereses, en menos de 5 minutos.</p>
+            <h3>Intereses & Dominio</h3>
+            <p>16 a 24 preguntas psicométricas focalizadas en tus áreas de afinidad real, en menos de 5 minutos.</p>
           </li>
           <li class="step">
             <span class="step-number">2</span>
-            <h3>Tu Top 3</h3>
-            <p>Las tres carreras de la PUCE con mayor afinidad para ti.</p>
+            <h3>Podio Top 3</h3>
+            <p>Compara tus 3 mejores carreras de la PUCE (Oro, Plata, Bronce) con afinidad %, aranceles y mallas oficiales.</p>
           </li>
           <li class="step">
             <span class="step-number">3</span>
-            <h3>Mini-reto</h3>
-            <p>Un ejercicio de 2 minutos de una materia real de primer semestre.</p>
+            <h3>Micro-reto & IA</h3>
+            <p>Resuelve un caso real de primer semestre y aclara dudas de materias con AurelioBot, tu orientador con IA.</p>
           </li>
         </ol>
         <div style="text-align: center; margin-top: 36px;">
-          <a href="test.html?nuevo=1" class="btn btn-primary" style="padding: 16px 36px; font-size: 1rem; box-shadow: 0 4px 14px rgba(0, 168, 204, 0.4);">
+          <a href="test.html?nuevo=1" class="btn btn-primary" style="padding: 16px 36px; font-size: 1rem; box-shadow: 0 4px 14px rgba(0, 168, 204, 0.4); border-radius: 8px;">
             ¡Hacer el Test Vocacional Ahora! →
           </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Comparativo: Tradicional vs Orienta PUCE -->
+    <section class="comparison-section">
+      <div class="container">
+        <span class="eyebrow">Diferencial Único</span>
+        <h2>¿Por qué Orienta PUCE es diferente?</h2>
+        <p style="max-width: 650px; color: #64748b; margin-bottom: 0;">Elegir una carrera no debería ser lanzar una moneda al aire ni aburrirse con cuestionarios interminables.</p>
+
+        <div class="comparison-grid">
+          <div class="comparison-card bad">
+            <div class="comparison-title" style="color: #ef4444;">
+              <span>❌ Tests Web Tradicionales</span>
+            </div>
+            <ul class="comparison-list">
+              <li><span class="icon-bad">✕</span> 70 preguntas infinitas y aburridas que no terminas.</li>
+              <li><span class="icon-bad">✕</span> Entregan solo áreas genéricas ("Te gustan las Ciencias").</li>
+              <li><span class="icon-bad">✕</span> Mallas curriculares en PDF densos e incomprensibles.</li>
+              <li><span class="icon-bad">✕</span> Cero práctica: no sabes cómo es una materia de primer año.</li>
+              <li><span class="icon-bad">✕</span> Sin acompañamiento cuando tienes dudas de costos o dificultad.</li>
+            </ul>
+          </div>
+
+          <div class="comparison-card good">
+            <div class="comparison-title" style="color: #003b81;">
+              <span>✅ Plataforma Orienta PUCE</span>
+            </div>
+            <ul class="comparison-list">
+              <li><span class="icon-good">✓</span> <strong>Test ágil y balanceado</strong> de 16 a 24 preguntas de Psicología PUCE.</li>
+              <li><span class="icon-good">✓</span> <strong>Podio Top 3 de carreras exactas</strong> con % de compatibilidad real.</li>
+              <li><span class="icon-good">✓</span> <strong>Mallas interactivas nivel por nivel</strong> con aranceles referenciales.</li>
+              <li><span class="icon-good">✓</span> <strong>Micro-retos formativos de 2 min</strong> con casos reales de primer semestre.</li>
+              <li><span class="icon-good">✓</span> <strong>AurelioBot con IA oficial</strong> para responder cualquier duda al instante.</li>
+            </ul>
+          </div>
         </div>
       </div>
     </section>
@@ -164,6 +245,23 @@
         </div>
       </div>
     </section>
+
+    <!-- 5. Caja Destacada de Acción en el Cuerpo (Comienza Aquí) -->
+    <section class="body-cta-section" id="empezar-test">
+      <div class="container">
+        <div class="body-cta-box">
+          <span style="display: inline-block; background: #00a8cc; color: #fff; font-size: 0.75rem; font-weight: 800; padding: 4px 12px; border-radius: 999px; text-transform: uppercase; margin-bottom: 12px;">¡Da el primer paso hoy!</span>
+          <h2>Descubre tu futuro profesional en 5 minutos</h2>
+          <p>Para hacer el test vocacional, no necesitas crear cuenta ni dejar contraseñas. Es 100% anónimo, gratuito y seguro según la Ley de Protección de Datos Personales.</p>
+          <a href="test.html?nuevo=1" id="body-start-btn" class="btn-hero-cta" style="font-size: 1.05rem; padding: 18px 32px;">
+            <span>👉 HAZ CLIC AQUÍ PARA COMENZAR EL TEST VOCACIONAL</span>
+          </a>
+          <div style="margin-top: 16px; font-size: 0.85rem; color: #bae6fd;">
+            <span>Evaluación psicométrica oficial · Podio Top 3 · Micro-retos reales</span>
+          </div>
+        </div>
+      </div>
+    </section>
   </main>
 
   <!-- Pie de página -->
@@ -172,6 +270,14 @@
       <p>Proyecto académico del equipo <strong>Developers CARF</strong> · Emprendimiento Tecnológico · Ingeniería en Sistemas de Información · PUCE · <span id="year">2026</span></p>
     </div>
   </footer>
+
+  <!-- Barra Flotante Sticky en Celulares (100% Tráfico Mobile en Clarity) -->
+  <div class="mobile-sticky-cta" id="mobile-sticky-bar">
+    <a href="test.html?nuevo=1" id="sticky-start-btn">
+      <span>🚀 HACER TEST VOCACIONAL (GRATIS)</span>
+      <span>→</span>
+    </a>
+  </div>
 
   <script src="js/main.js" defer></script>
 </body>

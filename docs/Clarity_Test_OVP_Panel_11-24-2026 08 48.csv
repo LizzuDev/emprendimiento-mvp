@@ -1,0 +1,69 @@
+﻿"Nombre del proyecto","Test OVP"
+"Intervalo de fechas","11/05/2026 00:00 - 11/24/2026 23:59"
+
+
+"Métricas","Sesiones"
+"","Total de sesiones","15"
+"","Sesiones de bot","7"
+
+"Métricas","Páginas por sesión"
+"","Promedio","1.6666666666666667"
+
+"Métricas","Profundidad de desplazamiento"
+"","Promedio","63.6"
+
+"Métricas","Tiempo activo empleado"
+"","Tiempo activo","121"
+"","Tiempo total","257"
+
+"Métricas","Información general de los usuarios"
+"","Usuarios únicos","12"
+"","Sesiones con nuevos usuarios","14"
+"","Sesiones con usuarios recurrentes","1"
+
+"Métricas","Ideas","Nro. de sesiones","% de sesiones"
+"","Clics continuos","0","0%"
+"","Clic inactivo","2","13,33%"
+"","Desplazamiento excesivo","0","0%"
+"","Clic atrás rápido","1","6,67%"
+
+"Métricas","Exploradores","Nro. de sesiones","% de sesiones"
+"","ChromeMobile","10","66,67%"
+"","MobileSafari","5","33,33%"
+
+"Métricas","Páginas principales","Nro. de sesiones"
+"","https://emprendimiento-mvp.onrender.com/","10"
+"","https://emprendimiento-mvp.onrender.com/test.html","5"
+"","https://emprendimiento-mvp.onrender.com/index.html","2"
+
+"Métricas","Eventos inteligentes","Nro. de sesiones","% de sesiones"
+"","phase1","3","20%"
+"","transition","3","20%"
+"","phase2b","3","20%"
+"","session_start","3","20%"
+"","phase2a","2","13,33%"
+"","results","2","13,33%"
+"","test_completed","2","13,33%"
+
+"Métricas","Origen de referencia","Nro. de sesiones"
+"","emprendimiento-mvp.onrender.com","5"
+
+"Métricas","Errores de JavaScript"
+"","Sesiones con errores de JavaScript"
+""," total de errores de JavaScript","0"
+"","","Nro. de sesiones","% de sesiones"
+
+"Métricas","Información general del rendimiento"
+"","Puntuación","0"
+"","LCP (Pintura con contenido más grande)","nulls"
+"","INP (Interacción con Next Paint)","nullms"
+"","CLS (desplazamiento de diseño acumulativo)","nulls"
+
+"Métricas","Tráfico de bots"
+"webScraperBotSessions","0"
+"suspiciousDeviceBotSessions","7"
+"suspiciousNetworkBotSessions","1"
+"suspiciousInteractionBotSessions","7"
+"ppcAdFraudBotSessions","0"
+"otherBotsSessions","0"
+"__typename","BotTypes"
