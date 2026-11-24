@@ -1085,6 +1085,19 @@ function closeLeadModal() {
   if (leadModal) leadModal.style.display = 'none';
 }
 
+function updateChatAiStatus() {
+  const subEl = document.getElementById('chat-header-sub');
+  if (!subEl) return;
+  const hasKey = typeof localStorage !== 'undefined' && !!(localStorage.getItem('puce_groq_api_key') || (typeof window !== 'undefined' && window.GROQ_API_KEY));
+  if (hasKey) {
+    subEl.innerHTML = 'Llama 3.3 70B Activo <span style="color: #4ade80;">●</span>';
+    subEl.title = 'Conectado a Groq Cloud AI (Llama 3.3 70B)';
+  } else {
+    subEl.innerHTML = 'Motor Experto PUCE <span style="color: #facc15;">⚡</span>';
+    subEl.title = 'Motor local verificado. Haz clic en ⚙️ para conectar Groq Cloud AI.';
+  }
+}
+
 function openChat() {
   if (chatPanel) {
     const activeCareer = state.rankedCareers.find(c => c.key === state.activeCareerKey);
@@ -1093,12 +1106,13 @@ function openChat() {
       state.chatHistory = [
         {
           sender: 'aurelio',
-          text: `¡Hola! Soy Aurelio, orientador y mascota de la PUCE. Ahora que estás explorando ${activeCareer.name}, pregúntame con confianza: ¿cuánto cuesta?, ¿es difícil?, ¿dónde puedes trabajar?, o sobre sus materias.`
+          text: `¡Hola! Soy Aurelio, orientador y mascota de la PUCE. Ahora que estás explorando ${activeCareer.name}, pregúntame con confianza: convenios, prácticas hospitalarias, becas, costos, intercambios o sobre sus materias.`
         }
       ];
       saveStorage('chatHistory', state.chatHistory);
     }
     chatPanel.style.display = 'flex';
+    updateChatAiStatus();
     renderChatMessages();
     ajustarChatAlTeclado();
   }
@@ -1170,6 +1184,7 @@ async function sendAurelioQuestion(questionText) {
 
     state.chatHistory.push({ sender: 'aurelio', text: reply });
     saveStorage('chatHistory', state.chatHistory);
+    updateChatAiStatus();
     renderChatMessages();
 
     telemetry.trackAurelioQuery(activeCareer?.key || 'general', userQuery, reply, 'groq_ai');
@@ -1181,6 +1196,7 @@ async function sendAurelioQuestion(questionText) {
     const fallbackReply = getAurelioContextualAnswer(activeCareer, userQuery);
     state.chatHistory.push({ sender: 'aurelio', text: fallbackReply });
     saveStorage('chatHistory', state.chatHistory);
+    updateChatAiStatus();
     renderChatMessages();
 
     telemetry.trackAurelioQuery(activeCareer?.key || 'general', userQuery, fallbackReply, 'local_fallback');
@@ -1276,6 +1292,31 @@ function setupModalEvents() {
 
   const closeChatBtn = document.getElementById('btn-close-chat');
   if (closeChatBtn) closeChatBtn.onclick = closeChat;
+
+  const configGroqBtn = document.getElementById('btn-config-groq');
+  if (configGroqBtn) {
+    configGroqBtn.onclick = () => {
+      const currentKey = localStorage.getItem('puce_groq_api_key') || '';
+      const newKey = prompt(
+        'Configurar Groq Cloud AI (Llama 3.3 70B):\n\n' +
+        'Pega tu API Key de Groq (ej: gsk_...):\n' +
+        '(Si lo dejas en blanco, Aurelio funcionará con el Motor Experto PUCE local sin consumir saldo)',
+        currentKey
+      );
+      if (newKey !== null) {
+        if (newKey.trim()) {
+          localStorage.setItem('puce_groq_api_key', newKey.trim());
+          if (typeof window !== 'undefined') window.GROQ_API_KEY = newKey.trim();
+          alert('✅ Clave de Groq configurada. Aurelio Bot responderá con IA en tiempo real.');
+        } else {
+          localStorage.removeItem('puce_groq_api_key');
+          if (typeof window !== 'undefined') delete window.GROQ_API_KEY;
+          alert('⚡ Clave eliminada. Aurelio Bot utilizará el Motor Experto PUCE local verificado.');
+        }
+        updateChatAiStatus();
+      }
+    };
+  }
 
   const chatForm = document.getElementById('chat-form');
   const chatInput = document.getElementById('chat-input');

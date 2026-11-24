@@ -141,15 +141,20 @@
         <img class="chat-avatar" src="assets/img/aurelio/neutro.svg" alt="Aurelio">
         <div>
           <div class="chat-header-title">Aurelio Bot</div>
-          <div class="chat-header-sub">Orientador Vocacional PUCE</div>
+          <div id="chat-header-sub" class="chat-header-sub">Orientador Vocacional PUCE</div>
         </div>
       </div>
-      <button id="btn-close-chat" class="close-btn" style="color: #fff;" aria-label="Cerrar chat">&times;</button>
+      <div style="display: flex; align-items: center; gap: 6px;">
+        <button id="btn-config-groq" title="Configurar Groq Cloud AI (Llama 3.3 70B)" style="background: none; border: none; color: #fff; font-size: 1.1rem; cursor: pointer; padding: 4px 6px; opacity: 0.85;" aria-label="Configurar Groq Cloud">⚙️</button>
+        <button id="btn-close-chat" class="close-btn" style="color: #fff;" aria-label="Cerrar chat">&times;</button>
+      </div>
     </div>
     <div id="chat-messages-container" class="chat-messages">
       <!-- Mensajes dinámicos -->
     </div>
     <div class="chat-suggested-queries">
+      <button class="query-chip">¿Qué convenios y prácticas tiene?</button>
+      <button class="query-chip">¿Tienen intercambios internacionales?</button>
       <button class="query-chip">¿Cuánto cuesta la carrera?</button>
       <button class="query-chip">¿Es difícil?</button>
       <button class="query-chip">¿Dónde puedo trabajar?</button>

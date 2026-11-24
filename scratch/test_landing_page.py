@@ -80,9 +80,9 @@ async def run_tests():
             print(f"  ✅ Navegación verificada. URL actual: {current_url}")
             assert "test.html" in current_url, f"La URL debe contener test.html, obtenida: {current_url}"
             
-            # Verificar que el contenedor del test se cargue en la página de destino
+            # Verificar que el contenedor principal del test esté en test.html
             test_container = page_mobile.locator(".test-container, #test-container, main")
-            assert await test_container.count() > 0, "El contenedor principal del test debe estar presente en test.html"
+            assert await test_container.count() > 0, "El contenedor del test debe existir en test.html"
             print("  ✅ Página test.html cargada correctamente tras hacer click")
             
             await context_mobile.close()
@@ -94,4 +94,3 @@ async def run_tests():
 
 if __name__ == "__main__":
     asyncio.run(run_tests())
-
