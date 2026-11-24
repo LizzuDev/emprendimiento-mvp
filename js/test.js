@@ -614,24 +614,8 @@ function renderResults() {
       <div class="react-results-grid">
         <!-- SIDEBAR: LISTA DE CARRERAS -->
         <div class="react-results-sidebar">
-          <h3 class="react-sidebar-title">Ranking de Afinidad</h3>
-          <div>
-            ${state.rankedCareers.map((career, idx) => {
-              const isSelected = state.activeCareerKey === career.key;
-              return `
-                <button class="react-career-item-btn ${isSelected ? 'selected' : ''}" data-key="${career.key}">
-                  <div class="react-career-left">
-                    <div class="react-career-num">${idx + 1}</div>
-                    <span class="react-career-name">${career.name}</span>
-                  </div>
-                  <span class="react-career-pct">${career.matchPct}%</span>
-                </button>
-              `;
-            }).join('')}
-          </div>
-
           <!-- Aptitudes Consolidadas -->
-          <div class="react-aptitudes-box">
+          <div class="react-aptitudes-box" style="margin-top: 0;">
             <h4 class="react-sidebar-title" style="padding: 0; margin-bottom: 12px;">Aptitudes Detectadas</h4>
             ${Object.entries(state.macroScores)
               .sort((a, b) => b[1] - a[1])
