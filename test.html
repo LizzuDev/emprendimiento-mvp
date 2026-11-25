@@ -153,16 +153,22 @@
       <!-- Mensajes dinámicos -->
     </div>
     <div class="chat-suggested-queries">
-      <button class="query-chip">¿Qué convenios y prácticas tiene?</button>
-      <button class="query-chip">¿Tienen intercambios internacionales?</button>
-      <button class="query-chip">¿Cuánto cuesta la carrera?</button>
-      <button class="query-chip">¿Es difícil?</button>
-      <button class="query-chip">¿Dónde puedo trabajar?</button>
-      <button class="query-chip">¿Qué materias voy a ver?</button>
+      <div class="chat-queries-label">💡 Selecciona una pregunta para Aurelio:</div>
+      <div class="chat-queries-grid">
+        <button class="query-chip">🏥 ¿Qué convenios y prácticas tiene?</button>
+        <button class="query-chip">🌍 ¿Tienen intercambios internacionales?</button>
+        <button class="query-chip">💰 ¿Cuánto cuesta y qué becas hay?</button>
+        <button class="query-chip">📚 ¿Qué materias veré en primer año?</button>
+        <button class="query-chip">💼 ¿Dónde puedo trabajar?</button>
+        <button class="query-chip">⚡ ¿Es difícil la carrera?</button>
+        <button class="query-chip">🎓 ¿Cuáles son los requisitos de grado?</button>
+        <button class="query-chip">🏆 ¿Qué acreditación tiene la PUCE?</button>
+      </div>
     </div>
-    <form id="chat-form" class="chat-form">
-      <input id="chat-input" type="text" class="chat-input" placeholder="Escribe tu pregunta a Aurelio...">
-      <button type="submit" class="chat-send-btn">Enviar</button>
+    <!-- Entrada de texto libre oculta para modo guiado (sin dañar la lógica interna) -->
+    <form id="chat-form" class="chat-form" style="display: none !important;">
+      <input id="chat-input" type="text" class="chat-input" placeholder="Escribe tu pregunta a Aurelio..." disabled>
+      <button type="submit" class="chat-send-btn" disabled>Enviar</button>
     </form>
   </div>
 

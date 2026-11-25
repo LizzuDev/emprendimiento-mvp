@@ -1209,7 +1209,27 @@ body.test-body {
 .chat-suggested-queries {
   padding: 10px 14px;
   background: #f8fafc;
-  border-top: 1px solid #f1f5f9;
+  border-top: 1px solid #e2e8f0;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  max-height: 190px;
+  overflow-y: auto;
+  box-shadow: 0 -4px 12px rgba(0, 0, 0, 0.03);
+}
+
+.chat-queries-label {
+  font-size: 11px;
+  font-weight: 700;
+  color: #003b81;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.chat-queries-grid {
   display: flex;
   flex-wrap: wrap;
   gap: 6px;
@@ -1217,18 +1237,28 @@ body.test-body {
 
 .query-chip {
   background: #ffffff;
-  border: 1px solid #e2e8f0;
-  border-radius: 2px;
-  font-size: 11px;
-  padding: 4px 10px;
-  color: #475569;
+  border: 1px solid #cbd5e1;
+  border-radius: 6px;
+  font-size: 11.5px;
+  font-weight: 500;
+  padding: 6px 10px;
+  color: #1e293b;
   cursor: pointer;
   transition: all 0.2s ease;
+  line-height: 1.35;
+  text-align: left;
 }
 
 .query-chip:hover {
+  background: #f0f7ff;
   border-color: #003b81;
   color: #003b81;
+  transform: translateY(-1px);
+  box-shadow: 0 2px 5px rgba(0, 59, 129, 0.08);
+}
+
+.query-chip:active {
+  transform: scale(0.97);
 }
 
 .chat-form {
@@ -1391,17 +1421,13 @@ body.test-body {
   flex-shrink: 0;
 }
 
-/* Sugerencias en una sola fila deslizable */
+/* Sugerencias guiadas */
 .chat-suggested-queries {
-  flex-wrap: nowrap;
-  overflow-x: auto;
-  -webkit-overflow-scrolling: touch;
   scrollbar-width: thin;
 }
 
 .query-chip {
-  flex: 0 0 auto;
-  white-space: nowrap;
+  white-space: normal;
 }
 
 .chat-form {
