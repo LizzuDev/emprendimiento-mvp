@@ -181,13 +181,11 @@ function renderPhase1() {
           <!-- Response Buttons -->
           <div class="react-answers-grid">
             <button id="btn-ans-yes" class="react-answer-btn react-btn-yes">
-              <div class="react-icon-box">✓</div>
-              <span class="btn-label">SÍ, ME GUSTA</span>
+              <span class="btn-label">Sí me interesa</span>
             </button>
 
             <button id="btn-ans-no" class="react-answer-btn react-btn-no">
-              <div class="react-icon-box">✕</div>
-              <span class="btn-label">NO ME GUSTA</span>
+              <span class="btn-label">No me interesa</span>
             </button>
           </div>
 
@@ -438,13 +436,11 @@ function renderPhase2a() {
 
           <div class="react-answers-grid">
             <button id="btn-ans2-yes" class="react-answer-btn react-btn-yes">
-              <div class="react-icon-box">✓</div>
-              <span class="btn-label">SÍ, ME GUSTA</span>
+              <span class="btn-label">Sí me interesa</span>
             </button>
 
             <button id="btn-ans2-no" class="react-answer-btn react-btn-no">
-              <div class="react-icon-box">✕</div>
-              <span class="btn-label">NO ME GUSTA</span>
+              <span class="btn-label">No me interesa</span>
             </button>
           </div>
 
