@@ -2,7 +2,8 @@
 // Cliente ligero para comunicación directa con la API REST de Supabase
 
 const SUPABASE_BASE_URL = 'https://bjgtoplousxknouxneor.supabase.co';
-const SUPABASE_ANON_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImJqZ3RvcGxvdXN4a25vdXhuZW9yIiwicm9sZSI6ImFub24iLCJpYXQiOjE3OTQ4MzQ3OTMsImV4cCI6MjExMDQxMDc5M30.x9NoFdDmqQi8HktWOw7kPRnslLM-o0fZnD5EHTPqjYc';
+export const SUPABASE_FUNCTIONS_URL = `${SUPABASE_BASE_URL}/functions/v1`;
+export const SUPABASE_ANON_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImJqZ3RvcGxvdXN4a25vdXhuZW9yIiwicm9sZSI6ImFub24iLCJpYXQiOjE3OTQ4MzQ3OTMsImV4cCI6MjExMDQxMDc5M30.x9NoFdDmqQi8HktWOw7kPRnslLM-o0fZnD5EHTPqjYc';
 
 const headers = {
   'apikey': SUPABASE_ANON_KEY,

@@ -1114,7 +1114,9 @@ body.test-body {
   display: flex;
   flex-direction: column;
   overflow: hidden;
-  max-height: 28rem;
+  height: min(80vh, 640px);
+  height: min(80dvh, 640px);
+  max-height: calc(100vh - 32px);
 }
 
 .chat-header {
@@ -1136,36 +1138,44 @@ body.test-body {
 }
 
 .chat-messages {
-  flex: 1;
+  flex: 1 1 auto;
+  min-height: 0;
+  position: relative;
   overflow-y: auto;
+  overscroll-behavior: contain;
   padding: 16px;
-  background: #f8fafc;
+  background: #e9eef5;
   display: flex;
   flex-direction: column;
-  gap: 12px;
-  min-height: 11rem;
-  max-height: 17rem;
+  gap: 8px;
 }
 
 .chat-msg {
   max-width: 82%;
-  padding: 10px 14px;
-  font-size: 12px;
+  width: fit-content;
+  padding: 8px 12px 6px;
+  font-size: 13px;
   line-height: 1.5;
-  border-radius: 2px;
+  border-radius: 12px;
+  box-shadow: 0 1px 1px rgba(15, 23, 42, 0.12);
 }
 
+/* Mensajes de Aurelio: pegados a la izquierda (como la otra persona en WhatsApp) */
 .chat-msg.aurelio {
   background: #ffffff;
-  border: 1px solid rgba(226, 232, 240, 0.9);
-  color: #334155;
+  color: #1e293b;
   align-self: flex-start;
+  margin-right: auto;
+  border-top-left-radius: 2px;
 }
 
+/* Mensajes del usuario: pegados a la derecha */
 .chat-msg.user {
-  background: #003b81;
+  background: #0b4fa3;
   color: #ffffff;
   align-self: flex-end;
+  margin-left: auto;
+  border-top-right-radius: 2px;
 }
 
 /* Indicador de escritura animado para AurelioBot */
@@ -1370,4 +1380,115 @@ body.test-body {
   .react-question-panel {
     padding: 24px 12px;
   }
+}
+
+/* =========================================================
+   Chat de Aurelio v2: input siempre visible, mensajes con formato y animación
+   ========================================================= */
+.chat-header,
+.chat-suggested-queries,
+.chat-form {
+  flex-shrink: 0;
+}
+
+/* Sugerencias en una sola fila deslizable */
+.chat-suggested-queries {
+  flex-wrap: nowrap;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: thin;
+}
+
+.query-chip {
+  flex: 0 0 auto;
+  white-space: nowrap;
+}
+
+.chat-form {
+  padding: 10px;
+  box-shadow: 0 -4px 12px rgba(0, 0, 0, 0.04);
+}
+
+.chat-input {
+  min-height: 44px;
+  min-width: 0;
+}
+
+/* Burbujas */
+.chat-msg {
+  max-width: 88%;
+  font-size: 13px;
+  line-height: 1.55;
+  overflow-wrap: anywhere;
+}
+
+.chat-msg.user {
+  white-space: pre-wrap;
+}
+
+.chat-msg-time {
+  display: block;
+  text-align: right;
+  font-size: 10px;
+  line-height: 1;
+  margin-top: 4px;
+  opacity: 0.6;
+}
+
+.chat-msg-body p {
+  margin: 0 0 8px;
+}
+
+.chat-msg-body > :last-child {
+  margin-bottom: 0;
+}
+
+.chat-msg-body ul,
+.chat-msg-body ol {
+  margin: 4px 0 8px;
+  padding-left: 18px;
+}
+
+.chat-msg-body li {
+  margin-bottom: 4px;
+}
+
+.chat-msg-body strong {
+  color: #003b81;
+  font-weight: 700;
+}
+
+.chat-msg-body a {
+  color: #0a63c9;
+  text-decoration: underline;
+  word-break: break-all;
+}
+
+/* Animación de entrada de la respuesta + resaltado breve */
+.chat-msg-new {
+  animation: chatMsgIn 0.32s ease-out both, chatMsgFlash 1.6s ease-out 0.1s both;
+}
+
+@keyframes chatMsgIn {
+  from { opacity: 0; transform: translateY(12px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes chatMsgFlash {
+  0%   { background: #e0f7fc; box-shadow: 0 0 0 2px rgba(0, 168, 204, 0.35); }
+  100% { background: #ffffff; box-shadow: 0 0 0 0 rgba(0, 168, 204, 0); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .chat-msg-new { animation: none; }
+  .chat-messages { scroll-behavior: auto; }
+}
+
+@media (max-width: 600px) {
+  .chat-panel {
+    height: calc(100vh - 16px);
+    height: calc(100dvh - 16px);
+    max-height: none;
+  }
+  .chat-msg { max-width: 92%; }
 }

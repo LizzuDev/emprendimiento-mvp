@@ -4,7 +4,8 @@
 // =========================================================
 
 import { MACROAREAS, FASE_1_QUESTIONS, DOMAIN_DATA } from './data/vocationalData.js';
-import { getAurelioContextualAnswer, queryGroqAurelio } from './aurelioBot.js';
+import { getAurelioContextualAnswer, queryGroqAurelio, getLastAurelioSource } from './aurelioBot.js';
+import { formatAurelioMessage, escapeHtml } from './chatFormat.js';
 import { telemetry } from './telemetry.js';
 
 // --- ESTADO GLOBAL Y PERSISTENCIA (MISMAS CLAVES QUE EN REACT) ---
@@ -1073,12 +1074,19 @@ function updateChatAiStatus() {
   const subEl = document.getElementById('chat-header-sub');
   if (!subEl) return;
   const hasKey = typeof localStorage !== 'undefined' && !!(localStorage.getItem('puce_groq_api_key') || (typeof window !== 'undefined' && window.GROQ_API_KEY));
+  const src = getLastAurelioSource();
   if (hasKey) {
     subEl.innerHTML = 'Llama 3.3 70B Activo <span style="color: #4ade80;">●</span>';
-    subEl.title = 'Conectado a Groq Cloud AI (Llama 3.3 70B)';
+    subEl.title = 'Conectado a Groq Cloud AI con tu clave personal';
+  } else if (src === 'groq' || src === 'gemini') {
+    subEl.innerHTML = 'Asistente con IA <span style="color: #4ade80;">●</span>';
+    subEl.title = 'Respondiendo con inteligencia artificial';
+  } else if (src === 'local') {
+    subEl.innerHTML = 'Modo básico <span style="color: #facc15;">⚡</span>';
+    subEl.title = 'El servicio de IA no respondió; se usa el motor local con datos de la PUCE.';
   } else {
-    subEl.innerHTML = 'Motor Experto PUCE <span style="color: #facc15;">⚡</span>';
-    subEl.title = 'Motor local verificado. Haz clic en ⚙️ para conectar Groq Cloud AI.';
+    subEl.textContent = 'Orientador Vocacional PUCE';
+    subEl.title = '';
   }
 }
 
@@ -1105,10 +1113,17 @@ function openChat() {
 // Con el teclado abierto en el celular, el panel del chat se ajusta al alto visible
 // para que la caja de texto y el botón de envío no queden tapados (cambio por pruebas U1-U5).
 function ajustarChatAlTeclado() {
-  if (!chatPanel || !window.visualViewport || window.innerWidth > 600) return;
+  if (!chatPanel || !window.visualViewport) return;
+  if (window.innerWidth > 600) {
+    chatPanel.style.bottom = '';
+    chatPanel.style.height = '';
+    chatPanel.style.maxHeight = '';
+    return;
+  }
   const vv = window.visualViewport;
   const tecladoAlto = Math.max(window.innerHeight - vv.height - vv.offsetTop, 0);
   chatPanel.style.bottom = `${tecladoAlto + 8}px`;
+  chatPanel.style.height = `${vv.height - 16}px`;
   chatPanel.style.maxHeight = `${vv.height - 16}px`;
 }
 if (window.visualViewport) {
@@ -1120,24 +1135,52 @@ function closeChat() {
   if (chatPanel) chatPanel.style.display = 'none';
 }
 
-function renderChatMessages() {
+function chatTimeLabel(ts) {
+  if (!ts) return '';
+  const d = new Date(ts);
+  if (Number.isNaN(d.getTime())) return '';
+  return `<span class="chat-msg-time">${d.toLocaleTimeString('es-EC', { hour: '2-digit', minute: '2-digit' })}</span>`;
+}
+
+// Estilo WhatsApp: Aurelio a la izquierda, el usuario a la derecha; sin rótulos ni tablas.
+function chatMessageHtml(msg, isNew) {
+  const time = chatTimeLabel(msg.ts);
+  if (msg.sender === 'aurelio') {
+    return `
+      <div class="chat-msg aurelio${isNew ? ' chat-msg-new' : ''}">
+        <div class="chat-msg-body">${formatAurelioMessage(msg.text)}</div>${time}
+      </div>`;
+  }
+  return `<div class="chat-msg user">${escapeHtml(msg.text)}${time}</div>`;
+}
+
+// scroll: 'bottom' (por defecto) | 'reply-start' (inicio de la última respuesta de Aurelio)
+function renderChatMessages({ scroll = 'bottom', animateLast = false } = {}) {
   const msgContainer = document.getElementById('chat-messages-container');
   if (!msgContainer) return;
 
-  msgContainer.innerHTML = state.chatHistory.map(msg => `
-    <div class="chat-msg ${msg.sender}">
-      ${msg.text}
-    </div>
-  `).join('');
+  const lastIdx = state.chatHistory.length - 1;
+  msgContainer.innerHTML = state.chatHistory
+    .map((msg, i) => chatMessageHtml(msg, animateLast && i === lastIdx))
+    .join('');
 
-  msgContainer.scrollTop = msgContainer.scrollHeight;
+  const reduceMotion = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const behavior = reduceMotion ? 'auto' : 'smooth';
+  const lastMsg = msgContainer.lastElementChild;
+
+  if (scroll === 'reply-start' && lastMsg) {
+    // Se desplaza al inicio de la respuesta para que el usuario vea que Aurelio ya contestó
+    msgContainer.scrollTo({ top: Math.max(lastMsg.offsetTop - 8, 0), behavior });
+  } else {
+    msgContainer.scrollTo({ top: msgContainer.scrollHeight, behavior });
+  }
 }
 
 async function sendAurelioQuestion(questionText) {
   if (!questionText || !questionText.trim()) return;
 
   const userQuery = questionText.trim();
-  state.chatHistory.push({ sender: 'user', text: userQuery });
+  state.chatHistory.push({ sender: 'user', text: userQuery, ts: Date.now() });
   saveStorage('chatHistory', state.chatHistory);
   renderChatMessages();
 
@@ -1148,13 +1191,14 @@ async function sendAurelioQuestion(questionText) {
     typingEl = document.createElement('div');
     typingEl.className = 'chat-typing';
     typingEl.id = 'chat-typing-indicator';
+    typingEl.setAttribute('aria-label', 'Aurelio está escribiendo');
     typingEl.innerHTML = `
       <span class="chat-typing-dot"></span>
       <span class="chat-typing-dot"></span>
       <span class="chat-typing-dot"></span>
     `;
     msgContainer.appendChild(typingEl);
-    msgContainer.scrollTop = msgContainer.scrollHeight;
+    msgContainer.scrollTo({ top: msgContainer.scrollHeight, behavior: 'smooth' });
   }
 
   const activeCareer = state.rankedCareers.find(c => c.key === state.activeCareerKey);
@@ -1166,22 +1210,23 @@ async function sendAurelioQuestion(questionText) {
     const existingTyping = document.getElementById('chat-typing-indicator');
     if (existingTyping) existingTyping.remove();
 
-    state.chatHistory.push({ sender: 'aurelio', text: reply });
+    state.chatHistory.push({ sender: 'aurelio', text: reply, ts: Date.now() });
     saveStorage('chatHistory', state.chatHistory);
     updateChatAiStatus();
-    renderChatMessages();
+    renderChatMessages({ scroll: 'reply-start', animateLast: true });
 
-    telemetry.trackAurelioQuery(activeCareer?.key || 'general', userQuery, reply, 'groq_ai');
+    const src = getLastAurelioSource();
+    telemetry.trackAurelioQuery(activeCareer?.key || 'general', userQuery, reply, src === 'local' ? 'local_fallback' : src === 'gemini' ? 'gemini_ai' : 'groq_ai');
   } catch (err) {
     console.error('Error al generar respuesta en AurelioBot:', err);
     const existingTyping = document.getElementById('chat-typing-indicator');
     if (existingTyping) existingTyping.remove();
 
     const fallbackReply = getAurelioContextualAnswer(activeCareer, userQuery);
-    state.chatHistory.push({ sender: 'aurelio', text: fallbackReply });
+    state.chatHistory.push({ sender: 'aurelio', text: fallbackReply, ts: Date.now() });
     saveStorage('chatHistory', state.chatHistory);
     updateChatAiStatus();
-    renderChatMessages();
+    renderChatMessages({ scroll: 'reply-start', animateLast: true });
 
     telemetry.trackAurelioQuery(activeCareer?.key || 'general', userQuery, fallbackReply, 'local_fallback');
   }

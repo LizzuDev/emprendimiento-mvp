@@ -3,6 +3,8 @@
 // Respuestas contextuales precisas por carrera y soporte Groq AI
 // =========================================================
 
+import { SUPABASE_FUNCTIONS_URL, SUPABASE_ANON_KEY } from './supabaseClient.js';
+
 /**
  * Normaliza texto para búsqueda semántica insensible a tildes y mayúsculas.
  */
@@ -80,6 +82,15 @@ export function getAurelioContextualAnswer(career, questionText) {
   const faculty = career.faculty || 'la PUCE';
   const norm = normalizeText(questionText);
   const tiene = (...palabras) => palabras.some(p => norm.includes(normalizeText(p)));
+  const numPalabras = norm.split(/\s+/).filter(Boolean).length;
+
+  // 0. SALUDOS, AGRADECIMIENTOS Y DESPEDIDAS (solo mensajes cortos)
+  if (numPalabras <= 4 && /^(hola|holi|buenas|buenos dias|buen dia|hey|que tal|saludos)\b/.test(norm)) {
+    return `¡Hola! Soy **Aurelio**, tu orientador de la PUCE 👋 Cuéntame qué quieres saber sobre **${cName}**. Por ejemplo:\n- Costos y becas\n- Convenios y prácticas\n- Materias del primer semestre\n- Intercambios internacionales`;
+  }
+  if (numPalabras <= 6 && /(gracias|chao|adios|hasta luego|nos vemos)/.test(norm)) {
+    return `¡Con gusto! Cuando quieras volver a preguntar sobre **${cName}**, aquí estaré. Y si decides dar el paso, Admisiones PUCE te acompaña: WhatsApp **099 2420 103**.`;
+  }
 
   // 1. CONVENIOS, PRÁCTICAS PREPROFESIONALES, HOSPITALES, PASANTÍAS
   if (tiene('convenio', 'convenios', 'practica', 'practicas', 'hospital', 'hospitales', 'clinica', 'clinicas', 'pasantia', 'pasantias', 'rotacion', 'internado', 'msp', 'iess', 'centro de salud')) {
@@ -129,8 +140,20 @@ export function getAurelioContextualAnswer(career, questionText) {
     }
   }
 
+  // 4b. SUELDO / SALARIO (no hay cifras oficiales en la plataforma: no se inventan)
+  if (tiene('sueldo', 'salario', 'cuanto gana', 'cuanto ganan', 'remuneracion', 'ganar dinero')) {
+    return `No tengo cifras oficiales de sueldos para **${cName}**, y prefiero no inventarlas: varían según la empresa, la experiencia y el sector.\n\nLo que sí puedo decirte:\n- Los graduados de la PUCE cuentan con una red de contactos de más de 75 años y convenios de prácticas.\n- Puedes pedir datos de empleabilidad actualizados a Admisiones: WhatsApp **099 2420 103** o **inscripciones@puce.edu.ec**.`;
+  }
+
+  // 4c. QUÉ HACE UN PROFESIONAL DE ESTA CARRERA
+  if (tiene('que hace un', 'que hacen', 'a que se dedica', 'en que consiste', 'de que trata', 'que voy a aprender', 'que aprendo', 'que se estudia', 'perfil')) {
+    const skillsList = (career.skills || []).slice(0, 4);
+    const skillsLines = skillsList.length ? `\n\n**Habilidades que desarrollarás:**\n${skillsList.map(s => `- ${s}`).join('\n')}` : '';
+    return `**${cName}** (${faculty}): ${career.description || 'formación técnica y humana de excelencia para resolver problemas reales.'}${skillsLines}`;
+  }
+
   // 5. CAMPO LABORAL, DÓNDE TRABAJAR, EMPLEABILIDAD, SALIDAS
-  if (tiene('trabajo', 'trabajar', 'empleo', 'campo', 'laboral', 'salida', 'donde puedo trabajar', 'sueldo', 'empresa', 'contrato', 'ganar', 'puesto')) {
+  if (tiene('trabajo', 'trabajar', 'empleo', 'campo', 'laboral', 'salida', 'donde puedo trabajar', 'empresa', 'contrato', 'puesto')) {
     const field = career.fieldOfWork || 'Diversos sectores empresariales, públicos y de consultoría especializada.';
     return `Como profesional de **${cName}** de la PUCE podrás desempeñarte en: **${field}** Los egresados de la PUCE tienen una tasa de empleabilidad superior al 85% gracias al prestigio institucional, convenios de prácticas y red de contactos de más de 75 años.`;
   }
@@ -156,6 +179,16 @@ export function getAurelioContextualAnswer(career, questionText) {
     return `La PUCE es una de las universidades más prestigiosas y tradicionales del país. Está plenamente acreditada por el **CACES** y se ubica consistentemente en las posiciones de vanguardia del **QS World University Rankings** en Ecuador, destacando por su producción científica, excelencia docente y alta empleabilidad de sus graduados en **${cName}**.`;
   }
 
+  // 8b. UBICACIÓN Y CÓMO LLEGAR
+  if (tiene('donde queda', 'donde esta', 'ubicacion', 'ubicada', 'direccion', 'como llegar', 'en que ciudad', 'sede')) {
+    return `**${cName}** se estudia en el **campus matriz de la PUCE en Quito**, Ecuador.\n\nPara la dirección exacta, indicaciones de llegada o visitas guiadas, consulta el portal de grado de la PUCE: https://landing.puce.edu.ec/pucegradogeneral o escribe a Admisiones: WhatsApp **099 2420 103**.`;
+  }
+
+  // 8c. COMPARAR CARRERAS / DUDAS DE ELECCIÓN
+  if (tiene('diferencia entre', 'comparar', 'compara', 'mejor que', 'cual es mejor', 'o mejor', 'no se cual', 'indecis', 'dudo', 'no estoy segur')) {
+    return `Es normal dudar al elegir 😊 Cada carrera tiene un enfoque distinto, y lo importante es que encaje contigo.\n\n- Revisa tu **Ranking de Afinidad** y compara las carreras que te salieron.\n- Prueba el **mini-reto** de cada una para sentir cómo se piensa en esa profesión.\n- Mira la **malla curricular** para ver qué materias estudiarás.\n\nSi quieres, cuéntame qué carreras comparas y qué te preocupa de cada una.`;
+  }
+
   // 9. CAMPUS, VIDA UNIVERSITARIA, DEPORTES E INSTALACIONES
   if (tiene('campus', 'instalaciones', 'deporte', 'gimnasio', 'piscina', 'cancha', 'biblioteca', 'club', 'pastoral', 'polideportivo', 'cafeteria', 'actividades')) {
     return `El campus matriz de la PUCE en Quito te ofrece un entorno integral: **Polideportivo** con piscina semiolímpica temperada, canchas deportivas, gimnasio, Biblioteca General con más de 200.000 volúmenes físicos y digitales, salas de estudio, Centro Cultural, cafeterías y decenas de clubes estudiantiles, voluntariado y arte.`;
@@ -176,16 +209,24 @@ export function getAurelioContextualAnswer(career, questionText) {
     return `El proceso de admisión para **${cName}** está abierto. Puedes solicitar acompañamiento personalizado pulsando el botón **«Quiero más información»** en esta pantalla, o comunicándote al WhatsApp de Admisiones **099 2420 103** / correo **inscripciones@puce.edu.ec**. ¡No te quedes sin tu cupo!`;
   }
 
-  // 13. RESPUESTA DINÁMICA CONTEXTUAL INTELIGENTE (Cubre cualquier otra pregunta)
-  const desc = career.description || '';
-  const skills = (career.skills || []).slice(0, 3).join(', ');
-  const field = career.fieldOfWork || '';
+  const sugerencias = `Puedes preguntarme, por ejemplo, por:\n- Costos, becas y descuentos\n- Convenios y prácticas\n- Materias del primer semestre\n- Intercambios internacionales\n- Dónde podrías trabajar`;
 
-  return `Respecto a tu consulta sobre **${cName}** (${faculty}):
-En esta carrera te formarás en **${desc}**
-• **Habilidades formativas:** ${skills || 'formación técnica y humana de excelencia'}.
-• **Entorno profesional:** ${field ? field.slice(0, 160) + '...' : 'Amplia inserción en el sector público, privado y organismos especializados.'}
-¿Te gustaría conocer en detalle los aranceles diferenciados, convenios hospitalarios/institucionales, materias de primer semestre o conversar con un asesor de Admisiones PUCE?`;
+  // 12b. TEMAS AJENOS A LA UNIVERSIDAD
+  if (tiene('clima', 'chiste', 'futbol', 'politica', 'receta', 'pelicula', 'cancion', 'horoscopo', 'bitcoin', 'criptomoneda', 'novia', 'novio', 'tarea de', 'resuelve', 'quien eres', 'cuantos anos tienes')) {
+    return `Soy **Aurelio**, el orientador vocacional de la PUCE, así que mi especialidad es ayudarte a elegir y conocer tu carrera 🎓 De ese otro tema no puedo ayudarte mucho.\n\nSi te interesa **${cName}**, ${sugerencias.charAt(0).toLowerCase()}${sugerencias.slice(1)}`;
+  }
+
+  // 13. RESPUESTA GENERAL (cualquier otra pregunta): honesta, útil y con siguientes pasos
+  const recorta = (texto, max) => {
+    if (!texto || texto.length <= max) return texto || '';
+    const corte = texto.slice(0, max);
+    return corte.slice(0, Math.max(corte.lastIndexOf(' '), 0)).replace(/[,;:\s]+$/, '') + '…';
+  };
+  const desc = recorta(career.description, 220);
+  const skills = (career.skills || []).slice(0, 3).join(', ');
+  const field = recorta(career.fieldOfWork, 160);
+
+  return `Sobre tu consulta en **${cName}**, te comparto lo más relevante:\n\n- **Enfoque de la carrera:** ${desc || 'formación técnica y humana de excelencia.'}\n- **Habilidades clave:** ${skills || 'pensamiento crítico, trabajo en equipo y ética profesional.'}\n- **Dónde trabajar:** ${field || 'sector público, privado y organismos especializados.'}\n\nSi necesitas el dato exacto, Admisiones PUCE te responde: WhatsApp **099 2420 103** o **inscripciones@puce.edu.ec**.\n\n${sugerencias}`;
 }
 
 /**
@@ -216,8 +257,12 @@ export async function queryGroqAurelio(career, questionText, chatHistory = [], c
     (typeof window !== 'undefined' && window.GROQ_API_KEY) || 
     (typeof localStorage !== 'undefined' && localStorage.getItem('puce_groq_api_key'));
 
-  // Si no hay API Key configurada, responde inmediatamente con el motor local oficial
+  // Sin clave propia en este navegador: se usa el servicio de IA del proyecto (Supabase Edge Function),
+  // que guarda la clave del proveedor en el servidor. Si no responde, se usa el motor local.
   if (!apiKey || !apiKey.trim()) {
+    const viaProxy = await queryAurelioProxy(career, questionText, chatHistory);
+    if (viaProxy) return viaProxy;
+    lastAiSource = 'local';
     return getAurelioContextualAnswer(career, questionText);
   }
 
@@ -256,7 +301,9 @@ DATOS OFICIALES DE LA CARRERA ACTIVA:
 - Materias del primer semestre: ${cSem1}
 
 DIRECTRICES DE RESPUESTA:
-1. Responde directamente y con precisión a la pregunta del usuario (máximo 2 a 4 oraciones claras).
+1. Responde directamente y con precisión a la pregunta del usuario (máximo ~120 palabras) y termina siempre con una oración completa.
+   FORMATO: texto sencillo. Puedes usar **negrita** para resaltar 1 a 3 ideas clave y listas con "- " cuando enumeres. No uses encabezados (#), tablas ni bloques de código.
+   Si no tienes un dato exacto (sueldos, fechas, horarios), dilo con honestidad y deriva a Admisiones (WhatsApp 099 2420 103, inscripciones@puce.edu.ec); nunca inventes cifras.
 2. Si te preguntan sobre convenios o prácticas, menciona los convenios oficiales pertinentes a su carrera y facultad (especialmente hospitales como MSP, IESS, HCAM, Vozandes, Metropolitano si es del área de salud).
 3. Si te preguntan por costos, menciona el descuento institucional y las 5 categorías socioeconómicas.
 4. Mantén un tono juvenil, motivador y acogedor, sin perder la seriedad académica y ética de la PUCE.
@@ -267,7 +314,7 @@ DIRECTRICES DE RESPUESTA:
       { role: 'system', content: systemPrompt }
     ];
 
-    const recentHistory = chatHistory.slice(-4);
+    const recentHistory = historyBeforeQuestion(chatHistory, questionText).slice(-4);
     recentHistory.forEach(msg => {
       messages.push({
         role: msg.sender === 'user' ? 'user' : 'assistant',
@@ -287,12 +334,13 @@ DIRECTRICES DE RESPUESTA:
         model: 'llama-3.3-70b-versatile',
         messages: messages,
         temperature: 0.6,
-        max_tokens: 280
+        max_tokens: 700
       })
     });
 
     if (!response.ok) {
       console.warn(`Groq API respondió con estado ${response.status}. Usando motor local de respaldo.`);
+      lastAiSource = 'local';
       return getAurelioContextualAnswer(career, questionText);
     }
 
@@ -300,6 +348,7 @@ DIRECTRICES DE RESPUESTA:
     const reply = data.choices?.[0]?.message?.content?.trim();
 
     if (reply) {
+      lastAiSource = 'groq';
       return reply;
     }
   } catch (err) {
@@ -307,5 +356,71 @@ DIRECTRICES DE RESPUESTA:
   }
 
   // Fallback si la llamada a Groq falla o hay un corte de red
+  lastAiSource = 'local';
   return getAurelioContextualAnswer(career, questionText);
+}
+
+// =========================================================
+// IA compartida para todos los visitantes (sin exponer claves en el navegador)
+// =========================================================
+const AI_PROXY_URL = `${SUPABASE_FUNCTIONS_URL}/aurelio-chat`;
+
+// Último origen de respuesta: 'unknown' | 'groq' | 'gemini' | 'local'
+let lastAiSource = 'unknown';
+export function getLastAurelioSource() {
+  return lastAiSource;
+}
+
+// El historial ya incluye la pregunta actual (la última del usuario): se excluye para no duplicarla.
+function historyBeforeQuestion(chatHistory, questionText) {
+  const hist = Array.isArray(chatHistory) ? chatHistory : [];
+  const last = hist[hist.length - 1];
+  return last && last.sender === 'user' && last.text === questionText ? hist.slice(0, -1) : hist;
+}
+
+async function queryAurelioProxy(career, questionText, chatHistory) {
+  const controller = new AbortController();
+  const timer = setTimeout(() => controller.abort(), 20000);
+  try {
+    const response = await fetch(AI_PROXY_URL, {
+      method: 'POST',
+      signal: controller.signal,
+      headers: {
+        'Content-Type': 'application/json',
+        'apikey': SUPABASE_ANON_KEY,
+        'Authorization': `Bearer ${SUPABASE_ANON_KEY}`
+      },
+      body: JSON.stringify({
+        question: questionText,
+        history: historyBeforeQuestion(chatHistory, questionText).slice(-4).map(m => ({
+          role: m.sender === 'user' ? 'user' : 'assistant',
+          content: String(m.text || '')
+        })),
+        career: {
+          name: career?.name || '',
+          faculty: career?.faculty || '',
+          description: career?.description || '',
+          skills: career?.skills || [],
+          fieldOfWork: career?.fieldOfWork || '',
+          benefits: career?.benefits || [],
+          semester1: career?.syllabus?.semesters?.[0] || []
+        }
+      })
+    });
+    if (!response.ok) {
+      console.warn(`Servicio de IA respondió ${response.status}. Se usa el motor local.`);
+      return null;
+    }
+    const data = await response.json();
+    const reply = typeof data?.reply === 'string' ? data.reply.trim() : '';
+    if (reply) {
+      lastAiSource = data.provider === 'gemini' ? 'gemini' : 'groq';
+      return reply;
+    }
+  } catch (err) {
+    console.warn('Servicio de IA no disponible:', err);
+  } finally {
+    clearTimeout(timer);
+  }
+  return null;
 }
