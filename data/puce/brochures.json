@@ -1,0 +1,5167 @@
+{
+ "ingenieria_integral": {
+  "nombre": "INGENIERÍA",
+  "modalidad": "Presencial",
+  "duracion": "9 semestres",
+  "titulo": null,
+  "malla": [
+   [
+    "Teoría de los mecanismos",
+    "Matemática I",
+    "Electro magnetismo",
+    "Humanidades I",
+    "PDD – pedagogía de la decisión I",
+    "Pedagogía de proyecto-análisis Dron",
+    "Aprendizaje basado en problemas"
+   ],
+   [
+    "Resistencia de estructuras",
+    "Matemáticas II",
+    "Óptica",
+    "Descubrimiento de empresas",
+    "Humanidades II",
+    "PDD – pedagogía de la decisión II",
+    "Pedagogía de proyecto-optimización del Dron",
+    "Aprendizaje basado en problemas – PBL B"
+   ],
+   [
+    "Resistencia de estructuras",
+    "Matemáticas III",
+    "Electrónica Analógica",
+    "Mecánica de Fluidos y Polímeros",
+    "Humanidades III",
+    "PDD – pedagogía de la decisión III",
+    "Pedagogía de proyecto-conceptualización de bote Dron",
+    "Aprendizaje basado en problemas",
+    "PBL C",
+    "Prácticas Preprofesionales II"
+   ],
+   [
+    "Prácticas Preprofesionales I",
+    "Electrónica Digital",
+    "Polímeros – Máquinas Térmicas",
+    "Humanidades IV",
+    "PDD – pedagogía de la decisión IV",
+    "Pedagogía de proyecto - diseño bote Dron",
+    "Aprendizaje basado en problemas – PBL D",
+    "Prácticas Preprofesionales III"
+   ],
+   [
+    "Técnicas de Manufactura",
+    "Electrónica de Potencia I",
+    "Microestructura de Materiales",
+    "Industrialización",
+    "Humanidades V",
+    "PDD – pedagogía de la decisión V",
+    "Pedagogía de proyecto – construcción bote Dron I",
+    "Aprendizaje basado en problemas – PBL E"
+   ],
+   [
+    "Elasticidad y Elementos Finitos",
+    "Electrónica de Potencia II",
+    "Estructuras de Relación-Propiedades y Procesos",
+    "Métodos y Calidad",
+    "Humanidades VI",
+    "PDD – pedagogía de la decisión VI",
+    "Pedagogía de proyecto – construcción bote",
+    "Dron II",
+    "Aprendizaje basado en problemas – PBL F",
+    "Prácticas Preprofesionales IV"
+   ],
+   [
+    "IoT y Ciberseguridad",
+    "Materiales de Construcción-Transferencias Térmicas",
+    "Enfoque de Sistemas",
+    "Humanidades VII",
+    "PDD – pedagogía de la decisión VII",
+    "Pedagogía de proyecto – Proyecto diseño Demótico",
+    "Aprendizaje basado en problemas – PBL G"
+   ],
+   [
+    "Dimensionamiento de Estructuras",
+    "Red Inteligente, Microcontroladores y Automatización",
+    "Transferencias Térmicas – Reciclaje de materiales",
+    "Ley de Contratos Internacionales",
+    "Humanidades VIII",
+    "PDD – pedagogía de la decisión VIII",
+    "Pedagogía de proyecto – Integración Proyecto",
+    "Aprendizaje basado en problemas – PBL H",
+    "Prácticas de servicio comunitario"
+   ],
+   [
+    "Vibración Estructural",
+    "Simulación Numérica",
+    "Control y Dominio de Procesos Industriales",
+    "Gestión financiera y Derecho Gestión Industrial",
+    "PDD – Pedagogía de la decisión – Proyecto Profesional y Vida",
+    "Unidad de integración curricular – Proyecto Creación",
+    "Experimentación Profesional V"
+   ]
+  ],
+  "bloques_adicionales": [],
+  "itinerarios": [],
+  "semestres_compartidos": [],
+  "malla_lineas_sin_asignar": [],
+  "problemas_malla": [],
+  "precio_sin_descuento": 5000,
+  "inversion": 3050,
+  "descuento_pct": 39.0,
+  "montos_encontrados": [
+   5000,
+   3050
+  ],
+  "fuente": "https://www.puce.edu.ec/docs/dce/landing/pdf/ingenieria-integral-202401.pdf",
+  "fecha_fuente": "2026-11-26T21:40:33+00:00",
+  "sha256": "0b090e39a170622a48d928f8b3724c3e87797a7d9bde9b5fbc661bb90c891354"
+ },
+ "arquitectura": {
+  "nombre": "ARQUITECTURA",
+  "modalidad": "Presencial",
+  "duracion": "10 semestres",
+  "titulo": "ARQUITECTO/A",
+  "malla": [
+   [
+    "Conocimiento, Palabra y Cambio Social",
+    "Laboratorio 1: Exploración y Retos",
+    "Introducción a los Lenguajes Visuales",
+    "Ciencia de los Materiales: Propiedades, Procesos y Ciclos",
+    "Historia y Pensamiento de las Prácticas Creativas Globales"
+   ],
+   [
+    "Fundamentos de Investigación",
+    "Laboratorio 2: Experimentación y Cocreación",
+    "Lenguajes Visuales Aplicados",
+    "Materia y Recursos: Enfoque Sostenible",
+    "Historia y Pensamiento de las Prácticas Creativas Latinoamericanas"
+   ],
+   [
+    "Jesucristo y Aprendizajes Vitales",
+    "Taller Integrador I",
+    "Comunicación y Representación I",
+    "Sistemas Constructivos y Estructuras I",
+    "Teoría e Historia de la Arquitectura I"
+   ],
+   [
+    "Bioclimática",
+    "Taller Integrador II",
+    "Comunicación y Representación II",
+    "Sistemas Constructivos y Estructuras II",
+    "Teoría e Historia de la Arquitectura II"
+   ],
+   [
+    "Ética e Interculturalidad",
+    "Taller Integrador III",
+    "Comunicación y Representación III",
+    "Sistemas Constructivos y Estructuras III",
+    "Análisis y Crítica"
+   ],
+   [
+    "Ecología Integral",
+    "Taller Integrador IV",
+    "Comunicación y Representación IV",
+    "Integración y Procesos Digitales de la Construcción",
+    "Teoría e Historia del Espacio Urbano"
+   ],
+   [
+    "Instalaciones Especiales",
+    "Taller Integrador V",
+    "Asignatura 1 de Itinerario",
+    "Asignatura 2 de Itinerario",
+    "Gestión Pública y Privada"
+   ],
+   [
+    "Ética de la Legislación y Riesgos",
+    "Taller Integrador VI",
+    "Asignatura 3 de Itinerario",
+    "Asignatura 4 de Itinerario",
+    "Investigación Tecnológica Aplicada I"
+   ],
+   [
+    "Seminario de Titulación",
+    "Taller Profesional",
+    "Investigación Tecnológica Aplicada II",
+    "Asesorías de Proyecto Arquitectónico I",
+    "Gestión de Emprendimiento"
+   ],
+   [
+    "Integración Curricular",
+    "Prototipo de Sistema Constructivo",
+    "Asesorías de Proyecto Arquitectónico II",
+    "Asesorías de Proyecto Arquitectónico III",
+    "Factibilidad"
+   ]
+  ],
+  "bloques_adicionales": [],
+  "itinerarios": [
+   {
+    "nombre": "Itinerario I: Herramientas Digitales Aplicadas a Procesos de Construcción",
+    "materias": [
+     {
+      "materia": "Procesamiento Tridimensional de Información (BIM)",
+      "nivel": 7
+     },
+     {
+      "materia": "Laboratorio, Normativa y Procesos",
+      "nivel": 7
+     },
+     {
+      "materia": "Gestión de Seguridad y Ambiente en Obra",
+      "nivel": 8
+     },
+     {
+      "materia": "Comunicación y Evaluación del Proyecto",
+      "nivel": 8
+     }
+    ]
+   },
+   {
+    "nombre": "Itinerario II: Ciudades Sostenibles y Acción Climática",
+    "materias": [
+     {
+      "materia": "Ciudad y Espacio Público Ecosistémico",
+      "nivel": 7
+     },
+     {
+      "materia": "Movilidad Sostenible",
+      "nivel": 7
+     },
+     {
+      "materia": "Resiliencia y Cambio Climático",
+      "nivel": 8
+     },
+     {
+      "materia": "Proyecto de Aplicación",
+      "nivel": 8
+     }
+    ]
+   },
+   {
+    "nombre": "Itinerario III: Tecnologías Creativas para un Mundo Digital",
+    "materias": [
+     {
+      "materia": "Pensamiento y Crítica del Mundo Digital",
+      "nivel": 7
+     },
+     {
+      "materia": "Métodos de Computación Creativas",
+      "nivel": 7
+     },
+     {
+      "materia": "Laboratorio de Creación Digital",
+      "nivel": 8
+     },
+     {
+      "materia": "Laboratorio de Fabricación Digital",
+      "nivel": 8
+     }
+    ]
+   }
+  ],
+  "semestres_compartidos": [],
+  "malla_lineas_sin_asignar": [],
+  "problemas_malla": [],
+  "precio_sin_descuento": 3950,
+  "inversion": 3000,
+  "descuento_pct": 24.0,
+  "montos_encontrados": [
+   3950,
+   3000
+  ],
+  "fuente": "https://www.puce.edu.ec/docs/dce/landing/pdf/arquitectura-202401.pdf",
+  "fecha_fuente": "2026-11-26T21:40:39+00:00",
+  "sha256": "c029fde8658f50ccf66403899541c49cd8fe69de0e29fdfc0315842ed726ec20"
+ },
+ "ciencia_datos": {
+  "nombre": "CIENCIA DE",
+  "modalidad": "Híbrida combinación entre clases presenciales y semipresenciales",
+  "duracion": "8 semestres",
+  "titulo": "INGENIERO/A EN CIENCIA DE DATOS",
+  "malla": [
+   [
+    "Conocimiento, Palabra y Cambio Social",
+    "Matemática I y II",
+    "Matemática Discreta I",
+    "Fundamentos Ciencia de Datos",
+    "Programación I"
+   ],
+   [
+    "Fundamentos de Investigación",
+    "Algebra Lineal",
+    "Estadistica I",
+    "Matemática III",
+    "Limpieza, Depuración y Curación de Datos",
+    "Estructura de Datos"
+   ],
+   [
+    "Jesucristo y Aprendizajes Vitales",
+    "Fundamentos de Economía",
+    "Teoria Probabilidades",
+    "Estadistica II",
+    "Lectura y escritura académica",
+    "Programación Orientada a Objetos"
+   ],
+   [
+    "Visualización de Datos",
+    "Aprendizaje Estadistico I",
+    "Simulación Matemática",
+    "Métodos Numéricos",
+    "Fundamentos de Administración",
+    "Bases de Datos Relacionales y no Relacionales"
+   ],
+   [
+    "Ética e Interculturalidad",
+    "Estadistica IV",
+    "Aprendizaje Automático Inicial",
+    "Optimización",
+    "Fundamentos de Finanzas",
+    "Procesamiento, Gestión y Almacenamiento de Datos"
+   ],
+   [
+    "Ecología Integral",
+    "Aprendizaje Estadistico II",
+    "Inteligencia de Negocios",
+    "Ciencia de Datos para Estudio de Casos",
+    "Storytelling",
+    "Computación Paralela, Distribuida y en la Nube"
+   ],
+   [
+    "Seminario de Titulación",
+    "Aprendizaje Automático Avanzado",
+    "Asignatura 1 de Itinerario",
+    "Asignatura 2 de Itinerario",
+    "Ciencia de Datos para el Análisis de Problemas Reales",
+    "Analisis de Datos Geoespaciales"
+   ],
+   [
+    "Integración Curricular",
+    "Procesamiento de Lenguaje Natural",
+    "Asignatura 3 de Itinerario",
+    "Asignatura 4 de Itinerario",
+    "Ciencia de Datos para la Resolución de Problemas Reales",
+    "Gobernanza y Legislación de Datos"
+   ]
+  ],
+  "bloques_adicionales": [],
+  "itinerarios": [
+   {
+    "nombre": "Itinerario I: Gestión de Proyectos (Project Management)",
+    "materias": [
+     {
+      "materia": "Dirección de Proyecto",
+      "nivel": 7
+     },
+     {
+      "materia": "Inicio y Planificación del Proyecto",
+      "nivel": 7
+     },
+     {
+      "materia": "Ejecución, Monitoreo, Control y Cierre del Proyecto",
+      "nivel": 8
+     },
+     {
+      "materia": "Gestión Ágil de Proyectos",
+      "nivel": 8
+     }
+    ]
+   },
+   {
+    "nombre": "Itinerario II: Asesoría Política",
+    "materias": [
+     {
+      "materia": "Movilización de Bases Sociales",
+      "nivel": 7
+     },
+     {
+      "materia": "Gestión de la Asesoría Política",
+      "nivel": 7
+     },
+     {
+      "materia": "Comunicación y Marketing Político",
+      "nivel": 8
+     },
+     {
+      "materia": "Estudios de Opinión de Mercado. Análisis Electoral.",
+      "nivel": 8
+     }
+    ]
+   },
+   {
+    "nombre": "Itinerario III: Comunicación Asertiva y Gestión de Contenidos",
+    "materias": [
+     {
+      "materia": "Comunicación y Persuasión",
+      "nivel": 7
+     },
+     {
+      "materia": "Gestión de Marca Personal",
+      "nivel": 7
+     },
+     {
+      "materia": "Media Training y Estrategias Comunicativas",
+      "nivel": 8
+     },
+     {
+      "materia": "Creación y Gestión de Contenidos Multiplataforma",
+      "nivel": 8
+     }
+    ]
+   }
+  ],
+  "semestres_compartidos": [],
+  "malla_lineas_sin_asignar": [],
+  "problemas_malla": [],
+  "precio_sin_descuento": 3950,
+  "inversion": 2900,
+  "descuento_pct": 27.0,
+  "montos_encontrados": [
+   3950,
+   2900
+  ],
+  "fuente": "https://www.puce.edu.ec/docs/dce/landing/pdf/ciencia-de-datos-202401.pdf",
+  "fecha_fuente": "2026-11-26T21:40:44+00:00",
+  "sha256": "5a94a049c23dc51bdae45c142691674715197a2f9ad5211f419f77fa11933e8e"
+ },
+ "diseno_grafico": {
+  "nombre": "DISEÑO",
+  "modalidad": "Presencial",
+  "duracion": "8 semestres",
+  "titulo": "LICENCIADO/A EN DISEÑO GRÁFICO",
+  "malla": [
+   [
+    "Conocimiento, Palabra y Cambio Social",
+    "Laboratorio 1: Exploración y Retos",
+    "Introducción a los Lenguajes Visuales",
+    "Ciencia de los Materiales: Propiedades, Procesos y Ciclos",
+    "Historia y Pensamiento de las Prácticas Creativas Globales"
+   ],
+   [
+    "Fundamentos de Investigación",
+    "Laboratorio 2: Experimentación y Cocreación",
+    "Lenguajes Visuales Aplicados",
+    "Materia y Recursos: Enfoque Sostenible",
+    "Historia y Pensamiento de las Prácticas Creativas Latinoamericanas"
+   ],
+   [
+    "Jesucristo y Aprendizajes Vitales",
+    "Laboratorio de Construcción de Imagen",
+    "Expresión plástica",
+    "Animación 2D",
+    "Dibujo e ilustración digital",
+    "Culturas visuales"
+   ],
+   [
+    "Fotografía Creativa",
+    "Laboratorio de pensamiento visual",
+    "Sistemas de Impresión",
+    "Modelado y Animación 3D",
+    "Producción Audiovisual",
+    "Pensamiento crítico visual"
+   ],
+   [
+    "Ética e Interculturalidad",
+    "Diseño Editorial",
+    "Diseño para información",
+    "Comunicación y Producción",
+    "Ingeniería de Papel y Empaques",
+    "Codificación Visual y Comunicación"
+   ],
+   [
+    "Ecología Integral",
+    "Diseño de Identidad",
+    "Diseño estratégico",
+    "Prototipado de Interfaces",
+    "Experiencia del usuario",
+    "Enunciado y Discurso Gráfico"
+   ],
+   [
+    "Seminario de Titulación",
+    "Diseño para Nuevos Medios",
+    "Diseño Futuro",
+    "Código creativo",
+    "Asignatura 1 de Itinerario",
+    "Asignatura 2 de Itinerario"
+   ],
+   [
+    "Integración Curricular",
+    "Redacción Académica del Trabajo de Titulación",
+    "Análisis crítico del Diseño",
+    "Asignatura 3 de Itinerario",
+    "Asignatura 4 de Itinerario"
+   ]
+  ],
+  "bloques_adicionales": [],
+  "itinerarios": [
+   {
+    "nombre": "Itinerario I: Tecnologías Creativas para un Mundo Digital",
+    "materias": [
+     {
+      "materia": "Pensamiento y Crítica del Mundo Digital",
+      "nivel": 7
+     },
+     {
+      "materia": "Métodos de Computación Creativa",
+      "nivel": 7
+     },
+     {
+      "materia": "Laboratorio de Creación Digital",
+      "nivel": 8
+     },
+     {
+      "materia": "Laboratorio de Fabricación Digital",
+      "nivel": 8
+     }
+    ]
+   },
+   {
+    "nombre": "Itinerario II: Emprendimiento en los Negocios",
+    "materias": [
+     {
+      "materia": "Introducción al Emprendimiento y Modelos de Negocios Innovadores",
+      "nivel": 7
+     },
+     {
+      "materia": "Identidad y Marketing Aplicado al Emprendimiento",
+      "nivel": 7
+     },
+     {
+      "materia": "Operaciones e Innovación Organizacional en el Proceso de Producción",
+      "nivel": 8
+     },
+     {
+      "materia": "Finanzas para Emprendedores",
+      "nivel": 8
+     }
+    ]
+   },
+   {
+    "nombre": "Itinerario III: Comunicación Asertiva y Gestión de Contenidos",
+    "materias": [
+     {
+      "materia": "Comunicación y Persuasión",
+      "nivel": 7
+     },
+     {
+      "materia": "Gestión de Marca Personal",
+      "nivel": 7
+     },
+     {
+      "materia": "Media Training y Estrategias",
+      "nivel": 8
+     },
+     {
+      "materia": "Creación y Gestión de Contenidos Multiplataforma",
+      "nivel": 8
+     }
+    ]
+   }
+  ],
+  "semestres_compartidos": [],
+  "malla_lineas_sin_asignar": [],
+  "problemas_malla": [],
+  "precio_sin_descuento": 3950,
+  "inversion": 2900,
+  "descuento_pct": 27.0,
+  "montos_encontrados": [
+   3950,
+   2900
+  ],
+  "fuente": "https://www.puce.edu.ec/docs/dce/landing/pdf/diseno-grafico-202401.pdf",
+  "fecha_fuente": "2026-11-26T21:40:50+00:00",
+  "sha256": "e025d2df4aa8df404d5c41261a337a519bca3cb3e4562e4a26612469487b524d"
+ },
+ "ingenieria_civil": {
+  "nombre": "INGENIERÍA",
+  "modalidad": "Presencial",
+  "duracion": "9 semestres",
+  "titulo": "INGENIERO/A CIVIL",
+  "malla": [
+   [
+    "Conocimiento, Palabra y Cambio Social",
+    "Cálculo I",
+    "Física General",
+    "Pensamiento Computacional",
+    "Innovación y Creatividad",
+    "Técnicas Gráficas y Geométricas"
+   ],
+   [
+    "Fundamentos de Investigación",
+    "Cálculo II",
+    "Estadística Aplicada",
+    "Programación I",
+    "Ciencia de los Materiales: Propiedades, Procesos y Ciclos",
+    "Álgebra Lineal y Geometría Analítica"
+   ],
+   [
+    "Jesucristo y Aprendizajes Vitales",
+    "Mecánica para Ingenieros: Estática",
+    "Mecánica para Ingenieros: Dinámica",
+    "Análisis Numérico para Ingeniería",
+    "Tecnología del Hormigón y Laboratorio",
+    "Geomática-Topografía I"
+   ],
+   [
+    "Resistencia de Materiales I y Laboratorio",
+    "Mecánica de Fluidos",
+    "Hidrología",
+    "Mecánica de Suelos y Laboratorio",
+    "Geomática-Topografía II",
+    "Costos y Programación de Obra"
+   ],
+   [
+    "Ética e Interculturalidad",
+    "Resistencia de Materiales II",
+    "Hidráulica General",
+    "Instalaciones en Edificaciones Sostenibles",
+    "Geotecnia Aplicada I y Laboratorio",
+    "Diseño Geométrico Vial"
+   ],
+   [
+    "Ecología Integral",
+    "Estructuras del Hormigón I",
+    "Análisis Estructural",
+    "Hidráulica Aplicada",
+    "Sanitaria I",
+    "Geotecnia Aplicada II y Ensayos de Campo"
+   ],
+   [
+    "Estructuras del Hormigón II",
+    "Análisis Matricial",
+    "Estructuras de Acero",
+    "Sanitaria II",
+    "Diseño y Evaluación de Proyectos",
+    "Diseño de Pavimentos y Laboratorio"
+   ],
+   [
+    "Seminario de Titulación",
+    "Asignatura 1 de Itinerario",
+    "Asignatura 2 de Itinerario",
+    "Hormigón Presforzado",
+    "Cimentaciones y Métodos Computacionales",
+    "Impacto Ambiental en Obras Civiles"
+   ],
+   [
+    "Integración Curricular",
+    "Asignatura 3 de Itinerario",
+    "Asignatura 4 de Itinerario",
+    "Puentes",
+    "Diseño Sismorresistente",
+    "Fiscalización y Residencia de Obras Civiles"
+   ]
+  ],
+  "bloques_adicionales": [],
+  "itinerarios": [
+   {
+    "nombre": "Itinerario I: Herramientas Digitales Aplicadas a Procesos de Construcción",
+    "materias": [
+     {
+      "materia": "Procesamiento Tridimensional de Información (BIM)",
+      "nivel": 7
+     },
+     {
+      "materia": "Laboratorio, Normativa y Procesos",
+      "nivel": 7
+     },
+     {
+      "materia": "Gestión de Seguridad y Ambiente en Obra",
+      "nivel": 8
+     },
+     {
+      "materia": "Comunicación y Evaluación del Proyecto",
+      "nivel": 8
+     }
+    ]
+   },
+   {
+    "nombre": "Itinerario II: Ciudades Sostenibles y Acción Climática",
+    "materias": [
+     {
+      "materia": "Ciudad y Espacio Público Ecosistémico",
+      "nivel": 7
+     },
+     {
+      "materia": "Movilidad Sostenible",
+      "nivel": 7
+     },
+     {
+      "materia": "Resiliencia y Cambio Climático",
+      "nivel": 8
+     },
+     {
+      "materia": "Proyecto de Aplicación",
+      "nivel": 8
+     }
+    ]
+   },
+   {
+    "nombre": "Itinerario III: Inteligencia Artificial Aplicada",
+    "materias": [
+     {
+      "materia": "Fundamentos de Inteligencia Artificial",
+      "nivel": 7
+     },
+     {
+      "materia": "Análisis, Procesamiento y Aplicación de Inteligencia Artificial",
+      "nivel": 7
+     },
+     {
+      "materia": "Técnicas de Inteligencia Artificial",
+      "nivel": 8
+     },
+     {
+      "materia": "Proyecto Aplicado de Inteligencia Artificial",
+      "nivel": 8
+     }
+    ]
+   }
+  ],
+  "semestres_compartidos": [],
+  "malla_lineas_sin_asignar": [],
+  "problemas_malla": [],
+  "precio_sin_descuento": 3950,
+  "inversion": 2900,
+  "descuento_pct": 27.0,
+  "montos_encontrados": [
+   3950,
+   2900
+  ],
+  "fuente": "https://www.puce.edu.ec/docs/dce/landing/pdf/ingenieria-civil-202401.pdf",
+  "fecha_fuente": "2026-11-26T21:40:57+00:00",
+  "sha256": "4b99958aa37026b0fd0b61c17290022fd5444bbcd33d85e53bd2fcce2c9d5cf0"
+ },
+ "sistemas_informacion": {
+  "nombre": "SISTEMAS DE",
+  "modalidad": "Presencial",
+  "duracion": "8 semestres",
+  "titulo": "INGENIERO/A EN SISTEMAS DE INFORMACIÓN",
+  "malla": [
+   [
+    "Conocimiento, Palabra y Cambio Social",
+    "Cálculo I",
+    "Física General",
+    "Pensamiento Computacional",
+    "Innovación y Creatividad",
+    "Técnicas Gráficas y Geométricas"
+   ],
+   [
+    "Fundamentos de Investigación",
+    "Cálculo II",
+    "Estadística Aplicada",
+    "Programación I",
+    "Ciencia de los Materiales: Propiedades, Procesos y Ciclos",
+    "Algebra Lineal y Geometría Analítica"
+   ],
+   [
+    "Jesucristo y Aprendizajes Vitales",
+    "Ingeniería de Requerimientos",
+    "Programación II",
+    "Cálculo de Predicados",
+    "Sistemas Opetarivos",
+    "Redes de Computadoras"
+   ],
+   [
+    "Fundamentos de SI",
+    "Diseño de Sistemas",
+    "Programación III",
+    "Programación IV",
+    "Bases de Datos I",
+    "Infraestructura"
+   ],
+   [
+    "Ética e Interculturalidad",
+    "Interacción Humano Computadora",
+    "Desarrollo en Plataformas",
+    "Ingeniería de Software",
+    "Bases de Datos II",
+    "Arquitectuta Empresarial"
+   ],
+   [
+    "Ecología Integral",
+    "Desarrollo de Software Seguro",
+    "Integración de Sistemas",
+    "Programación Móvil",
+    "Inteligencia Artificial",
+    "Emprendimiento Tecnológico"
+   ],
+   [
+    "Seminario de Titulación",
+    "Asignatura 1 de Itinerario",
+    "Asignatura 2 de Itinerario",
+    "Inteligencia de Negocios",
+    "Ciencia de Datos",
+    "Diseño y Evaluación de Proyectos"
+   ],
+   [
+    "Integración Curricular",
+    "Asignatura 3 de Itinerario",
+    "Asignatura 4 de Itinerario",
+    "Desarrollo en Contenedores",
+    "Big Data",
+    "Minería de Datos y Metodologías"
+   ]
+  ],
+  "bloques_adicionales": [],
+  "itinerarios": [
+   {
+    "nombre": "Itinerario I: Inteligencia Artificial Aplicada",
+    "materias": [
+     {
+      "materia": "Fundamentos de Inteligencia Artificial",
+      "nivel": 7
+     },
+     {
+      "materia": "Análisis, Procesamiento y Aplicación de Inteligencia Artificial",
+      "nivel": 7
+     },
+     {
+      "materia": "Técnicas de Inteligencia Artificial",
+      "nivel": 8
+     },
+     {
+      "materia": "Proyecto Aplicado de Inteligencia Artificial",
+      "nivel": 8
+     }
+    ]
+   },
+   {
+    "nombre": "Itinerario II: Tecnologías Creativas Para un Mundo Digital",
+    "materias": [
+     {
+      "materia": "Pensamiento y Crítica del Mundo Digital",
+      "nivel": 7
+     },
+     {
+      "materia": "Métodos de Computación Creativa",
+      "nivel": 7
+     },
+     {
+      "materia": "Laboratorio de Creación Digital",
+      "nivel": 8
+     },
+     {
+      "materia": "Laboratorio de Fabricación Digital",
+      "nivel": 8
+     }
+    ]
+   },
+   {
+    "nombre": "Itinerario III: Gestión de Proyectos (Project Magnament)",
+    "materias": [
+     {
+      "materia": "Dirección de Proyectos",
+      "nivel": 7
+     },
+     {
+      "materia": "Inicio y Planificación del Proyecto",
+      "nivel": 7
+     },
+     {
+      "materia": "Ejecución, Monitoreo, Control y Cierre del Proyecto",
+      "nivel": 8
+     },
+     {
+      "materia": "Gestión Ágil de Proyectos",
+      "nivel": 8
+     }
+    ]
+   }
+  ],
+  "semestres_compartidos": [],
+  "malla_lineas_sin_asignar": [],
+  "problemas_malla": [],
+  "precio_sin_descuento": 3950,
+  "inversion": 2900,
+  "descuento_pct": 27.0,
+  "montos_encontrados": [
+   3950,
+   2900
+  ],
+  "fuente": "https://www.puce.edu.ec/docs/dce/landing/pdf/ingenieria-en-sistemas-de-informacion-202401.pdf",
+  "fecha_fuente": "2026-11-26T21:41:02+00:00",
+  "sha256": "b7951816c22a961f900ce0ccc23fb2ef7dfaaffdca759b65df26a341df4e4080"
+ },
+ "biologia": {
+  "nombre": "BIOLOGÍA",
+  "modalidad": "Presencial",
+  "duracion": "8 semestres",
+  "titulo": "BIÓLOGO",
+  "malla": [
+   [
+    "Conocimiento, Palabra y Cambio Social",
+    "Fundamentos de Biología",
+    "Fundamentos de Química",
+    "Física I",
+    "Ecuador Megadiverso",
+    "Matemática I"
+   ],
+   [
+    "Fundamentos de Investigación",
+    "Fundamentos de Microbiología",
+    "Química Orgánica Básica",
+    "Matemática II",
+    "Fundamentos de Genética",
+    "Ecología y Ecosistemas"
+   ],
+   [
+    "Jesucristo y Aprendizajes Vitales",
+    "Macromoléculas y Metabolismo",
+    "Biodiversidad de Algas y Plantas",
+    "Ecología Humana",
+    "Estadística I",
+    "Ciencias Fundamentales I"
+   ],
+   [
+    "Genética Molecular",
+    "Estadística II",
+    "Biología de la Conservación",
+    "Evolución",
+    "Biología Integrativa I",
+    "Biología de Hongos"
+   ],
+   [
+    "Ética e Interculturalidad",
+    "Plantas con Semilla",
+    "Zoología de Invertebrados",
+    "Biología Molecular",
+    "Biología Integrativa II",
+    "Recursos Naturales"
+   ],
+   [
+    "Ecología Integral",
+    "Diversidad de Plantas y Etnobotánica",
+    "Entomología",
+    "Ecología de Poblaciones",
+    "Biología Celular y del Desarrollo",
+    "Bioinformática"
+   ],
+   [
+    "Seminario de Titulación",
+    "Asignatura 1 de Itinerario*",
+    "Asignatura 2 de Itinerario*",
+    "Zoología de Vertebrados",
+    "Biogeografía",
+    "Fisiología Animal y Vegetal"
+   ],
+   [
+    "Integración Curricular",
+    "Asignatura 3 de Itinerario*",
+    "Asignatura 4 de itinerario*",
+    "Sistemática",
+    "Técnicas de Investigación en Biología",
+    "Ecología de Comunidades y Ecosistemas"
+   ]
+  ],
+  "bloques_adicionales": [],
+  "itinerarios": [
+   {
+    "nombre": "Itinerario I: Ciencias de Datos con Aplicaciones Prácticas",
+    "materias": [
+     {
+      "materia": "Exploración de Datos",
+      "nivel": 7
+     },
+     {
+      "materia": "Visualización Avanzada de Datos",
+      "nivel": 7
+     },
+     {
+      "materia": "Analítica de Datos",
+      "nivel": 8
+     },
+     {
+      "materia": "Aplicación de la Ciencia de Datos",
+      "nivel": 8
+     }
+    ]
+   },
+   {
+    "nombre": "Itinerario II: ONE HEALTH",
+    "materias": [
+     {
+      "materia": "Salud Ambiental (Salud Global III)",
+      "nivel": 7
+     },
+     {
+      "materia": "Salud Pública",
+      "nivel": 7
+     },
+     {
+      "materia": "Salud Global Aplicada (Salud Global IV)",
+      "nivel": 8
+     },
+     {
+      "materia": "Epidemiología",
+      "nivel": 8
+     }
+    ]
+   },
+   {
+    "nombre": "Itinerario III: Economía y Ambiente",
+    "materias": [
+     {
+      "materia": "Introducción a la Economía Sostenible",
+      "nivel": 7
+     },
+     {
+      "materia": "Sostenibilidad Ambiental y Cambio Climático",
+      "nivel": 7
+     },
+     {
+      "materia": "Heramientas para la Valoración Ambiental",
+      "nivel": 8
+     },
+     {
+      "materia": "Gestión Sostenible de Empresas",
+      "nivel": 8
+     }
+    ]
+   }
+  ],
+  "semestres_compartidos": [],
+  "malla_lineas_sin_asignar": [],
+  "problemas_malla": [],
+  "precio_sin_descuento": 3950,
+  "inversion": 2900,
+  "descuento_pct": 27.0,
+  "montos_encontrados": [
+   3950,
+   2900
+  ],
+  "fuente": "https://www.puce.edu.ec/docs/dce/landing/pdf/biologia-202401.pdf",
+  "fecha_fuente": "2026-11-26T21:41:08+00:00",
+  "sha256": "67f5112f68d2390b2422cc6423e53b6d86a80c735d546c84e1dfb43fa90090c4"
+ },
+ "quimica": {
+  "nombre": "QUÍMICA",
+  "modalidad": "Presencial",
+  "duracion": "8 semestres",
+  "titulo": "QUÍMICO/A",
+  "malla": [
+   [
+    "Conocimiento, Palabra y Cambio Social",
+    "Fundamentos de Biología",
+    "Matemática I",
+    "Fundamentos de Química",
+    "Ecuador Megadiverso",
+    "Física I"
+   ],
+   [
+    "Fundamentos de Investigación",
+    "Fundamentos de Microbiologia",
+    "Matemática II",
+    "Técnicas de Laboratorio Químico",
+    "Química Orgánica Básica",
+    "Física II"
+   ],
+   [
+    "Jesucristo y Aprendizajes Vitales",
+    "Química Inorgánica I",
+    "Ecuaciones Diferenciales",
+    "Química Analítica",
+    "Química Orgánica I",
+    "Física III"
+   ],
+   [
+    "Física IV",
+    "Química Inorgánica II",
+    "Estadística I",
+    "Análisis Instrumental I",
+    "Química Orgánica II",
+    "Fisicoquímica I"
+   ],
+   [
+    "Ética e Interculturalidad",
+    "Química del Estado Sólido",
+    "Estadística II",
+    "Análisis Instrumental II",
+    "Síntesis Orgánica",
+    "Fisicoquímica II"
+   ],
+   [
+    "Ecología Integral",
+    "Química de Materiales",
+    "Estadística III",
+    "Técnicas Instrumentales Especiales",
+    "Bioquímica",
+    "Electroquímica"
+   ],
+   [
+    "Seminario de Titulación",
+    "Asignatura 1 de Itinerario",
+    "Asignatura 2 de Itinerario",
+    "Aseguramiento de la Calidad",
+    "Química de Alimentos",
+    "Química Ambiental"
+   ],
+   [
+    "Integración Curricular",
+    "Asignatura 3 de Itinerario",
+    "Asignatura 4 de Itinerario",
+    "Nanociencia y Nanotecnología",
+    "Química Industrial",
+    "Introducción a la Quimio- Informática"
+   ]
+  ],
+  "bloques_adicionales": [],
+  "itinerarios": [
+   {
+    "nombre": "Intinerario I: Biotecnología",
+    "materias": [
+     {
+      "materia": "Biotecnología vegetal (Biotecnología verde)",
+      "nivel": 7
+     },
+     {
+      "materia": "Aplicaciones veterinarias de la Biotecnología (Biotecnología marrón)",
+      "nivel": 7
+     },
+     {
+      "materia": "Bioindustria (Biotecnología blanca)",
+      "nivel": 8
+     },
+     {
+      "materia": "Emulsionantes y Desarrollo de Alimentos (Biotecnología amarilla)",
+      "nivel": 8
+     }
+    ]
+   },
+   {
+    "nombre": "Itinerario II: Cambio Climático y Energías Renovables",
+    "materias": [
+     {
+      "materia": "Arqueología y Cambio Climático",
+      "nivel": 7
+     },
+     {
+      "materia": "Paleoecología y Recursos Alimenticios Prehispánicos",
+      "nivel": 7
+     },
+     {
+      "materia": "Energías Renovables",
+      "nivel": 8
+     },
+     {
+      "materia": "Tecnologías Limpias",
+      "nivel": 8
+     }
+    ]
+   },
+   {
+    "nombre": "Itinerario III: Técnicas Disruptivas de Materiales y Aplicaciones",
+    "materias": [
+     {
+      "materia": "Biomateriales",
+      "nivel": 7
+     },
+     {
+      "materia": "Nanomateriales",
+      "nivel": 7
+     },
+     {
+      "materia": "Textiles Electrónicos",
+      "nivel": 8
+     },
+     {
+      "materia": "Bio-Refinados",
+      "nivel": 8
+     }
+    ]
+   }
+  ],
+  "semestres_compartidos": [],
+  "malla_lineas_sin_asignar": [],
+  "problemas_malla": [],
+  "precio_sin_descuento": 3950,
+  "inversion": 2900,
+  "descuento_pct": 27.0,
+  "montos_encontrados": [
+   3950,
+   2900
+  ],
+  "fuente": "https://www.puce.edu.ec/docs/dce/landing/pdf/quimica-202401.pdf",
+  "fecha_fuente": "2026-11-26T21:41:13+00:00",
+  "sha256": "e6de8fdd4fa499b9656d8e223ba9a2fa3ca6c87f1d677f74ab9f07b40e47cd23"
+ },
+ "medicina": {
+  "nombre": "MEDICINA",
+  "modalidad": "Presencial",
+  "duracion": "10 semestres + 2 semestres de internado",
+  "titulo": "MÉDICO/A GENERAL",
+  "malla": [
+   [
+    "Conocimiento, Palabra y Cambio Social",
+    "Fundamentos de Morfofunción",
+    "Primeros Auxilios y Bioseguridad Básica",
+    "Ciencias Básicas de la Salud 1",
+    "Comportamiento Humano y Procesos Psicológicos",
+    "One Health y Salud Holística/Ancestral"
+   ],
+   [
+    "Fundamentos de la Investigación",
+    "Morfofunción 2: CardioRespiratorio/ Hematología",
+    "Morfofunción 2: Digestivo y Excretor",
+    "Ciencias Básicas de la Salud 2",
+    "Desarrollo Humano 2",
+    "IDIS 1"
+   ],
+   [
+    "Jesucristo y Aprendizajes Vitales",
+    "Morfofunción 3: Nervioso Sentidos",
+    "Morfofunción 3: Endócrino y Reproductor",
+    "Ciencias Básicas de la Salud 3",
+    "Desarrollo Humano 3",
+    "Administrativo Sanitario 1",
+    "IDIS 2"
+   ],
+   [
+    "Ética e Interculturalidad",
+    "Morfofunción 4: Ostemusculoesquelético",
+    "Piel",
+    "Ciencias Básicas de la Salud 4",
+    "Desarrollo Humano 4",
+    "Administrativo Sanitario 2",
+    "IDIS 3"
+   ],
+   [
+    "Salud Integral Mujer 1",
+    "Salud Integral Adulto 1",
+    "Salud Integral Niño 1",
+    "Ciencias Básicas de la Salud 5",
+    "IDIS 4"
+   ],
+   [
+    "Ecología Integral",
+    "Salud Integral Mujer 2",
+    "Salud Integral Adulto 2",
+    "Salud Integral Niño 2",
+    "IDIS 5"
+   ],
+   [
+    "Salud Integral Mujer 3",
+    "Salud Integral Adulto 3",
+    "Salud Integral Niño 3",
+    "Evidence-Based Medicine",
+    "IDIS 6"
+   ],
+   [
+    "Salud Integral Mujer 4",
+    "Salud Integral Adulto 4",
+    "Salud Integral Niño 4",
+    "Clinical Decision Making",
+    "IDIS 7"
+   ],
+   [
+    "Seminario de Titulación",
+    "Salud Integral Hospitalaria 1: Clínica 1",
+    "Salud Integral Hospitalaria 1: Clínica 2",
+    "Desarrollo Humano 5",
+    "Destrezas Clínicas",
+    "IDIS 8"
+   ],
+   [
+    "Integración Curricular",
+    "Salud Integral Hospitalaría 2: Clínica 3",
+    "Salud Integral Hospitalaría 2: Quirúrgica",
+    "Medicina Legal",
+    "Destrezas Quirúrgicas",
+    "IDIS 9"
+   ]
+  ],
+  "bloques_adicionales": [
+   {
+    "titulo": "Internado Rotativo I",
+    "despues_del_semestre": 10,
+    "materias": [
+     "IR Medicina Interna",
+     "IR Ginecología y Obstetricia",
+     "IR Comunitaria Pre-Rural",
+     "IR Qurúrgicas",
+     "IR Pediatría"
+    ]
+   }
+  ],
+  "itinerarios": [],
+  "semestres_compartidos": [],
+  "malla_lineas_sin_asignar": [],
+  "problemas_malla": [],
+  "precio_sin_descuento": 5500,
+  "inversion": 4500,
+  "descuento_pct": 18.0,
+  "montos_encontrados": [
+   5500,
+   4500
+  ],
+  "fuente": "https://www.puce.edu.ec/docs/dce/landing/pdf/medicina-202401.pdf",
+  "fecha_fuente": "2026-11-26T21:41:19+00:00",
+  "sha256": "baf5749c472806228055cbf92ba6bd1a1e7f62847f21456c9b5dc3bb046e7716"
+ },
+ "enfermeria": {
+  "nombre": "ENFERMERÍA",
+  "modalidad": "Presencial",
+  "duracion": "9 semestres",
+  "titulo": "LICENCIADO/A EN ENFERMERÍA",
+  "malla": [
+   [
+    "Conocimiento, Palabra y Cambio Social",
+    "Salud Contexto Nacional e Internacional",
+    "Comportamiento Humano y Procesos Psicológicos",
+    "One Health y Salud Holística/Ancestral",
+    "Fundamentos de Morfofunción",
+    "Primeros Auxilios y Bioseguridad Básica"
+   ],
+   [
+    "Fundamentos de Investigación",
+    "Fundamentos de Bioquímica",
+    "Salud y Grupos Prioritarios (Diversidad)",
+    "Enfermería Básica I",
+    "Morfofisiología",
+    "Epistemología del Cuidado Enfermero"
+   ],
+   [
+    "Jesucristo y Aprendizajes Vitales",
+    "Estadistica para Ciencias de la Salud",
+    "Farmacología Aplicada a la Enfermería",
+    "Enfermería Básica II",
+    "Educación y Comunicación para la Salud",
+    "Microbiología y Parasitología"
+   ],
+   [
+    "Deontología Profesional y Legislación",
+    "Práctica Basada en Evidencia",
+    "Enfermería en Salud Sexual",
+    "Epidemiología y Salud Pública",
+    "Enfermería Clínica"
+   ],
+   [
+    "Ética e Interculturalidad",
+    "Enfermería Materno Neonatal",
+    "Gestión de los Servicios de Salud",
+    "Enfermería Quirúrgica"
+   ],
+   [
+    "Ecología Integral",
+    "Seminario de Titulación",
+    "Gestión del Cuidado en los Servicios de Enfermería",
+    "Salud Digital",
+    "Enfermería Pediátrica y de la Adolescencia"
+   ],
+   [
+    "Integración Curricular",
+    "Enfermería Familiar y Comunitaria",
+    "Simulación Clínica",
+    "Enfermería en Salud Mental y Psiquiatría"
+   ],
+   [
+    "Internado Rotativo Ginecobstetricia/ Neonatología",
+    "Internado Rotativo Clínico- Quirúrgico"
+   ],
+   [
+    "Internado Rotativo Pediatría",
+    "Internado Rotativo Enfermería Comunitaria"
+   ]
+  ],
+  "bloques_adicionales": [],
+  "itinerarios": [],
+  "semestres_compartidos": [],
+  "malla_lineas_sin_asignar": [],
+  "problemas_malla": [],
+  "precio_sin_descuento": 3950,
+  "inversion": 2900,
+  "descuento_pct": null,
+  "montos_encontrados": [
+   3950,
+   2900
+  ],
+  "fuente": "https://www.puce.edu.ec/docs/dce/landing/pdf/enfermeria-202401.pdf",
+  "fecha_fuente": "2026-11-26T21:41:25+00:00",
+  "sha256": "fde52f8e0006ed521bbd535a5d8d7b5ccdea3efa36c18bf9b2813ce2362831d2"
+ },
+ "odontologia": {
+  "nombre": "ODONTOLOGÍA",
+  "modalidad": "Presencial",
+  "duracion": "10 semestres",
+  "titulo": "ODONTÓLOGO/A",
+  "malla": [
+   [
+    "Conocimiento, Palabra y Cambio Social",
+    "Fundamentos de Morfofunción",
+    "Primeros Auxilios y Bioseguridad Básica",
+    "Ciencias Básicas de la Salud",
+    "Comportamiento Humano y Procesos Psicológicos",
+    "One Health y Salud Holística/Ancestral"
+   ],
+   [
+    "Fundamentos de la investigación",
+    "Morfofunción II: anatomía cabeza y cuello",
+    "Morfofunción II Dental: (embriología e histología bucal)",
+    "Microbiología",
+    "Clínica",
+    "Biomateriales",
+    "Inmunología Clínica"
+   ],
+   [
+    "Jesucristo y los Aprendizajes Vitales",
+    "Imagenología",
+    "Morfofunción III: Fisiologia",
+    "Cariología",
+    "Oclusión I",
+    "Comunicación en Salud",
+    "Patología General"
+   ],
+   [
+    "Bioestadística en Ciencias de la Salud",
+    "Endodoncia I",
+    "Riesgos en el trabajo",
+    "Semiología",
+    "Oclusión II",
+    "Periodoncia I",
+    "Patología",
+    "Estomatológica"
+   ],
+   [
+    "Ética e Interculturalidad",
+    "Endodoncia II",
+    "Operatoria Dental",
+    "Cirugía Dentomaxilar I",
+    "Bioética y Legislación",
+    "Periodoncia II",
+    "Farmacología Básica"
+   ],
+   [
+    "Ecología Integral",
+    "Medicina Interna I",
+    "Prótesis Fija",
+    "Cirugía Dentomaxilar II",
+    "Clinica Odontológica I",
+    "Documentación Fotográfica y Odontología Digital I",
+    "Farmacoclínica I"
+   ],
+   [
+    "Salud Pública I",
+    "Medicina Interna II",
+    "Prótesis Removible",
+    "Odontopediatría I",
+    "Clínica Odontológica II",
+    "Documentación Fotográfica y Odontología Digital II",
+    "Farmacoclínica II"
+   ],
+   [
+    "Odontología Forense",
+    "Prótesis Total",
+    "Ortodoncia I",
+    "Odontopediatría II",
+    "Clínica Odontológica III",
+    "Epidemiología"
+   ],
+   [
+    "Seminario aplicado a Titulación",
+    "Salud Integral del paciente en Odontología",
+    "Ortodoncia II",
+    "Salud Pública II",
+    "Clínica Odontológica IV",
+    "Práctica Pre profesionales I (IDIS I)"
+   ],
+   [
+    "Integración Curricular",
+    "Administración en Gerencia y Salud Oral",
+    "Bases y Principíos de Implantología",
+    "Investigación en Odontología",
+    "Clínica Integral",
+    "Práctica Pre profesionales II (IDIS II)"
+   ]
+  ],
+  "bloques_adicionales": [],
+  "itinerarios": [],
+  "semestres_compartidos": [],
+  "malla_lineas_sin_asignar": [],
+  "problemas_malla": [],
+  "precio_sin_descuento": 5500,
+  "inversion": 4000,
+  "descuento_pct": 27.0,
+  "montos_encontrados": [
+   5500,
+   4000
+  ],
+  "fuente": "https://www.puce.edu.ec/docs/dce/landing/pdf/odontologia-202403.pdf",
+  "fecha_fuente": "2026-11-26T21:41:30+00:00",
+  "sha256": "9d38f926446465163fa67dfdf42ad47a41def63c09b4a8680b6200467190d885"
+ },
+ "fisioterapia": {
+  "nombre": "FISIOTERAPIA",
+  "modalidad": "Presencial",
+  "duracion": "8 semestres",
+  "titulo": "LICENCIADO/A EN FISIOTERAPIA",
+  "malla": [
+   [
+    "Conocimiento, Palabra y Cambio Social",
+    "Fundamentos de Morfofunción",
+    "Comportamiento Humano y Procesos Psicológicos",
+    "One Health y Salud Holistica/Ancestral",
+    "Primeros Auxilios y Bioseguridad Básica",
+    "Salud Contexto Nacional e Internacional"
+   ],
+   [
+    "Fundamentos de Investigación",
+    "Fundamentos de Bioquímica",
+    "Salud y Grupos Prioritarios (Diversidad)",
+    "Fundamentos de Fisioterapia y Razonamiento Clínico",
+    "Biofísica",
+    "Morfofuncional"
+   ],
+   [
+    "Jesucristo y Aprendizajes Vitales",
+    "Estadística para Ciencias de la Salud",
+    "Deontología Profesional y Legislación en Fisioterapia",
+    "Masoterapia y Cinesiterapia",
+    "Semiopatología Neuromusculoesquelética",
+    "Biomecánica I",
+    "Bases Neurológicas del Control Motor"
+   ],
+   [
+    "Farmacología Aplicada a la Fisioterapia",
+    "Practica Basada en la Evidencia",
+    "Imagenología Aplicada a la Fisioterapia",
+    "Agentes Físicos y Electrofísicos",
+    "Biomecánica II",
+    "Evaluación y Diagnóstico Neuromusculoesquelético",
+    "Neurodesarrollo"
+   ],
+   [
+    "Ética e Interculturalidad",
+    "Gestión de los Servicios de Salud",
+    "Epidemiología",
+    "Terapia Manual Ortopédica",
+    "Técnicas de Intervención Postural",
+    "Evaluación y Diagnóstico en Neurorehabilitación"
+   ],
+   [
+    "Ecología Integral",
+    "Ortesis, Prótesis y Nuevas Tecnologías Asistivas",
+    "Fisioterapia en Salud Mental",
+    "Evaluación y Diagnóstico en Fisioterapia Cardio-respiratoria",
+    "Neurorrehabilitación",
+    "Prácticas Preprofesionales I"
+   ],
+   [
+    "Seminario de Titulación",
+    "Fisioterapia Respiratoria",
+    "Fisioterapia en Traumatologia y Ortopedia",
+    "Fisioterapia Cardiaca",
+    "Innovación y Emprendimiento en Fisioterapia",
+    "Prácticas Preprofesionales II"
+   ],
+   [
+    "Integración Curricular",
+    "Fisioterapia Oncológica",
+    "Salud Ocupacional y Ergonomia",
+    "Fisioterapia Pelviperineal",
+    "Fisioterapia Dermatofuncional",
+    "Fisioterapia Deportiva",
+    "Fisioterapia Comunitaria y Discapacidad"
+   ]
+  ],
+  "bloques_adicionales": [],
+  "itinerarios": [],
+  "semestres_compartidos": [],
+  "malla_lineas_sin_asignar": [],
+  "problemas_malla": [],
+  "precio_sin_descuento": 3950,
+  "inversion": 2900,
+  "descuento_pct": null,
+  "montos_encontrados": [
+   3950,
+   2900
+  ],
+  "fuente": "https://www.puce.edu.ec/docs/dce/landing/pdf/fisioterapia-202401.pdf",
+  "fecha_fuente": "2026-11-26T21:41:36+00:00",
+  "sha256": "16a59e9195340246c5b25981c2bdffd624e36768964ca52439870be1ab7e8942"
+ },
+ "nutricion": {
+  "nombre": "NUTRICIÓN",
+  "modalidad": "Presencial",
+  "duracion": "9 semestres",
+  "titulo": "LICENCIADO/A EN NUTRICIÓN Y DIETÉTICA",
+  "malla": [
+   [
+    "Conocimiento, Palabra y Cambio Social",
+    "Comportamiento Humano y Procesos Psicológicos",
+    "One Health y Salud Holística/Ancestral",
+    "Fundamentos de Morfofunción",
+    "Primeros Auxilios y Bioseguridad Básica",
+    "Salud Contexto Nacional e Internacional"
+   ],
+   [
+    "Fundamentos de Investigación",
+    "Salud y Grupos Prioritarios (Diversidad)",
+    "Microbiología Aplicada",
+    "Nutrición Básica",
+    "Metabolismo Básico",
+    "Cultura y Antropología Alimentaria"
+   ],
+   [
+    "Jesucristo y Aprendizajes Vitales",
+    "Estadística para Ciencias de la Salud",
+    "Proceso de Cuidado Nutricional",
+    "Evaluación del Estado Nutricional I",
+    "Metabolismo Energético",
+    "Ciencia de los Alimentos"
+   ],
+   [
+    "Práctica Basada en Evidencia",
+    "Educación y Consejería Nutriciona",
+    "Fisiopatología",
+    "Nutrición en el Ciclo de Vida",
+    "Evaluación del Estado Nutricional II",
+    "Gastronomía en Nuevas Tendencias de Alimentación",
+    "Alimentos Funcionales"
+   ],
+   [
+    "Ética e Interculturalidad",
+    "Gestión de los Servicios de Salud",
+    "Dietoterapia",
+    "Epidemiología Nutricional",
+    "Nutrición Clínica",
+    "Farmacología Nutricional"
+   ],
+   [
+    "Ecología Integral",
+    "Seminario de Titulación",
+    "Seguridad, Soberanía Alimentaria y Consumo Responsable",
+    "Nutrición Pediátrica",
+    "Gestión en Servicios de Alimentación",
+    "Nutrición Geriátrica"
+   ],
+   [
+    "Integración Curricular",
+    "Alimentación y Nutrición en Situaciones de Emergencia",
+    "Nutrición Comunitaria y Salud Pública",
+    "Nutrición en el Deporte",
+    "Emprendimiento e Innovación Alimentaria Nutricional",
+    "Bases de Nutrigenómica y Metabolómica"
+   ],
+   [
+    "Internado Rotativo: Nutrición Clínica",
+    "Internado Rotativo: Nutrición Comunitaria"
+   ],
+   [
+    "Internado Rotativo: Nutrición Clínica",
+    "Internado Rotativo: Nutrición Comunitaria"
+   ]
+  ],
+  "bloques_adicionales": [],
+  "itinerarios": [],
+  "semestres_compartidos": [
+   [
+    8,
+    9
+   ]
+  ],
+  "malla_lineas_sin_asignar": [],
+  "problemas_malla": [
+   "los semestres 8 y 9 comparten el bloque 'Internado Rotativo' en el brochure: no se distingue qué materia va en cada uno"
+  ],
+  "precio_sin_descuento": 3950,
+  "inversion": 2900,
+  "descuento_pct": null,
+  "montos_encontrados": [
+   3950,
+   2900
+  ],
+  "fuente": "https://www.puce.edu.ec/docs/dce/landing/pdf/nutricion-y-dietetica-202401.pdf",
+  "fecha_fuente": "2026-11-26T21:41:41+00:00",
+  "sha256": "ccec04db0d18e9674a3c1634ef89dc2efe33ee1f96b9e2cf0b7cd5a38cf82089"
+ },
+ "psicologia_clinica": {
+  "nombre": "PSICOLOGÍA",
+  "modalidad": "Presencial",
+  "duracion": "9 semestres",
+  "titulo": "PSICÓLOGO/A CLÍNICO",
+  "malla": [
+   [
+    "Conocimiento, Palabra y Cambio Social",
+    "Salud Contexto Nacional e Internacional",
+    "Comportamiento Humano y Procesos Psicológicos",
+    "Primeros Auxilios y Bioseguridad Básica",
+    "Fundamentos de Morfofunción",
+    "One Health y Salud Holística/Ancestral"
+   ],
+   [
+    "Fundamentos de Investigación",
+    "Historia de la Psicología",
+    "Neuroanatomía y Psicofisiología",
+    "Conducción de Grupos",
+    "Epistemología de la Psicología",
+    "Salud y Grupos Prioritarios (Diversidad)"
+   ],
+   [
+    "Jesucristo y Aprendizaje Vital",
+    "Enfoques Psicológicos",
+    "Neuropsicología",
+    "Psicología del Desarrollo de la Niñez",
+    "Psicología Social",
+    "Estadística Aplicada a la Psicología"
+   ],
+   [
+    "Fundamentos de Psicología Dinámica",
+    "Psicología del Desarrollo de la Adolescencia, Adultez y Tercera Edad",
+    "Psicopatología I",
+    "Técnicas de Entrevista",
+    "Evaluación Psicológica",
+    "Intervención en Crisis"
+   ],
+   [
+    "Ética e Interculturalidad",
+    "Psicopatología II",
+    "Teoría Psicoanalítica",
+    "Teoría Humanista",
+    "Teoría Cognitivo Conductual",
+    "Técnicas Psicométricas",
+    "Técnicas Proyectivas"
+   ],
+   [
+    "Ecología Integral",
+    "Psicopatología Dinámica",
+    "Teoría Sistémica",
+    "Teoría Integrativa",
+    "Psicodiagnóstico",
+    "Intervenciones comunitarias de la Ps. Clínica"
+   ],
+   [
+    "Psicopatología y Clínica de la Niñez",
+    "Psicopatología y Clínica de la Adultez",
+    "Fundamentos de la Psicoterapia en la Infancia y Adolescencia",
+    "Fundamentos de la Psicoterapia en la Adultez",
+    "Trabajo de Campo I",
+    "Prácticas Preprofesionales I"
+   ],
+   [
+    "Seminario de Titulación",
+    "Psicofarmacología para Psicólogos Clínicos",
+    "Deontología Profesional",
+    "Trabajo de Campo II",
+    "Prácticas Preprofesionales II"
+   ],
+   [
+    "Integración Curricular",
+    "Dinámicas Familiares",
+    "Psicología de las Violencias",
+    "Problemáticas de la Psicología Contemporánea",
+    "Metodología Cualitativa en Psicología",
+    "Metodología Cuantitativa en Psicología",
+    "Habilidades de Escritura Aplicada a la Investigación clínica"
+   ]
+  ],
+  "bloques_adicionales": [],
+  "itinerarios": [],
+  "semestres_compartidos": [],
+  "malla_lineas_sin_asignar": [],
+  "problemas_malla": [],
+  "precio_sin_descuento": 3950,
+  "inversion": 2900,
+  "descuento_pct": 27.0,
+  "montos_encontrados": [
+   3950,
+   2900
+  ],
+  "fuente": "https://www.puce.edu.ec/docs/dce/landing/pdf/psicologia-clinica-202401.pdf",
+  "fecha_fuente": "2026-11-26T21:41:46+00:00",
+  "sha256": "271a837758f93262e1d99b2edd799864543d38f35ec5e2db11d0c0039d06a2f5"
+ },
+ "bioingenieria": {
+  "nombre": "BIOINGENIERÍA",
+  "modalidad": "Presencial",
+  "duracion": "8 semestres",
+  "titulo": "BIOINGENIERO/A",
+  "malla": [
+   [
+    "Conocimiento, Palabra y Cambio Social",
+    "Fundamentos de Biología",
+    "Fundamentos de Química",
+    "Física I",
+    "Ecuador Megadiverso",
+    "Matemática I"
+   ],
+   [
+    "Fundamentos de la Investigación",
+    "Fundamentos de Microbiología",
+    "Química Orgánica Básica",
+    "Matemática II",
+    "Fundamentos de Genética",
+    "Física II"
+   ],
+   [
+    "Jesucristo y los Aprendizajes Vitales",
+    "Macromoléculas y Metabolismo",
+    "Algebra Lineal",
+    "Técnicas de Laboratorio Químico",
+    "Estadística I",
+    "Ciencias Fundamentales I"
+   ],
+   [
+    "Genética Molecular",
+    "Estadística II",
+    "Biología de Hongos",
+    "Ecuaciones Diferenciales",
+    "Soluciones inspiradas en la Naturaleza",
+    "Pensamiento Sistémico"
+   ],
+   [
+    "Ética e interculturalidad",
+    "Biología Molecular",
+    "Balance de Materia y Energía",
+    "Fenómenos de Transporte",
+    "Mecánica",
+    "Ecodiseño y Sostenibilidad"
+   ],
+   [
+    "Ecología Integral",
+    "Biotecnología y Herramientas Bioinformáticas",
+    "Operaciones Unitarias",
+    "Propiedades Físicas y Mecánicas de los Materiales",
+    "Diseño y Evaluación de Proyectos",
+    "Fisicoquímica"
+   ],
+   [
+    "Seminario de Titulación",
+    "Asignatura 1 de Itinerario",
+    "Asignatura 2 de Itinerario",
+    "Biología Sintética",
+    "Fermentaciones Industriales",
+    "Fundamentos de Procesos, Simulación y Control"
+   ],
+   [
+    "Integración Curricular",
+    "Asignatura 3 de Itinerario",
+    "Asignatura 4 de itinerario",
+    "Ingeniería de Procesos",
+    "Polímeros",
+    "Nanociencia y Nanotecnología"
+   ]
+  ],
+  "bloques_adicionales": [],
+  "itinerarios": [
+   {
+    "nombre": "Intinerario I: Emprendimiento en los Negocios",
+    "materias": [
+     {
+      "materia": "Introducción al Emprendimiento y Modelos de Negocio Innovadores",
+      "nivel": 7
+     },
+     {
+      "materia": "Identidad y Marketing Aplicado al Emprendimiento",
+      "nivel": 7
+     },
+     {
+      "materia": "Operaciones e Innovación Organizacional en el Proceso de Producción",
+      "nivel": 8
+     },
+     {
+      "materia": "Finanzas para Emprendedores",
+      "nivel": 8
+     }
+    ]
+   },
+   {
+    "nombre": "Itinerario II: Economía y Ambiente",
+    "materias": [
+     {
+      "materia": "Introducción a la Economía Sostenible",
+      "nivel": 7
+     },
+     {
+      "materia": "Sostenibilidad Ambiental y Cambio Climático",
+      "nivel": 7
+     },
+     {
+      "materia": "Herramientas para la Valoración Ambiental",
+      "nivel": 8
+     },
+     {
+      "materia": "Gestión Sostenible de Empresas",
+      "nivel": 8
+     }
+    ]
+   },
+   {
+    "nombre": "Itinerario III: Gestión de Proyectos (Project Management)",
+    "materias": [
+     {
+      "materia": "Dirección de Proyecto",
+      "nivel": 7
+     },
+     {
+      "materia": "Inicio y Planificación del Proyecto",
+      "nivel": 7
+     },
+     {
+      "materia": "Ejecución, Monitoreo, Control y Cierre del Proyecto",
+      "nivel": 8
+     },
+     {
+      "materia": "Gestión Ágil de Proyectos",
+      "nivel": 8
+     }
+    ]
+   }
+  ],
+  "semestres_compartidos": [],
+  "malla_lineas_sin_asignar": [],
+  "problemas_malla": [],
+  "precio_sin_descuento": 3950,
+  "inversion": 2900,
+  "descuento_pct": 27.0,
+  "montos_encontrados": [
+   3950,
+   2900
+  ],
+  "fuente": "https://www.puce.edu.ec/docs/dce/landing/pdf/bioingenieria-202401.pdf",
+  "fecha_fuente": "2026-11-26T21:41:54+00:00",
+  "sha256": "5ade5e60a79605382d36bed6b43c4f978b31487388f9e227a6e00d15a8abccae"
+ },
+ "ciencias_biomedicas": {
+  "nombre": "CIENCIAS",
+  "modalidad": "Presencial",
+  "duracion": "8 semestres",
+  "titulo": "LICENCIADO/A EN CIENCIAS BIOMÉDICAS",
+  "malla": [
+   [
+    "Conocimiento, Palabra y Cambio Social",
+    "Fundamentos de Biología",
+    "Fundamentos de Química",
+    "Fisica I",
+    "Ecuador Megadiverso",
+    "Matemática I",
+    "Seminario de Investigación I"
+   ],
+   [
+    "Fundamentos de Investigación",
+    "Fundamentos de Microbiología",
+    "Quimica Orgánica Básica",
+    "Fundamentos de Genética",
+    "Ecología y Ecosistemas",
+    "Matemática II",
+    "Biología y Salud Integral I"
+   ],
+   [
+    "Jesucristo y Aprendizajes Vitales",
+    "Morfofunción",
+    "Macromoléculas y Metabolismo",
+    "Ecología Humana",
+    "Estadistica I",
+    "Seminario de Investigación II",
+    "Biología y Salud Integral II"
+   ],
+   [
+    "Tópicos de las Enfermedades Infecciosas y Crónicas",
+    "Genética Molécular",
+    "Estadistica II",
+    "Salud y Sociedad",
+    "Evolución",
+    "Prácticas preprofesionales I",
+    "Biología y Salud Integral III"
+   ],
+   [
+    "Ética e Interculturalidad",
+    "Microbiología Patogénica",
+    "Ecología y Salud",
+    "Biologia Molecular Aplicada a las Enfermedades - Salud Global I",
+    "Bioseguridad",
+    "Prácticas Preprofesionales II"
+   ],
+   [
+    "Ecología Integral",
+    "Entomología Médica",
+    "Parasitología",
+    "SIG y Salud",
+    "Salud Global II",
+    "Biología Celular y del Desarrollo",
+    "Comunicación Científica"
+   ],
+   [
+    "Seminario de Titulación",
+    "Salud Global III",
+    "Salud Pública",
+    "Virología",
+    "Inmunología",
+    "Enfermedades Genéticas y Metabólicas",
+    "Ética y Conducta Resposable de Investigación Biomédica",
+    "Prácticas preprofesionales III"
+   ],
+   [
+    "Integración Curricular",
+    "Salud Global IV",
+    "Epidemiología",
+    "Bioinformática",
+    "Técnicas de Laboratorio y Campo Aplicada a Enfermedades",
+    "Diagnóstico de Microorganismos",
+    "Prácticas preprofesionales IV"
+   ]
+  ],
+  "bloques_adicionales": [],
+  "itinerarios": [],
+  "semestres_compartidos": [],
+  "malla_lineas_sin_asignar": [],
+  "problemas_malla": [],
+  "precio_sin_descuento": 3950,
+  "inversion": 2900,
+  "descuento_pct": 27.0,
+  "montos_encontrados": [
+   3950,
+   2900
+  ],
+  "fuente": "https://www.puce.edu.ec/docs/dce/landing/pdf/ciencias-biomedicas-202401.pdf",
+  "fecha_fuente": "2026-11-26T21:42:00+00:00",
+  "sha256": "8c575aed164875f68e487c391804acb5b90f5277e8051e6356eb76297c0152c4"
+ },
+ "laboratorio_clinico": {
+  "nombre": "LABORATORIO",
+  "modalidad": "Presencial",
+  "duracion": "9 semestres",
+  "titulo": "LICENCIADO/A EN LABORATORIO CLÍNICO",
+  "malla": [
+   [
+    "Conocimiento, Palabra y Cambio Social",
+    "Salud Contexto Nacional e Internacional",
+    "Fundamentos de Morfofunción",
+    "Primeros auxilios y Bioseguridad Básica",
+    "Comportamiento Humano y Procesos Psicológicos",
+    "One Health y Salud holística / Ancestral"
+   ],
+   [
+    "Fundamentos de Investigación",
+    "Metodología e Instrumentación en el Laboratorio Clínico",
+    "Fundamentos de Bioquímica",
+    "Introducción al Laboratorio Clínico",
+    "Técnicas Histológicas",
+    "Biología Celular y Molecular"
+   ],
+   [
+    "Jesucristo y Aprendizajes Vitales",
+    "Metabolismo y Regulación",
+    "Estadística para Ciencias de la salud",
+    "Hematología Básica",
+    "Histología",
+    "Diagnóstico Microbiológico Humano",
+    "Técnicas de Flebotomía"
+   ],
+   [
+    "Parasitología Humana",
+    "Bioquímica Clínica I",
+    "Inmunología Básica",
+    "Hematología Diagnóstica",
+    "Herramientas Moleculares para el Diagnóstico Clínico",
+    "Bacteriología Clínica I",
+    "Urianálisis"
+   ],
+   [
+    "Ética e interculturalidad",
+    "Bioquímica Clínica II",
+    "Inmunología diagnóstico y Virología",
+    "Fisiopatología de la Coagulación",
+    "Diagnóstico Molecular",
+    "Bacteriología Clínica II",
+    "Prácticas preprofesionales I"
+   ],
+   [
+    "Ecología Integral",
+    "Bioquímica Clínica III",
+    "Inmunohematología",
+    "Análisis de Líquidos Biológicos",
+    "Genética",
+    "Micología Clínica",
+    "Prácticas preprofesionales II"
+   ],
+   [
+    "Diseño de Proyectos",
+    "Metrología en el Laboratorio Clínico",
+    "Toxicología",
+    "Citología Ginecológica",
+    "Introducción a Técnicas Ómicas",
+    "Epidemiología",
+    "Prácticas preprofesionales III"
+   ],
+   [
+    "Seminario de Titulación",
+    "Aseguramiento de la Calidad en Laboratorios Clínicos I",
+    "Correlación Clínica I",
+    "Hemovigilancia y Control de Calidad en Bancos de Sangre",
+    "Gestión de Laboratorio Clínico I",
+    "Prácticas preprofesionales IV"
+   ],
+   [
+    "Integración Curricular",
+    "Aseguramiento de la Calidad en Laboratorios Clínicos II",
+    "Correlación Clínica II",
+    "Biología Molecular en Neoplasias",
+    "Gestión de Laboratorio Clínico II",
+    "Normativa en Salud y Laboratorios Clínicos"
+   ]
+  ],
+  "bloques_adicionales": [],
+  "itinerarios": [],
+  "semestres_compartidos": [],
+  "malla_lineas_sin_asignar": [],
+  "problemas_malla": [],
+  "precio_sin_descuento": 3950,
+  "inversion": 2900,
+  "descuento_pct": null,
+  "montos_encontrados": [
+   3950,
+   2900
+  ],
+  "fuente": "https://www.puce.edu.ec/docs/dce/landing/pdf/laboratorio-clinico-202508.pdf",
+  "fecha_fuente": "2026-11-26T21:42:06+00:00",
+  "sha256": "449d73daf24a25edaeb1d1c26e81e54132d7d9049ccc0517b20f05f86d5a0420"
+ },
+ "microbiologia": {
+  "nombre": "MICROBIOLOGÍA",
+  "modalidad": "Presencial",
+  "duracion": "8 semestres",
+  "titulo": "LICENCIADO/A EN MICROBIOLOGÍA",
+  "malla": [
+   [
+    "Conocimiento, Palabra y Cambio Social",
+    "Fundamentos de Biología",
+    "Matemática I",
+    "Fundamentos de Química",
+    "Ecuador Megadiverso",
+    "Física I"
+   ],
+   [
+    "Fundamentos de Investigación",
+    "Fundamentos de Microbiología",
+    "Matemática II",
+    "Técnicas de Laboratorio Químico",
+    "Química Orgánica Básica",
+    "Fundamentos de Genética"
+   ],
+   [
+    "Jesucristo y Aprendizajes Vitales",
+    "Fisiología Microbiana",
+    "Bacteriología",
+    "Estadística I",
+    "Parasitología",
+    "Bioseguridad"
+   ],
+   [
+    "Micología",
+    "Microbiología Humana",
+    "Estadística II",
+    "Biología Molecular",
+    "Fundamentos de Inmunología",
+    "Ficología"
+   ],
+   [
+    "Ética e Interculturalidad",
+    "Antimicrobianos",
+    "Aseguramiento de la Calidad",
+    "Microbiología Veterinaria",
+    "Microbiología Agrícola",
+    "Genética Microbiana"
+   ],
+   [
+    "Ecología Integral",
+    "Fitopatología Microbiana",
+    "Diseño y Evaluación de Proyectos",
+    "Microbiología Industrial",
+    "Microbiología de Alimentos, Aguas y Superficies",
+    "Ecología Microbiana"
+   ],
+   [
+    "Seminario de Titulación",
+    "Asignatura 1 de Itinerario",
+    "Asignatura 2 de Itinerario",
+    "Bioinformática",
+    "Virología",
+    "Biotecnología de Microorganismos"
+   ],
+   [
+    "Integración Curricular",
+    "Asignatura 3 de Itinerario",
+    "Asignatura 4 de Itinerario",
+    "Laboratorio de Microbiología Farmacéutica",
+    "Laboratorio de Biorremediación",
+    "Redacción de Artículos Científicos"
+   ]
+  ],
+  "bloques_adicionales": [],
+  "itinerarios": [
+   {
+    "nombre": "Intinerario I: Biotecnología",
+    "materias": [
+     {
+      "materia": "Biotecnología vegetal (Biotecnología verde)",
+      "nivel": 7
+     },
+     {
+      "materia": "Aplicaciones veterinarias de la Biotecnología (Biotecnología marrón)",
+      "nivel": 7
+     },
+     {
+      "materia": "Bioindustria (Biotecnología blanca)",
+      "nivel": 8
+     },
+     {
+      "materia": "Emulsionantes y Desarrollo de Alimentos (Biotecnología amarilla)",
+      "nivel": 8
+     }
+    ]
+   },
+   {
+    "nombre": "Itinerario II: Emprendimiento en los Negocios",
+    "materias": [
+     {
+      "materia": "Introducción al Emprendimiento y Modelos de Negocio Innovadores",
+      "nivel": 7
+     },
+     {
+      "materia": "Identidad y Marketing Aplicado al Emprendimiento",
+      "nivel": 7
+     },
+     {
+      "materia": "Operaciones e Innovación Organizacional en el Proceso de Producción",
+      "nivel": 8
+     },
+     {
+      "materia": "Finanzas para Emprendedores",
+      "nivel": 8
+     }
+    ]
+   },
+   {
+    "nombre": "Itinerario III: One Health",
+    "materias": [
+     {
+      "materia": "Salud Ambiental (Salud global III)",
+      "nivel": 7
+     },
+     {
+      "materia": "Salud Pública",
+      "nivel": 7
+     },
+     {
+      "materia": "Salud Global Aplicada (Salud global IV)",
+      "nivel": 8
+     },
+     {
+      "materia": "Epidemiología",
+      "nivel": 8
+     }
+    ]
+   }
+  ],
+  "semestres_compartidos": [],
+  "malla_lineas_sin_asignar": [],
+  "problemas_malla": [],
+  "precio_sin_descuento": 3950,
+  "inversion": 2900,
+  "descuento_pct": 27.0,
+  "montos_encontrados": [
+   3950,
+   2900
+  ],
+  "fuente": "https://www.puce.edu.ec/docs/dce/landing/pdf/microbiologia-202401.pdf",
+  "fecha_fuente": "2026-11-26T21:42:11+00:00",
+  "sha256": "7b7bdd828acab9dfa9379fdb482cfcc9680ce9e6845ca6f021137db224bd8fd8"
+ },
+ "veterinaria": {
+  "nombre": "MEDICINA",
+  "modalidad": "Presencial",
+  "duracion": "9 semestres",
+  "titulo": "MÉDICO/A VETERINARIO/A",
+  "malla": [
+   [
+    "Conocimiento, palabra y cambio social",
+    "Fundamentos de biología",
+    "Fundamentos de Química",
+    "One Health y salud holística/ancestral",
+    "Ecuador megadiverso",
+    "Matemática I"
+   ],
+   [
+    "Fundamentos de la Investigación",
+    "Organización del cuerpo animal",
+    "Manejo y contención de animales",
+    "Biofísica",
+    "Microbiología veterinaria I",
+    "Bioquímica"
+   ],
+   [
+    "Aparatos y sistemas animales I",
+    "Microbiología veterinaria II",
+    "Etología veterinaria",
+    "Biología molecular",
+    "Parasitología"
+   ],
+   [
+    "Jesucristo y los aprendizajes vitales",
+    "Genética",
+    "Aparatos y sistemas animales II",
+    "Preservación de la salud y desarrollo de la respuesta inmune I",
+    "Causas de enfermedad y transtornos en el cuerpo animal I",
+    "Diagnóstico veterinario I"
+   ],
+   [
+    "Ética e interculturalidad",
+    "Nutrición en animales domésticos y silvestres.",
+    "Causas de enfermedad y transtornos en el cuerpo animal II",
+    "Farmacología veterinaria",
+    "Diagnóstico veterinario II",
+    "Eventos reproductivos en animales domésticos"
+   ],
+   [
+    "Anestesiología",
+    "Imagenología veterinaria",
+    "Medicina y clínica general",
+    "Enfermedades Infecciosas",
+    "Práctica quirúrgica veterinaria",
+    "Bioestadística"
+   ],
+   [
+    "Medicina fauna silvestre",
+    "Medicina aviar",
+    "Cirugía I",
+    "Medicina y clínica de caninos y felinos (medicina fauna urbana)",
+    "Medicina y clínica de especies mayores"
+   ],
+   [
+    "Ecología Integral",
+    "Asignatura 1 de itinerario*",
+    "Asignatura 2 de itinerario*",
+    "Seminario de titulación",
+    "Cirugía II",
+    "Manejo y cuidado de especies no tradicionales y de experimentación"
+   ],
+   [
+    "Integración curricular",
+    "Asignatura 3 de itinerario",
+    "Asignatura 4 de itinerario",
+    "Emergencia y cuidados críticos veterinaria",
+    "Atención clínica integral",
+    "Bioética y bienestar animal"
+   ]
+  ],
+  "bloques_adicionales": [],
+  "itinerarios": [
+   {
+    "nombre": "Itinerario I: cirugía avanzada",
+    "materias": []
+   },
+   {
+    "nombre": "Itinerario II: medicina veterinaria de la producción",
+    "materias": []
+   }
+  ],
+  "semestres_compartidos": [],
+  "malla_lineas_sin_asignar": [],
+  "problemas_malla": [],
+  "precio_sin_descuento": 3950,
+  "inversion": 3500,
+  "descuento_pct": 11.0,
+  "montos_encontrados": [
+   3950,
+   3500
+  ],
+  "fuente": "https://www.puce.edu.ec/docs/dce/landing/pdf/veterinaria-202403.pdf",
+  "fecha_fuente": "2026-11-26T21:45:50+00:00",
+  "sha256": "1bb6ad26c48dc6ce9857308e8d185ce82f79d1f8a8d02df71d28b7c2cbfc2b49"
+ },
+ "derecho": {
+  "nombre": "DERECHO",
+  "modalidad": "Presencial",
+  "duracion": "9 semestres",
+  "titulo": "ABOGADO/A",
+  "malla": [
+   [
+    "Conocimiento, Palabra y Cambio Social",
+    "Teoría Social",
+    "Pensamientos Políticos",
+    "Fundamentos del Derecho",
+    "Actores Sociales y Desarrollo",
+    "Introducción a las Relaciones Internacionales"
+   ],
+   [
+    "Fundamentos de la Investigación",
+    "Teoría del Estado",
+    "Procesos Sociales y Políticos de América Latina",
+    "Derecho Constitucional",
+    "Economía y Sociedad",
+    "Historia y Sociología del Derecho"
+   ],
+   [
+    "Jesucristo y los Aprendizajes Vitales",
+    "Teoría y Filosofía de la Justicia",
+    "Derecho Romano",
+    "Derecho Administrativo",
+    "Derecho Procesal Orgánico",
+    "Introducción al Derecho Penal"
+   ],
+   [
+    "Derecho Internacional Público J/RI",
+    "Objetos del Derecho",
+    "Sujetos del Derecho",
+    "Derechos Humanos J/RI/S/GS/CP",
+    "Teoría General del Proceso",
+    "Teoría del Delito"
+   ],
+   [
+    "Ética e Interculturalidad",
+    "Derecho Laboral",
+    "Obligaciones",
+    "Derecho de la Familia y Niñez",
+    "Teoría de la Prueba y Recursos",
+    "Derecho Penal Ejecutivo"
+   ],
+   [
+    "Ecología Integral",
+    "Derecho Ambiental",
+    "Negocios Jurídicos",
+    "Derecho Procesal Constitucional",
+    "Derecho Procesal Penal",
+    "Delitos en Particular"
+   ],
+   [
+    "Procesos en Sede Administrativa",
+    "Derecho Tributario",
+    "Teoría de la Responsabilidad",
+    "Técnicas de Litigación Oral",
+    "Procedimientos Penales Especiales",
+    "Métodos Alternativos de Solución de Conflictos"
+   ],
+   [
+    "Seminario de Titulación",
+    "Asignatura 1 de Itinerario",
+    "Asignatura 2 de Itinerario",
+    "Derecho Sucesorio",
+    "Derecho Mercantil",
+    "Argumentación Jurídica"
+   ],
+   [
+    "Integración Curricular",
+    "Asignatura 3 de Itinerario",
+    "Asignatura 4 de Itinerario",
+    "Derecho Internacional Privado",
+    "Derecho Societario",
+    "Derechos Inmateriales"
+   ]
+  ],
+  "bloques_adicionales": [],
+  "itinerarios": [
+   {
+    "nombre": "Itinerario I: GESTIÓN PÚBLICA",
+    "materias": [
+     {
+      "materia": "Políticas y Ética Pública",
+      "nivel": 8
+     },
+     {
+      "materia": "Contratación Pública",
+      "nivel": 8
+     },
+     {
+      "materia": "Normas de Responsabilidad y Control",
+      "nivel": 9
+     },
+     {
+      "materia": "Técnicas de Evaluación e Impacto",
+      "nivel": 9
+     }
+    ]
+   },
+   {
+    "nombre": "Itinerario II: DERECHO EMPRESARIAL",
+    "materias": [
+     {
+      "materia": "Gobierno Corporativo",
+      "nivel": 8
+     },
+     {
+      "materia": "Derecho de Competencia",
+      "nivel": 8
+     },
+     {
+      "materia": "Derechos y Nuevas Tecnologías",
+      "nivel": 9
+     },
+     {
+      "materia": "Compliance",
+      "nivel": 9
+     }
+    ]
+   },
+   {
+    "nombre": "Itinerario III: PAZ Y CONFLICTO",
+    "materias": [
+     {
+      "materia": "Estudios de Paz y Justicia Transicional",
+      "nivel": 8
+     },
+     {
+      "materia": "Security and Conflict",
+      "nivel": 8
+     },
+     {
+      "materia": "Violence and Human Rigths",
+      "nivel": 9
+     },
+     {
+      "materia": "Métodos Alternativos de Solución de Conflictos",
+      "nivel": 9
+     }
+    ]
+   }
+  ],
+  "semestres_compartidos": [],
+  "malla_lineas_sin_asignar": [],
+  "problemas_malla": [],
+  "precio_sin_descuento": 3950,
+  "inversion": 2900,
+  "descuento_pct": 27.0,
+  "montos_encontrados": [
+   3950,
+   2900
+  ],
+  "fuente": "https://www.puce.edu.ec/docs/dce/landing/pdf/derecho-202401.pdf",
+  "fecha_fuente": "2026-11-26T21:42:34+00:00",
+  "sha256": "f7c1d3f328da27289a13211333b9417d8faaebee30c0487379d8e8cdc37096bf"
+ },
+ "relaciones_internacionales": {
+  "nombre": "RELACIONES",
+  "modalidad": "Presencial",
+  "duracion": "8 semestres",
+  "titulo": null,
+  "malla": [
+   [
+    "Conocimiento, Palabra y Cambio Social",
+    "Teoría Social",
+    "Pensamientos Políticos",
+    "Fundamentos del Derecho",
+    "Actores Sociales y Desarrollo",
+    "Introducción a las Relaciones Internacionales"
+   ],
+   [
+    "Fundamentos de Investigación",
+    "Teoría del Estado",
+    "Procesos Sociales y Políticos de América Latina",
+    "Derecho Constitucional",
+    "Economía y Sociedad",
+    "Historia y Sociología del Derecho"
+   ],
+   [
+    "Jesucristo y Aprendizajes Vitales",
+    "Economía de América Latina y Ecuador",
+    "Estadística básica",
+    "Historia de las Relaciones Internacionales I",
+    "Teoría de las Relaciones Internacionales I",
+    "Métodos Cualitativos de Investigación"
+   ],
+   [
+    "Epistemología de las Ciencias Sociales",
+    "Procesos Sociales y Políticos del Ecuador",
+    "Derecho Internacional Público",
+    "Historia de las Relaciones Internacionales II",
+    "Derechos Humanos",
+    "Métodos Cuantitativos para las Ciencias Sociales"
+   ],
+   [
+    "Ética e Interculturalidad",
+    "Organismos Internacionales",
+    "Políticas Públicas",
+    "Teoría de las Relaciones Internacionales II",
+    "Medioambiente y Desarrolllo Sostenible",
+    "Regímenes Internacionales y Gobernanza Global"
+   ],
+   [
+    "Ecología Integral",
+    "Política Exterior",
+    "Integración Regional",
+    "Sociología Política Internacional",
+    "Conflictos Contemporáneos",
+    "Taller de Investigación Social"
+   ],
+   [
+    "Seminario de Titulación",
+    "Asignatura 1 de Itinerario",
+    "Asignatura 2 de Itinerario",
+    "Economía Política Internacional",
+    "Seguridad Internacional",
+    "Geopolítica"
+   ],
+   [
+    "Integración Curricular",
+    "Asignatura 3 de Itinerario",
+    "Asignatura 4 de Itinerario",
+    "Negociación",
+    "Diseño y Evaluación de Proyectos",
+    "Política Exterior del Ecuador"
+   ]
+  ],
+  "bloques_adicionales": [],
+  "itinerarios": [
+   {
+    "nombre": "Itinerario I: Captación y manejo de recursos internacionales",
+    "materias": [
+     {
+      "materia": "Fundamentos y Actores de la Cooperación Internacional",
+      "nivel": 7
+     },
+     {
+      "materia": "Foreign Aid and International Politics",
+      "nivel": 7
+     },
+     {
+      "materia": "Modelos y Estrategias de Sostenibilidad",
+      "nivel": 8
+     },
+     {
+      "materia": "Fundraising Programs",
+      "nivel": 8
+     }
+    ]
+   },
+   {
+    "nombre": "Itinerario II: Paz y Conflicto",
+    "materias": [
+     {
+      "materia": "Estudios de Paz y Justicia Transicional",
+      "nivel": 7
+     },
+     {
+      "materia": "Security and Conflict",
+      "nivel": 7
+     },
+     {
+      "materia": "Violence and Human Rights",
+      "nivel": 8
+     },
+     {
+      "materia": "Métodos Alternativos de Solución de Conflictos",
+      "nivel": 8
+     }
+    ]
+   },
+   {
+    "nombre": "Itinerario III: Internacionalización de la Empresa",
+    "materias": [
+     {
+      "materia": "Internacionalización de MYPIMES",
+      "nivel": 7
+     },
+     {
+      "materia": "Negociación en Mercados Internacionales",
+      "nivel": 7
+     },
+     {
+      "materia": "Riesgos Internacionales",
+      "nivel": 8
+     },
+     {
+      "materia": "Gerencia de Negocios Internacionales",
+      "nivel": 8
+     }
+    ]
+   }
+  ],
+  "semestres_compartidos": [],
+  "malla_lineas_sin_asignar": [],
+  "problemas_malla": [],
+  "precio_sin_descuento": 3950,
+  "inversion": 2500,
+  "descuento_pct": 37.0,
+  "montos_encontrados": [
+   3950,
+   2500
+  ],
+  "fuente": "https://www.puce.edu.ec/docs/dce/landing/pdf/relaciones-internacionales-202401.pdf",
+  "fecha_fuente": "2026-11-26T21:42:39+00:00",
+  "sha256": "5ce2c72b82ce33a2b1fdfd945eb604901f154dbd0fa03c6901cbb904b4ae24c2"
+ },
+ "comunicacion": {
+  "nombre": "COMUNICACIÓN",
+  "modalidad": "Presencial",
+  "duracion": "8 semestres",
+  "titulo": "LICENCIADA/O EN COMUNICACIÓN",
+  "malla": [
+   [
+    "Conocimiento, Palabra y Cambio Social",
+    "Técnicas y Herramientas de Expresión Oral",
+    "Filosofía del Conocimiento",
+    "Herramientas Digitales para las Humanidades",
+    "Identidad Personal y Convivencia",
+    "Globalización"
+   ],
+   [
+    "Fundamentos de Investigación",
+    "Redacción y Composición",
+    "Apreciación de las Artes",
+    "Cultura y Socialización",
+    "Taller Integral de Saberes",
+    "Cambios Históricos en el Ecuador"
+   ],
+   [
+    "Jesucristo y Aprendizajes Vitales",
+    "Semiótica",
+    "Narratología",
+    "Fundamentos de Comunicación",
+    "Imagen y Fotografía",
+    "Comunicación y Producción Digital"
+   ],
+   [
+    "Taller de Narrativas Periodísticas",
+    "Community y Content Management",
+    "Guion Multiplataforma",
+    "Audio Digital y Podcast",
+    "Marca Personal y perﬁl en redes sociales",
+    "Taller de Escritura Creativa"
+   ],
+   [
+    "Ética e Interculturalidad",
+    "Taller de Narrativas Inmersivas",
+    "Fundamento de la IA",
+    "Pensamiento Estratégico",
+    "Taller de Creación de Contenido 1",
+    "Producción Audiovisual"
+   ],
+   [
+    "Ecología Integral",
+    "Cultura Digital",
+    "Brandend Content y Storytelling",
+    "Comunicación Estratégica para las Organizaciones",
+    "Taller de Creación de Contenido 2",
+    "Fact Checking y Postverdad"
+   ],
+   [
+    "Seminario de Titulación",
+    "Asignatura 1 de Itinerario",
+    "Asignatura 2 de Itinerario",
+    "Análisis de Discursos",
+    "Taller de Creación de Contenido 3",
+    "Activismos, Agencia e Impacto Social"
+   ],
+   [
+    "Integración Curricular",
+    "Asignatura 3 de Itinerario",
+    "Asignatura 4 de Itinerario",
+    "Modelos de Negocio en Comunicación",
+    "Worldbuilding",
+    "Comunicación Integral de Valor"
+   ]
+  ],
+  "bloques_adicionales": [],
+  "itinerarios": [
+   {
+    "nombre": "Itinerario I: Comunicación Asertiva y Gestión de Contenidos",
+    "materias": [
+     {
+      "materia": "Comunicación y Persuasión",
+      "nivel": 7
+     },
+     {
+      "materia": "Gestión de Marca Personal",
+      "nivel": 7
+     },
+     {
+      "materia": "Media Training y Estrategias Comunicativas",
+      "nivel": 8
+     },
+     {
+      "materia": "Creación y Gestión de Contenidos Multiplataforma",
+      "nivel": 8
+     }
+    ]
+   },
+   {
+    "nombre": "Itinerario II: Ciencia de Datos con Aplicaciones Prácticas",
+    "materias": [
+     {
+      "materia": "Exploración de Datos",
+      "nivel": 7
+     },
+     {
+      "materia": "Visualización Avanzada de Datos",
+      "nivel": 7
+     },
+     {
+      "materia": "Analítica de Datos",
+      "nivel": 8
+     },
+     {
+      "materia": "Aplicación de las Ciencias de los Datos",
+      "nivel": 8
+     }
+    ]
+   },
+   {
+    "nombre": "Itinerario III: Negocios Digitales",
+    "materias": [
+     {
+      "materia": "Presencia y Branding Digital",
+      "nivel": 7
+     },
+     {
+      "materia": "Marketing Inbound y de Contenidos",
+      "nivel": 7
+     },
+     {
+      "materia": "Experiencia del Cliente",
+      "nivel": 8
+     },
+     {
+      "materia": "E-Comerce y Social Selling",
+      "nivel": 8
+     }
+    ]
+   }
+  ],
+  "semestres_compartidos": [],
+  "malla_lineas_sin_asignar": [],
+  "problemas_malla": [],
+  "precio_sin_descuento": 3950,
+  "inversion": 2500,
+  "descuento_pct": 37.0,
+  "montos_encontrados": [
+   3950,
+   2500
+  ],
+  "fuente": "https://www.puce.edu.ec/docs/dce/landing/pdf/comunicacion-202401.pdf",
+  "fecha_fuente": "2026-11-26T21:42:44+00:00",
+  "sha256": "aa0447b81336f8bf6d9912105c0e1805f8348e6e823217eca424b4728df2fbff"
+ },
+ "lenguas_aplicadas": {
+  "nombre": "LENGUAS APLICADAS",
+  "modalidad": "Presencial",
+  "duracion": "8 semestres",
+  "titulo": "LICENCIADA/O EN LENGUAS APLICADAS A LOS ESTUDIOS GLOBALES",
+  "malla": [
+   [
+    "Conocimiento, Palabra y Cambio Social",
+    "Técnicas y Herramientas de Expresión Oral",
+    "Philosophy of Knowledge",
+    "Herramientas Digitales para las Humanidades",
+    "Personal Identity and Coexistence",
+    "Globalization"
+   ],
+   [
+    "Fundamentos de Investigación",
+    "Redacción y Composición",
+    "Art Appreciation",
+    "Culture and Socialization",
+    "Taller Integral de Saberes",
+    "Cambios Históricos en el Ecuador"
+   ],
+   [
+    "Jesucristo y Aprendizajes Vitales",
+    "English Advanced Grammar",
+    "Estudios Globales",
+    "Language and Civilization",
+    "Enfoques Teóricos e Históricos de la Globalización",
+    "Global Affairs"
+   ],
+   [
+    "Global Citizenship",
+    "Historia del Pensamiento Económico",
+    "Pensamiento Político",
+    "English Academic Reading and Writing",
+    "Translation Theory and Techniques",
+    "Media, Technology, and Digital Transformation"
+   ],
+   [
+    "Ética e Interculturalidad",
+    "Language, Identity and Representations",
+    "Pragmatics and Discourse Analysis",
+    "Políticas Globales",
+    "Economía Global",
+    "Traducción Legal Inversa"
+   ],
+   [
+    "Ecología Integral",
+    "Métodos de Investigación en Humanidades",
+    "Finanzas Globales",
+    "Traducción Económica Inversa",
+    "Strategic Negotiations",
+    "World Literature and Arts"
+   ],
+   [
+    "Seminario de Titulación",
+    "Asignatura 1 de Itinerario",
+    "Asignatura 2 de Itinerario",
+    "Nature, Culture and Politics",
+    "Cross-Cultural Communication",
+    "Digital Humanities"
+   ],
+   [
+    "Integración Curricular",
+    "Asignatura 3 de Itinerario",
+    "Asignatura 4 de Itinerario",
+    "Intercultural Cooperation",
+    "Diseño y Evaluación de Proyectos",
+    "Deontología de la Ciudadanía Global"
+   ]
+  ],
+  "bloques_adicionales": [],
+  "itinerarios": [
+   {
+    "nombre": "Itinerario I: Linguistic and Intercultural Mediation",
+    "materias": [
+     {
+      "materia": "Diversity and Culture of Peace",
+      "nivel": 7
+     },
+     {
+      "materia": "Transcultural Communication and Languages in Contact",
+      "nivel": 7
+     },
+     {
+      "materia": "Education Mediation",
+      "nivel": 8
+     },
+     {
+      "materia": "Mediation in Context Workshop",
+      "nivel": 8
+     }
+    ]
+   },
+   {
+    "nombre": "Itinerario II: Pedagogía para el Aprendizaje Activo",
+    "materias": [
+     {
+      "materia": "Neuroeducación",
+      "nivel": 7
+     },
+     {
+      "materia": "Estrategias Didácticas Innovadoras",
+      "nivel": 7
+     },
+     {
+      "materia": "Interaprendizaje y Diseño de Recursos Didácticos",
+      "nivel": 8
+     },
+     {
+      "materia": "Evaluación de los Aprendizajes",
+      "nivel": 8
+     }
+    ]
+   },
+   {
+    "nombre": "Itinerario III: Emprendimiento en los Negocios",
+    "materias": [
+     {
+      "materia": "Introducción al Emprendimiento y Modelos de Negocio Innovadores",
+      "nivel": 7
+     },
+     {
+      "materia": "Identidad y Marketing Aplicado al Eprendimiento",
+      "nivel": 7
+     },
+     {
+      "materia": "Operaciones e Innovación Organizacional en el Proceso de Producción",
+      "nivel": 8
+     },
+     {
+      "materia": "Finanzas para Emprendedores",
+      "nivel": 8
+     }
+    ]
+   }
+  ],
+  "semestres_compartidos": [],
+  "malla_lineas_sin_asignar": [],
+  "problemas_malla": [],
+  "precio_sin_descuento": 3950,
+  "inversion": 2500,
+  "descuento_pct": 37.0,
+  "montos_encontrados": [
+   3950,
+   2500
+  ],
+  "fuente": "https://www.puce.edu.ec/docs/dce/landing/pdf/lenguas-aplicadas-202401.pdf",
+  "fecha_fuente": "2026-11-26T21:42:49+00:00",
+  "sha256": "afe09527d8afb5649de8f63f3a74c3ea0a3c97760d1599f93dd2ada902615d56"
+ },
+ "linguistica": {
+  "nombre": "LINGÜÍSTICA",
+  "modalidad": "Presencial",
+  "duracion": "8 semestres",
+  "titulo": "LICENCIADO/A EN LINGÜÍSTICA",
+  "malla": [
+   [
+    "Conocimiento, Palabra y Cambio Social",
+    "Técnicas y Herramientas de Expresión Oral",
+    "Philosophy of Science",
+    "Herramientas Digitales para las Humanidades",
+    "Personal Identity and Coexistence",
+    "Globalization"
+   ],
+   [
+    "Foundations of Research",
+    "Redacción y Composición",
+    "Art Appreciation",
+    "Culture and Socialization",
+    "Taller Integral de Saberes",
+    "Cambios Históricos en el Ecuador"
+   ],
+   [
+    "Jesucristo y Aprendizajes Vitales",
+    "Introduction to Linguistics",
+    "Gramática Académica del Español",
+    "English Advanced Grammar",
+    "Narrativa Latinoamericana",
+    "Fonología y Fonética del Español"
+   ],
+   [
+    "Morfología y Sintaxis del Español",
+    "History of Linguistics",
+    "English Phonology and Phonetics",
+    "English Academic Reading and Writing",
+    "English Morphology and Syntax",
+    "Translation Theory and Techniques"
+   ],
+   [
+    "Ética e Interculturalidad",
+    "Contrastive Morphology and Syntax",
+    "Contrastive Phonology and Phonetics",
+    "Semantics",
+    "Pragmatics and Discourse Analysis",
+    "Psycholinguistics & Language Acquisition"
+   ],
+   [
+    "Ecología Integral",
+    "World Literature and Arts",
+    "Semiótica",
+    "History of English",
+    "Methodology of Language Teaching: Teaching the Four Skills",
+    "Audiovisual Translation"
+   ],
+   [
+    "Seminario de Titulación",
+    "Asignatura 1 de Itinerario",
+    "Asignatura 2 de Itinerario",
+    "Assessment and Evaluation in Language Pedagogy",
+    "Specialized Translation",
+    "Teaching English for Specific Purposes"
+   ],
+   [
+    "Integración Curricular",
+    "Asignatura 3 de Itinerario",
+    "Asignatura 4 de Itinerario",
+    "New Trends in Linguistics",
+    "Interpretación",
+    "Sociolingüística"
+   ]
+  ],
+  "bloques_adicionales": [],
+  "itinerarios": [
+   {
+    "nombre": "Itinerario I: Linguistic and Intercultural Mediation",
+    "materias": [
+     {
+      "materia": "Diversity and Culture of Peace",
+      "nivel": 7
+     },
+     {
+      "materia": "Transcultural Communication and Languages in Contact",
+      "nivel": 7
+     },
+     {
+      "materia": "Education Mediation",
+      "nivel": 8
+     },
+     {
+      "materia": "Mediation in Context Workshop",
+      "nivel": 8
+     }
+    ]
+   },
+   {
+    "nombre": "Itinerario II: Pedagogía para el Aprendizaje Activo",
+    "materias": [
+     {
+      "materia": "Neuroeducación",
+      "nivel": 7
+     },
+     {
+      "materia": "Estrategias Didácticas Innovadoras",
+      "nivel": 7
+     },
+     {
+      "materia": "Interaprendizaje y Diseño de Recursos Didácticos",
+      "nivel": 8
+     },
+     {
+      "materia": "Evaluación de los Aprendizajes",
+      "nivel": 8
+     }
+    ]
+   },
+   {
+    "nombre": "Itinerario III: Emprendimiento en los Negocios",
+    "materias": [
+     {
+      "materia": "Introducción al Emprendimiento y Modelos de Negocio Innovadores",
+      "nivel": 7
+     },
+     {
+      "materia": "Identidad y Marketing Aplicado al Eprendimiento",
+      "nivel": 7
+     },
+     {
+      "materia": "Operaciones e Innovación Organizacional en el Proceso de Producción",
+      "nivel": 8
+     },
+     {
+      "materia": "Finanzas para Emprendedores",
+      "nivel": 8
+     }
+    ]
+   }
+  ],
+  "semestres_compartidos": [],
+  "malla_lineas_sin_asignar": [],
+  "problemas_malla": [],
+  "precio_sin_descuento": 3950,
+  "inversion": 2500,
+  "descuento_pct": 37.0,
+  "montos_encontrados": [
+   3950,
+   2500
+  ],
+  "fuente": "https://www.puce.edu.ec/docs/dce/landing/pdf/linguistica-202401.pdf",
+  "fecha_fuente": "2026-11-26T21:42:55+00:00",
+  "sha256": "b828d7dce12792959d5181199e4cd965aee8977f3ad87c242375b2faf3a774b5"
+ },
+ "literatura": {
+  "nombre": "LITERATURA",
+  "modalidad": "Presencial",
+  "duracion": "8 semestres",
+  "titulo": "LICENCIADA/O EN LITERATURA",
+  "malla": [
+   [
+    "Conocimiento, Palabra y Cambio Social",
+    "Técnicas y Herramientas de Expresión Oral",
+    "Filosofía de las Ciencias",
+    "Herramientas Digitales para las Humanidades",
+    "Identidad Personal y Convivencia",
+    "Globalización"
+   ],
+   [
+    "Fundamentos de Investigación",
+    "Redacción y Composición",
+    "Apreciación de las Artes",
+    "Cultura y Socialización",
+    "Taller Integral de Saberes",
+    "Cambios Históricos en el Ecuador"
+   ],
+   [
+    "Jesucristo y Aprendizajes Vitales",
+    "Análisis y Producción de Textos",
+    "Lingüística para la Literatura",
+    "Narrativa Latinoamericana",
+    "Teoría y Práctica de la Narrativa",
+    "Gramática Académica del Español"
+   ],
+   [
+    "Mitología y Literatura Clásica Helena",
+    "Taller de Poesía y Narrativa",
+    "Cultura Digital",
+    "Semiótica",
+    "Literatura Ecuatoriana Colonial y Republicana",
+    "Poesía Latinoamericana"
+   ],
+   [
+    "Ética e Interculturalidad",
+    "Lenguajes y Narrativas Audiovisuales",
+    "Ensayo Latinoamericano",
+    "Teorías Literarias",
+    "Cervantes y el Siglo de Oro",
+    "Mitología y Literatura Clásica Latina"
+   ],
+   [
+    "Ecología Integral",
+    "Voces e Imágenes de la Alteridad",
+    "Literatura Ecuatoriana Contemporánea",
+    "Escritura Experimental y Vanguardia",
+    "Seminario de Autor Latinoamericano",
+    "Didáctica de la Lengua y Literatura"
+   ],
+   [
+    "Seminario de Titulación",
+    "Asignatura 1 de Itinerario",
+    "Asignatura 2 de Itinerario",
+    "Crítica Literaria Contemporánea",
+    "Seminario de Autor Extranjero",
+    "Edición y Corrección de Textos"
+   ],
+   [
+    "Integración Curricular",
+    "Asignatura 3 de Itinerario",
+    "Asignatura 4 de Itinerario",
+    "Técnicas Creativas de Narrativa Histórica",
+    "Taller de Guion Literario",
+    "Dramaturgia del Teatro a los Nuevos Medios"
+   ]
+  ],
+  "bloques_adicionales": [],
+  "itinerarios": [
+   {
+    "nombre": "Itinerario I: Pedagogía para el Aprendizaje Activo",
+    "materias": [
+     {
+      "materia": "Neuroeducación",
+      "nivel": 7
+     },
+     {
+      "materia": "Estrategias Didácticas Innovadoras",
+      "nivel": 7
+     },
+     {
+      "materia": "Interaprendizaje y Diseño de Recursos Didácticos",
+      "nivel": 8
+     },
+     {
+      "materia": "Evaluación de los Aprendizajes",
+      "nivel": 8
+     }
+    ]
+   },
+   {
+    "nombre": "Itinerario II: Estrategias Creativas para las Artes y Ciencias",
+    "materias": [
+     {
+      "materia": "Retórica de las Artes y las Ciencias",
+      "nivel": 7
+     },
+     {
+      "materia": "Laboratorio de Experimentación Creativa",
+      "nivel": 7
+     },
+     {
+      "materia": "Diseño de Proyectos Creativos",
+      "nivel": 8
+     },
+     {
+      "materia": "Laboratorio de Mundos Futuros en las Artes y Ciencias",
+      "nivel": 8
+     }
+    ]
+   },
+   {
+    "nombre": "Itinerario III: Comunicación Asertiva y Gestión de Contenidos",
+    "materias": [
+     {
+      "materia": "Comunicación y Persuasión",
+      "nivel": 7
+     },
+     {
+      "materia": "Gestión de Marca Personal",
+      "nivel": 7
+     },
+     {
+      "materia": "Media Training y Estrategias Comunicativas",
+      "nivel": 8
+     },
+     {
+      "materia": "Creación y Gestión de Contenidos Multiplataforma",
+      "nivel": 8
+     }
+    ]
+   }
+  ],
+  "semestres_compartidos": [],
+  "malla_lineas_sin_asignar": [],
+  "problemas_malla": [],
+  "precio_sin_descuento": 3950,
+  "inversion": 2500,
+  "descuento_pct": 37.0,
+  "montos_encontrados": [
+   3950,
+   2500
+  ],
+  "fuente": "https://www.puce.edu.ec/docs/dce/landing/pdf/literatura-202401.pdf",
+  "fecha_fuente": "2026-11-26T21:43:00+00:00",
+  "sha256": "3aed948d5a629aa8223977e480f2e1d06f0476d2ad7df4d4b5478325e2002d05"
+ },
+ "educacion_inicial": {
+  "nombre": "EDUCACIÓN",
+  "modalidad": "Presencial",
+  "duracion": "8 semestres",
+  "titulo": "LICENCIADA/O EN CIENCIAS DE LA EDUCACIÓN INICIAL",
+  "malla": [
+   [
+    "Conocimiento, Palabra y Cambio Social",
+    "Técnicas y Herramientas de Expresión Oral",
+    "Filosofía del Conocimiento",
+    "Herramientas Digitales para las Humanidades",
+    "Identidad Personal y Convivencia",
+    "Globalización",
+    "Jesucristo y Aprendizajes Vitales"
+   ],
+   [
+    "Fundamentos de Investigación",
+    "Redacción y Composición",
+    "Apreciación de las Artes",
+    "Cultura y Socialización",
+    "Taller Integral de Saberes",
+    "Cambios Históricos en el Ecuador"
+   ],
+   [
+    "Neurodidáctica",
+    "Teoría y Diseño Curricular",
+    "Psicología del Desarrollo y del Aprendizaje",
+    "Pedagogía y Modelos Pedagógicos",
+    "Desarrollo Prenatal, Posnatal y Acompañamiento para Padres"
+   ],
+   [
+    "Evaluación Educativa",
+    "Psicomotricidad",
+    "Didáctica Integrada I",
+    "Salud Integral del Niño de 0 a 6 Años",
+    "Didáctica de la Literatura Infantil",
+    "Educación para todos y Atención a la Diversidad"
+   ],
+   [
+    "Ética e Interculturalidad",
+    "Expresión Corporal",
+    "Didáctica Integrada II",
+    "Primeros Auxilios",
+    "Estrategias de Estimulación para el Desarrollo",
+    "Diseño Universal para el Aprendizaje"
+   ],
+   [
+    "Ecología Integral",
+    "Estadística Básica",
+    "Didáctica Integrada III",
+    "Expresión Musical",
+    "Habilidades para la Vida en la Educación",
+    "Tecnologías del Empoderamiento y la Participación Educativa"
+   ],
+   [
+    "Seminario de Titulación",
+    "Asignatura 1 de Itinerario",
+    "Asignatura 2 de Itinerario",
+    "Diseño y Organización de Escenarios Educativos",
+    "Educación Holista",
+    "Orientación Familiar"
+   ],
+   [
+    "Integración Curricular",
+    "Asignatura 3 de Itinerario",
+    "Asignatura 4 de Itinerario",
+    "Aprendizaje y Enseñanza de las Artes Plásticas",
+    "Sexualidad Infantil",
+    "Gestión Escolar y Comunidades de Aprendizaje"
+   ]
+  ],
+  "bloques_adicionales": [],
+  "itinerarios": [
+   {
+    "nombre": "Itinerario I: Artes para el Desarrollo Humano",
+    "materias": [
+     {
+      "materia": "Movimiento, Expresión y Aprendizaje",
+      "nivel": 7
+     },
+     {
+      "materia": "Música para el Desarrollo Integral",
+      "nivel": 7
+     },
+     {
+      "materia": "Recursos de las Artes Visuales para la Inclusión",
+      "nivel": 8
+     },
+     {
+      "materia": "Escritura creativa",
+      "nivel": 8
+     }
+    ]
+   },
+   {
+    "nombre": "Itinerario II: Diversidad, Inclusión y Ciclo Vital",
+    "materias": [
+     {
+      "materia": "Psicología del Desarrollo de la Niñez",
+      "nivel": 7
+     },
+     {
+      "materia": "Psicología del Desarrollo de la Adolescencia, Adultez y Tercera Edad",
+      "nivel": 7
+     },
+     {
+      "materia": "Sexualidad y Cultura",
+      "nivel": 8
+     },
+     {
+      "materia": "Inclusión y Necesidades Específicas",
+      "nivel": 8
+     }
+    ]
+   },
+   {
+    "nombre": "Itinerario III: Comunicación Asertiva y Gestión de Contenidos",
+    "materias": [
+     {
+      "materia": "Comunicación y Persuación",
+      "nivel": 7
+     },
+     {
+      "materia": "Gestión de Marca Personal",
+      "nivel": 7
+     },
+     {
+      "materia": "Media Training y Estrategias Comunicativas",
+      "nivel": 8
+     },
+     {
+      "materia": "Creación y Gestión de Contenidos Multiplataforma",
+      "nivel": 8
+     }
+    ]
+   }
+  ],
+  "semestres_compartidos": [],
+  "malla_lineas_sin_asignar": [],
+  "problemas_malla": [],
+  "precio_sin_descuento": 3950,
+  "inversion": 2500,
+  "descuento_pct": 37.0,
+  "montos_encontrados": [
+   3950,
+   2500
+  ],
+  "fuente": "https://www.puce.edu.ec/docs/dce/landing/pdf/educacion-inicial-presencial-202401.pdf",
+  "fecha_fuente": "2026-11-26T21:43:05+00:00",
+  "sha256": "c5a435c4d5e3bf877d5f986274ff64bbf8de96b25d3832c875606a799d16b48d"
+ },
+ "psicologia_educativa": {
+  "nombre": "PSICOLOGÍA",
+  "modalidad": "Presencial",
+  "duracion": "9 semestres",
+  "titulo": "LICENCIADO/A EN PSICOLOGÍA EDUCATIVA",
+  "malla": [
+   [
+    "Conocimiento, Palabra y Cambio Social",
+    "Salud: Contexto Nacional e Internacional",
+    "Comportamiento Humano y Procesos Psicológicos",
+    "Primero Auxilios y Bioseguridad Básica",
+    "Fundamentos de Morfofunción",
+    "One Health y Salud Holística/Ancestral"
+   ],
+   [
+    "Fundamentos de la investigación",
+    "Historia de la Psicología",
+    "Neuroanatomía y Psicofisiología",
+    "Conducción de Grupos",
+    "Epistemología de la Psicología",
+    "Salud y Grupos prioritarios (Diversidad)"
+   ],
+   [
+    "Jesucristo y Aprendizaje Vital",
+    "Enfoques Psicológicos",
+    "Neuropsicología",
+    "Psicología del Desarrollo de la Niñez",
+    "Psicología Social",
+    "Estadística aplicada a la Psicología"
+   ],
+   [
+    "Psicopatología I",
+    "Enfoques Psicológicos Contemporáneos",
+    "Psicología del Desarrollo de la Adolescencia, Adultez y Tercera edad",
+    "Psicometría",
+    "Técnicas de entrevista",
+    "Evaluación Psicológica"
+   ],
+   [
+    "Ética e Interculturalidad",
+    "Psicología Comunitaria",
+    "Psicopatología lI",
+    "Lectura y Escritura Académica en Psicología",
+    "Neuroaprendizaje",
+    "Evaluación Psicológica Especializada"
+   ],
+   [
+    "Ecología Integral",
+    "Psicología de la Salud",
+    "Consejería y Asesoría Familiar",
+    "Gestión Administrativa e Institucional",
+    "Inclusión y Necesidades Específicas",
+    "Trastorno del Desarrollo Neurológico l"
+   ],
+   [
+    "Trastorno del Desarrollo Neurológico ll",
+    "Sexualidad, Género y Cultura",
+    "Informática Aplicada en Psicología",
+    "Intervención Psicosocial y Derechos Humanos",
+    "Intervención Educativa Individual",
+    "Prácticas Pre-profesionales l"
+   ],
+   [
+    "Seminario de Titulación",
+    "Primeros Auxilios Psicológicos",
+    "Gestión e Innovación Educativa",
+    "Intervención Educativa Institucional",
+    "Deontología y Ética profesional",
+    "Prácticas Pre-profesionales ll"
+   ],
+   [
+    "Integración Curricular",
+    "Metodología Cualitativa en Psicología",
+    "Metodología Cuantitativa en Psicología",
+    "Estrategias Educativas y Tecnológicas",
+    "Psicología Educativa Hospitalaria",
+    "Soft Skills For Psychology"
+   ]
+  ],
+  "bloques_adicionales": [],
+  "itinerarios": [],
+  "semestres_compartidos": [],
+  "malla_lineas_sin_asignar": [],
+  "problemas_malla": [],
+  "precio_sin_descuento": 3950,
+  "inversion": 2900,
+  "descuento_pct": null,
+  "montos_encontrados": [
+   3950,
+   2900
+  ],
+  "fuente": "https://www.puce.edu.ec/docs/dce/landing/pdf/psicologia-educativa-202401.pdf",
+  "fecha_fuente": "2026-11-26T21:43:10+00:00",
+  "sha256": "14fbd5f9769e70db860ced33059f7f2c299de7be3aa4cd546d1b90b7a351633f"
+ },
+ "artes_visuales": {
+  "nombre": "ARTES",
+  "modalidad": "Presencial",
+  "duracion": "8 semestres",
+  "titulo": "LICENCIADO/A EN ARTES VISUALES",
+  "malla": [
+   [
+    "Conocimiento, Palabra y Cambio Social",
+    "Laboratorio 1: Exploración y Retos",
+    "Introducción a los Lenguajes Visuales",
+    "Ciencia de los Materiales: Propiedades, Procesos y Ciclos",
+    "Historia y Pensamiento de las Prácticas Creativas Globales"
+   ],
+   [
+    "Fundamentos de Investigación",
+    "Laboratorio 2: Experimentación y Cocreación",
+    "Lenguajes Visuales Aplicados",
+    "Materia y Recursos: Enfoque Sostenible",
+    "Historia y Pensamiento de las Prácticas Creativas Latinoamericanas"
+   ],
+   [
+    "Jesucristo y Aprendizajes Vitales",
+    "Laboratorio de Construcción de Imagen",
+    "Expresión Plástica",
+    "Animación 2D",
+    "Dibujo e ilustración digital",
+    "Culturas visuales"
+   ],
+   [
+    "Fotografía Creativa",
+    "Laboratorio de Pensamiento Visual",
+    "Sistemas de impresión",
+    "Modelado y animación 3D",
+    "Producción audiovisual",
+    "Pensamiento crítico visual"
+   ],
+   [
+    "Ética e Interculturalidad",
+    "Laboratorio: Estrategias Artísticas Contemporáneas",
+    "Modelado escultórico",
+    "Procesos y Materiales en la Pintura",
+    "Procesos y Materiales en el Grabado",
+    "Arte Moderno y Contemporáneo en Latinoamérica y Ecuador"
+   ],
+   [
+    "Ecología Integral",
+    "Laboratorio: Proyecto y Procesos Artísticos",
+    "Medios Digitales y programación",
+    "Procesos en Dibujo",
+    "Procesos y Materiales en la Escultura",
+    "Teoría del Arte"
+   ],
+   [
+    "Seminario de Titulación",
+    "Asignatura 1 de Itinerario",
+    "Asignatura 2 de Itinerario",
+    "Arte y Educación",
+    "Escritura y Procesos Creativos",
+    "Crítica y Curaduría"
+   ],
+   [
+    "Integración Curricular",
+    "Asignatura 3 de Itinerario",
+    "Asignatura 4 de Itinerario",
+    "Práctica Artística: Memoria Visual y Escrita",
+    "Arte, trabajo y derechos"
+   ]
+  ],
+  "bloques_adicionales": [],
+  "itinerarios": [
+   {
+    "nombre": "Itinerario I: Estrategias Creativas para las Artes y Ciencias",
+    "materias": [
+     {
+      "materia": "Retórica de las Artes y las Ciencias",
+      "nivel": 7
+     },
+     {
+      "materia": "Laboratorio de Experimentación Creativa",
+      "nivel": 7
+     },
+     {
+      "materia": "Diseño de Proyectos Creativos",
+      "nivel": 8
+     },
+     {
+      "materia": "Laboratorio de Mundos Futuros en las Artes y Ciencias",
+      "nivel": 8
+     }
+    ]
+   },
+   {
+    "nombre": "Itinerario II: Tecnologías Creativas para un Mundo Digital",
+    "materias": [
+     {
+      "materia": "Pensamiento y Crítica del Mundo Digital",
+      "nivel": 7
+     },
+     {
+      "materia": "Métodos de Computación Creativa",
+      "nivel": 7
+     },
+     {
+      "materia": "Laboratorio de Creación Digital",
+      "nivel": 8
+     },
+     {
+      "materia": "Laboratorio de Fabricación Digital",
+      "nivel": 8
+     }
+    ]
+   },
+   {
+    "nombre": "Itinerario III: Pedagogía para el Aprendizaje Activo",
+    "materias": [
+     {
+      "materia": "Neuroeducación",
+      "nivel": 7
+     },
+     {
+      "materia": "Estrategias Didácticas Innovadoras",
+      "nivel": 7
+     },
+     {
+      "materia": "Interaprendizaje y Diseño de Recursos Didácticos",
+      "nivel": 8
+     },
+     {
+      "materia": "Evaluación de los Aprendizajes",
+      "nivel": 8
+     }
+    ]
+   }
+  ],
+  "semestres_compartidos": [],
+  "malla_lineas_sin_asignar": [],
+  "problemas_malla": [],
+  "precio_sin_descuento": 3950,
+  "inversion": 2900,
+  "descuento_pct": 27.0,
+  "montos_encontrados": [
+   3950,
+   2900
+  ],
+  "fuente": "https://www.puce.edu.ec/docs/dce/landing/pdf/artes-visuales-202401.pdf",
+  "fecha_fuente": "2026-11-26T21:43:18+00:00",
+  "sha256": "e3a9bf158f9e5e7686b53c43f67f3ead5963f969a955d8aef8510ebe1309f2d2"
+ },
+ "filosofia": {
+  "nombre": "FILOSOFÍA",
+  "modalidad": "Presencial",
+  "duracion": "8 semestres",
+  "titulo": "LICENCIADO/A EN FILOSOFÍA",
+  "malla": [
+   [
+    "Introducción a la Filosofía: Fe y Razón",
+    "Lógica",
+    "Historia de la Filosofía Antigua",
+    "Latín",
+    "Seminario de Autor Antiguo",
+    "Comunicación Oral y Escrita",
+    "Tecnologías de la Información y de la Comunicación (TIC)"
+   ],
+   [
+    "Filosofía del Conocimiento",
+    "Historia de la Filosofía Medieval",
+    "Seminario de Autor Medieval",
+    "Psicología",
+    "Fundamentos de la Investigación",
+    "Filosofía de la Naturaleza"
+   ],
+   [
+    "Jesucristo y la Persona de Hoy",
+    "Ontología",
+    "Historia de la Filosofía Moderna",
+    "Seminario de Autor Moderno",
+    "Ética",
+    "Antropología Filosófica"
+   ],
+   [
+    "Estética",
+    "Historia de la Filosofía Contemporánea",
+    "Seminario de Autor Contemporáneo",
+    "Filosofía de Dios y la Religión",
+    "Filosofía de la Cultura",
+    "Itinerario I: Filosofía de la Educación",
+    "Prácticas de Servicio Comunitario I"
+   ],
+   [
+    "Lógica Simbólica",
+    "Filosofía Política",
+    "Seminario I de Tema o Autor",
+    "Hermenéutica",
+    "Itinerario I: Planificación y Adaptaciones Curriculares",
+    "Prácticas de Servicio Comunitario II"
+   ],
+   [
+    "Filosofía de la Ciencia",
+    "Seminario II de Tema o Autor",
+    "Filosofía del Lenguaje",
+    "Cosmovisiones Andinas",
+    "Itinerario I: Didáctica de la Filosofía",
+    "Prácticas Preprofesionales I"
+   ],
+   [
+    "Fenomenología",
+    "Seminario III de Tema o Autor",
+    "Pensamiento Ecuatoriano y Latinoamericano",
+    "Investigación Filosófica",
+    "Itinerario l: Legislación Educativa y Políticas de Inclusión",
+    "Prácticas Preprofesionales II"
+   ],
+   [
+    "Lógica de Relaciones",
+    "Seminario IV de Tema o Autor",
+    "Estructuralismo y Postestructuralismo",
+    "Filosofía de la Tecnología",
+    "Integración Curricular"
+   ]
+  ],
+  "bloques_adicionales": [],
+  "itinerarios": [
+   {
+    "nombre": "Itinerario de enseñanzas de la filosofía",
+    "materias": [
+     {
+      "materia": "Filosofía de la educación",
+      "nivel": 4
+     },
+     {
+      "materia": "Planificación y adaptaciones Curriculares",
+      "nivel": 5
+     },
+     {
+      "materia": "Didáctica de la Filosofía",
+      "nivel": 6
+     },
+     {
+      "materia": "Legislación Educativa y Políticas de Inclusión",
+      "nivel": 7
+     }
+    ]
+   }
+  ],
+  "semestres_compartidos": [],
+  "malla_lineas_sin_asignar": [],
+  "problemas_malla": [],
+  "precio_sin_descuento": 3950,
+  "inversion": 2500,
+  "descuento_pct": 37.0,
+  "montos_encontrados": [
+   3950,
+   2500
+  ],
+  "fuente": "https://www.puce.edu.ec/docs/dce/landing/pdf/filosofia-202401.pdf",
+  "fecha_fuente": "2026-11-26T21:43:24+00:00",
+  "sha256": "a61d74a9a1abacca584b5b89094b54f59fc6f2d701612c49b60db182827d1ec2"
+ },
+ "teologia": {
+  "nombre": "TEOLOGÍA",
+  "modalidad": "Presencial",
+  "duracion": "8 semestres",
+  "titulo": "LICENCIADA/O EN TEOLOGÍA",
+  "malla": [
+   [
+    "Teología fundamental",
+    "Introducción a la Teología",
+    "Investigación Teológica",
+    "Introducción a la Biblia",
+    "Historia de la Iglesia: Antigua y Medieval"
+   ],
+   [
+    "Cristología",
+    "Trinidad",
+    "Pentateuco e Históricos",
+    "Patrología y Concilios",
+    "Historia de la Iglesia: Moderna y Contemporánea"
+   ],
+   [
+    "Creación, Alianza y Pecado",
+    "Mariología",
+    "Profetas",
+    "Sinópticos y Hechos",
+    "Teología e Historia de la Espiritualidad"
+   ],
+   [
+    "Eclesiología",
+    "Gracia y Escatología",
+    "Moral Fundamental",
+    "Escritos Sapienciales y Poéticos",
+    "Escritos Paulinos"
+   ],
+   [
+    "Moral Social",
+    "Introducción. A los sacramentos: Bautismo y Confirmación",
+    "Derecho Canónico",
+    "Liturgia",
+    "Escritos Joanicos"
+   ],
+   [
+    "Doctrina Social de la Iglesia",
+    "Penitencia, Matrimonio y Unción",
+    "Moral: Sexualidad y Vida",
+    "Historia de la Iglesia en América Latina",
+    "Acompañamiento Humano y Espiritual"
+   ],
+   [
+    "Magisterio Actual de la Iglesia",
+    "Orden y Eucaristía",
+    "Teología de la Misión y la Predicación",
+    "Pastoral de los Sacramentos y Homilética",
+    "Administración Pastoral"
+   ],
+   [
+    "Teología Bíblica",
+    "Práctica de la confesión",
+    "Derecho Sacramental",
+    "Bioética",
+    "Unidad de Integración Curricular"
+   ]
+  ],
+  "bloques_adicionales": [],
+  "itinerarios": [],
+  "semestres_compartidos": [],
+  "malla_lineas_sin_asignar": [],
+  "problemas_malla": [],
+  "precio_sin_descuento": 3950,
+  "inversion": 2500,
+  "descuento_pct": 37.0,
+  "montos_encontrados": [
+   3950,
+   2500
+  ],
+  "fuente": "https://www.puce.edu.ec/docs/dce/landing/pdf/teologia-202401.pdf",
+  "fecha_fuente": "2026-11-26T21:43:28+00:00",
+  "sha256": "bad4c5c61344674e0ec5972c94aebdcbce59ba37b66fa90d7cf72439524a85a9"
+ },
+ "administracion_empresas": {
+  "nombre": "ADMINISTRACIÓN",
+  "modalidad": "Presencial",
+  "duracion": "8 semestres",
+  "titulo": "LICENCIADO/A EN ADMINISTRACIÓN DE EMPRESAS",
+  "malla": [
+   [
+    "Conocimiento, Palabra y Cambio Social",
+    "Matemática I",
+    "Contabilidad Básica",
+    "Fundamentos de Administración",
+    "Entorno Socioeconómico",
+    "Introducción a la Microeconomía"
+   ],
+   [
+    "Fundamentos de Investigación",
+    "Estadística I",
+    "Fundamentos de Contabilidad de Costos",
+    "Pensamiento Creativo e Innovación",
+    "Optimización Aplicada a la Administración y Economía",
+    "Introducción a la Macroeconomía"
+   ],
+   [
+    "Jesucristo y Aprendizajes Vitales",
+    "Estadística II",
+    "Contabilidad Financiera",
+    "Marketing y Ecosistema Digital",
+    "Diseño y Estructura Organizacional",
+    "Gestión por Procesos"
+   ],
+   [
+    "Administración y Planificación Financiera",
+    "Investigación de Operaciones",
+    "Gestión de PYMES y Empresas Familiares",
+    "Investigación de Mercados",
+    "Cultura y Comportamiento Organizacional",
+    "Legislación Empresarial"
+   ],
+   [
+    "Ética e Interculturalidad",
+    "Gestión del Talento Humano",
+    "Administración de Operaciones",
+    "Negocios Digitales (E-Business)",
+    "Administración Estratégica",
+    "Estrategias Globales"
+   ],
+   [
+    "Ecología Integral",
+    "Gestión de Cadena de Suministro Internacional",
+    "Diseño y Evaluación de Proyectos",
+    "Auditoría y Compliance",
+    "Dirección e Innovación Estratégica",
+    "Responsabilidad Social, Corporativa y Ambiental"
+   ],
+   [
+    "Seminario de Titulación",
+    "Asignatura 1 de Itinerario",
+    "Asignatura 2 de Itinerario",
+    "Sistemas Integrados de Gestión",
+    "Prospectiva Estratégica",
+    "Finanzas Corporativas"
+   ],
+   [
+    "Integración Curricular",
+    "Asignatura 3 de Itinerario",
+    "Asignatura 4 de Itinerario",
+    "Tributación Aplicada",
+    "Habilidades Gerenciales",
+    "Sistemas de Información Gerencial"
+   ]
+  ],
+  "bloques_adicionales": [],
+  "itinerarios": [
+   {
+    "nombre": "Itinerario I: Negocios Digitales",
+    "materias": [
+     {
+      "materia": "Presencia y Branding Digital",
+      "nivel": 7
+     },
+     {
+      "materia": "Marketing Inbound y de Contenidos",
+      "nivel": 7
+     },
+     {
+      "materia": "Experiencia del Cliente",
+      "nivel": 8
+     },
+     {
+      "materia": "E-Commerce y Social Selling",
+      "nivel": 8
+     }
+    ]
+   },
+   {
+    "nombre": "Itinerario II: Gestión de Proyectos",
+    "materias": [
+     {
+      "materia": "Dirección de Proyectos",
+      "nivel": 7
+     },
+     {
+      "materia": "Inicio y Planificación del Proyecto",
+      "nivel": 7
+     },
+     {
+      "materia": "Ejecución, Monitoreo, Control y Cierre del Proyecto",
+      "nivel": 8
+     },
+     {
+      "materia": "Gestión Ágil de Proyectos",
+      "nivel": 8
+     }
+    ]
+   },
+   {
+    "nombre": "Itinerario III: Ciencia de Datos con Aplicaciones Prácticas",
+    "materias": [
+     {
+      "materia": "Exploración de Datos",
+      "nivel": 7
+     },
+     {
+      "materia": "Visualizacion Avanzada de Datos",
+      "nivel": 7
+     },
+     {
+      "materia": "Analítica de Datos",
+      "nivel": 8
+     },
+     {
+      "materia": "Aplicación de la Ciencia de Datos",
+      "nivel": 8
+     }
+    ]
+   }
+  ],
+  "semestres_compartidos": [],
+  "malla_lineas_sin_asignar": [],
+  "problemas_malla": [],
+  "precio_sin_descuento": 3950,
+  "inversion": 2600,
+  "descuento_pct": 34.0,
+  "montos_encontrados": [
+   3950,
+   2600
+  ],
+  "fuente": "https://www.puce.edu.ec/docs/dce/landing/pdf/administracion-de-empresas-202401.pdf",
+  "fecha_fuente": "2026-11-26T21:43:34+00:00",
+  "sha256": "bbcbe34d0560565ee69220716e21d3b41db0ca8364d8e3cc40c530c15eeabb40"
+ },
+ "turismo": {
+  "nombre": "ADMINISTRACIÓN",
+  "modalidad": "Presencial",
+  "duracion": "8 semestres",
+  "titulo": "LICENCIADO/A EN ADMINISTRACIÓN EN TURISMO Y HOSPITALIDAD",
+  "malla": [
+   [
+    "Conocimiento, Palabra y Cambio Social",
+    "Matemática I",
+    "Contabilidad Básica",
+    "Fundamentos de Administración",
+    "Entorno Socioeconómico",
+    "Introducción a la Microeconomía"
+   ],
+   [
+    "Fundamentos de Investigación",
+    "Estadística I",
+    "Fundamentos de Contabilidad de Costos",
+    "Pensamiento Creativo e Innovación",
+    "Optimización Aplicada a la Administración y Economía",
+    "Introducción a la Macroeconomía"
+   ],
+   [
+    "Jesucristo y Aprendizajes Vitales",
+    "Marketing y Ecosistema Digital",
+    "Gestión por Procesos",
+    "Introducción al Turismo y la Hospitalidad",
+    "Estadística II",
+    "Fundamentos de Sanidad y Nutrición"
+   ],
+   [
+    "Legislación Empresarial",
+    "Investigación de Mercados",
+    "Sociología del Turismo",
+    "Tendencias y Estrategias Turísticas y Hospitalidad",
+    "Geografía Turística"
+   ],
+   [
+    "Ética e Interculturalidad",
+    "Gestión del Talento Humano",
+    "Administración Estratégica",
+    "Operación de Empresas Turísticas y de Hospitalidad",
+    "Recursos Turísticos Culturales"
+   ],
+   [
+    "Procesos Culinarios",
+    "Ecología Integral",
+    "Diseño de Productos y Experiencias Turísticas y de Hospitalidad",
+    "Servicios digitales y Consultoría de Viajes",
+    "Diseño y Evaluación de Proyectos",
+    "Recursos Turísticos Naturales"
+   ],
+   [
+    "Operación de Empresas de Alimentos y Bebidas",
+    "Seminario de Titulación",
+    "Asignatura 1 de itinerario",
+    "Asignatura 2 de itinerario",
+    "Dirección y Organización de Eventos y Banquetes",
+    "Impactos Socio Ambientales",
+    "Gestión de Bares y Bebidas"
+   ],
+   [
+    "Responsabilidad Social, Corporativa y Ambiental",
+    "Integración Curricular",
+    "Asignatura 3 de itinerario",
+    "Asignatura 4 de itinerario",
+    "Modelos de Turismo Sostenible y Comunitario",
+    "Gestión de Destinos Turísticos",
+    "Estrategias Directivas en Turismo y Hospitalidad"
+   ]
+  ],
+  "bloques_adicionales": [],
+  "itinerarios": [
+   {
+    "nombre": "Itinerario I: Gestión de Proyectos (Project Management)",
+    "materias": [
+     {
+      "materia": "Dirección de Proyectos",
+      "nivel": 7
+     },
+     {
+      "materia": "Inicio y Planificación del Proyecto",
+      "nivel": 7
+     },
+     {
+      "materia": "Ejecución, Monitoreo, Control y Cierre del Proyecto",
+      "nivel": 8
+     },
+     {
+      "materia": "Gestión Ágil de Proyectos",
+      "nivel": 8
+     }
+    ]
+   },
+   {
+    "nombre": "Itinerario II: Negocios Digitales",
+    "materias": [
+     {
+      "materia": "Presencia y Branding Digital",
+      "nivel": 7
+     },
+     {
+      "materia": "Marketing Inbound y de Contenidos",
+      "nivel": 7
+     },
+     {
+      "materia": "Experiencia del Cliente",
+      "nivel": 8
+     },
+     {
+      "materia": "E-commerce y Social Selling",
+      "nivel": 8
+     }
+    ]
+   },
+   {
+    "nombre": "Itinerario III: Comunicación Asertiva y Gestión de Contenidos",
+    "materias": [
+     {
+      "materia": "Comunicación y Persuación",
+      "nivel": 7
+     },
+     {
+      "materia": "Gestión de Marca Personal",
+      "nivel": 7
+     },
+     {
+      "materia": "Media Training y Estrategias Comunicativas",
+      "nivel": 8
+     },
+     {
+      "materia": "Creación y Gestión de Contenidos Multiplataforma",
+      "nivel": 8
+     }
+    ]
+   }
+  ],
+  "semestres_compartidos": [],
+  "malla_lineas_sin_asignar": [],
+  "problemas_malla": [],
+  "precio_sin_descuento": 3950,
+  "inversion": 2600,
+  "descuento_pct": 34.0,
+  "montos_encontrados": [
+   3950,
+   2600
+  ],
+  "fuente": "https://www.puce.edu.ec/docs/dce/landing/pdf/administracion-en-turismo-y-hospitalidad-202401.pdf",
+  "fecha_fuente": "2026-11-26T21:43:38+00:00",
+  "sha256": "59bec3b793033c20b0d7489538cb6cddfdf30ff2d3bb36b2aba0decab4d35b88"
+ },
+ "contabilidad": {
+  "nombre": "CONTABILIDAD Y",
+  "modalidad": "Presencial",
+  "duracion": "8 semestres",
+  "titulo": "LICENCIADO/A EN CONTABILIDAD Y AUDITORÍA",
+  "malla": [
+   [
+    "Conocimiento, Palabra y Cambio Social",
+    "Matemática I",
+    "Contabilidad Básica",
+    "Fundamentos de Administración",
+    "Entorno Socioeconómico",
+    "Introducción a la Microeconomía"
+   ],
+   [
+    "Fundamentos de Investigación",
+    "Estadística I",
+    "Fundamentos de Contabilidad de Costos",
+    "Pensamiento Creativo e Innovación",
+    "Optimización Aplicada a la Administración y Economía",
+    "Introducción a la Macroeconomía"
+   ],
+   [
+    "Jesucristo y Aprendizajes Vitales",
+    "Estadística II",
+    "Contabilidad Intermedia",
+    "Marketing y Ecosistema Digital",
+    "Sistemas de Acumulación de Costos",
+    "Análisis y Diagnóstico Financiero"
+   ],
+   [
+    "Gestión por Procesos",
+    "Principios Básicos Tributarios",
+    "Contabilidad Superior",
+    "Legislación Empresarial",
+    "Gestión de Costos",
+    "Administración Presupuestaria"
+   ],
+   [
+    "Ética e Interculturalidad",
+    "Aplicaciones Tributarias",
+    "Contabilidad Avanzada",
+    "Gestión del Talento Humano",
+    "Auditoría I",
+    "Administración Estratégica"
+   ],
+   [
+    "Ecología Integral",
+    "Diseño y Evaluación de Proyectos",
+    "Contabilidad de Actividades Especiales",
+    "Herramientas de Programación para los Negocios",
+    "Auditoría II",
+    "Control de Gestión"
+   ],
+   [
+    "Seminario de Titulación",
+    "Asignatura 1 de Itinerario",
+    "Asignatura 2 de Itinerario",
+    "Data Analytics para Auditoría y Contabilidad I",
+    "Contabilidad de Instituciones Financieras y Seguros",
+    "Sostenibilidad e Informes Integrados"
+   ],
+   [
+    "Integración Curricular",
+    "Asignatura 3 de Itinerario",
+    "Asignatura 4 de Itinerario",
+    "Data Analytics para Auditoría y Contabilidad II",
+    "Habilidades Gerenciales",
+    "Finanzas Corporativas"
+   ]
+  ],
+  "bloques_adicionales": [],
+  "itinerarios": [
+   {
+    "nombre": "Itinerario I: Gestión de Proyectos (Project Management)",
+    "materias": [
+     {
+      "materia": "Dirección de Proyectos",
+      "nivel": 7
+     },
+     {
+      "materia": "Inicio y Planificación del Proyecto",
+      "nivel": 7
+     },
+     {
+      "materia": "Ejecución, Monitoreo, Control y Cierre del Proyecto",
+      "nivel": 8
+     },
+     {
+      "materia": "Gestión Ágil de Proyectos",
+      "nivel": 8
+     }
+    ]
+   },
+   {
+    "nombre": "Itinerario II: Economía y Ambiente",
+    "materias": [
+     {
+      "materia": "Introducción a la Economía Sostenible",
+      "nivel": 7
+     },
+     {
+      "materia": "Sostenibilidad Ambiental y Cambio Climático",
+      "nivel": 7
+     },
+     {
+      "materia": "Herramientas para la Valoración Ambiental",
+      "nivel": 8
+     },
+     {
+      "materia": "Gestión Sostenible de Empresas",
+      "nivel": 8
+     }
+    ]
+   },
+   {
+    "nombre": "Itinerario III: Derecho Empresarial",
+    "materias": [
+     {
+      "materia": "Gobierno Corporativo",
+      "nivel": 7
+     },
+     {
+      "materia": "Derecho de la Competencia",
+      "nivel": 7
+     },
+     {
+      "materia": "Derecho y Nuevas Tecnologías",
+      "nivel": 8
+     },
+     {
+      "materia": "Compliance",
+      "nivel": 8
+     }
+    ]
+   }
+  ],
+  "semestres_compartidos": [],
+  "malla_lineas_sin_asignar": [],
+  "problemas_malla": [],
+  "precio_sin_descuento": 3950,
+  "inversion": 2600,
+  "descuento_pct": 34.0,
+  "montos_encontrados": [
+   3950,
+   2600
+  ],
+  "fuente": "https://www.puce.edu.ec/docs/dce/landing/pdf/contabilidad-y-auditoria-202508.pdf",
+  "fecha_fuente": "2026-11-26T21:43:43+00:00",
+  "sha256": "0e0afb4ccb6e1f48d7d4f2da3d090035f68ac9b66a7f3c315057bb76698b7c65"
+ },
+ "economia_carrera": {
+  "nombre": "ECONOMÍA",
+  "modalidad": "Presencial",
+  "duracion": "8 semestres",
+  "titulo": null,
+  "malla": [
+   [
+    "Conocimiento, Palabra y Cambio Social",
+    "Matemática I",
+    "Contabilidad Básica",
+    "Fundamentos de Administración",
+    "Entorno Socioeconómico",
+    "Introducción a la Microeconomía"
+   ],
+   [
+    "Fundamentos de Investigación",
+    "Estadística I",
+    "Fundamentos de Contabilidad de Costos",
+    "Pensamiento Creativo e Innovación",
+    "Optimización Aplicada a la Administración y Economía",
+    "Introducción a la Macroeconomía"
+   ],
+   [
+    "Jesucristo y Aprendizajes Vitales",
+    "Estadística II",
+    "Sector Financiero y Economía Financiera",
+    "Economía de América Latina y Ecuador",
+    "Macroeconomía I",
+    "Microeconomía I"
+   ],
+   [
+    "Economía Institucional y del Comportamiento",
+    "Econometría",
+    "Mercado de Capitales y Economía Financiera",
+    "Economía Política I",
+    "Macroeconomía II",
+    "Microeconomía II"
+   ],
+   [
+    "Ética e Interculturalidad",
+    "Microeconometría",
+    "Organización Económica, Espacio y Territorio",
+    "Economía Política II",
+    "Economía Internacional",
+    "Teoría de Juegos"
+   ],
+   [
+    "Ecología Integral",
+    "Macroeconometría",
+    "Diseño y Evaluación de Proyectos",
+    "Sostenibilidad Ambiental",
+    "Economía del Sector Público",
+    "Organización Industrial"
+   ],
+   [
+    "Seminario de Titulación",
+    "Asignatura 1 de Itinerario",
+    "Asignatura 2 de Itinerario",
+    "Economía del Desarrollo",
+    "Política Fiscal y Finanzas Públicas",
+    "Economía de la Competencia"
+   ],
+   [
+    "Integración Curricular",
+    "Asignatura 3 de Itinerario",
+    "Asignatura 4 de Itinerario",
+    "Pensamiento Económico",
+    "Regulación Financiera y Política Monetaria",
+    "Bases de Datos en Economía"
+   ]
+  ],
+  "bloques_adicionales": [],
+  "itinerarios": [
+   {
+    "nombre": "Itinerario I: Diseño y Análisis de Políticas Públicas",
+    "materias": [
+     {
+      "materia": "Estado y Sociedad",
+      "nivel": 7
+     },
+     {
+      "materia": "Marcos Analíticos de Políticas Públicas",
+      "nivel": 7
+     },
+     {
+      "materia": "Análisis Comparado de Políticas Públicas",
+      "nivel": 8
+     },
+     {
+      "materia": "Métodos Múltiples para la Evaluación de Políticas Públicas",
+      "nivel": 8
+     }
+    ]
+   },
+   {
+    "nombre": "Itinerario II: Economía y Ambiente",
+    "materias": [
+     {
+      "materia": "Introducción a la Economía Sostenible",
+      "nivel": 7
+     },
+     {
+      "materia": "Sostenibilidad Ambiental y Cambio Climático",
+      "nivel": 7
+     },
+     {
+      "materia": "Herramientas para la Valoración Ambiental",
+      "nivel": 8
+     },
+     {
+      "materia": "Gestión Sostenible de Empresas",
+      "nivel": 8
+     }
+    ]
+   },
+   {
+    "nombre": "Itinerario III: Ciencia de Datos con Aplicaciones Prácticas",
+    "materias": [
+     {
+      "materia": "Exploración de Datos",
+      "nivel": 7
+     },
+     {
+      "materia": "Visualización Avanzada de Datos",
+      "nivel": 7
+     },
+     {
+      "materia": "Analítica de Datos",
+      "nivel": 8
+     },
+     {
+      "materia": "Aplicación de la Ciencia de Datos",
+      "nivel": 8
+     }
+    ]
+   }
+  ],
+  "semestres_compartidos": [],
+  "malla_lineas_sin_asignar": [],
+  "problemas_malla": [],
+  "precio_sin_descuento": 3950,
+  "inversion": 2600,
+  "descuento_pct": 34.0,
+  "montos_encontrados": [
+   3950,
+   2600
+  ],
+  "fuente": "https://www.puce.edu.ec/docs/dce/landing/pdf/economia-202401.pdf",
+  "fecha_fuente": "2026-11-26T21:43:48+00:00",
+  "sha256": "ff22f35b62405f0370149346604fec28e8a2910004b429eeb5697788e4aeaee1"
+ },
+ "finanzas": {
+  "nombre": "FINANZAS",
+  "modalidad": "Presencial",
+  "duracion": "8 semestres",
+  "titulo": "LICENCIADO/A EN FINANZAS",
+  "malla": [
+   [
+    "Conocimiento, Palabra y Cambio Social",
+    "Matemática I",
+    "Contabilidad Básica",
+    "Fundamentos de Administración",
+    "Entorno Socioeconómico",
+    "Introducción a la Microeconomía"
+   ],
+   [
+    "Fundamentos de Investigación",
+    "Estadística I",
+    "Fundamentos de Contabilidad de Costos",
+    "Pensamiento Creativo e Innovación",
+    "Optimización Aplicada a la Administración y Economía",
+    "Introducción a la Macroeconomía"
+   ],
+   [
+    "Jesucristo y Aprendizajes Vitales",
+    "Herramientas de programación para los negocios",
+    "Contabilidad intermedia",
+    "Marketing y ecosistema digital",
+    "Estadística II",
+    "Análisis y diagnóstico Financiero"
+   ],
+   [
+    "Legislación Empresarial",
+    "Investigación de Operaciones",
+    "Contabilidad Societaria",
+    "Gestión por Procesos",
+    "Administración Presupuestaria",
+    "Finanzas Operativas"
+   ],
+   [
+    "Ética e Interculturalidad",
+    "Gestión del Talento Humano",
+    "Administración de Portafolios",
+    "Administración Estratégica",
+    "Tributación Aplicada",
+    "Decisiones de Financiamiento e Inversiones"
+   ],
+   [
+    "Ecología Integral",
+    "Instituciones Financieras del Sistema Nacional",
+    "Control de Gestión",
+    "Diseño y Evaluación de Proyectos",
+    "Seguros y Transferencia de Riesgos",
+    "Finanzas Internacionales"
+   ],
+   [
+    "Seminario de Titulación",
+    "Asignatura 1 de Itinerario",
+    "Asignatura 2 de Itinerario",
+    "Analítica Financiera",
+    "Valoración de Renta Fija",
+    "Gestion de Riesgos Financieros"
+   ],
+   [
+    "Integración Curricular",
+    "Asignatura 3 de Itinerario",
+    "Asignatura 4 de Itinerario",
+    "Habilidades Gerenciales",
+    "Innovación Financiera y Fintech",
+    "Valoración de Empresas"
+   ]
+  ],
+  "bloques_adicionales": [],
+  "itinerarios": [
+   {
+    "nombre": "Itinerario I: Ciencia de Datos con Aplicaciones Prácticas",
+    "materias": [
+     {
+      "materia": "Exploración de Datos",
+      "nivel": 7
+     },
+     {
+      "materia": "Visualización Avanzada de Datos",
+      "nivel": 7
+     },
+     {
+      "materia": "Analítica de Datos",
+      "nivel": 8
+     },
+     {
+      "materia": "Aplicación de la Ciencia de Datos",
+      "nivel": 8
+     }
+    ]
+   },
+   {
+    "nombre": "Itinerario II: Gestión de Proyectos (Project Management)",
+    "materias": [
+     {
+      "materia": "Dirección de Proyectos",
+      "nivel": 7
+     },
+     {
+      "materia": "Inicio y Planificación del Proyecto",
+      "nivel": 7
+     },
+     {
+      "materia": "Ejecución, Monitoreo, Control y Cierre del Proyecto",
+      "nivel": 8
+     },
+     {
+      "materia": "Gestión Ágil de Proyectos",
+      "nivel": 8
+     }
+    ]
+   },
+   {
+    "nombre": "Itinerario III: Internacionalización de la Empresa",
+    "materias": [
+     {
+      "materia": "Internacionalización de MYPIMES",
+      "nivel": 7
+     },
+     {
+      "materia": "Negociación en Mercados Internacionales",
+      "nivel": 7
+     },
+     {
+      "materia": "Riesgos Internacionales",
+      "nivel": 8
+     },
+     {
+      "materia": "Gerencia de Negocios Internacionales",
+      "nivel": 8
+     }
+    ]
+   }
+  ],
+  "semestres_compartidos": [],
+  "malla_lineas_sin_asignar": [],
+  "problemas_malla": [],
+  "precio_sin_descuento": 3950,
+  "inversion": 2600,
+  "descuento_pct": 34.0,
+  "montos_encontrados": [
+   3950,
+   2600
+  ],
+  "fuente": "https://www.puce.edu.ec/docs/dce/landing/pdf/finanzas-202401.pdf",
+  "fecha_fuente": "2026-11-26T21:43:54+00:00",
+  "sha256": "fd0d5b13143ce53cc78039d057e9fa27f31b41f3026e506c000c5e1ef7d8145e"
+ },
+ "marketing": {
+  "nombre": "MARKETING",
+  "modalidad": "Presencial",
+  "duracion": "8 semestres",
+  "titulo": "LICENCIADO/A EN MARKETING",
+  "malla": [
+   [
+    "Conocimiento, Palabra y Cambio Social",
+    "Matemática I",
+    "Contabilidad Básica",
+    "Fundamentos de Administración",
+    "Entorno Socioeconómico",
+    "Introducción a la Microeconomía"
+   ],
+   [
+    "Fundamentos de Investigación",
+    "Estadística I",
+    "Fundamentos de Contabilidad de Costos",
+    "Pensamiento Creativo e Innovación",
+    "Optimización Aplicada a la Administración y Economía",
+    "Introducción a la Macroeconomía"
+   ],
+   [
+    "Jesucristo y Aprendizajes Vitales",
+    "Estadística II",
+    "Consumo y Neuromarketing",
+    "Marketing y Ecosistema Digital",
+    "Gestión por Procesos",
+    "Diseño Digital"
+   ],
+   [
+    "Precios y Revenue Management",
+    "Investigación de Mercados",
+    "Valor y Branding",
+    "Entrega del Valor",
+    "Administración y Planificación Financiera",
+    "Legislación Empresarial"
+   ],
+   [
+    "Ética e Interculturalidad",
+    "Operaciones de Marketing y Ventas",
+    "Comunicación Integral de Valor",
+    "Herramientas de Marketing Digital",
+    "Administración Estratégica",
+    "Gestión del Talento Humano"
+   ],
+   [
+    "Ecología Integral",
+    "Marketing Sostenible",
+    "Gestión de Relaciones con Clientes",
+    "Modelos de Negocio",
+    "Investigación de Marketing",
+    "Diseño y Evaluación de Proyectos"
+   ],
+   [
+    "Seminario de Titulación",
+    "Asignatura 1 de Itinerario",
+    "Asignatura 2 de Itinerario",
+    "Marketing Global",
+    "Data Analytics Marketing",
+    "Innovación y Creatividad para Start Ups"
+   ],
+   [
+    "Integración Curricular",
+    "Asignatura 3 de Itinerario",
+    "Asignatura 4 de Itinerario",
+    "Habilidades Gerenciales",
+    "Simulaciones de Marketing",
+    "Growth Marketing"
+   ]
+  ],
+  "bloques_adicionales": [],
+  "itinerarios": [
+   {
+    "nombre": "Itinerario I: Negocios Digitales",
+    "materias": [
+     {
+      "materia": "Presencia y Branding Digital",
+      "nivel": 7
+     },
+     {
+      "materia": "Marketing Inbound y de Contenidos",
+      "nivel": 7
+     },
+     {
+      "materia": "Experiencia del Cliente",
+      "nivel": 8
+     },
+     {
+      "materia": "E-commerce y Social Selling",
+      "nivel": 8
+     }
+    ]
+   },
+   {
+    "nombre": "Itinerario II: Internacionalización de la Empresa",
+    "materias": [
+     {
+      "materia": "Internacionalización de MYPIMES",
+      "nivel": 7
+     },
+     {
+      "materia": "Negociación en Mercados Internacionales",
+      "nivel": 7
+     },
+     {
+      "materia": "Riesgos Internacionales",
+      "nivel": 8
+     },
+     {
+      "materia": "Gerencia de Negocios Internacionales",
+      "nivel": 8
+     }
+    ]
+   },
+   {
+    "nombre": "Itinerario III: Ciencia de Datos con aplicaciones prácticas",
+    "materias": [
+     {
+      "materia": "Exploración de Datos",
+      "nivel": 7
+     },
+     {
+      "materia": "Visualización Avanzada de Datos",
+      "nivel": 7
+     },
+     {
+      "materia": "Analítica de Datos",
+      "nivel": 8
+     },
+     {
+      "materia": "Aplicación de la Ciencia de Datos",
+      "nivel": 8
+     }
+    ]
+   }
+  ],
+  "semestres_compartidos": [],
+  "malla_lineas_sin_asignar": [],
+  "problemas_malla": [],
+  "precio_sin_descuento": 3950,
+  "inversion": 2600,
+  "descuento_pct": 34.0,
+  "montos_encontrados": [
+   3950,
+   2600
+  ],
+  "fuente": "https://www.puce.edu.ec/docs/dce/landing/pdf/marketing-202401.pdf",
+  "fecha_fuente": "2026-11-26T21:43:58+00:00",
+  "sha256": "63f6396a0dd47634f59b37c311d6319e6adcae1de0506aa7bba183c64d752800"
+ },
+ "negocios_internacionales": {
+  "nombre": "NEGOCIOS",
+  "modalidad": "Presencial",
+  "duracion": "8 semestres",
+  "titulo": "LICENCIADO/A EN NEGOCIOS INTERNACIONALES",
+  "malla": [
+   [
+    "Conocimiento, Palabra y Cambio Social",
+    "Matemática I",
+    "Contabilidad Básica",
+    "Fundamentos de Administración",
+    "Entorno Socioeconómico",
+    "Introducción a la Microeconomía"
+   ],
+   [
+    "Fundamentos de Investigación",
+    "Estadística I",
+    "Fundamentos de Contabilidad de Costos",
+    "Pensamiento Creativo e Innovación",
+    "Optimización Aplicada a la Administración y Economía",
+    "Introducción a la Macroeconomía"
+   ],
+   [
+    "Jesucristo y Aprendizajes Vitales",
+    "Gestión por Procesos",
+    "Estadística II",
+    "Legislación y Nomenclatura Aduanera",
+    "Marketing y Ecosistema Digital",
+    "Introducción a los Negocios Internacionales"
+   ],
+   [
+    "Fundamentals of Business Communication",
+    "Legislación Empresarial",
+    "Investigación de Operaciones",
+    "Transporte Internacional y Seguros",
+    "Investigación de Mercados",
+    "Administración y Planificación Financiera"
+   ],
+   [
+    "Ética e Interculturalidad",
+    "Gestión del Talento Humano",
+    "Strategic Management",
+    "International Marketing",
+    "Gestión de Importaciones",
+    "Finanzas Corporativas"
+   ],
+   [
+    "Ecología Integral",
+    "International Supply Chain Management",
+    "International Negotiation Strategies",
+    "Finanzas Internacionales",
+    "Gestión de Exportaciones",
+    "Diseño y Evaluación de Proyectos"
+   ],
+   [
+    "Seminario de Titulación",
+    "Asignatura 1 de itinerario",
+    "Asignatura 2 de itinerario",
+    "Fair Trade and Social Responsibility",
+    "Propiedad Intelectual y Contratación",
+    "Comercio Exterior y Políticas Comerciales"
+   ],
+   [
+    "Integración Curricular",
+    "Asignatura 3 de itinerario",
+    "Asignatura 4 de itinerario",
+    "Digital Business Strategies",
+    "Cross Cultural Management",
+    "Relaciones Económicas Internacionales"
+   ]
+  ],
+  "bloques_adicionales": [],
+  "itinerarios": [
+   {
+    "nombre": "Itinerario I: Internacionalización de la Empresa",
+    "materias": [
+     {
+      "materia": "Internacionalización de MYPIMES",
+      "nivel": 7
+     },
+     {
+      "materia": "Negociación en Mercados Internacionales",
+      "nivel": 7
+     },
+     {
+      "materia": "Riesgos Internacionales",
+      "nivel": 8
+     },
+     {
+      "materia": "Gerencia de Negocios Internacionales",
+      "nivel": 8
+     }
+    ]
+   },
+   {
+    "nombre": "Itinerario II: Captación y Manejo de Recursos Internacionales",
+    "materias": [
+     {
+      "materia": "Fundamentos y Actores de la Cooperación Internacional",
+      "nivel": 7
+     },
+     {
+      "materia": "Foreign Aid and International Politics",
+      "nivel": 7
+     },
+     {
+      "materia": "Modelos y Estrategias de Sostenibilidad",
+      "nivel": 8
+     },
+     {
+      "materia": "Fundraising Program",
+      "nivel": 8
+     }
+    ]
+   },
+   {
+    "nombre": "Itinerario III: Ciencia de Datos con aplicaciones prácticas",
+    "materias": [
+     {
+      "materia": "Exploración de Datos",
+      "nivel": 7
+     },
+     {
+      "materia": "Visualización Avanzada de Datos",
+      "nivel": 7
+     },
+     {
+      "materia": "Analítica de Datos",
+      "nivel": 8
+     },
+     {
+      "materia": "Aplicación de la Ciencia de Datos",
+      "nivel": 8
+     }
+    ]
+   }
+  ],
+  "semestres_compartidos": [],
+  "malla_lineas_sin_asignar": [],
+  "problemas_malla": [],
+  "precio_sin_descuento": 3950,
+  "inversion": 2600,
+  "descuento_pct": 34.0,
+  "montos_encontrados": [
+   3950,
+   2600
+  ],
+  "fuente": "https://www.puce.edu.ec/docs/dce/landing/pdf/negocios-internacionales-202401.pdf",
+  "fecha_fuente": "2026-11-26T21:44:02+00:00",
+  "sha256": "c7bd4d6ecb700d5c826217fb313cb6bc737a6742aac665e190281ca1ed7e7868"
+ },
+ "fpe": {
+  "nombre": "FILOSOFÍA, POLÍTICA",
+  "modalidad": "Híbrida",
+  "duracion": "8 semestres",
+  "titulo": "LICENCIADO/A EN FILOSOFÍA, POLÍTICA Y ECONOMÍA",
+  "malla": [
+   [
+    "Conocimiento, Palabra y Cambio Social",
+    "Introducción a la Microeconomía",
+    "Matemática I",
+    "Teoría Social",
+    "Introducción a la Filosofía",
+    "Historia del Pensamiento I"
+   ],
+   [
+    "Fundamentos de Investigación",
+    "Introducción a la Macroeconomía",
+    "Estadística I",
+    "Teoría del Estado",
+    "Introducción a la Ética",
+    "Historia del Pensamiento II"
+   ],
+   [
+    "Jesucristo y Aprendizajes Vitales",
+    "Métodos Cualitativos de Investigación",
+    "Estadística II",
+    "Economía de América Latina y Ecuador",
+    "Sector Financiero y Economía Financiera",
+    "Lógica"
+   ],
+   [
+    "Ciencia de Datos",
+    "Estética y Política",
+    "Derechos Humanos",
+    "Economía Política I",
+    "Seminario I: Problemas contemporáneos de la ética",
+    "Epistemología y Pensamiento Crítico"
+   ],
+   [
+    "Sostenibilidad Ambiental",
+    "Economía del Desarrollo",
+    "Economía Internacional",
+    "Economía Política II",
+    "Seminario II: Teorías de la Justicia",
+    "Ontología"
+   ],
+   [
+    "Ecología Integral",
+    "Diseño y Evaluación de Proyectos",
+    "Filosofía Política",
+    "Filosofía de la Tecnología",
+    "Seminario III: Filosofía de la Ciencia",
+    "Antropología Filosófica"
+   ],
+   [
+    "Seminario de Titulación",
+    "Asignatura 1 de Itinerario",
+    "Asignatura 2 de itinerario",
+    "Fundamentos de la Interdisciplinariedad",
+    "Pensamiento Económico",
+    "Principios de Consultoría"
+   ],
+   [
+    "Integración curricular",
+    "Asignatura 3 de Itinerario",
+    "Asignatura 4 de itinerario",
+    "Taller interdisciplinar I: Crisis Sociales",
+    "Taller interdisciplinar II: Justicia, Diversidades y Desigualdades",
+    "Taller interdisciplinar III: Tecnología, Ambiente y Antropoceno"
+   ]
+  ],
+  "bloques_adicionales": [],
+  "itinerarios": [
+   {
+    "nombre": "Itinerario I: Diseño y Análisis de Políticas Públicas",
+    "materias": [
+     {
+      "materia": "Estado y Sociedad",
+      "nivel": 7
+     },
+     {
+      "materia": "Marcos Analíticos de Políticas Públicas",
+      "nivel": 7
+     },
+     {
+      "materia": "Análisis Comparado de Políticas Públicas",
+      "nivel": 8
+     },
+     {
+      "materia": "Métodos Múltiples para la Evaluación de Políticas Públicas",
+      "nivel": 8
+     }
+    ]
+   },
+   {
+    "nombre": "Itinerario II: Pedagogía para el Aprendizaje Activo",
+    "materias": [
+     {
+      "materia": "Neuroeducación",
+      "nivel": 7
+     },
+     {
+      "materia": "Estrategias didácticas innovadoras",
+      "nivel": 7
+     },
+     {
+      "materia": "Interaprendizaje y diseño de recursos didácticos",
+      "nivel": 8
+     },
+     {
+      "materia": "Evaluación de los aprendizajes",
+      "nivel": 8
+     }
+    ]
+   },
+   {
+    "nombre": "Itinerario III: Ciencia de Datos con Aplicaciones Prácticas",
+    "materias": [
+     {
+      "materia": "Exploración de Datos",
+      "nivel": 7
+     },
+     {
+      "materia": "Visualización Avanzada de Datos",
+      "nivel": 7
+     },
+     {
+      "materia": "Analítica de Datos",
+      "nivel": 8
+     },
+     {
+      "materia": "Aplicación de Ciencia de Datos",
+      "nivel": 8
+     }
+    ]
+   }
+  ],
+  "semestres_compartidos": [],
+  "malla_lineas_sin_asignar": [],
+  "problemas_malla": [],
+  "precio_sin_descuento": 3950,
+  "inversion": 2500,
+  "descuento_pct": null,
+  "montos_encontrados": [
+   3950,
+   2500
+  ],
+  "fuente": "https://www.puce.edu.ec/docs/dce/landing/pdf/filosofia-politica-economia_202411.pdf",
+  "fecha_fuente": "2026-11-26T21:44:07+00:00",
+  "sha256": "183b8b3086e0dd6d59ee80061173326bbe7266cc0f1c4df11c0b2658ee257c3f"
+ },
+ "psicologia_organizacional": {
+  "nombre": "PSICOLOGÍA",
+  "modalidad": "Presencial",
+  "duracion": "9 semestres",
+  "titulo": "LICENCIADO/A EN PSICOLOGÍA ORGANIZACIONAL",
+  "malla": [
+   [
+    "Conocimiento, Palabra y Cambio Social",
+    "Salud: Contexto Nacional e Internacional",
+    "Comportamiento Humano y Procesos Psicológicos",
+    "Primero Auxilios y Bioseguridad Básica",
+    "Fundamentos de Morfofunción",
+    "One Health y Salud Holística/Ancestral"
+   ],
+   [
+    "Fundamentos de la investigación",
+    "Historia de la Psicología",
+    "Neuroanatomía y Psicofisiología",
+    "Conducción de Grupos",
+    "Epistemología de la Psicología",
+    "Salud y Grupos prioritarios (Diversidad)"
+   ],
+   [
+    "Jesucristo y Aprendizaje Vital",
+    "Enfoques Psicológicos",
+    "Neuropsicología",
+    "Psicología del Desarrollo de la Niñez",
+    "Psicología Social",
+    "Estadística aplicada a la Psicología"
+   ],
+   [
+    "Psicopatología I",
+    "Enfoques Psicológicos Contemporáneos",
+    "Psicología del Desarrollo de la Adolescencia, Adultez y Tercera edad",
+    "Psicometría",
+    "Técnicas de entrevista",
+    "Evaluación Psicológica"
+   ],
+   [
+    "Ética e Interculturalidad",
+    "Psicología Comunitaria",
+    "Psicopatología lI",
+    "Lectura y Escritura Académica en Psicología",
+    "Neuroaprendizaje",
+    "Evaluación Psicológica Especializada"
+   ],
+   [
+    "Ecología Integral",
+    "Psicología de la Salud",
+    "Consejería y Asesoría Familiar",
+    "Gestión Administrativa e Institucional",
+    "Atracción, Selección y Retención de Talento Humano",
+    "Psicología y Comportamiento Organizacional"
+   ],
+   [
+    "Formación y Desarrollo",
+    "Sexualidad, Género y Cultura",
+    "Informática Aplicada en Psicología",
+    "Intervención Psicosocial y Derechos Humanos",
+    "Gestión del Desempeño y Motivación Prácticas Pre-profesionales l"
+   ],
+   [
+    "Seminario de Titulación",
+    "Primeros Auxilios Psicológicos",
+    "Deontología y Ética profesional",
+    "Bienestar y Salud Laboral",
+    "Gestión del Cambio y Transformación Digital",
+    "Prácticas Pre-profesionales ll"
+   ],
+   [
+    "Integración Curricular",
+    "Metodología Cualitativa en Psicología",
+    "Metodología Cuantitativa en Psicología",
+    "Soft Skills For Psychology",
+    "Gestión de la Compensación",
+    "Liderazgo y Comunicación Organizacional"
+   ]
+  ],
+  "bloques_adicionales": [],
+  "itinerarios": [],
+  "semestres_compartidos": [],
+  "malla_lineas_sin_asignar": [],
+  "problemas_malla": [],
+  "precio_sin_descuento": 3950,
+  "inversion": 2900,
+  "descuento_pct": null,
+  "montos_encontrados": [
+   3950,
+   2900
+  ],
+  "fuente": "https://www.puce.edu.ec/docs/dce/landing/pdf/psicologia-organizacional-202401.pdf",
+  "fecha_fuente": "2026-11-26T21:44:12+00:00",
+  "sha256": "e35d2719f6862b4b1b6ef89b29d082f203ad25c834c8758c27bebd735f7143cd"
+ }
+}

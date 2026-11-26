@@ -3,13 +3,12 @@
 //
 // 1. Camino principal: Edge Function de Supabase `aurelio-chat`, que arma el contexto
 //    con datos verificados y consulta la IA (las claves viven solo en el servidor).
-// 2. Respaldo: motor local por intención. Solo usa datos verificados
-//    (js/data/aurelioKnowledge.js) y los datos oficiales de la carrera; si no sabe algo,
-//    lo dice y deriva a Admisiones.
+// 2. Respaldo: motor local por intención. Solo usa los datos oficiales extraídos de
+//    www.puce.edu.ec (js/data/aurelioKnowledge.js); si no sabe algo, lo dice y deriva a Admisiones.
 // =========================================================
 
 import { SUPABASE_FUNCTIONS_URL, SUPABASE_ANON_KEY } from './supabaseClient.js';
-import { PUCE_FACTS, CAREER_FLAGS } from './data/aurelioKnowledge.js';
+import { PUCE_FACTS, OFFICIAL_CAREERS } from './data/aurelioKnowledge.js';
 
 const AI_PROXY_URL = `${SUPABASE_FUNCTIONS_URL}/aurelio-chat`;
 const PROXY_TIMEOUT_MS = 20000;
@@ -44,10 +43,11 @@ function hasPhrase(normText, phrase) {
 }
 
 // =========================================================
-// Datos verificados
+// Datos oficiales verificados
 // =========================================================
 const factsByTopic = (tema) => PUCE_FACTS.filter((f) => f.tema === tema);
 const factById = (id) => PUCE_FACTS.find((f) => f.id === id);
+const factsByIds = (...ids) => ids.map(factById).filter(Boolean);
 
 function admissionsContact() {
   const f = factById('admisiones-contacto');
@@ -58,9 +58,8 @@ function factsList(facts) {
   return facts.map((f) => `- ${f.texto}`).join('\n');
 }
 
-// Respuesta cuando el dato todavía no está verificado.
 function notConfirmed(tema) {
-  return `Todavía no tengo información confirmada sobre ${tema}, y prefiero no darte un dato que pueda ser incorrecto.\n\n${admissionsContact()}`;
+  return `No tengo información oficial confirmada sobre ${tema}, y prefiero no darte un dato que pueda ser incorrecto.\n\n${admissionsContact()}`;
 }
 
 function answerWithFacts(intro, facts, temaSinDatos) {
@@ -68,26 +67,26 @@ function answerWithFacts(intro, facts, temaSinDatos) {
   return `${intro}\n${factsList(facts)}`;
 }
 
-const AREA_CONVENIOS = {
-  salud: 'convenios-salud',
-  habitat: 'convenios-habitat',
-  economia: 'convenios-economia',
-  sociales: 'convenios-sociales',
-  sostenibilidad: 'convenios-sostenibilidad',
-};
+const usd = (n) => `USD ${Number(n).toLocaleString('es-EC')}`;
+
+// Datos propios de cada facultad (prácticas e infraestructura).
+const FACULTY_FACTS = [
+  [/salud/i, 'convenios-salud'],
+  [/derecho/i, 'convenios-sociales'],
+  [/exactas|naturales|ambientales/i, 'convenios-sostenibilidad'],
+];
 
 function careerInfo(career) {
-  const flags = CAREER_FLAGS[career?.key] || {};
-  const semesters = career?.syllabus?.semesters || [];
+  const o = OFFICIAL_CAREERS[career?.key] || null;
   return {
-    name: career?.name || 'esta carrera',
-    faculty: flags.faculty || career?.faculty || '',
-    area: flags.area || null,
-    semesters,
-    syllabusOk: !!flags.syllabusOk,
-    cost: flags.costOk ? { discount: flags.discount, base: flags.base, investment: flags.investment } : null,
+    official: o,
+    name: o?.nombre || career?.name || 'esta carrera',
+    faculty: o?.facultad || '',
+    page: o?.fuentes?.pagina || null,
   };
 }
+
+const moreInfo = (c) => (c.page ? `\n\nMás información oficial: ${c.page}` : '');
 
 // =========================================================
 // Intenciones del motor local
@@ -96,7 +95,8 @@ function careerInfo(career) {
 // =========================================================
 const INTENTS = [
   { id: 'admisiones', phrases: ['inscribir', 'inscribirme', 'inscribirse', 'inscribo', 'inscripcion', 'inscripciones', 'admision', 'admisiones', 'postular', 'postulacion', 'matricula', 'matricularme', 'examen de admision', 'examen de ingreso', 'requisitos', 'requisito', 'requisitos para entrar', 'requisitos para ingresar', 'requisitos de ingreso', 'ingresar a la puce', 'entrar a la puce', 'whatsapp', 'telefono', 'numero de whatsapp', 'numero de telefono', 'numero de contacto', 'contacto', 'contactar', 'correo', 'asesor', 'cupo', 'cupos'] },
-  { id: 'costos', phrases: ['costo', 'costos', 'cuesta', 'cuestan', 'precio', 'precios', 'arancel', 'aranceles', 'pension', 'pagar', 'pago', 'cuota', 'cuanto vale', 'inversion', 'descuento', 'descuentos', 'beca', 'becas', 'financiamiento', 'ayuda economica', 'categoria'] },
+  { id: 'costos', phrases: ['costo', 'costos', 'cuesta', 'cuestan', 'precio', 'precios', 'arancel', 'aranceles', 'pension', 'pagar', 'pago', 'cuota', 'cuotas', 'cuanto vale', 'inversion', 'descuento', 'financiamiento', 'financiar', 'diferir', 'matricula cuesta', 'valor'] },
+  { id: 'becas', phrases: ['beca', 'becas', 'ayuda economica', 'abanderado', 'abanderada', 'escolta', 'deportista', 'discapacidad', 'hermanos', 'media beca', 'beca completa'] },
   { id: 'sueldo', phrases: ['sueldo', 'sueldos', 'salario', 'salarios', 'cuanto gana', 'cuanto ganan', 'cuanto se gana', 'remuneracion'] },
   { id: 'convenios', phrases: ['convenio', 'convenios', 'practica', 'practicas', 'practicas preprofesionales', 'hospital', 'hospitales', 'clinica', 'clinicas', 'pasantia', 'pasantias', 'internado', 'rotacion', 'rotaciones'] },
   { id: 'intercambios', phrases: ['intercambio', 'intercambios', 'movilidad', 'extranjero', 'otro pais', 'otros paises', 'afuera', 'ausjal', 'internacional', 'internacionales', 'espana', 'europa', 'estados unidos'] },
@@ -128,7 +128,7 @@ export function detectIntent(questionText) {
   return best;
 }
 
-const SUGGESTIONS = 'Puedes preguntarme, por ejemplo, por:\n- Materias y duración de la carrera\n- Dónde podrías trabajar\n- Costos y becas\n- Convenios y prácticas';
+const SUGGESTIONS = 'Puedes preguntarme, por ejemplo, por:\n- Materias y duración de la carrera\n- Dónde podrías trabajar\n- Costos y becas\n- Cómo inscribirte';
 
 // =========================================================
 // Motor local de respaldo
@@ -150,95 +150,112 @@ export function getAurelioContextualAnswer(career, questionText) {
     return `¡Con gusto! Cuando quieras volver a preguntar sobre **${c.name}**, aquí estaré.`;
   }
 
+  const o = c.official;
   switch (detectIntent(questionText)) {
     case 'admisiones': {
-      const facts = factsByTopic('admisiones');
+      let ids = ['admisiones-examen', 'admisiones-examen-cuando', 'admisiones-requisitos', 'admisiones-inscripcion-gratuita'];
+      if (/fecha|inicio|empiez|clases|cuando/.test(norm)) ids = ['admisiones-inicio-clases', 'admisiones-examen-cuando', 'admisiones-examen-medicina'];
+      if (/requisit|document/.test(norm)) ids = ['admisiones-requisitos', 'admisiones-inscripcion-gratuita'];
+      if (/curso|prepar|simulador/.test(norm)) ids = ['admisiones-curso-preparacion', 'admisiones-curso-de-admision'];
+      if (career?.key === 'medicina' && !ids.includes('admisiones-examen-medicina')) ids.push('admisiones-examen-medicina');
+      const facts = factsByIds(...ids, 'admisiones-contacto');
       if (!facts.length) return notConfirmed('el proceso de admisión');
-      return `Para inscribirte en **${c.name}** o resolver dudas de admisión:\n${factsList(facts)}\n\nTambién puedes pulsar **«Quiero más información»** en esta pantalla.`;
+      return `Para entrar a **${c.name}**:\n${factsList(facts)}`;
     }
 
     case 'costos': {
       const parts = [];
-      if (c.cost) {
-        parts.push(`En **${c.name}**, la inversión referencial es de **$${c.cost.investment} por semestre**, con un ${c.cost.discount}% de descuento institucional (precio sin descuento: $${c.cost.base}). Confirma el valor actualizado con Admisiones.`);
+      if (o?.costo) {
+        parts.push(`En **${c.name}**, el arancel es de **${usd(o.costo.precioConDescuento)} por semestre** con el ${o.costo.descuentoPct}% de descuento directo (precio real: ${usd(o.costo.precioReal)}).${o.costo.nota ? ` ${o.costo.nota}.` : ''}`);
       } else {
-        parts.push(`No tengo el costo confirmado de **${c.name}**.`);
+        parts.push(`No tengo el costo oficial de **${c.name}**.`);
       }
-      const facts = factsByTopic('costos');
-      if (facts.length) parts.push(`Además:\n${factsList(facts)}`);
-      if (!c.cost || factById('admisiones-contacto')) parts.push(admissionsContact());
-      return parts.join('\n\n');
+      const facts = factsByIds('costos-matricula', 'costos-descuento-permanente', 'costos-financiamiento');
+      if (facts.length) parts.push(factsList(facts));
+      parts.push('Si te interesan las becas, pregúntame por ellas 😉');
+      return parts.join('\n\n') + moreInfo(c);
+    }
+
+    case 'becas': {
+      let ids = ['beca-abanderados', 'beca-excelencia', 'beca-igualdad', 'beca-deportistas', 'beca-hermanos'];
+      if (/deport/.test(norm)) ids = ['beca-deportistas', 'beca-cultural'];
+      if (/discapacidad/.test(norm)) ids = ['beca-discapacidad'];
+      if (/pueblo|nacionalidad|indigena|afro/.test(norm)) ids = ['beca-pueblos'];
+      const facts = factsByIds(...ids, 'becas-como-postular');
+      return answerWithFacts('Algunas becas de la PUCE:', facts, 'las becas');
     }
 
     case 'sueldo':
-      return `No tengo cifras oficiales de sueldos para **${c.name}** y prefiero no inventarlas: varían según el sector, la empresa y la experiencia.\n\nLo que sí puedo contarte es dónde podrías trabajar: ${career.fieldOfWork || 'en diversos sectores públicos y privados.'}`;
+      return `No tengo cifras oficiales de sueldos para **${c.name}** y prefiero no inventarlas: varían según el sector, la empresa y la experiencia.${o?.campoLaboral ? `\n\nLo que sí dice la PUCE sobre dónde podrías trabajar: ${o.campoLaboral}` : ''}`;
 
     case 'convenios': {
-      const tema = AREA_CONVENIOS[c.area];
+      const tema = FACULTY_FACTS.find(([re]) => re.test(c.faculty))?.[1];
       const facts = tema ? factsByTopic(tema) : [];
-      return answerWithFacts(`Para prácticas y convenios en **${c.name}**:`, facts, `los convenios de prácticas de ${c.name}`);
+      const why = o?.porQueEstudiar ? `Según la PUCE, en **${c.name}**: ${o.porQueEstudiar}` : '';
+      if (!facts.length && !why) return notConfirmed(`los convenios y prácticas de ${c.name}`) + moreInfo(c);
+      return [why, facts.length ? factsList(facts) : '', 'Para el detalle de dónde se hacen las prácticas, consulta con Admisiones.'].filter(Boolean).join('\n\n') + moreInfo(c);
     }
 
     case 'intercambios':
-      return answerWithFacts(`Como estudiante de **${c.name}** en la PUCE:`, factsByTopic('intercambios'), 'los programas de intercambio');
+      return answerWithFacts(`Como estudiante de **${c.name}** en la PUCE:`, factsByIds('intercambios-requisitos', 'intercambios-costos', 'intercambios-beca-ausjal', 'intercambios-contacto'), 'los programas de intercambio');
 
-    case 'titulacion':
-      return answerWithFacts(`Para graduarte en **${c.name}**:`, factsByTopic('titulacion'), 'los requisitos de graduación');
-
-    case 'horarios':
-      return answerWithFacts(`Sobre la modalidad y horarios de **${c.name}**:`, factsByTopic('horarios'), `los horarios y la modalidad de ${c.name}`);
-
-    case 'ubicacion': {
-      const facts = [factById('campus-ubicacion'), factById('admisiones-portal')].filter(Boolean);
-      return answerWithFacts(`Sobre dónde se estudia **${c.name}**:`, facts, 'la ubicación de la carrera');
+    case 'titulacion': {
+      const parts = [];
+      if (o?.titulo) parts.push(`Al graduarte de **${c.name}** obtienes el título de **${o.titulo}**.`);
+      const facts = factsByTopic('titulacion');
+      if (facts.length) parts.push(factsList(facts));
+      parts.push('Los requisitos exactos de graduación (idiomas, prácticas, titulación) los confirma tu facultad o Admisiones.');
+      return parts.join('\n\n');
     }
 
+    case 'horarios':
+      return o?.modalidad
+        ? `**${c.name}** se estudia en modalidad **${o.modalidad.toLowerCase()}**. Los horarios exactos de cada período los entrega la PUCE al matricularte.\n\n${admissionsContact()}`
+        : notConfirmed(`la modalidad de ${c.name}`);
+
+    case 'ubicacion':
+      return answerWithFacts(`Sobre dónde se estudia **${c.name}**:`, factsByIds('campus-direccion', 'sedes'), 'la ubicación');
+
     case 'campus':
-      return answerWithFacts('Sobre el campus y la vida universitaria en la PUCE:', factsByTopic('campus').filter((f) => f.id !== 'campus-ubicacion'), 'las instalaciones del campus');
+      return answerWithFacts('Sobre la vida universitaria en la PUCE:', factsByIds('campus-puce-activa', 'campus-biblioteca'), 'las instalaciones del campus');
 
     case 'malla': {
-      const total = c.semesters.length;
-      const duration = total ? `**${c.name}** dura **${total} semestres** (aprox. ${total % 2 === 0 ? total / 2 : (total / 2).toFixed(1)} años).` : `No tengo la duración confirmada de **${c.name}**.`;
-      if (!total) return `${duration}\n\n${admissionsContact()}`;
-      if (c.syllabusOk) {
-        return `${duration} En el primer semestre verás:\n${c.semesters[0].map((s) => `- ${s}`).join('\n')}\n\nPuedes revisar los ${total} semestres en el botón «Malla Curricular» de tus resultados.`;
-      }
-      // Sin orden confirmado: se muestran materias de inicio de secuencia (sin número o con número 1).
-      const sample = [...new Set(c.semesters.flat())].filter((s) => !/\s([2-9]|\d{2,})\b/.test(s)).slice(0, 6);
-      return `${duration} Algunas de sus materias son:\n${sample.map((s) => `- ${s}`).join('\n')}\n\nEl orden exacto por semestre lo confirma Admisiones. ${admissionsContact()}`;
+      if (!o?.malla?.length) return notConfirmed(`la malla de ${c.name}`) + moreInfo(c);
+      const intro = `**${c.name}** dura **${o.duracion || `${o.malla.length} semestres`}**. En el primer semestre verás:`;
+      const its = o.itinerarios?.length ? `\n\nEn los últimos semestres eliges un itinerario: ${o.itinerarios.map((i) => i.nombre.replace(/^\s*I?ntinerario\s+[IVX]+:\s*/i, '')).join(', ')}.` : '';
+      return `${intro}\n${o.malla[0].map((s) => `- ${s}`).join('\n')}${its}\n\nPuedes ver la malla completa en el brochure oficial: ${o.fuentes.brochure}`;
     }
 
     case 'dificultad': {
-      const first = c.syllabusOk ? c.semesters[0] || [] : [];
+      const first = o?.malla?.[0] || [];
       const base = first.length
         ? `En **${c.name}**, el primer semestre incluye materias como **${first.slice(0, 3).join(', ')}**. Cada persona vive la exigencia de forma distinta: lo que más ayuda es la constancia y pedir apoyo a tiempo.`
         : `Cada persona vive la exigencia de **${c.name}** de forma distinta: lo que más ayuda es la constancia y pedir apoyo a tiempo.`;
       const facts = factsByTopic('apoyo-academico');
-      const support = facts.length ? `\n\n${factsList(facts)}` : '';
-      return `${base}${support}\n\nUn buen termómetro es el **mini-reto** de la carrera en tus resultados: te muestra cómo se piensa en esa profesión.`;
+      return `${base}${facts.length ? `\n\n${factsList(facts)}` : ''}\n\nUn buen termómetro es el **mini-reto** de la carrera en tus resultados.`;
     }
 
     case 'perfil': {
-      const skills = (career.skills || []).slice(0, 4);
-      const list = skills.length ? `\n\n**Habilidades que desarrollarás:**\n${skills.map((s) => `- ${s}`).join('\n')}` : '';
-      return `**${c.name}**${c.faculty ? ` (${c.faculty})` : ''}: ${career.description || 'formación profesional de la PUCE.'}${list}`;
+      const items = (o?.resultadosAprendizaje || []).slice(0, 4);
+      if (!items.length) return notConfirmed(`el perfil de ${c.name}`) + moreInfo(c);
+      return `Al terminar **${c.name}**${o.titulo ? ` (título: ${o.titulo})` : ''}, según la PUCE serás capaz de:\n${items.map((s) => `- ${s}`).join('\n')}`;
     }
 
     case 'laboral':
-      return career.fieldOfWork
-        ? `Como profesional de **${c.name}** podrás desempeñarte en: ${career.fieldOfWork}`
-        : notConfirmed(`el campo laboral de ${c.name}`);
+      return o?.campoLaboral ? `${o.campoLaboral}${moreInfo(c)}` : notConfirmed(`el campo laboral de ${c.name}`);
 
-    case 'prestigio':
-      return answerWithFacts('Sobre la calidad y el reconocimiento de la PUCE:', factsByTopic('prestigio'), 'la acreditación y los rankings de la PUCE');
+    case 'prestigio': {
+      const facts = factsByIds('prestigio-qs', 'prestigio-cifras', ...(career?.key === 'medicina' ? ['prestigio-medicina-wfme'] : []));
+      return answerWithFacts('Sobre el reconocimiento de la PUCE:', facts, 'la acreditación y los rankings de la PUCE');
+    }
 
     case 'comparar':
       return 'Es normal dudar al elegir 😊 Lo importante es que la carrera encaje contigo.\n\n- Compara las carreras de tu **Ranking de Afinidad**.\n- Prueba el **mini-reto** de cada una para ver cómo se piensa en esa profesión.\n- Revisa su **malla curricular** para ver qué materias estudiarás.\n\nSi quieres, cuéntame qué carreras estás comparando.';
 
     case 'ventajas': {
-      const facts = factsByTopic('prestigio');
-      const extra = facts.length ? `\n\nSobre la PUCE:\n${factsList(facts)}` : '';
-      return `**${c.name}** te prepara para: ${career.description || 'una formación profesional sólida.'}${extra}\n\nLa mejor razón para elegirla es que encaje con tus intereses: tu resultado de afinidad y el mini-reto te ayudan a comprobarlo.`;
+      const why = o?.porQueEstudiar ? `Según la PUCE, **${c.name}** destaca por: ${o.porQueEstudiar}` : '';
+      const facts = factsByIds('prestigio-qs');
+      return [why, facts.length ? factsList(facts) : '', 'La mejor razón para elegirla es que encaje con tus intereses: tu resultado de afinidad y el mini-reto te ayudan a comprobarlo.'].filter(Boolean).join('\n\n');
     }
 
     case 'ajeno':

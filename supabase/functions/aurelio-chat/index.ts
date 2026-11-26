@@ -148,7 +148,7 @@ Deno.serve(async (req) => {
 
   const active = findActiveCareer(body);
   const others = mentionedCareers(question, active?.key);
-  const system = buildSystemPrompt(active, others, question);
+  const system = buildSystemPrompt(active, others, question, history);
   const messages = [{ role: 'system', content: system }, ...history, { role: 'user', content: question }];
 
   const groq = await callGroq(messages);

@@ -1,0 +1,1347 @@
+{
+ "generated_at": "2026-11-26T22:05:31+00:00",
+ "careers": {
+  "ingenieria_integral": {
+   "landing": {
+    "url": "https://www.puce.edu.ec/landing-ingenieria-integral/",
+    "status": 200,
+    "file": ".cache/puce/landing/ingenieria_integral.html",
+    "bytes": 284137,
+    "sha256": "30ecd3ca5c0c3c769feb774c99cccce7fb020dbe49b767d9cf16d8d65b0f5521",
+    "fetched_at": "2026-11-26T21:40:30+00:00",
+    "from_cache": true
+   },
+   "brochure": {
+    "url": "https://www.puce.edu.ec/docs/dce/landing/pdf/ingenieria-integral-202401.pdf",
+    "status": 200,
+    "file": ".cache/puce/brochure/ingenieria_integral.pdf",
+    "bytes": 3543135,
+    "sha256": "0b090e39a170622a48d928f8b3724c3e87797a7d9bde9b5fbc661bb90c891354",
+    "fetched_at": "2026-11-26T21:40:33+00:00",
+    "from_cache": true
+   }
+  },
+  "arquitectura": {
+   "landing": {
+    "url": "https://www.puce.edu.ec/landing-arquitectura/",
+    "status": 200,
+    "file": ".cache/puce/landing/arquitectura.html",
+    "bytes": 282014,
+    "sha256": "4bc245b70e8b1f2c802e19a272de6fa3d0b80ee5afca277b93ecb4b041582bbd",
+    "fetched_at": "2026-11-26T21:40:35+00:00",
+    "from_cache": true
+   },
+   "brochure": {
+    "url": "https://www.puce.edu.ec/docs/dce/landing/pdf/arquitectura-202401.pdf",
+    "status": 200,
+    "file": ".cache/puce/brochure/arquitectura.pdf",
+    "bytes": 3752469,
+    "sha256": "c029fde8658f50ccf66403899541c49cd8fe69de0e29fdfc0315842ed726ec20",
+    "fetched_at": "2026-11-26T21:40:39+00:00",
+    "from_cache": true
+   }
+  },
+  "ciencia_datos": {
+   "landing": {
+    "url": "https://www.puce.edu.ec/landing-ciencia-de-datos/",
+    "status": 200,
+    "file": ".cache/puce/landing/ciencia_datos.html",
+    "bytes": 281604,
+    "sha256": "cbd9e1472d7e3e581ff3a6940f672c2f5001ca4d8531ea44adce349d5f0af8f5",
+    "fetched_at": "2026-11-26T21:40:41+00:00",
+    "from_cache": true
+   },
+   "brochure": {
+    "url": "https://www.puce.edu.ec/docs/dce/landing/pdf/ciencia-de-datos-202401.pdf",
+    "status": 200,
+    "file": ".cache/puce/brochure/ciencia_datos.pdf",
+    "bytes": 3547289,
+    "sha256": "5a94a049c23dc51bdae45c142691674715197a2f9ad5211f419f77fa11933e8e",
+    "fetched_at": "2026-11-26T21:40:44+00:00",
+    "from_cache": true
+   }
+  },
+  "diseno_grafico": {
+   "landing": {
+    "url": "https://www.puce.edu.ec/landing-diseno-grafico/",
+    "status": 200,
+    "file": ".cache/puce/landing/diseno_grafico.html",
+    "bytes": 282640,
+    "sha256": "a7a7f795de6480064902a8e32d972956f2042dd82b8d40a2b152e4ac0864f42b",
+    "fetched_at": "2026-11-26T21:40:46+00:00",
+    "from_cache": true
+   },
+   "brochure": {
+    "url": "https://www.puce.edu.ec/docs/dce/landing/pdf/diseno-grafico-202401.pdf",
+    "status": 200,
+    "file": ".cache/puce/brochure/diseno_grafico.pdf",
+    "bytes": 3509076,
+    "sha256": "e025d2df4aa8df404d5c41261a337a519bca3cb3e4562e4a26612469487b524d",
+    "fetched_at": "2026-11-26T21:40:50+00:00",
+    "from_cache": true
+   }
+  },
+  "ingenieria_civil": {
+   "landing": {
+    "url": "https://www.puce.edu.ec/landing-ingenieria-civil/",
+    "status": 200,
+    "file": ".cache/puce/landing/ingenieria_civil.html",
+    "bytes": 282562,
+    "sha256": "d8e7a69dcd44a49362e33e1b81b36451d8d674e4dbeb9eae5e4bc5b08c1bf38b",
+    "fetched_at": "2026-11-26T21:40:52+00:00",
+    "from_cache": true
+   },
+   "brochure": {
+    "url": "https://www.puce.edu.ec/docs/dce/landing/pdf/ingenieria-civil-202401.pdf",
+    "status": 200,
+    "file": ".cache/puce/brochure/ingenieria_civil.pdf",
+    "bytes": 3733593,
+    "sha256": "4b99958aa37026b0fd0b61c17290022fd5444bbcd33d85e53bd2fcce2c9d5cf0",
+    "fetched_at": "2026-11-26T21:40:57+00:00",
+    "from_cache": true
+   }
+  },
+  "sistemas_informacion": {
+   "landing": {
+    "url": "https://www.puce.edu.ec/landing-ingenieria-en-sistemas-de-informacion/",
+    "status": 200,
+    "file": ".cache/puce/landing/sistemas_informacion.html",
+    "bytes": 283288,
+    "sha256": "b11e6921a19cc52f4f51d3f8b854f2bc72ae195f3a77841980480f5fbcee1d5e",
+    "fetched_at": "2026-11-26T21:40:59+00:00",
+    "from_cache": true
+   },
+   "brochure": {
+    "url": "https://www.puce.edu.ec/docs/dce/landing/pdf/ingenieria-en-sistemas-de-informacion-202401.pdf",
+    "status": 200,
+    "file": ".cache/puce/brochure/sistemas_informacion.pdf",
+    "bytes": 4296213,
+    "sha256": "b7951816c22a961f900ce0ccc23fb2ef7dfaaffdca759b65df26a341df4e4080",
+    "fetched_at": "2026-11-26T21:41:02+00:00",
+    "from_cache": true
+   }
+  },
+  "biologia": {
+   "landing": {
+    "url": "https://www.puce.edu.ec/landing-biologia/",
+    "status": 200,
+    "file": ".cache/puce/landing/biologia.html",
+    "bytes": 281357,
+    "sha256": "762cac901504e2547d404d6c5ad652e43d942d84e2dffc7d22345a9b94a810c6",
+    "fetched_at": "2026-11-26T21:41:04+00:00",
+    "from_cache": true
+   },
+   "brochure": {
+    "url": "https://www.puce.edu.ec/docs/dce/landing/pdf/biologia-202401.pdf",
+    "status": 200,
+    "file": ".cache/puce/brochure/biologia.pdf",
+    "bytes": 3575144,
+    "sha256": "67f5112f68d2390b2422cc6423e53b6d86a80c735d546c84e1dfb43fa90090c4",
+    "fetched_at": "2026-11-26T21:41:08+00:00",
+    "from_cache": true
+   }
+  },
+  "quimica": {
+   "landing": {
+    "url": "https://www.puce.edu.ec/landing-quimica/",
+    "status": 200,
+    "file": ".cache/puce/landing/quimica.html",
+    "bytes": 235627,
+    "sha256": "faa256f9c1220e268329015c1edd8240073dec4d924eaa4a6b822b5bbc0da336",
+    "fetched_at": "2026-11-26T21:41:10+00:00",
+    "from_cache": true
+   },
+   "brochure": {
+    "url": "https://www.puce.edu.ec/docs/dce/landing/pdf/quimica-202401.pdf",
+    "status": 200,
+    "file": ".cache/puce/brochure/quimica.pdf",
+    "bytes": 3436939,
+    "sha256": "e6de8fdd4fa499b9656d8e223ba9a2fa3ca6c87f1d677f74ab9f07b40e47cd23",
+    "fetched_at": "2026-11-26T21:41:13+00:00",
+    "from_cache": true
+   }
+  },
+  "medicina": {
+   "landing": {
+    "url": "https://www.puce.edu.ec/landing-medicina/",
+    "status": 200,
+    "file": ".cache/puce/landing/medicina.html",
+    "bytes": 281576,
+    "sha256": "3ca2805c58f6d9c26b992e40ba153f4f214ab2a3b3d784792f5b691f07947e5c",
+    "fetched_at": "2026-11-26T21:41:15+00:00",
+    "from_cache": true
+   },
+   "brochure": {
+    "url": "https://www.puce.edu.ec/docs/dce/landing/pdf/medicina-202401.pdf",
+    "status": 200,
+    "file": ".cache/puce/brochure/medicina.pdf",
+    "bytes": 3906006,
+    "sha256": "baf5749c472806228055cbf92ba6bd1a1e7f62847f21456c9b5dc3bb046e7716",
+    "fetched_at": "2026-11-26T21:41:19+00:00",
+    "from_cache": true
+   }
+  },
+  "enfermeria": {
+   "landing": {
+    "url": "https://www.puce.edu.ec/landing-enfermeria/",
+    "status": 200,
+    "file": ".cache/puce/landing/enfermeria.html",
+    "bytes": 281693,
+    "sha256": "c014ee35b68e596a01d677fb416bb9196f4aae9cd1bdf389fb2aad727d8da139",
+    "fetched_at": "2026-11-26T21:41:21+00:00",
+    "from_cache": true
+   },
+   "brochure": {
+    "url": "https://www.puce.edu.ec/docs/dce/landing/pdf/enfermeria-202401.pdf",
+    "status": 200,
+    "file": ".cache/puce/brochure/enfermeria.pdf",
+    "bytes": 4287040,
+    "sha256": "fde52f8e0006ed521bbd535a5d8d7b5ccdea3efa36c18bf9b2813ce2362831d2",
+    "fetched_at": "2026-11-26T21:41:25+00:00",
+    "from_cache": true
+   }
+  },
+  "odontologia": {
+   "landing": {
+    "url": "https://www.puce.edu.ec/landing-odontologia/",
+    "status": 200,
+    "file": ".cache/puce/landing/odontologia.html",
+    "bytes": 282488,
+    "sha256": "8d6a73cba6f4cffa1c8f7968b9156e2abb2741b82b5575f8a75120ba45934ed9",
+    "fetched_at": "2026-11-26T21:41:27+00:00",
+    "from_cache": true
+   },
+   "brochure": {
+    "url": "https://www.puce.edu.ec/docs/dce/landing/pdf/odontologia-202403.pdf",
+    "status": 200,
+    "file": ".cache/puce/brochure/odontologia.pdf",
+    "bytes": 3848274,
+    "sha256": "9d38f926446465163fa67dfdf42ad47a41def63c09b4a8680b6200467190d885",
+    "fetched_at": "2026-11-26T21:41:30+00:00",
+    "from_cache": true
+   }
+  },
+  "fisioterapia": {
+   "landing": {
+    "url": "https://www.puce.edu.ec/landing-fisioterapia/",
+    "status": 200,
+    "file": ".cache/puce/landing/fisioterapia.html",
+    "bytes": 281984,
+    "sha256": "a71af9a2039e6d71bd678387741a93a9324c24770c06b560506a992cbf935bbc",
+    "fetched_at": "2026-11-26T21:41:32+00:00",
+    "from_cache": true
+   },
+   "brochure": {
+    "url": "https://www.puce.edu.ec/docs/dce/landing/pdf/fisioterapia-202401.pdf",
+    "status": 200,
+    "file": ".cache/puce/brochure/fisioterapia.pdf",
+    "bytes": 3861429,
+    "sha256": "16a59e9195340246c5b25981c2bdffd624e36768964ca52439870be1ab7e8942",
+    "fetched_at": "2026-11-26T21:41:36+00:00",
+    "from_cache": true
+   }
+  },
+  "nutricion": {
+   "landing": {
+    "url": "https://www.puce.edu.ec/landing-nutricion-y-dietetica/",
+    "status": 200,
+    "file": ".cache/puce/landing/nutricion.html",
+    "bytes": 282183,
+    "sha256": "87c2e2f4b93ebcc72608467245c4fb97e4e3418fa2e0a6d2c25baf5bd34675ba",
+    "fetched_at": "2026-11-26T21:41:38+00:00",
+    "from_cache": true
+   },
+   "brochure": {
+    "url": "https://www.puce.edu.ec/docs/dce/landing/pdf/nutricion-y-dietetica-202401.pdf",
+    "status": 200,
+    "file": ".cache/puce/brochure/nutricion.pdf",
+    "bytes": 3827977,
+    "sha256": "ccec04db0d18e9674a3c1634ef89dc2efe33ee1f96b9e2cf0b7cd5a38cf82089",
+    "fetched_at": "2026-11-26T21:41:41+00:00",
+    "from_cache": true
+   }
+  },
+  "psicologia_clinica": {
+   "landing": {
+    "url": "https://www.puce.edu.ec/landing-psicologia-clinica/",
+    "status": 200,
+    "file": ".cache/puce/landing/psicologia_clinica.html",
+    "bytes": 281914,
+    "sha256": "9dd2ee0935344ac46ed5136bacdb3a52afb45f09b8267f764f2d1ccd30740f6c",
+    "fetched_at": "2026-11-26T21:41:43+00:00",
+    "from_cache": true
+   },
+   "brochure": {
+    "url": "https://www.puce.edu.ec/docs/dce/landing/pdf/psicologia-clinica-202401.pdf",
+    "status": 200,
+    "file": ".cache/puce/brochure/psicologia_clinica.pdf",
+    "bytes": 3872082,
+    "sha256": "271a837758f93262e1d99b2edd799864543d38f35ec5e2db11d0c0039d06a2f5",
+    "fetched_at": "2026-11-26T21:41:46+00:00",
+    "from_cache": true
+   }
+  },
+  "bioingenieria": {
+   "landing": {
+    "url": "https://www.puce.edu.ec/landing-bioingenieria/",
+    "status": 200,
+    "file": ".cache/puce/landing/bioingenieria.html",
+    "bytes": 239600,
+    "sha256": "518b9ebab0ebe2ddb661f15b6ce292cbb81b6e79e6a683647a7088ed37cc7ad2",
+    "fetched_at": "2026-11-26T21:41:48+00:00",
+    "from_cache": true
+   },
+   "brochure": {
+    "url": "https://www.puce.edu.ec/docs/dce/landing/pdf/bioingenieria-202401.pdf",
+    "status": 200,
+    "file": ".cache/puce/brochure/bioingenieria.pdf",
+    "bytes": 3660582,
+    "sha256": "5ade5e60a79605382d36bed6b43c4f978b31487388f9e227a6e00d15a8abccae",
+    "fetched_at": "2026-11-26T21:41:54+00:00",
+    "from_cache": true
+   }
+  },
+  "ciencias_biomedicas": {
+   "landing": {
+    "url": "https://www.puce.edu.ec/landing-ciencias-biomedicas/",
+    "status": 200,
+    "file": ".cache/puce/landing/ciencias_biomedicas.html",
+    "bytes": 281644,
+    "sha256": "0561dd8e4ccf09e6c2e3a8b3b307fde2d327cb477d3d8e0209f76ba7793828de",
+    "fetched_at": "2026-11-26T21:41:56+00:00",
+    "from_cache": true
+   },
+   "brochure": {
+    "url": "https://www.puce.edu.ec/docs/dce/landing/pdf/ciencias-biomedicas-202401.pdf",
+    "status": 200,
+    "file": ".cache/puce/brochure/ciencias_biomedicas.pdf",
+    "bytes": 3531016,
+    "sha256": "8c575aed164875f68e487c391804acb5b90f5277e8051e6356eb76297c0152c4",
+    "fetched_at": "2026-11-26T21:42:00+00:00",
+    "from_cache": true
+   }
+  },
+  "laboratorio_clinico": {
+   "landing": {
+    "url": "https://www.puce.edu.ec/landing-laboratorio-clinico/",
+    "status": 200,
+    "file": ".cache/puce/landing/laboratorio_clinico.html",
+    "bytes": 282124,
+    "sha256": "2dbcd4a0e778b4e04adc9ff0533ad6b89e5213742fb6a38a63344a4ebb6b7307",
+    "fetched_at": "2026-11-26T21:42:03+00:00",
+    "from_cache": true
+   },
+   "brochure": {
+    "url": "https://www.puce.edu.ec/docs/dce/landing/pdf/laboratorio-clinico-202508.pdf",
+    "status": 200,
+    "file": ".cache/puce/brochure/laboratorio_clinico.pdf",
+    "bytes": 3893216,
+    "sha256": "449d73daf24a25edaeb1d1c26e81e54132d7d9049ccc0517b20f05f86d5a0420",
+    "fetched_at": "2026-11-26T21:42:06+00:00",
+    "from_cache": true
+   }
+  },
+  "microbiologia": {
+   "landing": {
+    "url": "https://www.puce.edu.ec/landing-microbiologia/",
+    "status": 200,
+    "file": ".cache/puce/landing/microbiologia.html",
+    "bytes": 282100,
+    "sha256": "7753e6db40f749f5d7b78df6c4206a3a9a798959d73a51e4af6f4a142a4ce549",
+    "fetched_at": "2026-11-26T21:42:08+00:00",
+    "from_cache": true
+   },
+   "brochure": {
+    "url": "https://www.puce.edu.ec/docs/dce/landing/pdf/microbiologia-202401.pdf",
+    "status": 200,
+    "file": ".cache/puce/brochure/microbiologia.pdf",
+    "bytes": 3438073,
+    "sha256": "7b7bdd828acab9dfa9379fdb482cfcc9680ce9e6845ca6f021137db224bd8fd8",
+    "fetched_at": "2026-11-26T21:42:11+00:00",
+    "from_cache": true
+   }
+  },
+  "veterinaria": {
+   "landing": {
+    "url": "https://www.puce.edu.ec/landing-veterinaria/",
+    "status": 200,
+    "file": ".cache/puce/landing/veterinaria.html",
+    "bytes": 283242,
+    "sha256": "1ebec1c8893389aca7a2fd70d69e7710cfec7900d141c1e5185818206d84ca2f",
+    "fetched_at": "2026-11-26T21:42:13+00:00",
+    "from_cache": true
+   },
+   "brochure": {
+    "url": "https://www.puce.edu.ec/docs/dce/landing/pdf/veterinaria-202403.pdf",
+    "status": 200,
+    "file": ".cache/puce/brochure/veterinaria.pdf",
+    "bytes": 3911167,
+    "sha256": "1bb6ad26c48dc6ce9857308e8d185ce82f79d1f8a8d02df71d28b7c2cbfc2b49",
+    "fetched_at": "2026-11-26T21:45:50+00:00",
+    "from_cache": true
+   }
+  },
+  "derecho": {
+   "landing": {
+    "url": "https://www.puce.edu.ec/landing-derecho/",
+    "status": 200,
+    "file": ".cache/puce/landing/derecho.html",
+    "bytes": 282079,
+    "sha256": "20c4676f8788478f07c956e52212a1756d4e9fe198eac9f38c10ab1d36142b32",
+    "fetched_at": "2026-11-26T21:42:30+00:00",
+    "from_cache": true
+   },
+   "brochure": {
+    "url": "https://www.puce.edu.ec/docs/dce/landing/pdf/derecho-202401.pdf",
+    "status": 200,
+    "file": ".cache/puce/brochure/derecho.pdf",
+    "bytes": 3416400,
+    "sha256": "f7c1d3f328da27289a13211333b9417d8faaebee30c0487379d8e8cdc37096bf",
+    "fetched_at": "2026-11-26T21:42:34+00:00",
+    "from_cache": true
+   }
+  },
+  "relaciones_internacionales": {
+   "landing": {
+    "url": "https://www.puce.edu.ec/landing-relaciones-internacionales/",
+    "status": 200,
+    "file": ".cache/puce/landing/relaciones_internacionales.html",
+    "bytes": 282500,
+    "sha256": "524a767314ded841f3d1ae171bb2bb8b84878acb6a9dcd284088839183a63a9e",
+    "fetched_at": "2026-11-26T21:42:36+00:00",
+    "from_cache": true
+   },
+   "brochure": {
+    "url": "https://www.puce.edu.ec/docs/dce/landing/pdf/relaciones-internacionales-202401.pdf",
+    "status": 200,
+    "file": ".cache/puce/brochure/relaciones_internacionales.pdf",
+    "bytes": 3636881,
+    "sha256": "5ce2c72b82ce33a2b1fdfd945eb604901f154dbd0fa03c6901cbb904b4ae24c2",
+    "fetched_at": "2026-11-26T21:42:39+00:00",
+    "from_cache": true
+   }
+  },
+  "comunicacion": {
+   "landing": {
+    "url": "https://www.puce.edu.ec/landing-comunicacion/",
+    "status": 200,
+    "file": ".cache/puce/landing/comunicacion.html",
+    "bytes": 282781,
+    "sha256": "70a940a799ee36f717d14c03ba8e6a7a1f4e572b7dd75783202ff0b706f5e5aa",
+    "fetched_at": "2026-11-26T21:42:41+00:00",
+    "from_cache": true
+   },
+   "brochure": {
+    "url": "https://www.puce.edu.ec/docs/dce/landing/pdf/comunicacion-202401.pdf",
+    "status": 200,
+    "file": ".cache/puce/brochure/comunicacion.pdf",
+    "bytes": 3094846,
+    "sha256": "aa0447b81336f8bf6d9912105c0e1805f8348e6e823217eca424b4728df2fbff",
+    "fetched_at": "2026-11-26T21:42:44+00:00",
+    "from_cache": true
+   }
+  },
+  "lenguas_aplicadas": {
+   "landing": {
+    "url": "https://www.puce.edu.ec/landing-lenguas-aplicadas-a-los-estudios-globales/",
+    "status": 200,
+    "file": ".cache/puce/landing/lenguas_aplicadas.html",
+    "bytes": 235530,
+    "sha256": "d6e336a1a76a0609ddfa691c96650b9277c7697e6940447a65d7f30510ce30fa",
+    "fetched_at": "2026-11-26T21:42:45+00:00",
+    "from_cache": true
+   },
+   "brochure": {
+    "url": "https://www.puce.edu.ec/docs/dce/landing/pdf/lenguas-aplicadas-202401.pdf",
+    "status": 200,
+    "file": ".cache/puce/brochure/lenguas_aplicadas.pdf",
+    "bytes": 3382284,
+    "sha256": "afe09527d8afb5649de8f63f3a74c3ea0a3c97760d1599f93dd2ada902615d56",
+    "fetched_at": "2026-11-26T21:42:49+00:00",
+    "from_cache": true
+   }
+  },
+  "linguistica": {
+   "landing": {
+    "url": "https://www.puce.edu.ec/landing-linguistica/",
+    "status": 200,
+    "file": ".cache/puce/landing/linguistica.html",
+    "bytes": 279228,
+    "sha256": "557ed0021b6723457bc18a686e8222072e29cf3cbc58d64577a21128ac83e201",
+    "fetched_at": "2026-11-26T21:42:51+00:00",
+    "from_cache": true
+   },
+   "brochure": {
+    "url": "https://www.puce.edu.ec/docs/dce/landing/pdf/linguistica-202401.pdf",
+    "status": 200,
+    "file": ".cache/puce/brochure/linguistica.pdf",
+    "bytes": 3529160,
+    "sha256": "b828d7dce12792959d5181199e4cd965aee8977f3ad87c242375b2faf3a774b5",
+    "fetched_at": "2026-11-26T21:42:55+00:00",
+    "from_cache": true
+   }
+  },
+  "literatura": {
+   "landing": {
+    "url": "https://www.puce.edu.ec/landing-literatura/",
+    "status": 200,
+    "file": ".cache/puce/landing/literatura.html",
+    "bytes": 277528,
+    "sha256": "b5bf8b6e06d9594e57e0bed233d1ca531687cb4b74081ac2f7d5df5da61b3a6c",
+    "fetched_at": "2026-11-26T21:42:57+00:00",
+    "from_cache": true
+   },
+   "brochure": {
+    "url": "https://www.puce.edu.ec/docs/dce/landing/pdf/literatura-202401.pdf",
+    "status": 200,
+    "file": ".cache/puce/brochure/literatura.pdf",
+    "bytes": 3498380,
+    "sha256": "3aed948d5a629aa8223977e480f2e1d06f0476d2ad7df4d4b5478325e2002d05",
+    "fetched_at": "2026-11-26T21:43:00+00:00",
+    "from_cache": true
+   }
+  },
+  "educacion_inicial": {
+   "landing": {
+    "url": "https://www.puce.edu.ec/landing-educacion-inicial-presencial/",
+    "status": 200,
+    "file": ".cache/puce/landing/educacion_inicial.html",
+    "bytes": 283736,
+    "sha256": "41eae6b6adc6bef234698c1696e8a5afd2059d5c9a2152bf9704aeb30ba2422c",
+    "fetched_at": "2026-11-26T21:43:02+00:00",
+    "from_cache": true
+   },
+   "brochure": {
+    "url": "https://www.puce.edu.ec/docs/dce/landing/pdf/educacion-inicial-presencial-202401.pdf",
+    "status": 200,
+    "file": ".cache/puce/brochure/educacion_inicial.pdf",
+    "bytes": 3523555,
+    "sha256": "c5a435c4d5e3bf877d5f986274ff64bbf8de96b25d3832c875606a799d16b48d",
+    "fetched_at": "2026-11-26T21:43:05+00:00",
+    "from_cache": true
+   }
+  },
+  "psicologia_educativa": {
+   "landing": {
+    "url": "https://www.puce.edu.ec/landing-psicologia-educativa/",
+    "status": 200,
+    "file": ".cache/puce/landing/psicologia_educativa.html",
+    "bytes": 279463,
+    "sha256": "39b4165ba63fcebbadd9dc0d05048c4286ebf4e381f7d89ee3f02de9f7f448b5",
+    "fetched_at": "2026-11-26T21:43:07+00:00",
+    "from_cache": true
+   },
+   "brochure": {
+    "url": "https://www.puce.edu.ec/docs/dce/landing/pdf/psicologia-educativa-202401.pdf",
+    "status": 200,
+    "file": ".cache/puce/brochure/psicologia_educativa.pdf",
+    "bytes": 3864381,
+    "sha256": "14fbd5f9769e70db860ced33059f7f2c299de7be3aa4cd546d1b90b7a351633f",
+    "fetched_at": "2026-11-26T21:43:10+00:00",
+    "from_cache": true
+   }
+  },
+  "artes_visuales": {
+   "landing": {
+    "url": "https://www.puce.edu.ec/landing-artes-visuales/",
+    "status": 200,
+    "file": ".cache/puce/landing/artes_visuales.html",
+    "bytes": 282138,
+    "sha256": "540b1a663f7fa994b214c4f4831a557102398169acd6d63758ba1bedaa71c5c2",
+    "fetched_at": "2026-11-26T21:43:12+00:00",
+    "from_cache": true
+   },
+   "brochure": {
+    "url": "https://www.puce.edu.ec/docs/dce/landing/pdf/artes-visuales-202401.pdf",
+    "status": 200,
+    "file": ".cache/puce/brochure/artes_visuales.pdf",
+    "bytes": 3518380,
+    "sha256": "e3a9bf158f9e5e7686b53c43f67f3ead5963f969a955d8aef8510ebe1309f2d2",
+    "fetched_at": "2026-11-26T21:43:18+00:00",
+    "from_cache": true
+   }
+  },
+  "filosofia": {
+   "landing": {
+    "url": "https://www.puce.edu.ec/landing-filosofia/",
+    "status": 200,
+    "file": ".cache/puce/landing/filosofia.html",
+    "bytes": 241058,
+    "sha256": "f0339200ae1e314bde02a0847f2d41d08ce8fda5a14e1a737cebba9e05ff20a4",
+    "fetched_at": "2026-11-26T21:43:20+00:00",
+    "from_cache": true
+   },
+   "brochure": {
+    "url": "https://www.puce.edu.ec/docs/dce/landing/pdf/filosofia-202401.pdf",
+    "status": 200,
+    "file": ".cache/puce/brochure/filosofia.pdf",
+    "bytes": 3466094,
+    "sha256": "a61d74a9a1abacca584b5b89094b54f59fc6f2d701612c49b60db182827d1ec2",
+    "fetched_at": "2026-11-26T21:43:24+00:00",
+    "from_cache": true
+   }
+  },
+  "teologia": {
+   "landing": {
+    "url": "https://www.puce.edu.ec/landing-teologia/",
+    "status": 200,
+    "file": ".cache/puce/landing/teologia.html",
+    "bytes": 241994,
+    "sha256": "d7d94e311fcd28e403ee1a7066a3e9a829462afde3ba87f98b7fadb4a7b131d7",
+    "fetched_at": "2026-11-26T21:43:26+00:00",
+    "from_cache": true
+   },
+   "brochure": {
+    "url": "https://www.puce.edu.ec/docs/dce/landing/pdf/teologia-202401.pdf",
+    "status": 200,
+    "file": ".cache/puce/brochure/teologia.pdf",
+    "bytes": 3484101,
+    "sha256": "bad4c5c61344674e0ec5972c94aebdcbce59ba37b66fa90d7cf72439524a85a9",
+    "fetched_at": "2026-11-26T21:43:28+00:00",
+    "from_cache": true
+   }
+  },
+  "administracion_empresas": {
+   "landing": {
+    "url": "https://www.puce.edu.ec/landing-administracion-de-empresas/",
+    "status": 200,
+    "file": ".cache/puce/landing/administracion_empresas.html",
+    "bytes": 281871,
+    "sha256": "ae0df17ff67c9e362609c1259ca73796489ad7a82aa5e58e3d5d9c3dab599779",
+    "fetched_at": "2026-11-26T21:43:30+00:00",
+    "from_cache": true
+   },
+   "brochure": {
+    "url": "https://www.puce.edu.ec/docs/dce/landing/pdf/administracion-de-empresas-202401.pdf",
+    "status": 200,
+    "file": ".cache/puce/brochure/administracion_empresas.pdf",
+    "bytes": 3504679,
+    "sha256": "bbcbe34d0560565ee69220716e21d3b41db0ca8364d8e3cc40c530c15eeabb40",
+    "fetched_at": "2026-11-26T21:43:34+00:00",
+    "from_cache": true
+   }
+  },
+  "turismo": {
+   "landing": {
+    "url": "https://www.puce.edu.ec/landing-administracion-en-turismo-y-hospitalidad/",
+    "status": 200,
+    "file": ".cache/puce/landing/turismo.html",
+    "bytes": 242986,
+    "sha256": "a54661d9896d0445cad495eac92bf8a8ac94c5dbed5f3bcfcd5f66207749b936",
+    "fetched_at": "2026-11-26T21:43:36+00:00",
+    "from_cache": true
+   },
+   "brochure": {
+    "url": "https://www.puce.edu.ec/docs/dce/landing/pdf/administracion-en-turismo-y-hospitalidad-202401.pdf",
+    "status": 200,
+    "file": ".cache/puce/brochure/turismo.pdf",
+    "bytes": 904793,
+    "sha256": "59bec3b793033c20b0d7489538cb6cddfdf30ff2d3bb36b2aba0decab4d35b88",
+    "fetched_at": "2026-11-26T21:43:38+00:00",
+    "from_cache": true
+   }
+  },
+  "contabilidad": {
+   "landing": {
+    "url": "https://www.puce.edu.ec/landing-contabilidad-y-auditoria/",
+    "status": 200,
+    "file": ".cache/puce/landing/contabilidad.html",
+    "bytes": 282680,
+    "sha256": "f03e42b24e736259664fa1673bdcca9d7e97621b9be8723d634b6b369e534dbe",
+    "fetched_at": "2026-11-26T21:43:40+00:00",
+    "from_cache": true
+   },
+   "brochure": {
+    "url": "https://www.puce.edu.ec/docs/dce/landing/pdf/contabilidad-y-auditoria-202508.pdf",
+    "status": 200,
+    "file": ".cache/puce/brochure/contabilidad.pdf",
+    "bytes": 3460993,
+    "sha256": "0e0afb4ccb6e1f48d7d4f2da3d090035f68ac9b66a7f3c315057bb76698b7c65",
+    "fetched_at": "2026-11-26T21:43:43+00:00",
+    "from_cache": true
+   }
+  },
+  "economia_carrera": {
+   "landing": {
+    "url": "https://www.puce.edu.ec/landing-economia/",
+    "status": 200,
+    "file": ".cache/puce/landing/economia_carrera.html",
+    "bytes": 281609,
+    "sha256": "5ac7e80736a5e31e4b758fa054b8f67110931391ef4da638d3ac9c4c379a91a8",
+    "fetched_at": "2026-11-26T21:43:45+00:00",
+    "from_cache": true
+   },
+   "brochure": {
+    "url": "https://www.puce.edu.ec/docs/dce/landing/pdf/economia-202401.pdf",
+    "status": 200,
+    "file": ".cache/puce/brochure/economia_carrera.pdf",
+    "bytes": 3758777,
+    "sha256": "ff22f35b62405f0370149346604fec28e8a2910004b429eeb5697788e4aeaee1",
+    "fetched_at": "2026-11-26T21:43:48+00:00",
+    "from_cache": true
+   }
+  },
+  "finanzas": {
+   "landing": {
+    "url": "https://www.puce.edu.ec/landing-finanzas/",
+    "status": 200,
+    "file": ".cache/puce/landing/finanzas.html",
+    "bytes": 281321,
+    "sha256": "978a9cf8e1eeda86c75aefdeac574eb998c4281fd0bc07539af5ee524159feb5",
+    "fetched_at": "2026-11-26T21:43:50+00:00",
+    "from_cache": true
+   },
+   "brochure": {
+    "url": "https://www.puce.edu.ec/docs/dce/landing/pdf/finanzas-202401.pdf",
+    "status": 200,
+    "file": ".cache/puce/brochure/finanzas.pdf",
+    "bytes": 3454115,
+    "sha256": "fd0d5b13143ce53cc78039d057e9fa27f31b41f3026e506c000c5e1ef7d8145e",
+    "fetched_at": "2026-11-26T21:43:54+00:00",
+    "from_cache": true
+   }
+  },
+  "marketing": {
+   "landing": {
+    "url": "https://www.puce.edu.ec/landing-marketing/",
+    "status": 200,
+    "file": ".cache/puce/landing/marketing.html",
+    "bytes": 281174,
+    "sha256": "68ab5f0d0b1e463d43bd60b5efa860a725ba5554acf25aead944be7b169d55b0",
+    "fetched_at": "2026-11-26T21:43:56+00:00",
+    "from_cache": true
+   },
+   "brochure": {
+    "url": "https://www.puce.edu.ec/docs/dce/landing/pdf/marketing-202401.pdf",
+    "status": 200,
+    "file": ".cache/puce/brochure/marketing.pdf",
+    "bytes": 1334462,
+    "sha256": "63f6396a0dd47634f59b37c311d6319e6adcae1de0506aa7bba183c64d752800",
+    "fetched_at": "2026-11-26T21:43:58+00:00",
+    "from_cache": true
+   }
+  },
+  "negocios_internacionales": {
+   "landing": {
+    "url": "https://www.puce.edu.ec/landing-negocios-internacionales/",
+    "status": 200,
+    "file": ".cache/puce/landing/negocios_internacionales.html",
+    "bytes": 281985,
+    "sha256": "1e969e3988d519014f00268fdfb2a9baf10019baa4cc6b53b49914c6d9058875",
+    "fetched_at": "2026-11-26T21:44:00+00:00",
+    "from_cache": true
+   },
+   "brochure": {
+    "url": "https://www.puce.edu.ec/docs/dce/landing/pdf/negocios-internacionales-202401.pdf",
+    "status": 200,
+    "file": ".cache/puce/brochure/negocios_internacionales.pdf",
+    "bytes": 1342808,
+    "sha256": "c7bd4d6ecb700d5c826217fb313cb6bc737a6742aac665e190281ca1ed7e7868",
+    "fetched_at": "2026-11-26T21:44:02+00:00",
+    "from_cache": true
+   }
+  },
+  "fpe": {
+   "landing": {
+    "url": "https://www.puce.edu.ec/landing-filosofia-politica-economia/",
+    "status": 200,
+    "file": ".cache/puce/landing/fpe.html",
+    "bytes": 282821,
+    "sha256": "3ebca0701cc75602ed3acd5d7bc309ae6d48e4171ddef911a394e935f9764623",
+    "fetched_at": "2026-11-26T21:44:05+00:00",
+    "from_cache": true
+   },
+   "brochure": {
+    "url": "https://www.puce.edu.ec/docs/dce/landing/pdf/filosofia-politica-economia_202411.pdf",
+    "status": 200,
+    "file": ".cache/puce/brochure/fpe.pdf",
+    "bytes": 3640197,
+    "sha256": "183b8b3086e0dd6d59ee80061173326bbe7266cc0f1c4df11c0b2658ee257c3f",
+    "fetched_at": "2026-11-26T21:44:07+00:00",
+    "from_cache": true
+   }
+  },
+  "psicologia_organizacional": {
+   "landing": {
+    "url": "https://www.puce.edu.ec/landing-psicologia-organizacional/",
+    "status": 200,
+    "file": ".cache/puce/landing/psicologia_organizacional.html",
+    "bytes": 282390,
+    "sha256": "d50e6b876aa285cbbf919dc963ad98fe291ea08ba2b89167796bdf29b2df6093",
+    "fetched_at": "2026-11-26T21:44:10+00:00",
+    "from_cache": true
+   },
+   "brochure": {
+    "url": "https://www.puce.edu.ec/docs/dce/landing/pdf/psicologia-organizacional-202401.pdf",
+    "status": 200,
+    "file": ".cache/puce/brochure/psicologia_organizacional.pdf",
+    "bytes": 3887829,
+    "sha256": "e35d2719f6862b4b1b6ef89b29d082f203ad25c834c8758c27bebd735f7143cd",
+    "fetched_at": "2026-11-26T21:44:12+00:00",
+    "from_cache": true
+   }
+  }
+ },
+ "institutional": {
+  "inicio": {
+   "url": "https://www.puce.edu.ec/",
+   "status": 200,
+   "file": ".cache/puce/pages/inicio.html",
+   "bytes": 266358,
+   "sha256": "cdbc28b1de131f23a0c7c206d5a0c0a29e3d2509313630bac5fec2b3d89f61b6",
+   "fetched_at": "2026-11-26T21:44:16+00:00",
+   "from_cache": true
+  },
+  "grado": {
+   "url": "https://www.puce.edu.ec/grado/",
+   "status": 200,
+   "file": ".cache/puce/pages/grado.html",
+   "bytes": 249059,
+   "sha256": "e9af8e834a7dff1077559c73d8d86258ab6a686752ca2f7e26e97a48d1f18cc3",
+   "fetched_at": "2026-11-26T21:44:18+00:00",
+   "from_cache": true
+  },
+  "admisiones-grado": {
+   "url": "https://www.puce.edu.ec/admisiones/grado/",
+   "status": 200,
+   "file": ".cache/puce/pages/admisiones-grado.html",
+   "bytes": 194003,
+   "sha256": "f39e7ca4bfebe1901256735d538f3f9bc52c7d86f78b36771d1738dda49abbb2",
+   "fetched_at": "2026-11-26T21:44:19+00:00",
+   "from_cache": true,
+   "documentos": []
+  },
+  "examen-de-ingreso": {
+   "url": "https://www.puce.edu.ec/admisiones/grado/examen-de-ingreso/",
+   "status": 200,
+   "file": ".cache/puce/pages/examen-de-ingreso.html",
+   "bytes": 201401,
+   "sha256": "c4ed21c904d7ae60625db9229e58cd2a05afa6448fe3e0429c8d09fde2c5bb57",
+   "fetched_at": "2026-11-26T21:44:21+00:00",
+   "from_cache": true,
+   "documentos": [
+    {
+     "url": "https://www.puce.edu.ec/wp-content/uploads/2024/06/instructivo-prueba-aptitud-academica.pdf",
+     "status": 200,
+     "file": ".cache/puce/docs/instructivo-prueba-aptitud-academica.pdf",
+     "bytes": 564997,
+     "sha256": "aa60c5a24110cdf5b06471b4d39827740c57d7e5db1c0071539ba1dad62d8a9e",
+     "fetched_at": "2026-11-26T21:57:03+00:00",
+     "from_cache": true
+    }
+   ]
+  },
+  "curso-de-admision": {
+   "url": "https://www.puce.edu.ec/admisiones/grado/curso-de-admision/",
+   "status": 200,
+   "file": ".cache/puce/pages/curso-de-admision.html",
+   "bytes": 200724,
+   "sha256": "40711e779466b0a4d5f319ef7b6df393c91cb2770b2ba39b8a8dea410c54b5e1",
+   "fetched_at": "2026-11-26T21:44:22+00:00",
+   "from_cache": true,
+   "documentos": []
+  },
+  "admisiones-convenios": {
+   "url": "https://www.puce.edu.ec/admisiones/grado/convenios/",
+   "status": 200,
+   "file": ".cache/puce/pages/admisiones-convenios.html",
+   "bytes": 204708,
+   "sha256": "0003cc512011f754c04773209be5e8dbe3b5bc8071b8747648a5cea268077afa",
+   "fetched_at": "2026-11-26T21:44:24+00:00",
+   "from_cache": true
+  },
+  "aranceles": {
+   "url": "https://www.puce.edu.ec/aranceles/",
+   "status": 200,
+   "file": ".cache/puce/pages/aranceles.html",
+   "bytes": 177081,
+   "sha256": "098bd8b2a79593ba6a4f4c9b12d2b55839d030f8c960db9a18b6d9ddca172180",
+   "fetched_at": "2026-11-26T21:44:25+00:00",
+   "from_cache": true,
+   "documentos": [
+    {
+     "url": "https://www.puce.edu.ec/wp-content/uploads/2026/11/Tabla_matriculas_aranceles_derechos_2026_actualizada_nov.26.pdf",
+     "status": 200,
+     "file": ".cache/puce/docs/Tabla_matriculas_aranceles_derechos_2026_actualizada_nov.26.pdf",
+     "bytes": 732486,
+     "sha256": "d328d080cc95273a40d4c6ccdbccd7fa9b37cb5079bf1d67c21d934c600414a5",
+     "fetched_at": "2026-11-26T21:57:04+00:00",
+     "from_cache": true
+    }
+   ]
+  },
+  "financiamiento-y-becas": {
+   "url": "https://www.puce.edu.ec/financiamiento-y-becas/",
+   "status": 200,
+   "file": ".cache/puce/pages/financiamiento-y-becas.html",
+   "bytes": 186583,
+   "sha256": "5df8ea49866a040af2ee8abd9bd7e62cdc29bf0f511efe9d05b6b41fde36cf5d",
+   "fetched_at": "2026-11-26T21:44:27+00:00",
+   "from_cache": true,
+   "documentos": []
+  },
+  "becas": {
+   "url": "https://www.puce.edu.ec/financiamiento-y-becas/becas/",
+   "status": 200,
+   "file": ".cache/puce/pages/becas.html",
+   "bytes": 235991,
+   "sha256": "03f7f8d0e149a4fcbc1a4f6aa8ab14d696f42b1f48c887a3352af6347111e252",
+   "fetched_at": "2026-11-26T21:44:28+00:00",
+   "from_cache": true,
+   "documentos": []
+  },
+  "financiamiento-estudiantil": {
+   "url": "https://www.puce.edu.ec/financiamiento-estudiantil/",
+   "status": 200,
+   "file": ".cache/puce/pages/financiamiento-estudiantil.html",
+   "bytes": 200672,
+   "sha256": "cf4fd2197dda7400f06cf075e25c2f3abbf7a33d8a5664cfcf176b08a886fb8c",
+   "fetched_at": "2026-11-26T21:44:30+00:00",
+   "from_cache": true,
+   "documentos": [
+    {
+     "url": "https://www.puce.edu.ec/wp-content/uploads/2026/09/Directrices-Financiamiento-2026-02-Grado-y-Posgrado.pdf",
+     "status": 200,
+     "file": ".cache/puce/docs/Directrices-Financiamiento-2026-02-Grado-y-Posgrado.pdf",
+     "bytes": 1085116,
+     "sha256": "60ff8fc8a7ac74ffe49434a228157b2d648f6e2eb75cf53a3edf21e967961da2",
+     "fetched_at": "2026-11-26T21:57:06+00:00",
+     "from_cache": true
+    },
+    {
+     "url": "https://www.puce.edu.ec/wp-content/uploads/2026/09/Directrices-Refinanciamiento_2025-2026.pdf",
+     "status": 200,
+     "file": ".cache/puce/docs/Directrices-Refinanciamiento_2025-2026.pdf",
+     "bytes": 1133549,
+     "sha256": "629fd7f1e19eed5faa4ecfe59cbc060156a8024d1f76bc270523204ee2922ed4",
+     "fetched_at": "2026-11-26T21:57:08+00:00",
+     "from_cache": true
+    },
+    {
+     "url": "https://www.puce.edu.ec/wp-content/uploads/2026/09/Directrices-Financiamiento_2026-02-PUCETEC.pdf",
+     "status": 200,
+     "file": ".cache/puce/docs/Directrices-Financiamiento_2026-02-PUCETEC.pdf",
+     "bytes": 1113539,
+     "sha256": "7827e140bbffca5d49aaad45e4b4a4a42100d608e3a04aaf0bb092ae908cfa59",
+     "fetched_at": "2026-11-26T21:57:09+00:00",
+     "from_cache": true
+    },
+    {
+     "url": "https://www.puce.edu.ec/docs/dgf/tesoreria/financiamiento/financiamiento-puce_solicitud-credito_20260923.pdf",
+     "status": 200,
+     "file": ".cache/puce/docs/financiamiento-puce_solicitud-credito_20260923.pdf",
+     "bytes": 210106,
+     "sha256": "2217556f1604838233b6f8b60426fa107f10cac7f8df6fe891393ffd2b28ed9c",
+     "fetched_at": "2026-11-26T21:57:11+00:00",
+     "from_cache": true
+    },
+    {
+     "url": "https://www.puce.edu.ec/docs/dgf/tesoreria/financiamiento/financiamiento-puce_autorizacion-buro-credito_20260923.pdf",
+     "status": 200,
+     "file": ".cache/puce/docs/financiamiento-puce_autorizacion-buro-credito_20260923.pdf",
+     "bytes": 161780,
+     "sha256": "a8e9851b748227f7689ba63e9fd3b73ec38bafdc13fad5dbce67e296c748a2af",
+     "fetched_at": "2026-11-26T21:57:12+00:00",
+     "from_cache": true
+    }
+   ]
+  },
+  "beca-excelencia-academica": {
+   "url": "https://www.puce.edu.ec/financiamiento-y-becas/becas/excelencia-academica/",
+   "status": 200,
+   "file": ".cache/puce/pages/beca-excelencia-academica.html",
+   "bytes": 204923,
+   "sha256": "516fe94ee9bd98738b4c5626540ba77483d10c65ea35974ab2371f91d8451113",
+   "fetched_at": "2026-11-26T21:44:31+00:00",
+   "from_cache": true
+  },
+  "beca-abanderados": {
+   "url": "https://www.puce.edu.ec/financiamiento-y-becas/becas/abanderados-mejores-egresados-y-escoltas/",
+   "status": 200,
+   "file": ".cache/puce/pages/beca-abanderados.html",
+   "bytes": 205794,
+   "sha256": "bc392273dd4fd23c322270b1bb7e5d564959bbfa7c5ad8b39a5354ff90db1e95",
+   "fetched_at": "2026-11-26T21:44:33+00:00",
+   "from_cache": true
+  },
+  "beca-deportistas": {
+   "url": "https://www.puce.edu.ec/financiamiento-y-becas/becas/deportistas-de-alto-rendimiento/",
+   "status": 200,
+   "file": ".cache/puce/pages/beca-deportistas.html",
+   "bytes": 205870,
+   "sha256": "eda9b55fcb22d61eb3cb24c321f46bd709308587ae465e30f2e6824c62e89013",
+   "fetched_at": "2026-11-26T21:44:35+00:00",
+   "from_cache": true
+  },
+  "beca-cultural": {
+   "url": "https://www.puce.edu.ec/financiamiento-y-becas/becas/beca-cultural-puce/",
+   "status": 200,
+   "file": ".cache/puce/pages/beca-cultural.html",
+   "bytes": 206398,
+   "sha256": "03949cf87fca7287acb16a3dfad36d8e9383d35b950ca1af8c1e05ae0dcb2eb9",
+   "fetched_at": "2026-11-26T21:44:36+00:00",
+   "from_cache": true
+  },
+  "beca-igualdad": {
+   "url": "https://www.puce.edu.ec/financiamiento-y-becas/becas/beca-igualdad-de-oportunidades/",
+   "status": 200,
+   "file": ".cache/puce/pages/beca-igualdad.html",
+   "bytes": 211506,
+   "sha256": "a50fd217b5774c16d786c1a79f9dd16a87416b8b367ed20b9bb9f06cf5008e91",
+   "fetched_at": "2026-11-26T21:44:38+00:00",
+   "from_cache": true
+  },
+  "beca-discapacidad": {
+   "url": "https://www.puce.edu.ec/financiamiento-y-becas/becas/beca-discapacidad/",
+   "status": 200,
+   "file": ".cache/puce/pages/beca-discapacidad.html",
+   "bytes": 204940,
+   "sha256": "e7ed97785de6eb6584dcdb69aa9a6b8e98ac343f8e3adf2da2e19f15783feebe",
+   "fetched_at": "2026-11-26T21:44:39+00:00",
+   "from_cache": true
+  },
+  "beca-pueblos": {
+   "url": "https://www.puce.edu.ec/financiamiento-y-becas/becas/beca-pueblos-y-nacionalidades/",
+   "status": 200,
+   "file": ".cache/puce/pages/beca-pueblos.html",
+   "bytes": 205390,
+   "sha256": "b7c2fbe9371c814491724841372f4aa9a00c8600495146509bc15b49ac484713",
+   "fetched_at": "2026-11-26T21:44:41+00:00",
+   "from_cache": true
+  },
+  "beca-hermanos": {
+   "url": "https://www.puce.edu.ec/financiamiento-y-becas/becas/becas-hermanos/",
+   "status": 200,
+   "file": ".cache/puce/pages/beca-hermanos.html",
+   "bytes": 210611,
+   "sha256": "89dc261d5df9412a22e521c3777245ccd9d6c3cb189cce8c3dccec22833bd935",
+   "fetched_at": "2026-11-26T21:44:42+00:00",
+   "from_cache": true
+  },
+  "beca-solidaridad": {
+   "url": "https://www.puce.edu.ec/financiamiento-y-becas/becas/beca-solidaridad-grado/",
+   "status": 200,
+   "file": ".cache/puce/pages/beca-solidaridad.html",
+   "bytes": 206518,
+   "sha256": "237a49ad661b0e4aefbf8af98fee0b2670c3d0d06570dc2be9498cf7c1ccec7e",
+   "fetched_at": "2026-11-26T21:44:44+00:00",
+   "from_cache": true
+  },
+  "beca-intercambio": {
+   "url": "https://www.puce.edu.ec/financiamiento-y-becas/becas/beca-para-intercambio-academico-internacional/",
+   "status": 200,
+   "file": ".cache/puce/pages/beca-intercambio.html",
+   "bytes": 206302,
+   "sha256": "42fdba1e6965c4d4400cb183070573cf6a66d15d8d8e371e72e1a2b9d0873856",
+   "fetched_at": "2026-11-26T21:44:45+00:00",
+   "from_cache": true
+  },
+  "beca-ausjal": {
+   "url": "https://www.puce.edu.ec/financiamiento-y-becas/becas/ausjal/",
+   "status": 200,
+   "file": ".cache/puce/pages/beca-ausjal.html",
+   "bytes": 205798,
+   "sha256": "b61fea8e7a33f41b2e44f730df7be9e2929fbb5d912d0ba00aea91e64e7c2d67",
+   "fetched_at": "2026-11-26T21:44:47+00:00",
+   "from_cache": true
+  },
+  "internacionalizacion": {
+   "url": "https://www.puce.edu.ec/internacionalizacion-universitaria/",
+   "status": 200,
+   "file": ".cache/puce/pages/internacionalizacion.html",
+   "bytes": 190855,
+   "sha256": "1a3ee3acdfd8359cf02a7c8cfac6e0c9eb8779cc8c76984d86a706474c3d5e07",
+   "fetched_at": "2026-11-26T21:44:48+00:00",
+   "from_cache": true
+  },
+  "internacionalizacion-estudiantes-puce": {
+   "url": "https://www.puce.edu.ec/internacionalizacion-universitaria/estudiantes-puce/",
+   "status": 200,
+   "file": ".cache/puce/pages/internacionalizacion-estudiantes-puce.html",
+   "bytes": 214328,
+   "sha256": "1aee7a62f654cc12678fb6e9e89291fc53222544c5d2264b453c87524e1a01af",
+   "fetched_at": "2026-11-26T21:44:50+00:00",
+   "from_cache": true
+  },
+  "internacionalizacion-becas-intercambios": {
+   "url": "https://www.puce.edu.ec/internacionalizacion-universitaria/becas-e-intercambios/",
+   "status": 200,
+   "file": ".cache/puce/pages/internacionalizacion-becas-intercambios.html",
+   "bytes": 226230,
+   "sha256": "76c60904cbd181d63c51035e4b2b028a999fe1e3eaeb83b56b003d42ea9cfa36",
+   "fetched_at": "2026-11-26T21:44:52+00:00",
+   "from_cache": true
+  },
+  "internacionalizacion-convenios-redes": {
+   "url": "https://www.puce.edu.ec/internacionalizacion-universitaria/convenios-y-redes-internacionales/",
+   "status": 200,
+   "file": ".cache/puce/pages/internacionalizacion-convenios-redes.html",
+   "bytes": 242046,
+   "sha256": "3a7d05df14d08f29799bcd4577f42f6f3b3880476316bbea0670477c55ec499f",
+   "fetched_at": "2026-11-26T21:44:53+00:00",
+   "from_cache": true
+  },
+  "internacionalizacion-preguntas": {
+   "url": "https://www.puce.edu.ec/internacionalizacion-universitaria/preguntas-y-respuestas/",
+   "status": 200,
+   "file": ".cache/puce/pages/internacionalizacion-preguntas.html",
+   "bytes": 193103,
+   "sha256": "b3aa9fc72fb8033d8800d503933ad20016d5d3c103ed0d744520151862bd21fb",
+   "fetched_at": "2026-11-26T21:44:55+00:00",
+   "from_cache": true
+  },
+  "quienes-somos": {
+   "url": "https://www.puce.edu.ec/adn-puce/quienes-somos/",
+   "status": 200,
+   "file": ".cache/puce/pages/quienes-somos.html",
+   "bytes": 208681,
+   "sha256": "6ad737c87277638c9048073b80438ccb4400810c79de91ee28649a6dc2c31b1a",
+   "fetched_at": "2026-11-26T21:44:56+00:00",
+   "from_cache": true
+  },
+  "mision-y-vision": {
+   "url": "https://www.puce.edu.ec/mision-y-vision/",
+   "status": 200,
+   "file": ".cache/puce/pages/mision-y-vision.html",
+   "bytes": 166842,
+   "sha256": "9b31255ea468728851da711fcb58cda1292caac178ab96b30f000ceb8a94bd00",
+   "fetched_at": "2026-11-26T21:44:58+00:00",
+   "from_cache": true
+  },
+  "identidad-y-mision": {
+   "url": "https://www.puce.edu.ec/identidad-y-mision/",
+   "status": 200,
+   "file": ".cache/puce/pages/identidad-y-mision.html",
+   "bytes": 220099,
+   "sha256": "7421e6e26314d34ed2c10514d8c09e6d03c18a2381c14e2392c5f974d8f16f30",
+   "fetched_at": "2026-11-26T21:44:59+00:00",
+   "from_cache": true
+  },
+  "calidad": {
+   "url": "https://www.puce.edu.ec/calidad-en-la-puce/",
+   "status": 200,
+   "file": ".cache/puce/pages/calidad.html",
+   "bytes": 192984,
+   "sha256": "646fa2d930eef32a7f974a9cf333838141383242be61831a1935725b8f5d10ad",
+   "fetched_at": "2026-11-26T21:45:01+00:00",
+   "from_cache": true
+  },
+  "calidad-que-es": {
+   "url": "https://www.puce.edu.ec/calidad-en-la-puce/que-es/",
+   "status": 200,
+   "file": ".cache/puce/pages/calidad-que-es.html",
+   "bytes": 206457,
+   "sha256": "523ef54b63ba292c71e2616f0d084b18f78cee85181b19f49ea8e964af3c8393",
+   "fetched_at": "2026-11-26T21:45:02+00:00",
+   "from_cache": true
+  },
+  "biblioteca": {
+   "url": "https://www.puce.edu.ec/biblioteca/",
+   "status": 200,
+   "file": ".cache/puce/pages/biblioteca.html",
+   "bytes": 215262,
+   "sha256": "782e111086cc2b6e4a1c6bb04049fbbfd634a7d726af1d692b0a09d716f1a357",
+   "fetched_at": "2026-11-26T21:45:04+00:00",
+   "from_cache": true
+  },
+  "biblioteca-nosotros": {
+   "url": "https://www.puce.edu.ec/biblioteca/nosotros/",
+   "status": 200,
+   "file": ".cache/puce/pages/biblioteca-nosotros.html",
+   "bytes": 219855,
+   "sha256": "abd3da286fab7c9a3c840f26e27f32061a49d919c2ce8401a61d81230a05f8df",
+   "fetched_at": "2026-11-26T21:45:05+00:00",
+   "from_cache": true
+  },
+  "centro-de-simulacion": {
+   "url": "https://www.puce.edu.ec/centro-de-simulacion/",
+   "status": 200,
+   "file": ".cache/puce/pages/centro-de-simulacion.html",
+   "bytes": 204776,
+   "sha256": "7b9e361afcf412c1f0b211522f604d1d44f85bff79388cd466950ced4c3bade5",
+   "fetched_at": "2026-11-26T21:45:07+00:00",
+   "from_cache": true
+  },
+  "estacion-yasuni": {
+   "url": "https://www.puce.edu.ec/estacion-cientifica-yasuni/",
+   "status": 200,
+   "file": ".cache/puce/pages/estacion-yasuni.html",
+   "bytes": 181739,
+   "sha256": "6ca8f7ca56b4c9d0e8071815ebb23dc68c34a1956b028f6b3fb8f8296200b4ef",
+   "fetched_at": "2026-11-26T21:45:09+00:00",
+   "from_cache": true
+  },
+  "consultorios-juridicos": {
+   "url": "https://www.puce.edu.ec/servicios/consultorios-juridicos-gratuitos/",
+   "status": 200,
+   "file": ".cache/puce/pages/consultorios-juridicos.html",
+   "bytes": 219857,
+   "sha256": "fe82f7b7f30c997e70bbef6065f3e8c2273b5145085e931ea0f12c9eb095ad8c",
+   "fetched_at": "2026-11-26T21:45:10+00:00",
+   "from_cache": true
+  },
+  "bienestar": {
+   "url": "https://www.puce.edu.ec/bienestar-universitario/",
+   "status": 200,
+   "file": ".cache/puce/pages/bienestar.html",
+   "bytes": 185934,
+   "sha256": "80eef1c640fb4e14ca52bc70c7050592a16f99afc75573fd2b9353c29ae3740d",
+   "fetched_at": "2026-11-26T21:45:12+00:00",
+   "from_cache": true
+  },
+  "acompanamiento-integral": {
+   "url": "https://www.puce.edu.ec/bienestar-universitario/acompanamiento-integral/",
+   "status": 200,
+   "file": ".cache/puce/pages/acompanamiento-integral.html",
+   "bytes": 219644,
+   "sha256": "dd296790b8574d6e896691cc832bc9578d7668dd2f477f099d6cfcd9eadf8f01",
+   "fetched_at": "2026-11-26T21:45:13+00:00",
+   "from_cache": true
+  },
+  "puce-activa": {
+   "url": "https://www.puce.edu.ec/bienestar-universitario/puce-activa/",
+   "status": 200,
+   "file": ".cache/puce/pages/puce-activa.html",
+   "bytes": 382981,
+   "sha256": "219ef3e6384875e431f5b7c63f6a59e2fdcd7a94c01e7201d4c5af03a43af7aa",
+   "fetched_at": "2026-11-26T21:45:16+00:00",
+   "from_cache": true
+  },
+  "centro-cultural": {
+   "url": "https://www.puce.edu.ec/centro-cultural/nosotros/",
+   "status": 200,
+   "file": ".cache/puce/pages/centro-cultural.html",
+   "bytes": 209556,
+   "sha256": "e8d60060403b57095da93c7c71b763be34fb3472c3faaa717819e0ee4e01e4dd",
+   "fetched_at": "2026-11-26T21:45:17+00:00",
+   "from_cache": true
+  },
+  "idiomas": {
+   "url": "https://www.puce.edu.ec/admisiones/idiomas/",
+   "status": 200,
+   "file": ".cache/puce/pages/idiomas.html",
+   "bytes": 202915,
+   "sha256": "f2715bb85d9ea5e50115cb3cd6b904776f4a0af42df0d7d7d63eb755c53f9d7e",
+   "fetched_at": "2026-11-26T21:45:19+00:00",
+   "from_cache": true,
+   "documentos": []
+  },
+  "orientacion-vocacional": {
+   "url": "https://www.puce.edu.ec/servicios-de-orientacion-vocacional-y-profesional/",
+   "status": 200,
+   "file": ".cache/puce/pages/orientacion-vocacional.html",
+   "bytes": 193603,
+   "sha256": "eb0939af5629019d747a0dad91624ee8bae2d1ff846c3f573d13f1bb6fa59b55",
+   "fetched_at": "2026-11-26T21:45:20+00:00",
+   "from_cache": true
+  },
+  "vinculacion": {
+   "url": "https://www.puce.edu.ec/vinculacion-con-la-colectividad/",
+   "status": 200,
+   "file": ".cache/puce/pages/vinculacion.html",
+   "bytes": 188210,
+   "sha256": "ea22006f67176a3c6af3f8596bdb15799c84319792068d271723a59672102b26",
+   "fetched_at": "2026-11-26T21:45:22+00:00",
+   "from_cache": true
+  },
+  "facultad-habitat": {
+   "url": "https://www.puce.edu.ec/facultad-de-habitat-infraestructura-y-creatividad/",
+   "status": 200,
+   "file": ".cache/puce/pages/facultad-habitat.html",
+   "bytes": 221931,
+   "sha256": "f4afbe3ff0bd41952b6c8500fc295fb14c03aa6599c7791a0e79f014a69ae9a4",
+   "fetched_at": "2026-11-26T21:45:23+00:00",
+   "from_cache": true
+  },
+  "facultad-derecho": {
+   "url": "https://www.puce.edu.ec/facultad-de-derecho-y-sociedad/",
+   "status": 200,
+   "file": ".cache/puce/pages/facultad-derecho.html",
+   "bytes": 218079,
+   "sha256": "033cddd263b966ef1936eca5586b0d215b325a4637a1672beb1f6a7102beefa4",
+   "fetched_at": "2026-11-26T21:45:25+00:00",
+   "from_cache": true
+  },
+  "facultad-economia": {
+   "url": "https://www.puce.edu.ec/facultad-de-economia-y-gestion-empresarial/",
+   "status": 200,
+   "file": ".cache/puce/pages/facultad-economia.html",
+   "bytes": 227573,
+   "sha256": "4dd74e6d6c2c8bf49a9856953f8ee63c8d75eda82d147d2cec74bd0a522021bb",
+   "fetched_at": "2026-11-26T21:45:27+00:00",
+   "from_cache": true
+  },
+  "facultad-aprendizaje": {
+   "url": "https://www.puce.edu.ec/facultad-de-aprendizaje-lenguas-y-comunicacion/",
+   "status": 200,
+   "file": ".cache/puce/pages/facultad-aprendizaje.html",
+   "bytes": 228766,
+   "sha256": "7bb2a1de494bc2a4687a6b5a303404c65151ca6d6de71511afc364947bf324ed",
+   "fetched_at": "2026-11-26T21:45:28+00:00",
+   "from_cache": true
+  },
+  "facultad-salud": {
+   "url": "https://www.puce.edu.ec/facultad-de-salud-y-bienestar/",
+   "status": 200,
+   "file": ".cache/puce/pages/facultad-salud.html",
+   "bytes": 272700,
+   "sha256": "c0a5363bb4124a0e442a5cb267de99f02ba661c5cd869ef32bbde82c15bf403e",
+   "fetched_at": "2026-11-26T21:45:30+00:00",
+   "from_cache": true
+  },
+  "facultad-exactas": {
+   "url": "https://www.puce.edu.ec/facultad-de-ciencias-exactas-naturales-y-ambientales/",
+   "status": 200,
+   "file": ".cache/puce/pages/facultad-exactas.html",
+   "bytes": 238116,
+   "sha256": "d1e2316e68de5f117075ebd6284df85524dc41771124e14c065b16316b79afc6",
+   "fetched_at": "2026-11-26T21:45:31+00:00",
+   "from_cache": true
+  },
+  "facultad-innovacion": {
+   "url": "https://www.puce.edu.ec/facultad-internacional-de-innovacion/",
+   "status": 200,
+   "file": ".cache/puce/pages/facultad-innovacion.html",
+   "bytes": 231143,
+   "sha256": "92ac30ab1760f41a9c4ef0a55145f3abc926d24b763998cfbea2c92a903adff3",
+   "fetched_at": "2026-11-26T21:45:35+00:00",
+   "from_cache": true
+  },
+  "facultad-teologia": {
+   "url": "https://www.puce.edu.ec/facultad-de-ciencias-filosofico-teologicas/",
+   "status": 200,
+   "file": ".cache/puce/pages/facultad-teologia.html",
+   "bytes": 210434,
+   "sha256": "4c450b7a5fde190d2c5edd9bcd9016b31e131261056a782663021f9b1ec7f588",
+   "fetched_at": "2026-11-26T21:45:37+00:00",
+   "from_cache": true
+  },
+  "ingenieria-integral-icam": {
+   "url": "https://www.puce.edu.ec/admisiones/grado/ingenieria-integral-puce-icam/",
+   "status": 200,
+   "file": ".cache/puce/pages/ingenieria-integral-icam.html",
+   "bytes": 196187,
+   "sha256": "cbc5be73ae15c0a2879b1ccfbb6490cf4c1f9d86b651bb125582ecf86f87accc",
+   "fetched_at": "2026-11-26T21:45:38+00:00",
+   "from_cache": true
+  },
+  "imagen-indicador-qs": {
+   "url": "https://www.puce.edu.ec/wp-content/uploads/2025/10/Indicador-QS.png",
+   "status": 200,
+   "file": ".cache/puce/images/Indicador-QS.png",
+   "bytes": 39411,
+   "sha256": "a499996ce882a35855f00649a17f022b8043d74d35b22bb8979dc2afc6df1f5b",
+   "fetched_at": "2026-11-26T21:58:20+00:00",
+   "from_cache": true
+  },
+  "imagen-mensajes-clave-2025": {
+   "url": "https://www.puce.edu.ec/wp-content/uploads/2025/03/MENSAJES-CLAVE-2025@2x.png",
+   "status": 200,
+   "file": ".cache/puce/images/MENSAJES-CLAVE-2025@2x.png",
+   "bytes": 81224,
+   "sha256": "5b2861cdbd054aea3fc0ca51746ded5ff10ac65994e1b9d834b100119cd2e08c",
+   "fetched_at": "2026-11-26T21:58:23+00:00",
+   "from_cache": true
+  }
+ }
+}

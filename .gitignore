@@ -25,3 +25,8 @@ node_modules/
 # Carpetas temporales de herramientas (Vite, Supabase CLI)
 .vite/
 supabase/.temp/
+
+# Descargas de fuentes oficiales (se regeneran con scripts/puce/fetch_sources.py)
+.cache/
+__pycache__/
+*.pyc

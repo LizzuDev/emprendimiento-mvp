@@ -1,0 +1,1264 @@
+{
+ "ingenieria_integral": {
+  "nombre": "Ingeniería Integral",
+  "precio_real": 5000,
+  "descuento_pct": 39.0,
+  "precio_con_descuento": 3050,
+  "nota_precio": "No incluye matrícula ni seguro",
+  "titulo": "INGENIERO/A INTEGRAL",
+  "duracion": "9 semestres",
+  "modalidad": "Presencial",
+  "decano": "Dr. Rafael Melgarejo Heredia",
+  "cargo_decano": "DECANO",
+  "por_que_estudiar": "30 convenios internacionales 1 AÑO de intercambio en Campus Icam Francia, Brasil, Camerún, Congo, India o Filipinas. Hasta el 39% de descuento sobre los aranceles.",
+  "resultados_aprendizaje": [
+   "Competencias científico-técnicas:",
+   "Dominio de conocimientos teóricos y prácticos para analizar y desarrollar proyectos complejos.",
+   "Adaptación a diversos campos y colaboración con especialistas.",
+   "Pensamiento crítico para identificar problemas y generar soluciones innovadoras.",
+   "Manejo ágil de herramientas y métodos de ingeniería.",
+   "Enfoque científico en trabajo en equipo e investigación.",
+   "Análisis y adaptación de información relevante con herramientas inteligentes.",
+   "Competencias empresariales y sociales:",
+   "Liderazgo en entornos industriales o de servicios, orientado a clientes, costos, calidad y plazos.",
+   "Dirección de equipos con visión colectiva y enfoque en seguridad y salud laboral.",
+   "Capacidad para proponer, asumir iniciativas y ejercer influencia responsable."
+  ],
+  "campo_laboral": "Los graduados de la carrera en Ingeniería Integral están preparados para desempeñarse en: especialista en automatización de procesos (mecatrónica), auditor de calidad en procesos de manufactura, especialista en diseño industrial, ingeniero/a de proyectos multidisciplinarios, especialista en sistemas de electrónica de control, gerente de proyectos técnicos, supervisión de equipos técnicos internacionales.",
+  "contacto_telefonos": [
+   "099 715 1239"
+  ],
+  "contacto_correos": [
+   "inscripciones@puce.edu.ec"
+  ],
+  "contacto_direccion": "Avenida 12 de Octubre 1076 y Vicente Ramón Roca",
+  "faltantes": [],
+  "fuente": "https://www.puce.edu.ec/landing-ingenieria-integral/",
+  "fecha_fuente": "2026-11-26T21:40:30+00:00",
+  "brochure_url": "https://www.puce.edu.ec/docs/dce/landing/pdf/ingenieria-integral-202401.pdf"
+ },
+ "arquitectura": {
+  "nombre": "Arquitectura",
+  "precio_real": 3950,
+  "descuento_pct": 24.0,
+  "precio_con_descuento": 3000,
+  "nota_precio": "No incluye matrícula ni seguro",
+  "titulo": "ARQUITECTO/A",
+  "duracion": "10 semestres",
+  "modalidad": "Presencial",
+  "decano": "Dr. Jorge Albuja",
+  "cargo_decano": "DECANO",
+  "por_que_estudiar": "9 convenios internacionales Aprendizaje activo a través de cátedras compartidas, inmersión dual, movilidad internacional virtual y presencial. Hasta el 24% de descuento sobre los aranceles.",
+  "resultados_aprendizaje": [
+   "Diseñar proyectos arquitectónicos y urbanos integrando contexto social, ambiental y cultural con creatividad y rigor técnico.",
+   "Aplicar herramientas analíticas para evaluar la factibilidad técnica, económica y normativa de propuestas arquitectónicas.",
+   "Incorporar principios de sostenibilidad y ética en el diseño de hábitats seguros, accesibles e inclusivos.",
+   "Desarrollar investigaciones que combinen saberes ancestrales con innovación para la preservación del patrimonio construido.",
+   "Integrar tecnologías digitales y modelado para optimizar la representación y ejecución de proyectos arquitectónicos."
+  ],
+  "campo_laboral": "Los graduados de la carrera en Arquitectura están preparados para desempeñarse en: diseñador/a arquitectónico/a y urbano/a, gerente de proyectos, director/a técnico/a de obra, residente de obra, fiscalizador/a de proyectos, promotor/a inmobiliario, consultor/a especializado/a, modelador/a digital, asesor/a de proyectos, docente e investigador/a, y especialista en rehabilitación del patrimonio.",
+  "contacto_telefonos": [
+   "099 715 1239"
+  ],
+  "contacto_correos": [
+   "inscripciones@puce.edu.ec"
+  ],
+  "contacto_direccion": "Avenida 12 de Octubre 1076 y Vicente Ramón Roca",
+  "faltantes": [],
+  "fuente": "https://www.puce.edu.ec/landing-arquitectura/",
+  "fecha_fuente": "2026-11-26T21:40:35+00:00",
+  "brochure_url": "https://www.puce.edu.ec/docs/dce/landing/pdf/arquitectura-202401.pdf"
+ },
+ "ciencia_datos": {
+  "nombre": "Ciencia de datos",
+  "precio_real": 3950,
+  "descuento_pct": 27.0,
+  "precio_con_descuento": 2900,
+  "nota_precio": "No incluye matrícula ni seguro",
+  "titulo": "INGENIERO/A EN CIENCIA DE DATOS",
+  "duracion": "8 semestres",
+  "modalidad": "HÍBRIDA",
+  "decano": "Dra. Lorena Meneses",
+  "cargo_decano": "DECANA",
+  "por_que_estudiar": "26 convenios internacionales Programa 4+1 para obtener el título de máster con un año más de estudios Hasta el 27% de descuento sobre los aranceles.",
+  "resultados_aprendizaje": [
+   "Analizar datos para identificar tendencias, patrones y soluciones a problemas en distintos ámbitos de la sociedad.",
+   "Desarrollar modelos científicos descriptivos, predictivos y prescriptivos, comunicándolos de manera clara para apoyar la toma de decisiones.",
+   "Recibir una formación integral que combina competencias técnicas con valores éticos, fomentando compromiso, emprendimiento y visión de futuro.",
+   "Promover buenas prácticas, ética y responsabilidad social, contribuyendo a la transformación positiva de la sociedad y del medio ambiente."
+  ],
+  "campo_laboral": "Los graduados de la carrera en Ciencia de Datos están preparados para desempeñarse en: director/a, gerente o líder de proyectos de datos, emprendedor/a en análisis de datos y productos/servicios basados en datos, gestor/a de equipos de proyecto en ciencia de datos, analista de datos.",
+  "contacto_telefonos": [
+   "099 715 1239"
+  ],
+  "contacto_correos": [
+   "inscripciones@puce.edu.ec"
+  ],
+  "contacto_direccion": "Avenida 12 de Octubre 1076 y Vicente Ramón Roca",
+  "faltantes": [],
+  "fuente": "https://www.puce.edu.ec/landing-ciencia-de-datos/",
+  "fecha_fuente": "2026-11-26T21:40:41+00:00",
+  "brochure_url": "https://www.puce.edu.ec/docs/dce/landing/pdf/ciencia-de-datos-202401.pdf"
+ },
+ "diseno_grafico": {
+  "nombre": "Diseño gráfico",
+  "precio_real": 3950,
+  "descuento_pct": 27.0,
+  "precio_con_descuento": 2900,
+  "nota_precio": "No incluye matrícula ni seguro",
+  "titulo": "Licenciado/a en Diseño Gráfico",
+  "duracion": "8 semestres",
+  "modalidad": "Presencial",
+  "decano": "Dr. Jorge Albuja",
+  "cargo_decano": "DECANO",
+  "por_que_estudiar": "9 convenios internacionales Aprendizaje activo a través de cátedras compartidas, inmersión dual, movilidad internacional virtual y presencial. Hasta el 27% de descuento sobre los aranceles.",
+  "resultados_aprendizaje": [
+   "Identificar problemas en contextos diversos, aplicando principios éticos y sensibilidad hacia la realidad social y ambiental.",
+   "Relacionar fundamentos teóricos y metodológicos del diseño para crear soluciones visuales con impacto positivo.",
+   "Diseñar mensajes gráficos efectivos con alto valor simbólico que respondan a necesidades comunicativas específicas.",
+   "Ejecutar proyectos optimizando recursos, herramientas y tecnologías para garantizar procesos eficientes.",
+   "Evaluar el impacto de propuestas gráficas, integrando criterios de pertinencia, estética y funcionalidad."
+  ],
+  "campo_laboral": "Los graduados de la carrera en Diseño Gráfico están preparados para desempeñarse en: supervisor/a de producción gráfica, ilustrador/a, fotógrafo/a, director/a creativo y de proyectos, gestor/a de diseño, investigador/a en comunicación gráfica, asesor/a en comunicación gráfica, emprendedor/a en negocios creativos, y diseñador/a de información, persuasión, identidad gráfica, educación y comunicación.",
+  "contacto_telefonos": [
+   "099 715 1239"
+  ],
+  "contacto_correos": [
+   "inscripciones@puce.edu.ec"
+  ],
+  "contacto_direccion": "Avenida 12 de Octubre 1076 y Vicente Ramón Roca",
+  "faltantes": [],
+  "fuente": "https://www.puce.edu.ec/landing-diseno-grafico/",
+  "fecha_fuente": "2026-11-26T21:40:46+00:00",
+  "brochure_url": "https://www.puce.edu.ec/docs/dce/landing/pdf/diseno-grafico-202401.pdf"
+ },
+ "ingenieria_civil": {
+  "nombre": "Ingeniería Civil",
+  "precio_real": 3950,
+  "descuento_pct": 27.0,
+  "precio_con_descuento": 2900,
+  "nota_precio": "No incluye matrícula ni seguro",
+  "titulo": "Ingeniero/a Civil",
+  "duracion": "9 semestres",
+  "modalidad": "Presencial",
+  "decano": "Dr. Jorge Albuja",
+  "cargo_decano": "DECANO",
+  "por_que_estudiar": "30 convenios internacionales Prácticas preprofesionales en nuestro laboratorio laboratorio de suelos y resistencia de materiales. Hasta el 27% de descuento sobre los aranceles.",
+  "resultados_aprendizaje": [
+   "Planificar proyectos de ingeniería civil en especialidades como vial, estructural y sanitaria, integrando criterios técnicos y normativos.",
+   "Diseñar soluciones de infraestructura que minimicen el impacto ambiental y optimicen el uso de recursos naturales.",
+   "Administrar proyectos con visión empresarial, promoviendo responsabilidad social, honestidad y equidad.",
+   "Liderar equipos multidisciplinarios, aplicando habilidades técnicas y de gestión en contextos complejos.",
+   "Desarrollar emprendimientos innovadores que respondan a necesidades sociales y ambientales con un enfoque sostenible.."
+  ],
+  "campo_laboral": "Los graduados de la carrera en Ingeniería Civil están preparados para desempeñarse en: gerente de empresas municipales y estatales, gerente de empresas constructoras, viales, inmobiliarias y consultoras, gerente de proyecto, superintendente de proyecto, supervisor/a técnico/a, residente de obra, calculista, consultor/a.",
+  "contacto_telefonos": [
+   "099 715 1239"
+  ],
+  "contacto_correos": [
+   "inscripciones@puce.edu.ec"
+  ],
+  "contacto_direccion": "Avenida 12 de Octubre 1076 y Vicente Ramón Roca",
+  "faltantes": [],
+  "fuente": "https://www.puce.edu.ec/landing-ingenieria-civil/",
+  "fecha_fuente": "2026-11-26T21:40:52+00:00",
+  "brochure_url": "https://www.puce.edu.ec/docs/dce/landing/pdf/ingenieria-civil-202401.pdf"
+ },
+ "sistemas_informacion": {
+  "nombre": "Ingeniería en Sistemas de información",
+  "precio_real": 3950,
+  "descuento_pct": 27.0,
+  "precio_con_descuento": 2900,
+  "nota_precio": "No incluye matrícula ni seguro",
+  "titulo": "Ingeniero/a en Sistemas de Información",
+  "duracion": "8 semestres",
+  "modalidad": "Presencial",
+  "decano": "Dr. Jorge Albuja",
+  "cargo_decano": "DECANO",
+  "por_que_estudiar": "55 convenios internacionales Alianzas con Cisco, Amazon Web Services y Oracle Hasta el 27% de descuento sobre los aranceles.",
+  "resultados_aprendizaje": [
+   "Desarrollar sistemas informáticos aplicando pensamiento lógico, matemático y algorítmico a diversos campos científicos.",
+   "Diseñar servicios de información que integren fundamentos matemáticos y de negocios para compartir datos en múltiples plataformas.",
+   "Analizar información estadística para generar datos que apoyen la toma de decisiones estratégicas.",
+   "Integrar conocimientos de ingeniería, administración y economía para liderar proyectos tecnológicos con impacto social.",
+   "Gestionar eficientemente las Tecnologías de la Información y Comunicación (TIC) para garantizar servicios profesionales de calidad."
+  ],
+  "campo_laboral": "Los graduados de la carrera en Ingeniería en Sistemas de Información están preparados para desempeñarse en: gerente de empresas tecnológicas, gerente de departamentos de tecnologías, desarrollador/a de sistemas de información (apps, juegos, sistemas informáticos), consultor/a de sistemas de información, Data Warehouse y Data Mining, diseñador/a y administrador/a de bases de datos, investigador/a, innovador/a de aplicaciones informáticas.",
+  "contacto_telefonos": [
+   "099 715 1239"
+  ],
+  "contacto_correos": [
+   "inscripciones@puce.edu.ec"
+  ],
+  "contacto_direccion": "Avenida 12 de Octubre 1076 y Vicente Ramón Roca",
+  "faltantes": [],
+  "fuente": "https://www.puce.edu.ec/landing-ingenieria-en-sistemas-de-informacion/",
+  "fecha_fuente": "2026-11-26T21:40:59+00:00",
+  "brochure_url": "https://www.puce.edu.ec/docs/dce/landing/pdf/ingenieria-en-sistemas-de-informacion-202401.pdf"
+ },
+ "biologia": {
+  "nombre": "Biología",
+  "precio_real": 3950,
+  "descuento_pct": 27.0,
+  "precio_con_descuento": 2900,
+  "nota_precio": "No incluye matrícula ni seguro",
+  "titulo": "Biólogo/a",
+  "duracion": "8 semestres",
+  "modalidad": "Presencial",
+  "decano": "Dra. Lorena Meneses",
+  "cargo_decano": "DECANA",
+  "por_que_estudiar": "30 convenios internacionales Laboratorios de última generación y centros de investigación especializados Hasta el 27% de descuento sobre los aranceles.",
+  "resultados_aprendizaje": [
+   "Analizar procesos biológicos a nivel molecular, celular y ecosistémico para generar soluciones científicas innovadoras.",
+   "Investigar la biodiversidad y los cambios globales, aplicando metodologías rigurosas y éticas.",
+   "Diseñar proyectos de conservación y manejo de recursos naturales con un enfoque interdisciplinario.",
+   "Evaluar el impacto de actividades humanas en los ecosistemas, proponiendo estrategias de mitigación.",
+   "Comunicar hallazgos científicos de manera clara y efectiva para promover la educación y la divulgación ambiental."
+  ],
+  "campo_laboral": "Los graduados de la carrera en Biología están preparados para desempeñarse en: genetista molecular y celular, taxónomo/a y sistemático/a, investigador/a en cambios globales y biodiversidad, científico/a de divulgación, consultor/a en problemas ambientales y sociales, docente e investigador/a en biología.",
+  "contacto_telefonos": [
+   "099 715 1239"
+  ],
+  "contacto_correos": [
+   "inscripciones@puce.edu.ec"
+  ],
+  "contacto_direccion": "Avenida 12 de Octubre 1076 y Vicente Ramón Roca",
+  "faltantes": [],
+  "fuente": "https://www.puce.edu.ec/landing-biologia/",
+  "fecha_fuente": "2026-11-26T21:41:04+00:00",
+  "brochure_url": "https://www.puce.edu.ec/docs/dce/landing/pdf/biologia-202401.pdf"
+ },
+ "quimica": {
+  "nombre": "Química",
+  "precio_real": 3950,
+  "descuento_pct": 29.0,
+  "precio_con_descuento": 2800,
+  "nota_precio": "No incluye matrícula ni seguro",
+  "titulo": "Químico/a",
+  "duracion": "8 semestres",
+  "modalidad": "Presencial",
+  "decano": "Dra. Lorena Meneses",
+  "cargo_decano": "DECANA",
+  "por_que_estudiar": "26 convenios Internacionales Investigación en electroquímica química computacional, nanociencia, nanotecnología, biopolímeros e impacto ambiental Hasta el 29% de descuento sobre los aranceles.",
+  "resultados_aprendizaje": [
+   "En esta carrera, formamos profesionales competentes en el análisis químico e investigación científica con una sólida formación académica en las metodologías analíticas y amplia experiencia en el manejo de técnicas instrumentales.",
+   "Desarrollarás capacidades en el campo investigativo demostrando tu preparación, incorporando valores éticos y sociales a los conocimientos adquiridos."
+  ],
+  "campo_laboral": "El/la químico/a ejerce su profesión en cargos como: Analista químico/a Desarrollador/a y validador/a de métodos analíticos Supervisor/a de control de calidad Investigador/a científico/a Especialista en sistemas de gestión de la calidad Docente e investigador/a universitario/a",
+  "contacto_telefonos": [
+   "099 715 1239"
+  ],
+  "contacto_correos": [
+   "inscripciones@puce.edu.ec"
+  ],
+  "contacto_direccion": "Avenida 12 de Octubre 1076 y Vicente Ramón Roca",
+  "faltantes": [],
+  "fuente": "https://www.puce.edu.ec/landing-quimica/",
+  "fecha_fuente": "2026-11-26T21:41:10+00:00",
+  "brochure_url": "https://www.puce.edu.ec/docs/dce/landing/pdf/quimica-202401.pdf"
+ },
+ "medicina": {
+  "nombre": "Medicina",
+  "precio_real": 5500,
+  "descuento_pct": 18.0,
+  "precio_con_descuento": 4500,
+  "nota_precio": "No incluye matrícula ni seguro",
+  "titulo": "Médico/a",
+  "duracion": "10 semestres + 2 semestres de internado",
+  "modalidad": "Presencial",
+  "decano": "Dr. Felipe Moreno-Piedrahita",
+  "cargo_decano": "DECANO",
+  "por_que_estudiar": "98 convenios internacionales Intercambios a diferentes partes del mundo. Hasta el 18% de descuento sobre los aranceles.",
+  "resultados_aprendizaje": [
+   "Atender integralmente las necesidades de salud de personas, familias y comunidades en todas sus dimensiones.",
+   "Aplicar principios éticos, de calidad y seguridad en la atención médica, utilizando evidencia científica actualizada.",
+   "Colaborar en equipos interdisciplinarios e intersectoriales para abordar desafíos de salud nacionales e internacionales.",
+   "Diseñar estrategias de atención y gestión que promuevan la cobertura universal de salud.",
+   "Integrar conocimientos científicos, culturales y sociales para ofrecer una atención médica humanizada y efectiva."
+  ],
+  "campo_laboral": "Los graduados de la carrera en Medicina están preparados para desempeñarse en: centros de salud, hospitales básicos, hospitales generales, instituciones privadas y públicas, organizaciones gubernamentales y no gubernamentales, la academia, trabajo independiente.",
+  "contacto_telefonos": [
+   "099 715 1239"
+  ],
+  "contacto_correos": [
+   "inscripciones@puce.edu.ec"
+  ],
+  "contacto_direccion": "Avenida 12 de Octubre 1076 y Vicente Ramón Roca",
+  "faltantes": [],
+  "fuente": "https://www.puce.edu.ec/landing-medicina/",
+  "fecha_fuente": "2026-11-26T21:41:15+00:00",
+  "brochure_url": "https://www.puce.edu.ec/docs/dce/landing/pdf/medicina-202401.pdf"
+ },
+ "enfermeria": {
+  "nombre": "Enfermería",
+  "precio_real": 3950,
+  "descuento_pct": 27.0,
+  "precio_con_descuento": 2900,
+  "nota_precio": "No incluye matrícula ni seguro",
+  "titulo": "Licenciado/a en Enfermería",
+  "duracion": "9 semestres",
+  "modalidad": "Presencial",
+  "decano": "Dr. Felipe Moreno-Piedrahita",
+  "cargo_decano": "DECANO",
+  "por_que_estudiar": "23 convenios internacionales Centro de simulación con la más alta tecnología Hasta el 27% de descuento sobre los aranceles.",
+  "resultados_aprendizaje": [
+   "Proveer cuidado integral a personas, familias y comunidades, promoviendo su bienestar y calidad de vida.",
+   "Gestionar servicios de salud con un enfoque ético, eficiente y orientado a la seguridad del paciente.",
+   "Diseñar estrategias de promoción de la salud para prevenir enfermedades y fomentar estilos de vida saludables.",
+   "Investigar problemas de salud pública, aplicando metodologías científicas para generar soluciones innovadoras.",
+   "Liderar equipos de enfermería, coordinando acciones que legitimen el cuidado integral en diversos contextos."
+  ],
+  "campo_laboral": "Los graduados de la carrera en Enfermería están preparados para desempeñarse en: enfermero/a de cuidado directo, jefe de servicio o de sección en instituciones privadas y públicas, docente, investigador/a, coordinador/a de área, director/a de enfermería, consultor/a en áreas de salud y gestión de servicios.",
+  "contacto_telefonos": [
+   "099 715 1239"
+  ],
+  "contacto_correos": [
+   "inscripciones@puce.edu.ec"
+  ],
+  "contacto_direccion": "Avenida 12 de Octubre 1076 y Vicente Ramón Roca",
+  "faltantes": [],
+  "fuente": "https://www.puce.edu.ec/landing-enfermeria/",
+  "fecha_fuente": "2026-11-26T21:41:21+00:00",
+  "brochure_url": "https://www.puce.edu.ec/docs/dce/landing/pdf/enfermeria-202401.pdf"
+ },
+ "odontologia": {
+  "nombre": "Odontología",
+  "precio_real": 5500,
+  "descuento_pct": 27.0,
+  "precio_con_descuento": 4000,
+  "nota_precio": "No incluye matrícula ni seguro",
+  "titulo": "Odontólogo/a",
+  "duracion": "10 semestres",
+  "modalidad": "Presencial",
+  "decano": "Dr. Felipe Moreno Piedrahita",
+  "cargo_decano": "DECANO",
+  "por_que_estudiar": "Única con metodologías innovadoras como Aprendizaje Basado en Problemas, Aprendizaje en Servicio e Integración de la Docencia, Investigación y Vinculación Tronco común con carreras de la salud en el primer semestre Convenios Internacionales",
+  "resultados_aprendizaje": [
+   "Realizar evaluaciones clínicas y diagnósticos precisos para diseñar tratamientos odontológicos efectivos.",
+   "Investigar problemas de salud bucal, generando soluciones basadas en evidencia científica para el país.",
+   "Diseñar programas de promoción y prevención de la salud bucal en diversos contextos comunitarios.",
+   "Diagnosticar afecciones del aparato estomatognático y sus implicancias en estructuras y órganos vecinos.",
+   "Aplicar técnicas especializadas en operatoria dental, endodoncia, periodoncia, ortodoncia, cirugía oral y rehabilitación."
+  ],
+  "campo_laboral": "Los graduados de la carrera en Odontología están preparados para desempeñarse en: Sistema Nacional de Salud, hospitales y consultorios públicos y privados, emprendimientos en consultorios propios.",
+  "contacto_telefonos": [
+   "099 715 1239",
+   "0995 984 9962"
+  ],
+  "contacto_correos": [
+   "inscripciones@puce.edu.ec",
+   "rjribadeneira@puce.edu.ec"
+  ],
+  "contacto_direccion": "Avenida 12 de Octubre 1076 y Vicente Ramón Roca",
+  "faltantes": [],
+  "fuente": "https://www.puce.edu.ec/landing-odontologia/",
+  "fecha_fuente": "2026-11-26T21:41:27+00:00",
+  "brochure_url": "https://www.puce.edu.ec/docs/dce/landing/pdf/odontologia-202403.pdf"
+ },
+ "fisioterapia": {
+  "nombre": "Fisioterapia",
+  "precio_real": 3950,
+  "descuento_pct": 27.0,
+  "precio_con_descuento": 2900,
+  "nota_precio": "No incluye matrícula ni seguro",
+  "titulo": "Licenciado/a en Fisioterapia",
+  "duracion": "8 semestres",
+  "modalidad": "Presencial",
+  "decano": "Dr. Felipe Moreno-Piedrahita",
+  "cargo_decano": "DECANO",
+  "por_que_estudiar": "Centro de simulación con la más alta tecnología Prácticas preprofesionales en hospitales, centros deportivos y de especialidades Hasta el 27% de descuento sobre los aranceles.",
+  "resultados_aprendizaje": [
+   "Diseñar programas de rehabilitación y tratamientos basados en diagnósticos fisioterapéuticos precisos y estandarizados.",
+   "Aplicar un enfoque holístico en cuidados fisioterapéuticos, integrando empatía, ética y pensamiento crítico.",
+   "Desarrollar proyectos de investigación multidisciplinarios en fisioterapia y salud, alineados con necesidades sociales.",
+   "Fomentar el autocuidado en la población, identificando necesidades de salud reales y potenciales.",
+   "Liderar intervenciones en entornos clínicos, escolares, industriales o deportivos, promoviendo ambientes proactivos."
+  ],
+  "campo_laboral": "Los graduados de la carrera en Fisioterapia están preparados para desempeñarse en: fisioterapeuta clínico/a, escolar, industrial, deportivo/a, fisioterapeuta de bienestar, asistencia en discapacidades, prevención, rehabilitación funcional con tecnología avanzada, especialista en diagnóstico y tratamiento, fisioterapeuta holístico/a, promotor/a de autocuidado, identificador/a de necesidades de salud y creador/a de ambientes proactivos.",
+  "contacto_telefonos": [
+   "099 715 1239"
+  ],
+  "contacto_correos": [
+   "inscripciones@puce.edu.ec"
+  ],
+  "contacto_direccion": "Avenida 12 de Octubre 1076 y Vicente Ramón Roca",
+  "faltantes": [],
+  "fuente": "https://www.puce.edu.ec/landing-fisioterapia/",
+  "fecha_fuente": "2026-11-26T21:41:32+00:00",
+  "brochure_url": "https://www.puce.edu.ec/docs/dce/landing/pdf/fisioterapia-202401.pdf"
+ },
+ "nutricion": {
+  "nombre": "Nutrición y dietética",
+  "precio_real": 3950,
+  "descuento_pct": 27.0,
+  "precio_con_descuento": 2900,
+  "nota_precio": "No incluye matrícula ni seguro",
+  "titulo": "Licenciado/a en Nutrición y Dietética",
+  "duracion": "9 semestres",
+  "modalidad": "Presencial",
+  "decano": "Dr. Felipe Moreno-Piedrahita",
+  "cargo_decano": "DECANO",
+  "por_que_estudiar": "28 convenios internacionales 2 certificaciones Hasta el 27% de descuento sobre los aranceles.",
+  "resultados_aprendizaje": [
+   "Diseñar planes alimentario-nutricionales personalizados basados en el proceso de cuidado nutricional.",
+   "Aplicar enfoques biopsicosociales e interculturales para atender las necesidades nutricionales a lo largo del ciclo de vida.",
+   "Evaluar el estado nutricional de individuos y comunidades para proponer intervenciones dietoterapéuticas efectivas.",
+   "Gestionar programas de salud y servicios de alimentación con un enfoque ético y orientado a la comunidad.",
+   "Investigar tendencias y desafíos en nutrición para desarrollar soluciones innovadoras en diversos contextos."
+  ],
+  "campo_laboral": "Los graduados de la carrera en Nutrición y Dietética están preparados para desempeñarse en: nutricionista clínico/a, gerente de servicios de salud, gestor de programas de salud, docente, nutricionista escolar, deportivo/a, en servicios de alimentación, en la industria alimentaria, en consulta privada, en fundaciones y proyectos sociales, analista clínico/a o comunitario/a en nutrición y dietética, auditor/a y asesor/a en nutrición y dietética.",
+  "contacto_telefonos": [
+   "099 715 1239"
+  ],
+  "contacto_correos": [
+   "inscripciones@puce.edu.ec"
+  ],
+  "contacto_direccion": "Avenida 12 de Octubre 1076 y Vicente Ramón Roca",
+  "faltantes": [],
+  "fuente": "https://www.puce.edu.ec/landing-nutricion-y-dietetica/",
+  "fecha_fuente": "2026-11-26T21:41:38+00:00",
+  "brochure_url": "https://www.puce.edu.ec/docs/dce/landing/pdf/nutricion-y-dietetica-202401.pdf"
+ },
+ "psicologia_clinica": {
+  "nombre": "Psicología clínica",
+  "precio_real": 3950,
+  "descuento_pct": 27.0,
+  "precio_con_descuento": 2900,
+  "nota_precio": "No incluye matrícula ni seguro",
+  "titulo": "Licenciado/a en Psicología Clínica",
+  "duracion": "9 semestres",
+  "modalidad": "Presencial",
+  "decano": "Dr. Felipe Moreno-Piedrahita",
+  "cargo_decano": "DECANO",
+  "por_que_estudiar": "28 convenios internacionales Laboratorio de psicometría para investigación y evaluación psicológica Hasta el 27% de descuento sobre los aranceles.",
+  "resultados_aprendizaje": [
+   "Aplicar principios éticos y deontológicos en intervenciones psicológicas clínicas y comunitarias.",
+   "Interactuar eficazmente en equipos multi, inter y transdisciplinarios para abordar problemas de salud mental.",
+   "Desarrollar habilidades de comunicación empática para establecer vínculos terapéuticos efectivos.",
+   "Evaluar y diagnosticar trastornos psicológicos utilizando herramientas psicométricas estandarizadas.",
+   "Diseñar intervenciones clínicas que promuevan el bienestar mental con un enfoque en la diversidad y la justicia social."
+  ],
+  "campo_laboral": "Los graduados de la carrera en Psicología Clínica están preparados para desempeñarse en: hospitales generales y de especialidad, proyectos de desarrollo social con grupos especiales, equipos de investigación en salud mental, consulta privada.",
+  "contacto_telefonos": [
+   "099 715 1239"
+  ],
+  "contacto_correos": [
+   "inscripciones@puce.edu.ec"
+  ],
+  "contacto_direccion": "Avenida 12 de Octubre 1076 y Vicente Ramón Roca",
+  "faltantes": [],
+  "fuente": "https://www.puce.edu.ec/landing-psicologia-clinica/",
+  "fecha_fuente": "2026-11-26T21:41:43+00:00",
+  "brochure_url": "https://www.puce.edu.ec/docs/dce/landing/pdf/psicologia-clinica-202401.pdf"
+ },
+ "bioingenieria": {
+  "nombre": "Bioingeniería",
+  "precio_real": 3950,
+  "descuento_pct": 27.0,
+  "precio_con_descuento": 2900,
+  "nota_precio": "No incluye matrícula ni seguro",
+  "titulo": "Bioingeniero/a",
+  "duracion": "8 semestres",
+  "modalidad": "Presencial",
+  "decano": "Dra. Lorena Meneses",
+  "cargo_decano": "DECANA",
+  "por_que_estudiar": "15 convenios Internacionales Laboratorios con instalaciones y equipamiento de punta Hasta el 27% de descuento sobre los aranceles.",
+  "resultados_aprendizaje": [
+   "A analizar, diseñar y gestionar sistemas productivos sostenibles desde la provisión de insumos hasta la entrega de bienes y servicios, integrándolos con eficacia y eficiencia.",
+   "A identificar necesidades del entorno y desarrollar investigación aplicada con la biodiversidad existente, para crear e innovar bienes y servicios.",
+   "A formular, evaluar y gestionar proyectos de inversión, que permitan emprender la creación deunidades productivas de bienes y servicios según criterios de competitividad y sostenibilidad.",
+   "A indagar, interpretar, argumentar y sistematizar la información identificada de las diversas fuentes disponibles, utilizándolas de manera responsable con la sociedad y el ambiente.",
+   "A describir los principios y métodos que fortalecen la cultura de calidad y seguridad, para minimizar los riesgos y eventos adversos, optimizando el talento humano y los recursos materiales y tecnológicos.",
+   "A utilizar de manera eficiente diversas herramientas de liderazgo y comunicación, para el trabajo en equipo en un marco de valores y ética.",
+   "A definir los valores que promuevan la diversidad de cosmovisiones, género y diversidad de capacidades, fomentando la identidad y la equidad.",
+   "Tomarás conciencia de la diversidad en todas las culturas y mercados y fortalecerás tu capacidad para identificar problemas y proponer soluciones comunes en todos los países considerando particularidades locales.",
+   "Aprender de manera autónoma y a actualizarte con los últimos avances en tu campo profesional para lograr su mejora continua y excelencia.",
+   "Mostrarás eficiencia, creatividad y responsabilidad en tu desempeño profesional, apuntando a la excelencia y servicio a los demás.",
+   "Estarás en capacidad de emprender e incubar empresas con base tecnológica, que promuevan el desarrollo socioeconómico local y regional, en un contexto global, considerando el marco legal vigente.",
+   "Contarás con el conocimiento y la experiencia para particiar en proyectos de transferencia, desarrollo y adaptación de tecnologías propias de la bioingeniería para desarrollo y mejoramiento de sistemas productivos.",
+   "Lograrás la integración de varias disciplinas de la ciencia, para alcanzar resultados más eficientes y sostenibles, de tal manera que tus conocimientos serán un aporte para el uso responsable de los recursos naturales."
+  ],
+  "campo_laboral": "El/la bioingeniero/a ejerce su profesión en actividades y cargos como: Gestor/a de sistemas productivos sostenibles Investigador/a en biodiversidad y desarrollo de bienes y servicios Coordinador/a de proyectos de transferencia y desarrollo tecnológico en bioingeniería Emprendedor/a en empresas tecnológicas y desarrollo socioeconómico Especialista en calidad, seguridad y optimización de recursos Profesional multidisciplinario/a en el uso responsable de los recursos naturales",
+  "contacto_telefonos": [
+   "099 715 1239"
+  ],
+  "contacto_correos": [
+   "inscripciones@puce.edu.ec"
+  ],
+  "contacto_direccion": "Avenida 12 de Octubre 1076 y Vicente Ramón Roca",
+  "faltantes": [],
+  "fuente": "https://www.puce.edu.ec/landing-bioingenieria/",
+  "fecha_fuente": "2026-11-26T21:41:48+00:00",
+  "brochure_url": "https://www.puce.edu.ec/docs/dce/landing/pdf/bioingenieria-202401.pdf"
+ },
+ "ciencias_biomedicas": {
+  "nombre": "Ciencias Biomédicas",
+  "precio_real": 3950,
+  "descuento_pct": 27.0,
+  "precio_con_descuento": 2900,
+  "nota_precio": "No incluye matrícula ni seguro",
+  "titulo": "Licenciado/a en Ciencias Biomédicas",
+  "duracion": "8 semestres",
+  "modalidad": "Presencial",
+  "decano": "Dra. Lorena Meneses",
+  "cargo_decano": "DECANA",
+  "por_que_estudiar": "30 convenios internacionales Programa 4+1 para obtener el título de máster con un año más de estudios Hasta el 27% de descuento sobre los aranceles.",
+  "resultados_aprendizaje": [
+   "Identificar necesidades del entorno y diseñar investigaciones para resolver problemas de salud.",
+   "Gestionar proyectos locales y nacionales que impulsen acciones de salud y el desarrollo profesional.",
+   "Analizar datos biomédicos con enfoque social, inclusivo y ambiental.",
+   "Aplicar técnicas de investigación de manera crítica, creativa e innovadora en laboratorios públicos y privados.",
+   "Conocer y respetar normas éticas internacionales en investigación con animales, humanos y publicaciones científicas."
+  ],
+  "campo_laboral": "Los graduados de la carrera en Ciencias Biomédicas están preparados para desempeñarse en: investigador/a en salud pública, científico/a de laboratorio, epidemiólogo/a, especialista en salud ambiental, analista de datos científicos.",
+  "contacto_telefonos": [
+   "099 715 1239"
+  ],
+  "contacto_correos": [
+   "inscripciones@puce.edu.ec"
+  ],
+  "contacto_direccion": "Avenida 12 de Octubre 1076 y Vicente Ramón Roca",
+  "faltantes": [],
+  "fuente": "https://www.puce.edu.ec/landing-ciencias-biomedicas/",
+  "fecha_fuente": "2026-11-26T21:41:56+00:00",
+  "brochure_url": "https://www.puce.edu.ec/docs/dce/landing/pdf/ciencias-biomedicas-202401.pdf"
+ },
+ "laboratorio_clinico": {
+  "nombre": "Laboratorio Clínico",
+  "precio_real": 3950,
+  "descuento_pct": 27.0,
+  "precio_con_descuento": 2900,
+  "nota_precio": "No incluye matrícula ni seguro",
+  "titulo": "Licenciado/a en Laboratorio Clínico",
+  "duracion": "9 semestres",
+  "modalidad": "Presencial",
+  "decano": "Dr. Felipe Moreno-Piedrahita",
+  "cargo_decano": "DECANO",
+  "por_que_estudiar": "10 convenios internacionales Centro de simulación con la más alta tecnología Hasta el 27% de descuento sobre los aranceles.",
+  "resultados_aprendizaje": [
+   "Aplicar principios éticos en la atención al paciente y en la investigación en salud dentro del laboratorio clínico.",
+   "Colaborar activamente en equipos inter y multidisciplinarios para generar conocimiento y soluciones en salud.",
+   "Integrar conocimientos teóricos, técnicos e investigativos en la práctica del laboratorio clínico según el contexto.",
+   "Administrar laboratorios clínicos con eficiencia, resolviendo problemas y demostrando liderazgo e innovación.",
+   "Desarrollar investigaciones científicas que respondan a las necesidades de salud de la comunidad."
+  ],
+  "campo_laboral": "Los graduados de la carrera en Laboratorio Clínico están preparados para desempeñarse en: gerente de calidad en instituciones de salud o laboratorios clínicos, responsable de satisfacción de la demanda social en instituciones de salud o laboratorios clínicos, investigador/a científico/a generador/a de proyectos de investigación, especialista de laboratorio clínico en análisis y tecnología de vanguardia.",
+  "contacto_telefonos": [
+   "099 715 1239"
+  ],
+  "contacto_correos": [
+   "inscripciones@puce.edu.ec"
+  ],
+  "contacto_direccion": "Avenida 12 de Octubre 1076 y Vicente Ramón Roca",
+  "faltantes": [],
+  "fuente": "https://www.puce.edu.ec/landing-laboratorio-clinico/",
+  "fecha_fuente": "2026-11-26T21:42:03+00:00",
+  "brochure_url": "https://www.puce.edu.ec/docs/dce/landing/pdf/laboratorio-clinico-202508.pdf"
+ },
+ "microbiologia": {
+  "nombre": "Microbiología",
+  "precio_real": 3950,
+  "descuento_pct": 27.0,
+  "precio_con_descuento": 2900,
+  "nota_precio": "No incluye matrícula ni seguro",
+  "titulo": "Licenciado/a en Microbiología",
+  "duracion": "8 semestres",
+  "modalidad": "Presencial",
+  "decano": "Dra. Lorena Meneses",
+  "cargo_decano": "DECANA",
+  "por_que_estudiar": "30 convenios internacionales Prácticas preprofesionales en programas internacionales Hasta el 27% de descuento sobre los aranceles.",
+  "resultados_aprendizaje": [
+   "Formular propuestas y ejecutar proyectos de investigación para resolver problemas relacionados con microorganismos.",
+   "Aplicar técnicas microbiológicas en la identificación, producción y control de microorganismos para diversos sectores.",
+   "Desarrollar soluciones biotecnológicas que promuevan la salud humana, animal, vegetal y la sostenibilidad ambiental.",
+   "Gestionar laboratorios de microbiología con eficiencia, asegurando calidad y cumplimiento de normativas.",
+   "Integrar principios éticos y de responsabilidad social en la práctica profesional y la investigación científica."
+  ],
+  "campo_laboral": "Los graduados de la carrera en Microbiología están preparados para desempeñarse en: biólogo/a molecular, biotecnólogo/a microbiano/a, especialista en control de calidad biológica, gestor/a de proyectos en el área de microbiología, administrador/a de laboratorios de microbiología, microbiólogo/a clínico/a humano/a, veterinario/a, ambiental y ecólogo/a microbiano/a, industrial, de suelos y agrícola, de aguas, alimentos y ambientes.",
+  "contacto_telefonos": [
+   "099 715 1239"
+  ],
+  "contacto_correos": [
+   "inscripciones@puce.edu.ec"
+  ],
+  "contacto_direccion": "Avenida 12 de Octubre 1076 y Vicente Ramón Roca",
+  "faltantes": [],
+  "fuente": "https://www.puce.edu.ec/landing-microbiologia/",
+  "fecha_fuente": "2026-11-26T21:42:08+00:00",
+  "brochure_url": "https://www.puce.edu.ec/docs/dce/landing/pdf/microbiologia-202401.pdf"
+ },
+ "veterinaria": {
+  "nombre": "Medicina Veterinaria",
+  "precio_real": 3950,
+  "descuento_pct": 11.0,
+  "precio_con_descuento": 3500,
+  "nota_precio": "No incluye matrícula ni seguro",
+  "titulo": "Médico/a Veterinario/a",
+  "duracion": "9 semestres",
+  "modalidad": "Presencial",
+  "decano": "Dr. Felipe Moreno-Piedrahita",
+  "cargo_decano": "DECANO",
+  "por_que_estudiar": "Única con metodologías innovadoras como Integración de la Docencia, visión de One Health. Principios de investigación e innovación para el cuidado de las especies domésticas y silvestres Convenios internacionales fundaciones de ayuda animal, clínicas veterinarias, INABIO, Fundación Zoológica del Ecuador, Universidades red AUSJAL. Enfoque en prevención, diagnóstico, técnicas quirúrgicas, investigación e innovación",
+  "resultados_aprendizaje": [
+   "Diagnosticar y tratar enfermedades en especies domésticas y silvestres con un enfoque ético y basado en evidencia científica.",
+   "Diseñar estrategias de prevención y promoción de la salud animal, integrando el concepto de One Health.",
+   "Aplicar técnicas quirúrgicas avanzadas para el cuidado y bienestar de diversas especies.",
+   "Investigar problemas de salud animal y ambiental, generando soluciones innovadoras y sostenibles.",
+   "Colaborar en equipos interdisciplinarios para abordar desafíos de salud integral en contextos nacionales e internacionales."
+  ],
+  "campo_laboral": "Los graduados de la carrera en Medicina Veterinaria están preparados para desempeñarse en: hospitales y clínicas de pequeñas y grandes especies, zoológicos, emprendimientos con clínicas o empresas pecuarias, laboratorios de diagnóstico veterinario, instituciones gubernamentales.",
+  "contacto_telefonos": [
+   "099 715 1239",
+   "0998 942 3833"
+  ],
+  "contacto_correos": [
+   "inscripciones@puce.edu.ec",
+   "lmgranados@puce.edu.ec"
+  ],
+  "contacto_direccion": "Avenida 12 de Octubre 1076 y Vicente Ramón Roca",
+  "faltantes": [],
+  "fuente": "https://www.puce.edu.ec/landing-veterinaria/",
+  "fecha_fuente": "2026-11-26T21:42:13+00:00",
+  "brochure_url": "https://www.puce.edu.ec/docs/dce/landing/pdf/veterinaria-202403.pdf"
+ },
+ "derecho": {
+  "nombre": "Derecho",
+  "precio_real": 3950,
+  "descuento_pct": 27.0,
+  "precio_con_descuento": 2900,
+  "nota_precio": "No incluye matrícula ni seguro",
+  "titulo": "Abogado/a",
+  "duracion": "9 semestres",
+  "modalidad": "Presencial o Semipresencial",
+  "decano": "Dra. Ruth Elizabeth García Alarcón",
+  "cargo_decano": "DECANA",
+  "por_que_estudiar": "8 convenios CICR, ACNUR, CJ, NED Centro de Derechos humanos para la promoción de derechos e investigación jurídica. Hasta el 27% de descuento sobre los aranceles.",
+  "resultados_aprendizaje": [
+   "Identificar fenómenos sociales nacionales e internacionales con relevancia jurídica.",
+   "Analizar y resolver problemas jurídicos aplicando principios del Derecho y técnicas interdisciplinarias.",
+   "Comunicar de manera efectiva y precisa situaciones jurídicas en formatos oral, escrito y digital.",
+   "Diseñar soluciones jurídicas fundamentadas que promuevan el diálogo, la equidad y la justicia social.",
+   "Ejercer la profesión con liderazgo, autonomía y responsabilidad social bajo principios éticos y valores cristianos."
+  ],
+  "campo_laboral": "Los graduados en Derecho están preparados para desempeñarse como abogados en ejercicio libre o en instituciones públicas y privadas, patrocinadores de causas voluntarias y contenciosas, asesores legales en empresas y organizaciones, investigadores en temas jurídicos y de derechos humanos, así como especialistas en áreas como derecho constitucional, civil, penal, laboral, ambiental, informático, mercantil, empresarial, financiero, tributario, comercio exterior y administración pública.",
+  "contacto_telefonos": [
+   "099 715 1239"
+  ],
+  "contacto_correos": [
+   "inscripciones@puce.edu.ec"
+  ],
+  "contacto_direccion": "Avenida 12 de Octubre 1076 y Vicente Ramón Roca",
+  "faltantes": [],
+  "fuente": "https://www.puce.edu.ec/landing-derecho/",
+  "fecha_fuente": "2026-11-26T21:42:30+00:00",
+  "brochure_url": "https://www.puce.edu.ec/docs/dce/landing/pdf/derecho-202401.pdf"
+ },
+ "relaciones_internacionales": {
+  "nombre": "Relaciones Internacionales",
+  "precio_real": 3950,
+  "descuento_pct": 37.0,
+  "precio_con_descuento": 2500,
+  "nota_precio": "No incluye matrícula ni seguro",
+  "titulo": "LICENCIADO/A EN RELACIONES INTERNACIONALES",
+  "duracion": "8 semestres",
+  "modalidad": "Presencial",
+  "decano": "Dra. Elizabeth García",
+  "cargo_decano": "DECANA",
+  "por_que_estudiar": "21 convenios internacionales 3 itinerarios de especialización Hasta el 37% de descuento sobre los aranceles.",
+  "resultados_aprendizaje": [
+   "Conocerás teorías, metodologías y enfoques interdisciplinarios que combinan política, economía, derecho, historia, sociología y cultura.",
+   "Aprenderás a analizar fenómenos internacionales desde dimensiones políticas, sociales, económicas, jurídicas y culturales, identificando tendencias y su impacto en actores como Estados, empresas y movimientos sociales.",
+   "Aplicarás enfoques analíticos para comprender problemas globales, políticas exteriores y procesos de integración regional con visión andina y latinoamericana.",
+   "Incorporarás en tus estudios perspectivas éticas, normativas, de género, interculturales y humanistas, priorizando la inclusión y la atención a grupos vulnerables."
+  ],
+  "campo_laboral": "Como Licenciado/a en Relaciones Internacionales de la PUCE podrás desempeñarte como: Gestor/a de programas y proyectos de cooperación internacional. Funcionario/a del servicio exterior o asesor/a en políticas y estrategias internacionales en el sector público y privado. Especialista en internacionalización de empresas y organizaciones. Gestor/a y analista de negociación y resolución de conflictos. Asesor/a en seguridad ciudadana e internacional. Director/a o consultor/a en ONG y entidades privadas vinculadas a relaciones internacionales. Investigador/a y docente universitario/a. Consultor/a especializado/a en relaciones internacionales.",
+  "contacto_telefonos": [
+   "099 715 1239"
+  ],
+  "contacto_correos": [
+   "inscripciones@puce.edu.ec"
+  ],
+  "contacto_direccion": "Avenida 12 de Octubre 1076 y Vicente Ramón Roca",
+  "faltantes": [],
+  "fuente": "https://www.puce.edu.ec/landing-relaciones-internacionales/",
+  "fecha_fuente": "2026-11-26T21:42:36+00:00",
+  "brochure_url": "https://www.puce.edu.ec/docs/dce/landing/pdf/relaciones-internacionales-202401.pdf"
+ },
+ "comunicacion": {
+  "nombre": "Comunicación",
+  "precio_real": 3950,
+  "descuento_pct": 37.0,
+  "precio_con_descuento": 2500,
+  "nota_precio": "No incluye matrícula ni seguro",
+  "titulo": "LICENCIADO/A EN COMUNICACIÓN",
+  "duracion": "8 semestres",
+  "modalidad": "Presencial",
+  "decano": "Dra. Victoria Palacios Mieles",
+  "cargo_decano": "DECANA",
+  "por_que_estudiar": "Convenios internacionales Trabajo práctico Hasta el 37% de descuento sobre los aranceles. Cuenta con La Quadra medio de comunicación propio para practicar desde el 1er semestre",
+  "resultados_aprendizaje": [
+   "A vincular la comunicación con la tecnología y la innovación y a ser contadores de historias en múltiples formatos y plataformas, utilizando las narrativas emergentes.",
+   "A ser generadores de contenido, estrategas de comunicación y storytellers con una visión crítica y creativa.",
+   "A manejar con destreza el lenguaje tanto oral como escrito, de acuerdo con las normas gramaticales, lexicales y ortográficas.",
+   "A producir contenidos periodísticos en múltiples formatos y a ser periodista de medios de comunicación tradicionales y digitales.",
+   "A desenvolverse en el entorno del marketing digital y de la ciencia de datos.",
+   "A generar contenidos para empresas y/o marcas y producir historias y experiencias significativas que conecten a estas con sus distintos públicos y que contribuyan a su posicionamiento.",
+   "A construir empresas en torno a la comunicación y al periodismo que sean rentables, que cuenten con un modelo de negocio específico y que generen impacto social y económico."
+  ],
+  "campo_laboral": "El Licenciado/a en Comunicación está preparado/a para desempeñarse como: Estratega y asesor de Comunicación. Consultor en Comunicación. Creador de contenidos multiplataforma. Periodista. Creador audiovisual. Experto en datos y marketing digital. Creador de medios de comunicación digitales. Curador de contenidos. Empresario en el campo de los medios digitales y de la comunicación.",
+  "contacto_telefonos": [
+   "099 715 1239"
+  ],
+  "contacto_correos": [
+   "inscripciones@puce.edu.ec"
+  ],
+  "contacto_direccion": "Avenida 12 de Octubre 1076 y Vicente Ramón Roca",
+  "faltantes": [],
+  "fuente": "https://www.puce.edu.ec/landing-comunicacion/",
+  "fecha_fuente": "2026-11-26T21:42:41+00:00",
+  "brochure_url": "https://www.puce.edu.ec/docs/dce/landing/pdf/comunicacion-202401.pdf"
+ },
+ "lenguas_aplicadas": {
+  "nombre": "Lenguas aplicadas a los estudios globales",
+  "precio_real": 3950,
+  "descuento_pct": 37.0,
+  "precio_con_descuento": 2500,
+  "nota_precio": "No incluye matrícula ni seguro",
+  "titulo": "Licenciado/a en Lenguas Aplicadas a los Estudios Globales",
+  "duracion": "8 semestres",
+  "modalidad": "Presencial",
+  "decano": "Dra. Victoria Palacios",
+  "cargo_decano": "DECANA",
+  "por_que_estudiar": "37 convenios internacionales. Docentes con títulos de cuarto nivel, otorgados por importantes universidades de Francia, Alemania, Armenia, EE.UU. e Italia. Hasta el 37% de descuento sobre los aranceles.",
+  "resultados_aprendizaje": [
+   "A dominar distintas lenguas, a analizar realidades globales y a desarrollar el pensamiento crítico. A alcanzar un conocimiento intercultural y lingüístico que permitirá a los estudiantes desenvolverse dentro del campo de los estudios globales, en sus diferentes niveles de complejidad e interactuar en procesos de mediación intercultural.",
+   "A manejar conocimientos relacionados a ciudadanía global, cultura de paz, relaciones públicas y cooperación intercultural para el desarrollo.",
+   "A interpretar las realidades del mundo mediante estudios de modelos y teorías de las humanidades. Esto les permitirá tener un manejo intercultural, político, socioeconómico y técnico de los estudios globales. Además, tendrán la capacidad para aplicar procesos de investigación científica para solucionar problemáticas del mundo con enfoques interdisciplinarios."
+  ],
+  "campo_laboral": "El/la licenciado en Lenguas Aplicadas a los Estudios Globales cuenta con una sólida formación para desempeñarse en organizaciones gubernamentales, no gubernamentales, privadas o públicas, nacionales, internacionales y multinacionales en cargos como: Mediadores que propicien el dialogo entre diversos actores y sectores, que logren alcanzar acuerdos y consensos locales, regionales, nacionales, internacionales y globales. Dinamizadores de intercambios internculturales y propulsores de proyectos propios y emprendimientos con un tinte cultural. Propulsores de la actividad cultural, política, económica, de cooperación, de la integración humana y de la producción de bienes y servicios en escenarios nacionales e internacionales. TIPO DE ESPECIALISTAS: Gestor/a cultural Coordinador/a de acuerdos de cooperación Facilitador/a de consensos Promotor/a de movilidad y desarrollo Experto/a en estudios globales",
+  "contacto_telefonos": [
+   "099 715 1239"
+  ],
+  "contacto_correos": [
+   "inscripciones@puce.edu.ec"
+  ],
+  "contacto_direccion": "Avenida 12 de Octubre 1076 y Vicente Ramón Roca",
+  "faltantes": [],
+  "fuente": "https://www.puce.edu.ec/landing-lenguas-aplicadas-a-los-estudios-globales/",
+  "fecha_fuente": "2026-11-26T21:42:45+00:00",
+  "brochure_url": "https://www.puce.edu.ec/docs/dce/landing/pdf/lenguas-aplicadas-202401.pdf"
+ },
+ "linguistica": {
+  "nombre": "Lingüística",
+  "precio_real": 3950,
+  "descuento_pct": 37.0,
+  "precio_con_descuento": 2500,
+  "nota_precio": "No incluye matrícula ni seguro",
+  "titulo": "Licenciado/a en LingÜística",
+  "duracion": "8 semestres",
+  "modalidad": "Presencial",
+  "decano": "Dra. Victoria Palacios",
+  "cargo_decano": "DECANA",
+  "por_que_estudiar": "25 convenios internacionales convenios con Universidades de Alemania y Francia para estudiar un semestre Hasta el 37% de descuento sobre los aranceles.",
+  "resultados_aprendizaje": [
+   "Analizar la relación entre lengua, sociedad y cultura para comprender cómo influyen en la comunicación humana.",
+   "Desarrollar competencias en traducción e interpretación aplicando conocimientos lingüísticos avanzados.",
+   "Investigar lenguas en riesgo de extinción y proponer estrategias para su revitalización.",
+   "Diseñar proyectos académicos y profesionales en torno al estudio de la diversidad lingüística.",
+   "Integrar habilidades multilingües para desenvolverse en contextos académicos y laborales internacionales."
+  ],
+  "campo_laboral": "Los graduados de la Licenciatura en Lingüística están preparados para desempeñarse en: instituciones educativas y de enseñanza de idiomas, proyectos de investigación lingüística y cultural, organismos nacionales e internacionales dedicados a la preservación de lenguas, sectores públicos y privados que requieren traducción e interpretación, así como en contextos académicos y profesionales en el extranjero gracias a su formación multilingüe.",
+  "contacto_telefonos": [
+   "099 715 1239"
+  ],
+  "contacto_correos": [
+   "inscripciones@puce.edu.ec"
+  ],
+  "contacto_direccion": "Avenida 12 de Octubre 1076 y Vicente Ramón Roca",
+  "faltantes": [],
+  "fuente": "https://www.puce.edu.ec/landing-linguistica/",
+  "fecha_fuente": "2026-11-26T21:42:51+00:00",
+  "brochure_url": "https://www.puce.edu.ec/docs/dce/landing/pdf/linguistica-202401.pdf"
+ },
+ "literatura": {
+  "nombre": "Literatura",
+  "precio_real": 3950,
+  "descuento_pct": 37.0,
+  "precio_con_descuento": 2500,
+  "nota_precio": "No incluye matrícula ni seguro",
+  "titulo": "Licenciado/a en Literatura",
+  "duracion": "8 semestres",
+  "modalidad": "Presencial",
+  "decano": "Dra. Victoria Palacios",
+  "cargo_decano": "DECANA",
+  "por_que_estudiar": "25 convenios internacionales. Docente especialistas en crítica literaria, escritores, poetas y articulistas. Hasta el 37% de descuento sobre los aranceles.",
+  "resultados_aprendizaje": [
+   "A formular proyectos y productos comunicacionales con énfasis en el lenguaje, la teoría literaria, el análisis y la interpretación de textos en un ambiente de investigación responsable, que permita tomar conciencia",
+   "sobre los problemas fundamentales de la realidad.",
+   "A reconocer el lenguaje como elemento fundamental de la formación humana.",
+   "A incorporar la cultura de la investigación, para procesar la información pertinente, confiable y precisa con especial énfasis en las áreas de lengua y literatura.",
+   "A aplicar los conocimientos fundamentales de los diversos niveles, funciones y registros del lenguaje, para realizar una lectura minuciosa y atenta de los textos y de sus manifestaciones culturales y conseguir una interpretación pertinente.",
+   "A fortalecer procesos de investigación y análisis sintáctico y semántico que posibiliten la reflexión de las diferentes problemáticas en el uso oral y escrito de la lengua española y su aplicación mediante la creación de textos escritos que atiendan a la sintaxis, la lógica y la pertinencia. Serás capaz de demostrar un desarrollo ordenado y pensamiento crítico en la producción de textos escritos y orales."
+  ],
+  "campo_laboral": "El/la licenciado/a en Literatura está preparado/a para desempeñarse como: Editor/a o corrector/a de textos en diferentes medios y empresas. Escritor/a independiente o editor en compañías de producción de textos impresos o digitales. Asesor/a pedagógico y literario en instituciones educativas y culturales. Orientador/a para librerías, bibliotecas y fundaciones culturales. Gestor de proyectos culturales en el ámbito editorial e interdisciplinarios. Crítico/a literario/a en revistas especializadas, periódicos y magazines con secciones culturales. Generador/a de contenidos para blogs, redes sociales, páginas web, podcasts. Docente de Lengua Castellana y Literatura en educación básica, bachillerato y superior.",
+  "contacto_telefonos": [
+   "099 715 1239"
+  ],
+  "contacto_correos": [
+   "inscripciones@puce.edu.ec"
+  ],
+  "contacto_direccion": "Avenida 12 de Octubre 1076 y Vicente Ramón Roca",
+  "faltantes": [],
+  "fuente": "https://www.puce.edu.ec/landing-literatura/",
+  "fecha_fuente": "2026-11-26T21:42:57+00:00",
+  "brochure_url": "https://www.puce.edu.ec/docs/dce/landing/pdf/literatura-202401.pdf"
+ },
+ "educacion_inicial": {
+  "nombre": "Educación inicial",
+  "precio_real": 3950,
+  "descuento_pct": 37.0,
+  "precio_con_descuento": 2500,
+  "nota_precio": "No incluye matrícula ni seguro",
+  "titulo": "Licenciado/a en Educación Inicial",
+  "duracion": "8 semestres",
+  "modalidad": "Presencial",
+  "decano": "Dra. Victoria Palacios Mieles",
+  "cargo_decano": "DECANA",
+  "por_que_estudiar": "28 convenios internacionales Forma parte de Red Primera Infancia (REDPI) Hasta el 37% de descuento sobre los aranceles.",
+  "resultados_aprendizaje": [
+   "Diseñar ambientes de aprendizaje motivadores, inclusivos e integradores con responsabilidad social y ética.",
+   "Aplicar estrategias pedagógicas y metodológicas fundamentadas en teorías educativas y sociales.",
+   "Integrar tecnologías de la información y entornos virtuales como herramientas de apoyo al aprendizaje.",
+   "Elaborar proyectos educativos basados en pluralidad, interdisciplinariedad, interculturalidad y respeto al medioambiente.",
+   "Desarrollar investigaciones pedagógicas y socioeducativas que respondan a las necesidades de la primera infancia."
+  ],
+  "campo_laboral": "Los graduados de la Licenciatura en Educación Inicial están preparados para desempeñarse en: instituciones educativas públicas y privadas de nivel inicial, centros de desarrollo infantil, programas comunitarios y gubernamentales enfocados en la niñez, universidades y centros de investigación en pedagogía, así como en proyectos socioeducativos y culturales orientados a la primera infancia. ¿Qué aprenderás en esta carrera? Al final de tu carrera, serás capaz de: Diseñar ambientes de aprendizaje motivadores, inclusivos e integradores con responsabilidad social y ética. Aplicar estrategias pedagógicas y metodológicas fundamentadas en teorías educativas y sociales. Integrar tecnologías de la información y entornos virtuales como herramientas de apoyo al aprendizaje. Elaborar proyectos educativos basados en pluralidad, interdisciplinariedad, interculturalidad y respeto al medioambiente. Desarrollar investigaciones pedagógicas y socioeducativas que respondan a las necesidades de la primera infancia.",
+  "contacto_telefonos": [
+   "099 715 1239"
+  ],
+  "contacto_correos": [
+   "inscripciones@puce.edu.ec"
+  ],
+  "contacto_direccion": "Avenida 12 de Octubre 1076 y Vicente Ramón Roca",
+  "faltantes": [],
+  "fuente": "https://www.puce.edu.ec/landing-educacion-inicial-presencial/",
+  "fecha_fuente": "2026-11-26T21:43:02+00:00",
+  "brochure_url": "https://www.puce.edu.ec/docs/dce/landing/pdf/educacion-inicial-presencial-202401.pdf"
+ },
+ "psicologia_educativa": {
+  "nombre": "Psicología educativa",
+  "precio_real": 3950,
+  "descuento_pct": 27.0,
+  "precio_con_descuento": 2900,
+  "nota_precio": "No incluye matrícula ni seguro",
+  "titulo": "Licenciado/a en Psicología Educativa",
+  "duracion": "9 semestres",
+  "modalidad": "Presencial",
+  "decano": "Dr. Felipe Moreno-Piedrahita",
+  "cargo_decano": "DECANO",
+  "por_que_estudiar": "28 convenios internacionales. Laboratorio de psicometría para investigación y evaluación psicológica. Hasta el 27% de descuento sobre los aranceles.",
+  "resultados_aprendizaje": [
+   "Contarás con una formación sólida que te permitirá desenvolverte en los niveles estratégicos, tácticos y operativos para diseñar y ejecutar intervenciones y evaluaciones psicoeducativas que faciliten el desarrollo de las personas en la niñez, la adolescencia y la adultez.",
+   "Así también, promoverás programas transformacionales con herramientas y técnicas que aporten a las instituciones dedicadas a la educación formal e informal en el Ecuador. De esta manera, estarás en la capacidad de:",
+   "Planificar proyectos psicoeducativos y psicosociales con responsabilidad social en el ámbito educativo.",
+   "Plantear procesos de detección, evaluación, diagnóstico, intervención y seguimiento respecto a las problemáticas individuales, grupales, comunitarias y sociales en el contexto educativo.",
+   "Aplicar planes y programas orientados a la prevención y promoción de la salud y el bienestar integral en el contexto educativo.",
+   "Fomentar la aplicación ética, eficiente y eficaz de los fundamentos teóricos, procedimentales, tecnológicos y científicos en la investigación psicológica en el campo educativo.",
+   "Proponer técnicas y estrategias de la psicología educativa orientadas al bienestar social, cultural, económico, político y de inclusión."
+  ],
+  "campo_laboral": "El licenciado/a en Psicología Educativa está capacitado/a para desempeñarse en: · Instituciones públicas y privadas relacionadas al ámbito de la educación · Fundaciones y Organizaciones no Gubernamentales · Instituciones educativas · Programas de educación hospitalaria · Consulta privada: diagnóstico, evaluación e intervención en Psicología Educativa",
+  "contacto_telefonos": [
+   "099 715 1239"
+  ],
+  "contacto_correos": [
+   "inscripciones@puce.edu.ec"
+  ],
+  "contacto_direccion": "Avenida 12 de Octubre 1076 y Vicente Ramón Roca",
+  "faltantes": [],
+  "fuente": "https://www.puce.edu.ec/landing-psicologia-educativa/",
+  "fecha_fuente": "2026-11-26T21:43:07+00:00",
+  "brochure_url": "https://www.puce.edu.ec/docs/dce/landing/pdf/psicologia-educativa-202401.pdf"
+ },
+ "artes_visuales": {
+  "nombre": "Artes Visuales",
+  "precio_real": 3950,
+  "descuento_pct": 27.0,
+  "precio_con_descuento": 2900,
+  "nota_precio": "No incluye matrícula ni seguro",
+  "titulo": "Licenciado/a en aRTES VISUALES",
+  "duracion": "8 semestres",
+  "modalidad": "Presencial",
+  "decano": "Dr. Jorge Albuja",
+  "cargo_decano": "DECANO",
+  "por_que_estudiar": "4 convenios internacionales Docentes especializados con años de experiencia académica y profesional Hasta el 27% de descuento sobre los aranceles.",
+  "resultados_aprendizaje": [
+   "Desarrollar prácticas artísticas innovadoras desde la investigación-creación, integrando sensibilidad y pensamiento crítico.",
+   "Crear proyectos artísticos relevantes que respondan a contextos sociales, culturales y ambientales con referentes locales y globales.",
+   "Promover la diversidad cultural y el acceso al arte mediante estrategias de educación artística y gestión cultural.",
+   "Investigar en historia, sociología y cultura, conectando estas disciplinas con las artes visuales y campos interdisciplinarios.",
+   "Diseñar propuestas pedagógicas y didácticas para la enseñanza de las artes visuales en diversos niveles educativos."
+  ],
+  "campo_laboral": "Los graduados de la carrera en Artes Visuales están preparados para desempeñarse en: coordinador/a de proyectos de arte contemporáneo e investigación artística, gestor/a, planificador/a y ejecutor/a de proyectos artísticos y culturales, profesor/a de artes visuales con enfoque pedagógico en educación inicial, básica y bachillerato, investigador/a en historia, sociología y cultura vinculada a las artes visuales, y especialista en gestión de espacios culturales y democratización del arte.",
+  "contacto_telefonos": [
+   "099 715 1239"
+  ],
+  "contacto_correos": [
+   "inscripciones@puce.edu.ec"
+  ],
+  "contacto_direccion": "Avenida 12 de Octubre 1076 y Vicente Ramón Roca",
+  "faltantes": [],
+  "fuente": "https://www.puce.edu.ec/landing-artes-visuales/",
+  "fecha_fuente": "2026-11-26T21:43:12+00:00",
+  "brochure_url": "https://www.puce.edu.ec/docs/dce/landing/pdf/artes-visuales-202401.pdf"
+ },
+ "filosofia": {
+  "nombre": "Filosofía",
+  "precio_real": 3950,
+  "descuento_pct": 37.0,
+  "precio_con_descuento": 2500,
+  "nota_precio": "No incluye matrícula ni seguro",
+  "titulo": "Licenciado/a en Filosofía",
+  "duracion": "8 semestres",
+  "modalidad": "Presencial",
+  "decano": "Mgtr. Carlos Man Ging Villanueva",
+  "cargo_decano": "DECANO",
+  "por_que_estudiar": "34 convenios nacionales e internacionales Aprendizaje activo a través de la producción anual de libros colectivos, traducciones y publicaciones en revistas Hasta el 37% de descuento sobre los aranceles.",
+  "resultados_aprendizaje": [
+   "Analizar investigaciones y textos especializados en filosofía para generar conocimiento y aplicarlo a la docencia y la investigación.",
+   "Diseñar proyectos educativos y filosóficos que promuevan ambientes inclusivos, motivadores y éticos.",
+   "Desarrollar proyectos de investigación filosófica respetando marcos epistemológicos y éticos.",
+   "Aplicar la reflexión crítica y la autonomía profesional en la toma de decisiones con responsabilidad social.",
+   "Integrar valores como solidaridad, respeto, honradez y equidad en la práctica académica y profesional."
+  ],
+  "campo_laboral": "Los graduados de la Licenciatura en Filosofía están preparados para desempeñarse en: proyectos de investigación y docencia en instituciones educativas, editoriales académicas y medios de divulgación, consultorías educativas y culturales, comités de ética en diversas organizaciones, así como en el asesoramiento filosófico y ético en instituciones públicas y privadas.",
+  "contacto_telefonos": [
+   "099 715 1239"
+  ],
+  "contacto_correos": [
+   "inscripciones@puce.edu.ec"
+  ],
+  "contacto_direccion": "Avenida 12 de Octubre 1076 y Vicente Ramón Roca",
+  "faltantes": [],
+  "fuente": "https://www.puce.edu.ec/landing-filosofia/",
+  "fecha_fuente": "2026-11-26T21:43:20+00:00",
+  "brochure_url": "https://www.puce.edu.ec/docs/dce/landing/pdf/filosofia-202401.pdf"
+ },
+ "teologia": {
+  "nombre": "Teología",
+  "precio_real": 3950,
+  "descuento_pct": 37.0,
+  "precio_con_descuento": 2500,
+  "nota_precio": "No incluye matrícula ni seguro",
+  "titulo": "Licenciado/a en Teología",
+  "duracion": "8 semestres",
+  "modalidad": "Presencial",
+  "decano": "Mgtr. Carlos Man Ging Villanueva",
+  "cargo_decano": "DECANO",
+  "por_que_estudiar": "19 convenios nacionales e internacionales Títulos eclesiásticos que cuentan con el aval de la Santa Sede Hasta el 37% de descuento sobre los aranceles.",
+  "resultados_aprendizaje": [
+   "Analizar fundamentos bíblicos, teológicos y pastorales desde una perspectiva crítica y actual.",
+   "Reflexionar sobre la praxis de fe y el compromiso ético en contextos sociales diversos.",
+   "Diseñar proyectos pastorales y comunitarios que promuevan valores de solidaridad, equidad y respeto.",
+   "Investigar documentos e investigaciones teológicas para transferir conocimientos al ámbito pastoral, educativo y académico.",
+   "Desarrollar una práctica profesional basada en valores éticos y cristianos, orientada al servicio de la comunidad."
+  ],
+  "campo_laboral": "Los graduados de la Licenciatura en Teología están preparados para desempeñarse como ministros de la palabra y de los sacramentos, líderes comunitarios y eclesiásticos, formadores pastorales y asesores en instituciones religiosas, investigadores teológicos en diálogo interdisciplinario, así como en proyectos sociales y educativos con inspiración cristiana.",
+  "contacto_telefonos": [
+   "099 715 1239"
+  ],
+  "contacto_correos": [
+   "inscripciones@puce.edu.ec"
+  ],
+  "contacto_direccion": "Avenida 12 de Octubre 1076 y Vicente Ramón Roca",
+  "faltantes": [],
+  "fuente": "https://www.puce.edu.ec/landing-teologia/",
+  "fecha_fuente": "2026-11-26T21:43:26+00:00",
+  "brochure_url": "https://www.puce.edu.ec/docs/dce/landing/pdf/teologia-202401.pdf"
+ },
+ "administracion_empresas": {
+  "nombre": "Administración de Empresas",
+  "precio_real": 3950,
+  "descuento_pct": 34.0,
+  "precio_con_descuento": 2600,
+  "nota_precio": "No incluye matrícula ni seguro",
+  "titulo": "Licenciado/a en administración de empresas",
+  "duracion": "8 semestres",
+  "modalidad": "Presencial",
+  "decano": "Mgtr. Jorge Altamirano",
+  "cargo_decano": "DECANO",
+  "por_que_estudiar": "2 certificaciones de calidad al servicio. 3 áreas de sólida formación: contabilidad, finanzas y productividad. Hasta el 34% de descuento sobre los aranceles.",
+  "resultados_aprendizaje": [
+   "Diseñar e implementar planes estratégicos y operativos para el desarrollo y crecimiento organizacional.",
+   "Liderar procesos de negociación para establecer acuerdos, convenios y alianzas con criterios éticos y legales.",
+   "Elaborar y evaluar proyectos de negocio, inversión y financiamiento que promuevan emprendimientos viables.",
+   "Analizar el entorno socioeconómico nacional e internacional para tomar decisiones frente a los retos de la globalización.",
+   "Fomentar la innovación y la creatividad empresarial, integrando valores éticos, compromiso ambiental e inclusión social."
+  ],
+  "campo_laboral": "Los graduados de la Licenciatura en Administración de Empresas están preparados para desempeñarse en organizaciones públicas, privadas y no gubernamentales como: facilitadores en gestión organizacional y talento humano, desarrolladores de proyectos y planes de negocio, gestores de procesos, recursos humanos, marketing, seguridad industrial y certificaciones (ISO), así como consultores en áreas de finanzas, productividad, marketing digital, negocios internacionales y control de gestión.",
+  "contacto_telefonos": [
+   "099 715 1239"
+  ],
+  "contacto_correos": [
+   "inscripciones@puce.edu.ec"
+  ],
+  "contacto_direccion": "Avenida 12 de Octubre 1076 y Vicente Ramón Roca",
+  "faltantes": [],
+  "fuente": "https://www.puce.edu.ec/landing-administracion-de-empresas/",
+  "fecha_fuente": "2026-11-26T21:43:30+00:00",
+  "brochure_url": "https://www.puce.edu.ec/docs/dce/landing/pdf/administracion-de-empresas-202401.pdf"
+ },
+ "turismo": {
+  "nombre": "Administración en turismo y hospitalidad",
+  "precio_real": 3950,
+  "descuento_pct": 34.0,
+  "precio_con_descuento": 2600,
+  "nota_precio": "No incluye matrícula ni seguro",
+  "titulo": "ILicenciado/a en TURISMO Y HOSPITALIDAD",
+  "duracion": "8 semestres",
+  "modalidad": "Presencial",
+  "decano": "Mgtr. Jorge Altamirano",
+  "cargo_decano": "DECANO",
+  "por_que_estudiar": "7 convenios internacionales 1 certificación mundial Hasta el 34% de descuento sobre los aranceles.",
+  "resultados_aprendizaje": [
+   "A partir del segundo año de la carrera los estudiantes realizan giras académicas que permiten conocer los principales destinos turísticos del país, para el último año realizar un viaje académico a las Islas Galápagos. Durante la carrera se realizan al menos 6 giras académicas que permiten conocer la mayor parte de los destinos turísticos del Ecuador.",
+   "La formación en la carrera se enfoca en la diversificación de un currículo que permite a los futuros graduados acercarse a los más de 100 subsectores en los que el turismo y la hospitalidad pueden desarrollarse, más allá de solo agencias de viajes y el sector público, abriendo el campo al emprendimiento, los negocios enfocados a la recreación, el deporte, la aventura, los alimentos y bebidas, el transporte y la hotelería, entre otros.",
+   "En un mundo cada vez más interconectado, el enfoque internacional de esta carrera ofrece la oportunidad de expandir sus horizontes más allá de las fronteras nacionales. Estudiar Administración en Turismo y Hospitalidad con un enfoque internacional te proporciona habilidades y conocimientos específicos para trabajar en contextos globales, abrirte camino en la industria del turismo en diferentes países y participar en proyectos internacionales emocionantes."
+  ],
+  "campo_laboral": "El/la licenciado/a en Administración Turística y Hotelera está preparado/a para desempeñarse como: Gerente de: hotel resort restaurante agencia de viajes eventos y convenciones Coordinador de turismo: comunitario sostenible cultural de aventura Planificador de destinos turísticos Analista de mercado turístico Especialista en gestión de eventos y alojamientos",
+  "contacto_telefonos": [
+   "099 715 1239"
+  ],
+  "contacto_correos": [
+   "inscripciones@puce.edu.ec"
+  ],
+  "contacto_direccion": "Avenida 12 de Octubre 1076 y Vicente Ramón Roca",
+  "faltantes": [],
+  "fuente": "https://www.puce.edu.ec/landing-administracion-en-turismo-y-hospitalidad/",
+  "fecha_fuente": "2026-11-26T21:43:36+00:00",
+  "brochure_url": "https://www.puce.edu.ec/docs/dce/landing/pdf/administracion-en-turismo-y-hospitalidad-202401.pdf"
+ },
+ "contabilidad": {
+  "nombre": "Contabilidad y auditoría",
+  "precio_real": 3950,
+  "descuento_pct": 34.0,
+  "precio_con_descuento": 2600,
+  "nota_precio": "No incluye matrícula ni seguro",
+  "titulo": "Licenciado/a en Contabilidad y Auditoría",
+  "duracion": "8 semestres",
+  "modalidad": "Presencial",
+  "decano": "Mgtr. Jorge Altamirano",
+  "cargo_decano": "DECANO",
+  "por_que_estudiar": "51 convenios internacionales 3° nivel de acreditación por parte de la Agencia Especializada en Programas Educativos de México Hasta el 34% de descuento sobre los aranceles.",
+  "resultados_aprendizaje": [
+   "Evaluar procesos contables, financieros y de auditoría aplicando normas internacionales y legislación vigente.",
+   "Diseñar estrategias de inversión y financiamiento considerando riesgos y criterios de sostenibilidad.",
+   "Optimizar recursos y generar información contable relevante para la toma de decisiones.",
+   "Aplicar buenas prácticas en ámbitos mercantiles, laborales, tributarios y ambientales con responsabilidad ética.",
+   "Participar en equipos multidisciplinarios fomentando inclusión, respeto a la diversidad y compromiso social."
+  ],
+  "campo_laboral": "Los graduados de la Licenciatura en Contabilidad y Auditoría están preparados para desempeñarse como analistas en finanzas, contabilidad, presupuestos, costos y precios; especialistas en detección de riesgos y fraudes, planificación tributaria y auditoría interna o externa; asesores en ámbitos contables, tributarios y financieros; así como generadores de información estratégica para la toma de decisiones en organizaciones públicas, privadas y no gubernamentales.",
+  "contacto_telefonos": [
+   "099 715 1239"
+  ],
+  "contacto_correos": [
+   "inscripciones@puce.edu.ec"
+  ],
+  "contacto_direccion": "Avenida 12 de Octubre 1076 y Vicente Ramón Roca",
+  "faltantes": [],
+  "fuente": "https://www.puce.edu.ec/landing-contabilidad-y-auditoria/",
+  "fecha_fuente": "2026-11-26T21:43:40+00:00",
+  "brochure_url": "https://www.puce.edu.ec/docs/dce/landing/pdf/contabilidad-y-auditoria-202508.pdf"
+ },
+ "economia_carrera": {
+  "nombre": "Economía",
+  "precio_real": 3950,
+  "descuento_pct": 34.0,
+  "precio_con_descuento": 2600,
+  "nota_precio": "No incluye matrícula ni seguro",
+  "titulo": "ECONOMISTA",
+  "duracion": "8 semestres",
+  "modalidad": "Presencial",
+  "decano": "Mgtr. Jorge Altamirano",
+  "cargo_decano": "DECANO",
+  "por_que_estudiar": "34 convenios internacionales. Título reconocido en la Unión Europea Hasta el 34% de descuento sobre los aranceles.",
+  "resultados_aprendizaje": [
+   "Analizar fenómenos económicos y sociales en distintos niveles de complejidad.",
+   "Aplicar herramientas estadísticas, econométricas y modelos económicos para la toma de decisiones.",
+   "Diseñar propuestas y políticas económicas orientadas al desarrollo sostenible.",
+   "Evaluar críticamente marcos teóricos y estrategias económicas en contextos públicos y privados.",
+   "Integrar conocimiento teórico y práctico para generar soluciones innovadoras a los retos económicos."
+  ],
+  "campo_laboral": "Los graduados de la Licenciatura en Economía están preparados para desempeñarse en instituciones gubernamentales y organismos de planificación económica, organizaciones no gubernamentales y de desarrollo social, empresas privadas del sector financiero y productivo, centros de investigación y universidades, así como en consultorías especializadas en políticas públicas, desarrollo económico y sostenibilidad.",
+  "contacto_telefonos": [
+   "099 715 1239"
+  ],
+  "contacto_correos": [
+   "inscripciones@puce.edu.ec"
+  ],
+  "contacto_direccion": "Avenida 12 de Octubre 1076 y Vicente Ramón Roca",
+  "faltantes": [],
+  "fuente": "https://www.puce.edu.ec/landing-economia/",
+  "fecha_fuente": "2026-11-26T21:43:45+00:00",
+  "brochure_url": "https://www.puce.edu.ec/docs/dce/landing/pdf/economia-202401.pdf"
+ },
+ "finanzas": {
+  "nombre": "Finanzas",
+  "precio_real": 3950,
+  "descuento_pct": 34.0,
+  "precio_con_descuento": 2600,
+  "nota_precio": "No incluye matrícula ni seguro",
+  "titulo": "Licenciado/a en finanzas",
+  "duracion": "8 semestres",
+  "modalidad": "Presencial",
+  "decano": "Mgtr. Jorge Altamirano",
+  "cargo_decano": "DECANO",
+  "por_que_estudiar": "51 convenios internacionales. Docentes especializados con años de experiencia académica y profesional. Hasta el 34% de descuento sobre los aranceles.",
+  "resultados_aprendizaje": [
+   "Gestionar recursos financieros considerando fuentes de financiamiento, riesgos, normativa y objetivos organizacionales.",
+   "Evaluar, diseñar y administrar sistemas de información financiera apoyados en tecnologías de la información.",
+   "Diseñar y ejecutar proyectos de inversión y financiamiento en mercados nacionales e internacionales.",
+   "Facilitar la toma de decisiones estratégicas para impulsar el crecimiento y desempeño financiero de las organizaciones.",
+   "Integrar valores éticos, responsabilidad social y sostenibilidad en la gestión financiera."
+  ],
+  "campo_laboral": "Los graduados de la Licenciatura en Finanzas están preparados para desempeñarse como analistas financieros, de riesgos, inversiones, crédito y cobranzas; valoradores de empresas; peritos financieros en procesos legales; directores de planeación y presupuesto; gestores de inversiones y tesorería; diseñadores de estrategias financieras; asesores en microfinanzas; consultores en financiamiento, inversiones y gestión de riesgos; capacitadores en temas financieros; gerentes de proyectos y negocios; especialistas en actualización tributaria, finanzas internacionales y control de gestión; así como docentes e investigadores universitarios en el área financiera.",
+  "contacto_telefonos": [
+   "099 715 1239"
+  ],
+  "contacto_correos": [
+   "inscripciones@puce.edu.ec"
+  ],
+  "contacto_direccion": "Avenida 12 de Octubre 1076 y Vicente Ramón Roca",
+  "faltantes": [],
+  "fuente": "https://www.puce.edu.ec/landing-finanzas/",
+  "fecha_fuente": "2026-11-26T21:43:50+00:00",
+  "brochure_url": "https://www.puce.edu.ec/docs/dce/landing/pdf/finanzas-202401.pdf"
+ },
+ "marketing": {
+  "nombre": "Marketing",
+  "precio_real": 3950,
+  "descuento_pct": 34.0,
+  "precio_con_descuento": 2600,
+  "nota_precio": "No incluye matrícula ni seguro",
+  "titulo": "Licenciado/a en marketing",
+  "duracion": "8 semestres",
+  "modalidad": "Presencial",
+  "decano": "Mgtr. Jorge Altamirano",
+  "cargo_decano": "DECANO",
+  "por_que_estudiar": "2 certificaciones de calidad al servicio. 51 convenios internacionales. Hasta el 34% de descuento sobre los aranceles.",
+  "resultados_aprendizaje": [
+   "Aplicar conocimientos de gestión comercial para diseñar estrategias de producto, precio, distribución y promoción.",
+   "Investigar y analizar cambios socioeconómicos a nivel local, nacional y global para generar propuestas innovadoras.",
+   "Desarrollar estrategias de comercialización en entornos digitales y tradicionales.",
+   "Integrar conocimientos de administración, finanzas, contabilidad y economía para impulsar negocios y proyectos productivos.",
+   "Ejercer liderazgo con ética, compromiso ambiental y valoración de la diversidad cultural en la gestión comercial."
+  ],
+  "campo_laboral": "Como Licenciado/a en Marketing de la PUCE podrás desempeñarte como analista de precios, comportamiento del consumidor o investigación de mercados; consultor/a en canales de distribución, estrategias comerciales, comunicación y publicidad; desarrollador/a de planes de comercialización; director/a de departamentos comerciales; gerente de comunicación, ventas, marcas y distribución; capacitador/a en gestión comercial; y especialista en marketing digital y redes sociales aplicadas a la comercialización.",
+  "contacto_telefonos": [
+   "099 715 1239"
+  ],
+  "contacto_correos": [
+   "inscripciones@puce.edu.ec"
+  ],
+  "contacto_direccion": "Avenida 12 de Octubre 1076 y Vicente Ramón Roca",
+  "faltantes": [],
+  "fuente": "https://www.puce.edu.ec/landing-marketing/",
+  "fecha_fuente": "2026-11-26T21:43:56+00:00",
+  "brochure_url": "https://www.puce.edu.ec/docs/dce/landing/pdf/marketing-202401.pdf"
+ },
+ "negocios_internacionales": {
+  "nombre": "Negocios Internacionales",
+  "precio_real": 3950,
+  "descuento_pct": 34.0,
+  "precio_con_descuento": 2600,
+  "nota_precio": "No incluye matrícula ni seguro",
+  "titulo": "LICENCIADO/A EN NEGOCIOS INTERNACIONALES",
+  "duracion": "8 semestres",
+  "modalidad": "Presencial",
+  "decano": "Mgtr. Jorge Altamirano",
+  "cargo_decano": "DECANO",
+  "por_que_estudiar": "2 certificaciones de calidad al servicio 51 Convenios internacionales Hasta el 34% de descuento sobre los aranceles.",
+  "resultados_aprendizaje": [
+   "Conectar culturas y oportunidades, creando soluciones innovadoras con visión global.",
+   "Liderar negociaciones y acuerdos estratégicos que vinculen mercados locales con internacionales.",
+   "Analizar fenómenos sociales, económicos y empresariales para anticipar cambios y aprovechar oportunidades.",
+   "Integrar valores éticos, respeto por la diversidad y conciencia ambiental en proyectos de negocios.",
+   "Liderar equipos multiculturales con creatividad, responsabilidad social e impacto positivo."
+  ],
+  "campo_laboral": "Como Licenciado/a en Negocios Internacionales de la PUCE podrás desempeñarte en organizaciones públicas, privadas, ONG y asociaciones productivas en roles como: Gerente de internacionalización, apertura de mercados, compras internacionales, cadena de suministro o marketing global. Analista de oportunidades de negocio, mercados internacionales o finanzas globales. Director/a estratégico de empresas internacionales y operaciones logísticas. Consultor/a en negocios internacionales. Docente e investigador/a en comercio y negocios internacionales.",
+  "contacto_telefonos": [
+   "099 715 1239"
+  ],
+  "contacto_correos": [
+   "inscripciones@puce.edu.ec"
+  ],
+  "contacto_direccion": "Avenida 12 de Octubre 1076 y Vicente Ramón Roca",
+  "faltantes": [],
+  "fuente": "https://www.puce.edu.ec/landing-negocios-internacionales/",
+  "fecha_fuente": "2026-11-26T21:44:00+00:00",
+  "brochure_url": "https://www.puce.edu.ec/docs/dce/landing/pdf/negocios-internacionales-202401.pdf"
+ },
+ "fpe": {
+  "nombre": "Filosofía, Política y Economía",
+  "precio_real": 3950,
+  "descuento_pct": 37.0,
+  "precio_con_descuento": 2500,
+  "nota_precio": "No incluye matrícula ni seguro",
+  "titulo": "Licenciado/a en Filosofía, Política y Economía",
+  "duracion": "8 semestres",
+  "modalidad": "Híbrida",
+  "decano": "Mgtr. Carlos Man Ging Villanueva",
+  "cargo_decano": "DECANO",
+  "por_que_estudiar": "Única carrera de grado en Ecuador que combina filosofía, política y economía para una formación interdisciplinaria que permite entender y abordar problemas complejos desde diversas perspectivas. Formación integral que desarrolla habilidades críticas, analíticas y de liderazgo, preparándolos para enfrentar los desafíos globales. La formación en estas tres disciplinas les proporciona una base sólida para entender y resolver problemas complejos y multifacéticos.",
+  "resultados_aprendizaje": [
+   "Analizar críticamente fenómenos políticos, económicos y sociales desde una base filosófica sólida.",
+   "Diseñar propuestas de desarrollo y políticas públicas con criterios éticos, sostenibles y de equidad.",
+   "Desarrollar investigaciones interdisciplinares que integren teoría y práctica en las tres áreas de estudio.",
+   "Aplicar la reflexión crítica y la autonomía profesional en la toma de decisiones estratégicas.",
+   "Integrar valores de responsabilidad social, justicia y respeto en el ejercicio profesional y académico."
+  ],
+  "campo_laboral": "Los graduados de la Licenciatura en Filosofía, Política y Economía están preparados para desempeñarse en: instituciones del sector público y privado como ministerios, municipios o empresas, organizaciones no gubernamentales vinculadas al desarrollo y los derechos humanos, organismos internacionales en cooperación y diplomacia, universidades y centros de investigación, así como en espacios de consultoría y análisis estratégico interdisciplinario.",
+  "contacto_telefonos": [
+   "0992420103"
+  ],
+  "contacto_correos": [
+   "inscripciones@puce.edu.ec"
+  ],
+  "contacto_direccion": "Avenida 12 de Octubre 1076 y Vicente Ramón Roca",
+  "faltantes": [],
+  "fuente": "https://www.puce.edu.ec/landing-filosofia-politica-economia/",
+  "fecha_fuente": "2026-11-26T21:44:05+00:00",
+  "brochure_url": "https://www.puce.edu.ec/docs/dce/landing/pdf/filosofia-politica-economia_202411.pdf"
+ },
+ "psicologia_organizacional": {
+  "nombre": "Psicología organizacional",
+  "precio_real": 3950,
+  "descuento_pct": 27.0,
+  "precio_con_descuento": 2900,
+  "nota_precio": "No incluye matrícula ni seguro",
+  "titulo": "Licenciado/a en Psicología Organizacional",
+  "duracion": "9 semestres",
+  "modalidad": "Presencial",
+  "decano": "Dr. Felipe Moreno-Piedrahita",
+  "cargo_decano": "DECANO",
+  "por_que_estudiar": "28 convenios internacionales Laboratorio de psicometría para investigación y evaluación psicológica Hasta el 27% de descuento sobre los aranceles.",
+  "resultados_aprendizaje": [
+   "Diseñar intervenciones organizacionales que fomenten el desarrollo individual y profesional, fortaleciendo el capital psicológico.",
+   "Aplicar estrategias de gestión humana para optimizar la planificación, organización y evaluación del talento en las empresas.",
+   "Fomentar la salud y el bienestar en las organizaciones mediante la prevención de riesgos psicosociales.",
+   "Evaluar dinámicas organizacionales utilizando herramientas psicométricas para diagnosticar y proponer soluciones integrales.",
+   "Liderar iniciativas que alineen objetivos individuales, grupales y organizacionales para la sostenibilidad empresarial."
+  ],
+  "campo_laboral": "Los graduados de la carrera en Psicología Organizacional están preparados para desempeñarse en: instituciones públicas y privadas en áreas de Talento Humano, fundaciones y organizaciones no gubernamentales, empresas industriales, comerciales y de servicios, consultoras relacionadas con el desarrollo organizacional y personal, asesoría en diagnóstico, evaluación e intervención en Psicología Organizacional.",
+  "contacto_telefonos": [
+   "099 715 1239"
+  ],
+  "contacto_correos": [
+   "inscripciones@puce.edu.ec"
+  ],
+  "contacto_direccion": "Avenida 12 de Octubre 1076 y Vicente Ramón Roca",
+  "faltantes": [],
+  "fuente": "https://www.puce.edu.ec/landing-psicologia-organizacional/",
+  "fecha_fuente": "2026-11-26T21:44:10+00:00",
+  "brochure_url": "https://www.puce.edu.ec/docs/dce/landing/pdf/psicologia-organizacional-202401.pdf"
+ }
+}
