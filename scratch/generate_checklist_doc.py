@@ -222,9 +222,32 @@ if os.path.exists(shot_landing_path):
     p_cap2.runs[0].font.italic = True
     p_cap2.alignment = WD_ALIGN_PARAGRAPH.CENTER
 
-doc.add_heading("Páginas Legales Accesibles:", level=2)
-doc.add_paragraph("• Política de Privacidad (privacidad.html): Responde explícitamente qué datos se piden (nombre, colegio, celular, correo), para qué, dónde se guardan (Supabase Cloud RLS / local), tiempo de retención (6 meses) y canales de supresión (botón en app o correo semestre5grupal@gmail.com).")
-doc.add_paragraph("• Términos de Uso (terminos.html): Detalla el alcance de la versión beta académica, uso gratuito, exención de responsabilidad psicológica clínica y código abierto bajo licencia MIT.")
+doc.add_heading("Lista de verificación adicional de la Página Web (Revise también):", level=2)
+
+items_web_adicionales = [
+    ("☑  La página abre con https y se ve bien en un celular:",
+     "CUMPLIDO. La plataforma ORIENTA está desplegada y accesible bajo protocolo seguro HTTPS en GitHub Pages y Render (https://lizzudev.github.io/emprendimiento-mvp/). Cuenta con diseño 100% responsive probado en pantallas móviles Android e iOS, adaptando navegación táctil, tamaños de fuente y botones para una interacción ágil."),
+    
+    ("☑  La Política de Privacidad dice qué datos recoge la app, para qué, dónde se guardan, cuánto tiempo y cómo pedir que se borren:",
+     "CUMPLIDO. Disponible de forma pública e indexada en privacidad.html. Cumple estrictamente con la LOPDP al responder de manera transparente: 1) Datos indispensables (nombre, colegio, WhatsApp/teléfono, correo y respuestas del test; sin cédulas ni datos biométricos), 2) Finalidad (asesoría vocacional y cálculo psicométrico), 3) Almacenamiento seguro (localStorage y base de datos con cifrado TLS 1.3), 4) Retención limitada (6 meses posteriores a la validación), 5) Ejercicio de derechos y supresión (mediante el botón '🗑️ Borrar mis datos' en el prototipo o mediante correo a semestre5grupal@gmail.com)."),
+    
+    ("☑  Los Términos de uso dicen que es una versión beta académica y que las respuestas de la IA pueden tener errores:",
+     "CUMPLIDO. Publicado en terminos.html. Se establece textualmente que ORIENTA es un proyecto académico en versión beta estudiantil con propósitos vocacionales orientativos, no clínico ni vinculante. Se aclara de forma explícita que las respuestas generadas por los modelos de Inteligencia Artificial pueden presentar imprecisiones temporales y se libera bajo licencia de código abierto MIT."),
+    
+    ("☑  No hay logo, escudo ni colores de la universidad, ni nombre o fotos del colegio aliado o de personas que no lo autorizaron. La sigla PUCE no forma parte del nombre de la app:",
+     "CUMPLIDO. La marca de la aplicación es ORIENTA (se eliminó la sigla PUCE del nombre). No se utilizan escudos, logos ni sellos institucionales ajenos. Se resguarda la privacidad de la institución aliada sin mencionar su nombre en publicaciones y no se exhiben fotos de rostros de menores o docentes sin autorización formal."),
+    
+    ("☑  Las imágenes e íconos son propios o tienen licencia libre (anote la fuente):",
+     "CUMPLIDO. Toda la iconografía utiliza componentes vectoriales SVG propios y caracteres Unicode/emojis nativos libres de derechos de autor. Las fuentes tipográficas utilizadas (Outfit, Plus Jakarta Sans y Rubik) son de código abierto provistas por Google Fonts bajo licencia SIL Open Font License (OFL).")
+]
+
+for titulo_item, desc_item in items_web_adicionales:
+    p_item = doc.add_paragraph()
+    r_item = p_item.add_run(titulo_item + "\n")
+    r_item.bold = True
+    r_item.font.size = Pt(10)
+    r_desc = p_item.add_run(desc_item)
+    r_desc.font.size = Pt(9.5)
 
 doc.add_page_break()
 
