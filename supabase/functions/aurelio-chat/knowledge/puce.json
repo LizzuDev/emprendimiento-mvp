@@ -1,0 +1,267 @@
+{
+  "_instrucciones": "Base de conocimiento institucional de Aurelio. Solo las entradas con verificado=true llegan al modelo o al motor local. Para verificar una entrada: corregir 'texto' si hace falta, poner la URL o documento en 'fuente' y cambiar 'verificado' a true. Para eliminar un dato, borra la entrada completa.",
+  "_actualizado": "2026-11-26",
+  "entradas": [
+    {
+      "id": "trayectoria",
+      "tema": "prestigio",
+      "texto": "La PUCE tiene más de 75 años de trayectoria.",
+      "origen": ["aurelioBot.js (acreditación, ventajas, campo laboral)", "Edge Function"],
+      "nota": "La PUCE se fundó en 1946: en 2026 son 80 años. Confirmar y actualizar la cifra.",
+      "fuente": "",
+      "verificado": false
+    },
+    {
+      "id": "acreditacion-caces",
+      "tema": "prestigio",
+      "texto": "La PUCE está acreditada por el CACES (Consejo de Aseguramiento de la Calidad de la Educación Superior).",
+      "origen": ["aurelioBot.js (acreditación, ventajas)", "Edge Function"],
+      "nota": "",
+      "fuente": "",
+      "verificado": false
+    },
+    {
+      "id": "ranking-qs",
+      "tema": "prestigio",
+      "texto": "La PUCE se ubica entre las mejores universidades del Ecuador en el QS World University Rankings.",
+      "origen": ["aurelioBot.js (acreditación, ventajas)", "Edge Function"],
+      "nota": "Si es posible, indicar la posición y el año exactos del ranking.",
+      "fuente": "",
+      "verificado": false
+    },
+    {
+      "id": "empleabilidad",
+      "tema": "campo-laboral",
+      "texto": "Los egresados de la PUCE tienen una tasa de empleabilidad superior al 85%.",
+      "origen": ["aurelioBot.js (campo laboral)"],
+      "nota": "Cifra sin fuente. Recomendación: eliminar salvo que exista un estudio oficial de seguimiento a graduados.",
+      "fuente": "",
+      "verificado": false
+    },
+    {
+      "id": "movilidad-ausjal",
+      "tema": "intercambios",
+      "texto": "La PUCE pertenece a la Red AUSJAL, con más de 30 universidades jesuitas de Latinoamérica (por ejemplo: Pontificia Universidad Javeriana en Colombia, Universidad Iberoamericana e ITESO en México, Universidad Católica de Córdoba en Argentina y Universidad Alberto Hurtado en Chile).",
+      "origen": ["aurelioBot.js (intercambios)", "Edge Function"],
+      "nota": "",
+      "fuente": "",
+      "verificado": false
+    },
+    {
+      "id": "movilidad-espana",
+      "tema": "intercambios",
+      "texto": "La PUCE tiene convenios bilaterales de intercambio en España con la Universidad de Deusto, la Universidad Pontificia Comillas y la Universitat de Barcelona.",
+      "origen": ["aurelioBot.js (intercambios)", "Edge Function"],
+      "nota": "",
+      "fuente": "",
+      "verificado": false
+    },
+    {
+      "id": "movilidad-convalidacion",
+      "tema": "intercambios",
+      "texto": "Hay movilidad estudiantil hacia Estados Unidos, Europa y Asia con convalidación de créditos académicos.",
+      "origen": ["aurelioBot.js (intercambios)", "Edge Function"],
+      "nota": "Confirmar que la convalidación aplica en general y no solo en convenios específicos.",
+      "fuente": "",
+      "verificado": false
+    },
+    {
+      "id": "convenios-salud-hospitales",
+      "tema": "convenios-salud",
+      "texto": "Para prácticas preprofesionales e internado rotativo del área de salud, la PUCE tiene convenios con el Ministerio de Salud Pública (MSP), el IESS (Hospital Carlos Andrade Marín y Hospital San Francisco), el Hospital Pablo Arturo Suárez, el Hospital Docente de Calderón, el Hospital de Especialidades Eugenio Espejo, el Hospital Vozandes Quito, el Hospital Metropolitano y Novaclínica Santa Cecilia.",
+      "origen": ["aurelioBot.js (convenios)", "Edge Function"],
+      "nota": "Revisar hospital por hospital: es la pregunta más frecuente del área de salud.",
+      "fuente": "",
+      "verificado": false
+    },
+    {
+      "id": "convenios-salud-aps",
+      "tema": "convenios-salud",
+      "texto": "Los estudiantes de salud también hacen prácticas en centros de salud de atención primaria del MSP en el Distrito Metropolitano de Quito.",
+      "origen": ["aurelioBot.js (convenios)"],
+      "nota": "",
+      "fuente": "",
+      "verificado": false
+    },
+    {
+      "id": "salud-simulacion",
+      "tema": "convenios-salud",
+      "texto": "El campus PUCE cuenta con un Centro de Simulación Médica y Quirúrgica de alta fidelidad.",
+      "origen": ["aurelioBot.js (convenios, dificultad)", "Edge Function"],
+      "nota": "",
+      "fuente": "",
+      "verificado": false
+    },
+    {
+      "id": "convenios-habitat-ingenieria",
+      "tema": "convenios-habitat",
+      "texto": "Para Hábitat e Ingeniería, la PUCE tiene convenios de prácticas con el Colegio de Arquitectos del Ecuador (CAE), la Cámara de la Industria de la Construcción (CAMICON), empresas tecnológicas y el Municipio del Distrito Metropolitano de Quito.",
+      "origen": ["aurelioBot.js (convenios)", "Edge Function"],
+      "nota": "'Empresas tecnológicas' es vago: si hay nombres concretos, mejor.",
+      "fuente": "",
+      "verificado": false
+    },
+    {
+      "id": "convenios-economia",
+      "tema": "convenios-economia",
+      "texto": "Para Economía y Negocios, la PUCE tiene convenios de prácticas con Banco Pichincha, Produbanco, Banco del Pacífico, la Cámara de Comercio de Quito y la Cámara de Industrias y Producción.",
+      "origen": ["aurelioBot.js (convenios)", "Edge Function"],
+      "nota": "",
+      "fuente": "",
+      "verificado": false
+    },
+    {
+      "id": "pucemprende",
+      "tema": "convenios-economia",
+      "texto": "La PUCE tiene un centro de emprendimiento e innovación llamado PUCEmprende.",
+      "origen": ["aurelioBot.js (convenios)", "Edge Function"],
+      "nota": "",
+      "fuente": "",
+      "verificado": false
+    },
+    {
+      "id": "convenios-sociales-derecho",
+      "tema": "convenios-sociales",
+      "texto": "Para Ciencias Sociales y Derecho, la PUCE tiene convenios con la Corte Nacional de Justicia, el Consejo de la Judicatura, la Defensoría Pública, ONGs, ACNUR, UNESCO y medios de comunicación, además de sus propios Consultorios Jurídicos Gratuitos.",
+      "origen": ["aurelioBot.js (convenios)", "Edge Function"],
+      "nota": "El código también dice 'ONU' en un lugar y 'UNESCO' en otro: unificar.",
+      "fuente": "",
+      "verificado": false
+    },
+    {
+      "id": "convenios-sostenibilidad",
+      "tema": "convenios-sostenibilidad",
+      "texto": "Para carreras de Ciencias y Sostenibilidad, la PUCE tiene convenios con el Ministerio del Ambiente, Agua y Transición Ecológica (MAATE) y el Instituto Nacional de Biodiversidad (INABIO), y administra la Estación Científica Yasuní en la Amazonía.",
+      "origen": ["aurelioBot.js (convenios)", "Edge Function"],
+      "nota": "",
+      "fuente": "",
+      "verificado": false
+    },
+    {
+      "id": "aranceles-categorias",
+      "tema": "costos",
+      "texto": "La PUCE aplica aranceles diferenciados en 5 categorías según el análisis socioeconómico de la familia.",
+      "origen": ["aurelioBot.js (costos)", "Edge Function"],
+      "nota": "Confirmar que siguen siendo 5 categorías.",
+      "fuente": "",
+      "verificado": false
+    },
+    {
+      "id": "becas",
+      "tema": "costos",
+      "texto": "La PUCE ofrece becas por excelencia académica (abanderados y escoltas), becas deportivas de alto rendimiento, becas culturales y financiamiento educativo directo.",
+      "origen": ["aurelioBot.js (costos)", "Edge Function"],
+      "nota": "",
+      "fuente": "",
+      "verificado": false
+    },
+    {
+      "id": "campus-ubicacion",
+      "tema": "campus",
+      "texto": "Las carreras de esta plataforma se estudian en el campus matriz de la PUCE en Quito.",
+      "origen": ["aurelioBot.js (ubicación, horarios)", "Edge Function"],
+      "nota": "Confirmar que ninguna de las 39 carreras se dicta en otra sede.",
+      "fuente": "",
+      "verificado": false
+    },
+    {
+      "id": "campus-deportes",
+      "tema": "campus",
+      "texto": "El campus matriz tiene un polideportivo con piscina semiolímpica temperada, canchas de fútbol, básquet y tenis, y gimnasio.",
+      "origen": ["aurelioBot.js (campus)", "Edge Function"],
+      "nota": "",
+      "fuente": "",
+      "verificado": false
+    },
+    {
+      "id": "campus-biblioteca",
+      "tema": "campus",
+      "texto": "La Biblioteca General de la PUCE tiene más de 200.000 volúmenes físicos y digitales.",
+      "origen": ["aurelioBot.js (campus)", "Edge Function"],
+      "nota": "",
+      "fuente": "",
+      "verificado": false
+    },
+    {
+      "id": "campus-vida-estudiantil",
+      "tema": "campus",
+      "texto": "El campus tiene Centro Cultural, cafeterías, salas de estudio, pastoral universitaria, voluntariado y grupos de danza, teatro y otros clubes estudiantiles.",
+      "origen": ["aurelioBot.js (campus)", "Edge Function"],
+      "nota": "",
+      "fuente": "",
+      "verificado": false
+    },
+    {
+      "id": "tutorias",
+      "tema": "apoyo-academico",
+      "texto": "La PUCE ofrece tutorías académicas gratuitas desde el primer semestre.",
+      "origen": ["aurelioBot.js (dificultad)"],
+      "nota": "El código dice 'desde la primera semana' y menciona 'círculos de estudio' y 'simuladores de negocios': confirmar qué existe realmente.",
+      "fuente": "",
+      "verificado": false
+    },
+    {
+      "id": "titulacion-requisitos",
+      "tema": "titulacion",
+      "texto": "Para graduarse hay que aprobar la malla curricular completa, cumplir las horas de prácticas preprofesionales y de vinculación con la comunidad, y aprobar una opción de titulación (trabajo de integración curricular o examen complexivo).",
+      "origen": ["aurelioBot.js (titulación)"],
+      "nota": "",
+      "fuente": "",
+      "verificado": false
+    },
+    {
+      "id": "titulacion-ingles",
+      "tema": "titulacion",
+      "texto": "Para graduarse hay que acreditar suficiencia en inglés de nivel B2, a través del Centro de Idiomas de la PUCE.",
+      "origen": ["aurelioBot.js (titulación)"],
+      "nota": "Confirmar el nivel exacto (B1 o B2) y si se puede acreditar con certificados externos.",
+      "fuente": "",
+      "verificado": false
+    },
+    {
+      "id": "modalidad",
+      "tema": "horarios",
+      "texto": "Las carreras de esta plataforma son presenciales.",
+      "origen": ["aurelioBot.js (horarios, malla)"],
+      "nota": "",
+      "fuente": "",
+      "verificado": false
+    },
+    {
+      "id": "horarios",
+      "tema": "horarios",
+      "texto": "Las clases se organizan habitualmente en jornada matutina o en bloques concentrados; el horario exacto lo entrega Admisiones para cada periodo.",
+      "origen": ["aurelioBot.js (horarios)"],
+      "nota": "Recomendación: dejar solo 'el horario exacto lo entrega Admisiones', salvo que haya información oficial por carrera.",
+      "fuente": "",
+      "verificado": false
+    },
+    {
+      "id": "admision-abierta",
+      "tema": "admisiones",
+      "texto": "El proceso de admisión está abierto.",
+      "origen": ["aurelioBot.js (inscripción)"],
+      "nota": "Recomendación: eliminar. Depende de la fecha; Aurelio no puede saberlo y puede dar información falsa fuera de periodo.",
+      "fuente": "",
+      "verificado": false
+    },
+    {
+      "id": "admisiones-contacto",
+      "tema": "admisiones",
+      "texto": "Admisiones PUCE atiende por WhatsApp al 099 2420 103 y por correo en inscripciones@puce.edu.ec.",
+      "origen": ["aurelioBot.js (varias respuestas)", "Edge Function"],
+      "nota": "Es el dato de respaldo cuando Aurelio no sabe algo: debe estar 100% confirmado.",
+      "fuente": "",
+      "verificado": false
+    },
+    {
+      "id": "admisiones-portal",
+      "tema": "admisiones",
+      "texto": "La información oficial de carreras de grado está en https://landing.puce.edu.ec/pucegradogeneral.",
+      "origen": ["aurelioBot.js (ubicación)"],
+      "nota": "",
+      "fuente": "",
+      "verificado": false
+    }
+  ]
+}
