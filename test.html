@@ -3,11 +3,11 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Test Vocacional Oficial | Orienta PUCE</title>
-  <meta name="description" content="Descubre tu carrera ideal en la Pontificia Universidad Católica del Ecuador en 10 minutos con mini-retos de materias reales.">
+  <title>ORIENTA · Test Vocacional Interactivo</title>
+  <meta name="description" content="Descubre tu carrera ideal en 10 minutos con screening de intereses y micro-retos vocacionales prácticos.">
   <link rel="icon" type="image/svg+xml" href="assets/img/aurelio/bienvenido.svg">
 
-  <!-- Tipografías institucionales PUCE -->
+  <!-- Tipografías institucionales -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&family=Rubik:wght@500;700;800;900&display=swap" rel="stylesheet">
@@ -35,16 +35,18 @@
 </head>
 <body class="test-body">
 
-  <!-- Header Institucional del Test -->
+  <!-- Header Oficial del Test (ORIENTA) -->
   <header class="test-header">
     <div class="test-header-inner">
-      <a href="index.html" class="test-brand" aria-label="Volver al inicio">
-        <img src="https://www.puce.edu.ec/wp-content/uploads/2026/05/horizontal_color.png" alt="PUCE">
-        <span class="test-badge">Test Vocacional OVP</span>
+      <a href="index.html" class="test-brand" aria-label="Volver al inicio de ORIENTA">
+        <span class="brand-text-logo">ORIENTA</span>
+        <span class="badge-beta">Versión Beta</span>
       </a>
-      <a href="index.html" class="btn-ghost">
-        ← Volver al inicio
-      </a>
+      <div class="test-nav-controls">
+        <button id="btn-open-about" class="btn-nav-action" title="Información académica del proyecto">ℹ️ Acerca de</button>
+        <button id="btn-reset-data" class="btn-nav-action btn-danger-action" title="Borrar mis datos almacenados en este dispositivo">🗑️ Borrar mis datos</button>
+        <a href="index.html" class="btn-ghost">← Volver al inicio</a>
+      </div>
     </div>
   </header>
 
@@ -73,12 +75,45 @@
     </div>
   </div>
 
-  <!-- MODAL: Asesoría / Lead Form ("Quiero más información") -->
+  <!-- MODAL: Acerca de (Requisito Oficial Parte 1) -->
+  <div id="about-modal" class="modal-overlay" style="display: none;">
+    <div class="modal-content" style="max-width: 580px;">
+      <div class="modal-header">
+        <h3 style="font-size: 1.15rem; color: var(--color-primary); font-family: 'Rubik', sans-serif;">ℹ️ Acerca de ORIENTA</h3>
+        <button id="btn-close-about" class="close-btn" aria-label="Cerrar modal">&times;</button>
+      </div>
+      <div class="modal-body" style="font-size: 0.88rem; line-height: 1.6; color: #334155;">
+        <div style="background: #f0fdf4; border-left: 4px solid #16a34a; padding: 12px 16px; margin-bottom: 16px; border-radius: 0 6px 6px 0;">
+          <span style="font-weight: 700; color: #166534; font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.5px;">Aviso Académico Oficial Obligatorio</span>
+          <p style="margin: 6px 0 0 0; font-size: 0.88rem; color: #1e293b; line-height: 1.5;">
+            «Proyecto académico estudiantil de la carrera de Ingeniería de Sistemas de Información de la Pontificia Universidad Católica del Ecuador (PUCE), asignatura Emprendimiento Tecnológico, desarrollado con metodología de aprendizaje-servicio y con el apoyo de la Coordinación de Aprendizaje-Servicio. No es un producto oficial de la PUCE. Profesor tutor: Ing. Francisco Rodríguez, MsC · <a href="mailto:frodriguez@puce.edu.ec" style="color: #003b81; font-weight: 700;">frodriguez@puce.edu.ec</a>».
+          </p>
+        </div>
+        <p style="margin-bottom: 8px;">
+          <strong>Equipo de Desarrollo:</strong> Developers CARF (Joselyn Cadena · Product Owner, Alejandro Flores · Scrum Master, Paúl Rosero · Tech Lead & Frontend, Gabriel Aguinaga · UI/UX Designer).
+        </p>
+        <p style="margin-bottom: 8px;">
+          <strong>Licencia:</strong> Código abierto bajo <a href="https://opensource.org/licenses/MIT" target="_blank" style="color: #003b81; text-decoration: underline;">Licencia MIT</a>. Repositorio en GitHub disponible para auditoría académica.
+        </p>
+        <p style="margin-bottom: 8px;">
+          <strong>Contacto del equipo:</strong> <a href="mailto:semestre5grupal@gmail.com" style="color: #003b81; font-weight: 700;">semestre5grupal@gmail.com</a>
+        </p>
+        <p style="margin-top: 14px; font-size: 0.8rem; color: #64748b;">
+          Documentos legales: <a href="privacidad.html" target="_blank" style="color: #00a8cc; text-decoration: underline;">Política de Privacidad</a> · <a href="terminos.html" target="_blank" style="color: #00a8cc; text-decoration: underline;">Términos de Uso</a>
+        </p>
+      </div>
+      <div class="modal-footer">
+        <button class="btn btn-primary" id="btn-ack-about">Entendido</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- MODAL: Captura de Datos de Contacto (Lead) -->
   <div id="lead-modal" class="modal-overlay" style="display: none;">
-    <div class="modal-content" style="max-width: 480px;">
+    <div class="modal-content">
       <div class="modal-header">
         <div>
-          <span class="results-eyebrow" style="margin-bottom: 2px;">Admisiones PUCE</span>
+          <span class="results-eyebrow" style="margin-bottom: 2px;">Orientación Personalizada</span>
           <h3 style="font-size: 1.25rem;">Asegura tu Acompañamiento</h3>
         </div>
         <button id="btn-close-lead" class="close-btn" aria-label="Cerrar modal">&times;</button>
@@ -113,15 +148,15 @@
             <input id="lead-email" type="email" required placeholder="tuemail@ejemplo.com" style="width: 100%; padding: 10px 12px; border: 1px solid var(--color-border); border-radius: 4px; font-size: 0.88rem;">
           </div>
 
-          <!-- Aviso de Privacidad / Disclaimer y Consentimiento Obligatorio -->
+          <!-- Aviso de Privacidad / Disclaimer y Consentimiento Obligatorio (Parte 1 Checklist) -->
           <div style="background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 4px; padding: 10px 12px; margin-top: 4px;">
             <p style="font-size: 0.72rem; color: #64748b; line-height: 1.4; margin: 0 0 8px 0;">
-              <strong>Aviso de Privacidad:</strong> Tus datos personales serán tratados exclusivamente por la Pontificia Universidad Católica del Ecuador (PUCE) como medio de contacto institucional para brindarte orientación vocacional personalizada, información de carreras y opciones de becas. No serán compartidos con terceros.
+              <strong>Aviso de Privacidad:</strong> Tus datos personales serán tratados exclusivamente para orientarte vocacionalmente y comunicarte opciones de becas académicas. No serán compartidos con terceros. Conoce más en nuestra <a href="privacidad.html" target="_blank" style="color: #003b81; font-weight: 700; text-decoration: underline;">Política de Privacidad</a>.
             </p>
             <div style="display: flex; align-items: flex-start; gap: 8px;">
               <input type="checkbox" id="lead-consent" required style="margin-top: 2px; accent-color: var(--color-primary);">
               <label for="lead-consent" style="font-size: 0.75rem; color: var(--color-primary-dark); font-weight: 600; cursor: pointer;">
-                Acepto que mis datos sean utilizados para recibir orientación y acompañamiento vocacional de la PUCE. *
+                Leí y acepto la Política de Privacidad y autorizo el acompañamiento vocacional. *
               </label>
             </div>
           </div>
@@ -141,7 +176,7 @@
         <img class="chat-avatar" src="assets/img/aurelio/neutro.svg" alt="Aurelio">
         <div>
           <div class="chat-header-title">Aurelio Bot</div>
-          <div id="chat-header-sub" class="chat-header-sub">Orientador Vocacional PUCE</div>
+          <div id="chat-header-sub" class="chat-header-sub">Orientador Vocacional Inteligente</div>
         </div>
       </div>
       <div style="display: flex; align-items: center; gap: 6px;">
@@ -149,6 +184,12 @@
         <button id="btn-close-chat" class="close-btn" style="color: #fff;" aria-label="Cerrar chat">&times;</button>
       </div>
     </div>
+
+    <!-- Aviso Obligatorio de Inteligencia Artificial (Parte 1 Checklist) -->
+    <div class="chat-ai-notice">
+      🤖 Tu texto se envía a un servicio de IA para generar la respuesta. No escribas nombres ni datos de salud.
+    </div>
+
     <div id="chat-messages-container" class="chat-messages">
       <!-- Mensajes dinámicos -->
     </div>
@@ -171,6 +212,15 @@
       <button type="submit" class="chat-send-btn" disabled>Enviar</button>
     </form>
   </div>
+
+  <!-- Pie de página Oficial Permanente (Parte 1 & Parte 2 Checklist) -->
+  <footer class="app-official-footer">
+    <div class="footer-legal-container">
+      <p class="footer-legal-text">
+        © 2026 <strong>ORIENTA</strong> · Proyecto académico estudiantil de Ingeniería de Sistemas de Información de la PUCE, asignatura Emprendimiento Tecnológico, con metodología de aprendizaje-servicio · No es un producto oficial de la PUCE · Profesor tutor: Ing. Francisco Rodríguez, MsC (<a href="mailto:frodriguez@puce.edu.ec">frodriguez@puce.edu.ec</a>) · Versión beta, uso gratuito · Código bajo licencia MIT · <a href="privacidad.html" target="_blank">Política de privacidad</a> · <a href="terminos.html" target="_blank">Términos de uso</a> · Contacto: <a href="mailto:semestre5grupal@gmail.com">semestre5grupal@gmail.com</a>
+      </p>
+    </div>
+  </footer>
 
   <script type="module" src="js/test.js"></script>
 </body>

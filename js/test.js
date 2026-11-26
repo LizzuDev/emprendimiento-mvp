@@ -1318,6 +1318,39 @@ function setupModalEvents() {
   const closeChatBtn = document.getElementById('btn-close-chat');
   if (closeChatBtn) closeChatBtn.onclick = closeChat;
 
+  // Eventos Modal Acerca de (Parte 1 Checklist)
+  const aboutModal = document.getElementById('about-modal');
+  const btnOpenAbout = document.getElementById('btn-open-about');
+  const btnCloseAbout = document.getElementById('btn-close-about');
+  const btnAckAbout = document.getElementById('btn-ack-about');
+
+  if (btnOpenAbout && aboutModal) {
+    btnOpenAbout.onclick = () => { aboutModal.style.display = 'flex'; };
+  }
+  if (btnCloseAbout && aboutModal) {
+    btnCloseAbout.onclick = () => { aboutModal.style.display = 'none'; };
+  }
+  if (btnAckAbout && aboutModal) {
+    btnAckAbout.onclick = () => { aboutModal.style.display = 'none'; };
+  }
+  if (aboutModal) {
+    aboutModal.onclick = (e) => {
+      if (e.target === aboutModal) aboutModal.style.display = 'none';
+    };
+  }
+
+  // Botón para Borrar Datos y Ejercer Derecho de Supresión LOPDP (Parte 1 Checklist)
+  const btnResetData = document.getElementById('btn-reset-data');
+  if (btnResetData) {
+    btnResetData.onclick = () => {
+      if (confirm('¿Deseas borrar todas tus respuestas y datos almacenados en este dispositivo para empezar de cero?')) {
+        resetTest();
+        if (typeof sessionStorage !== 'undefined') sessionStorage.clear();
+        alert('✅ Tus datos locales han sido eliminados de este dispositivo.');
+      }
+    };
+  }
+
   const configGroqBtn = document.getElementById('btn-config-groq');
   if (configGroqBtn) {
     configGroqBtn.onclick = () => {
