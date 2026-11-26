@@ -4,7 +4,7 @@
 
 **Cómo revisar cada dato:** ✅ correcto (indica la fuente: URL o documento) · ✏️ corregir (escribe el dato correcto) · ❌ eliminar.
 
-**Estado:** 0 de 29 datos institucionales verificados · 9 de 39 carreras con problemas detectados automáticamente.
+**Estado:** 0 de 29 datos institucionales verificados · 20 de 39 carreras con problemas detectados automáticamente.
 
 ## Parte A · Datos institucionales
 
@@ -56,9 +56,9 @@ Estos datos se muestran en la pantalla de resultados **y** Aurelio los usa para 
 | Ingeniería en Sistemas de Información | 8 | 27% | $3950 | $2900 | — | |
 | Biología | 8 | 27% | $3950 | $2900 | — | |
 | Química | 8 | 29% | $3950 | $2800 | — | |
-| Medicina | 10 | 18% | ? | $4500 | ⚠️ no indica precio sin descuento | |
+| Medicina | 10 | ?% | ? | ? | ⚠️ sus tarjetas no son de costos (la primera es "Acreditación"): Aurelio no tiene el costo de esta carrera | |
 | Enfermería | 8 | 27% | $3950 | $2900 | — | |
-| Odontología | 10 | 27% | ? | $4000 | ⚠️ no indica precio sin descuento | |
+| Odontología | 10 | ?% | ? | ? | ⚠️ sus tarjetas no son de costos (la primera es "Clínicas"): Aurelio no tiene el costo de esta carrera | |
 | Fisioterapia | 8 | 27% | $3950 | $2900 | — | |
 | Nutrición y Dietética | 8 | 27% | $3950 | $2900 | — | |
 | Psicología Clínica | 9 | 27% | $3950 | $2900 | — | |
@@ -66,8 +66,8 @@ Estos datos se muestran en la pantalla de resultados **y** Aurelio los usa para 
 | Ciencias Biomédicas | 8 | 27% | $3950 | $2900 | — | |
 | Laboratorio Clínico | 8 | 27% | $3950 | $2900 | — | |
 | Microbiología | 8 | 27% | $3950 | $2900 | — | |
-| Medicina Veterinaria | 10 | 27% | ? | $3950 | ⚠️ no indica precio sin descuento | |
-| Derecho | 9 | 27% | ? | $2900 | ⚠️ no indica precio sin descuento | |
+| Medicina Veterinaria | 10 | ?% | ? | ? | ⚠️ sus tarjetas no son de costos (la primera es "Clínica"): Aurelio no tiene el costo de esta carrera | |
+| Derecho | 9 | ?% | ? | ? | ⚠️ sus tarjetas no son de costos (la primera es "Tradición"): Aurelio no tiene el costo de esta carrera | |
 | Relaciones Internacionales | 8 | 37% | $3950 | $2500 | — | |
 | Comunicación | 8 | 37% | $3950 | $2500 | — | |
 | Lenguas Aplicadas a los Estudios Globales | 8 | 37% | $3950 | $2500 | — | |
@@ -87,6 +87,8 @@ Estos datos se muestran en la pantalla de resultados **y** Aurelio los usa para 
 | Negocios Internacionales | 8 | 34% | $3950 | $2600 | — | |
 | Filosofía, Política y Economía (FPE) | 8 | 27% | $3950 | $3950 | ⚠️ 27% de descuento sobre $3950 da ~$2884, no $3950 | |
 | Psicología Organizacional | 8 | 27% | $3950 | $2900 | — | |
+
+Mientras una carrera tenga ⚠️ en costos, Aurelio **no dará cifras** de esa carrera: derivará a Admisiones.
 
 **Pregunta general:** ¿es real que *todas* las carreras tienen el mismo precio sin descuento ($3950)? Si no, necesitamos el precio de cada una.
 
@@ -135,3 +137,33 @@ Aparecen en la pantalla de resultados. Varias son cifras o comparaciones (por ej
 | Negocios Internacionales | Global: movilidad estudiantil — Convenios con universidades de Asia, Europa y EE.UU. | |
 | Filosofía, Política y Economía (FPE) | Oxford: programa interdisciplinario — Único en el país con enfoque tripartito | |
 | Psicología Organizacional | People: & Culture — Alta demanda en empresas de tecnología y banca | |
+
+## Parte D · Facultades
+
+La pantalla de resultados muestra la facultad del área y no la de la carrera. ¿Cuál es la correcta? Aurelio usará la de la carrera.
+
+| Carrera | Diferencia | Tu revisión |
+|---|---|---|
+| Biología | la pantalla de resultados muestra "Facultad de Ciencias Exactas y Naturales" pero la carrera es de "Facultad de Ciencias Exactas, Naturales y Ambientales" | |
+| Ciencias Biomédicas | la pantalla de resultados muestra "Facultad de Ciencias Exactas y Naturales" pero la carrera es de "Facultad de Salud y Bienestar" | |
+| Microbiología | la pantalla de resultados muestra "Facultad de Ciencias Exactas y Naturales" pero la carrera es de "Facultad de Salud y Bienestar" | |
+| Derecho | la pantalla de resultados muestra "Facultad de Ciencias Sociales y Humanidades" pero la carrera es de "Facultad de Jurisprudencia / Derecho y Sociedad" | |
+| Relaciones Internacionales | la pantalla de resultados muestra "Facultad de Ciencias Sociales y Humanidades" pero la carrera es de "Facultad de Derecho y Sociedad" | |
+| Comunicación | la pantalla de resultados muestra "Facultad de Ciencias Sociales y Humanidades" pero la carrera es de "Facultad de Aprendizaje, Lenguas y Comunicación" | |
+| Lingüística | la pantalla de resultados muestra "Facultad de Ciencias Sociales y Humanidades" pero la carrera es de "Facultad de Aprendizaje, Lenguas y Comunicación" | |
+| Educación Inicial (Presencial) | la pantalla de resultados muestra "Facultad de Ciencias Sociales y Humanidades" pero la carrera es de "Facultad de Aprendizaje, Lenguas y Comunicación" | |
+| Artes Visuales | la pantalla de resultados muestra "Facultad de Hábitat, Infraestructura y Creatividad" pero la carrera es de "Facultades de Humanidades / Hábitat y Artes" | |
+| Filosofía, Política y Economía (FPE) | la pantalla de resultados muestra "Facultad de Ciencias Sociales y Humanidades" pero la carrera es de "Facultad de Economía y Gestión Empresarial" | |
+
+## Parte E · Orden de las mallas curriculares
+
+Asignaturas numeradas que aparecen en un semestre anterior al de su número previo. Mientras una malla esté marcada, Aurelio mencionará sus materias **sin decir en qué semestre** se ven.
+
+| Carrera | Inconsistencias | Tu revisión |
+|---|---|---|
+| Arquitectura | "Laboratorio 1" está en el semestre 7 y "Laboratorio 2" en el 2 | |
+| Diseño Gráfico | "Laboratorio 1" está en el semestre 6 y "Laboratorio 2" en el 1 | |
+| Ingeniería Civil | "Asignatura 1" está en el semestre 7 y "Asignatura 3" en el 6 | |
+| Medicina | "Morfofunción 3" está en el semestre 3 y "Morfofunción 4" en el 2; "Ciencias Básicas de la Salud 1" está en el semestre 6 y "Ciencias Básicas de la Salud 2" en el 1; "Ciencias Básicas de la Salud 3" está en el semestre 4 y "Ciencias Básicas de la Salud 4" en el 2; "Desarrollo Humano 3" está en el semestre 4 y "Desarrollo Humano 4" en el 2; "IDIS 2" está en el semestre 4 y "IDIS 3" en el 2; "IDIS 4" está en el semestre 5 y "IDIS 5" en el 3; "IDIS 8" está en el semestre 10 y "IDIS 9" en el 9; "Administrativo Sanitario 1" está en el semestre 4 y "Administrativo Sanitario 2" en el 2; "Salud Integral Mujer 1" está en el semestre 4 y "Salud Integral Mujer 2" en el 3; "Salud Integral Adulto 1" está en el semestre 4 y "Salud Integral Adulto 2" en el 3; "Salud Integral Niño 1" está en el semestre 5 y "Salud Integral Niño 2" en el 3 | |
+| Comunicación | "Taller de Creación de Contenido 1" está en el semestre 4 y "Taller de Creación de Contenido 2" en el 3 | |
+| Artes Visuales | "Laboratorio 1" está en el semestre 6 y "Laboratorio 2" en el 1 | |

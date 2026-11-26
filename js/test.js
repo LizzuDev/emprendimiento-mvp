@@ -4,7 +4,7 @@
 // =========================================================
 
 import { MACROAREAS, FASE_1_QUESTIONS, DOMAIN_DATA } from './data/vocationalData.js';
-import { getAurelioContextualAnswer, queryGroqAurelio, getLastAurelioSource } from './aurelioBot.js';
+import { getAurelioContextualAnswer, queryAurelio, getLastAurelioSource } from './aurelioBot.js';
 import { formatAurelioMessage, escapeHtml } from './chatFormat.js';
 import { telemetry } from './telemetry.js';
 
@@ -1069,12 +1069,8 @@ function closeLeadModal() {
 function updateChatAiStatus() {
   const subEl = document.getElementById('chat-header-sub');
   if (!subEl) return;
-  const hasKey = typeof localStorage !== 'undefined' && !!(localStorage.getItem('puce_groq_api_key') || (typeof window !== 'undefined' && window.GROQ_API_KEY));
   const src = getLastAurelioSource();
-  if (hasKey) {
-    subEl.innerHTML = 'Llama 3.3 70B Activo <span style="color: #4ade80;">●</span>';
-    subEl.title = 'Conectado a Groq Cloud AI con tu clave personal';
-  } else if (src === 'groq' || src === 'gemini') {
+  if (src === 'groq' || src === 'gemini') {
     subEl.innerHTML = 'Asistente con IA <span style="color: #4ade80;">●</span>';
     subEl.title = 'Respondiendo con inteligencia artificial';
   } else if (src === 'local') {
@@ -1200,8 +1196,7 @@ async function sendAurelioQuestion(questionText) {
   const activeCareer = state.rankedCareers.find(c => c.key === state.activeCareerKey);
 
   try {
-    // Si la pregunta coincide con preguntas clave o si Groq está activo, resuelve
-    const reply = await queryGroqAurelio(activeCareer, userQuery, state.chatHistory);
+    const reply = await queryAurelio(activeCareer, userQuery, state.chatHistory);
 
     const existingTyping = document.getElementById('chat-typing-indicator');
     if (existingTyping) existingTyping.remove();
@@ -1347,31 +1342,6 @@ function setupModalEvents() {
         resetTest();
         if (typeof sessionStorage !== 'undefined') sessionStorage.clear();
         alert('✅ Tus datos locales han sido eliminados de este dispositivo.');
-      }
-    };
-  }
-
-  const configGroqBtn = document.getElementById('btn-config-groq');
-  if (configGroqBtn) {
-    configGroqBtn.onclick = () => {
-      const currentKey = localStorage.getItem('puce_groq_api_key') || '';
-      const newKey = prompt(
-        'Configurar Groq Cloud AI (Llama 3.3 70B):\n\n' +
-        'Pega tu API Key de Groq (ej: gsk_...):\n' +
-        '(Si lo dejas en blanco, Aurelio funcionará con el Motor Experto PUCE local sin consumir saldo)',
-        currentKey
-      );
-      if (newKey !== null) {
-        if (newKey.trim()) {
-          localStorage.setItem('puce_groq_api_key', newKey.trim());
-          if (typeof window !== 'undefined') window.GROQ_API_KEY = newKey.trim();
-          alert('✅ Clave de Groq configurada. Aurelio Bot responderá con IA en tiempo real.');
-        } else {
-          localStorage.removeItem('puce_groq_api_key');
-          if (typeof window !== 'undefined') delete window.GROQ_API_KEY;
-          alert('⚡ Clave eliminada. Aurelio Bot utilizará el Motor Experto PUCE local verificado.');
-        }
-        updateChatAiStatus();
       }
     };
   }

@@ -5,54 +5,26 @@
 import { readFileSync, writeFileSync, mkdirSync } from 'node:fs';
 import { dirname, resolve } from 'node:path';
 import { fileURLToPath } from 'node:url';
+import { analyzeCareer, listCareers } from './careerChecks.mjs';
 
 const ROOT = resolve(dirname(fileURLToPath(import.meta.url)), '../..');
 const KB_PATH = resolve(ROOT, 'supabase/functions/aurelio-chat/knowledge/puce.json');
 const OUT_PATH = resolve(ROOT, 'docs/aurelio/verificacion_datos.md');
 
-const { ALL_CAREERS_CATALOG } = await import(resolve(ROOT, 'js/data/vocationalData.js'));
+const data = await import(resolve(ROOT, 'js/data/vocationalData.js'));
 const kb = JSON.parse(readFileSync(KB_PATH, 'utf8'));
 
-const money = (s) => {
-  const m = String(s ?? '').match(/\$\s*([\d.,]+)/);
-  return m ? Number(m[1].replace(/[.,]/g, '')) : null;
-};
-const percent = (s) => {
-  const m = String(s ?? '').match(/(\d+(?:[.,]\d+)?)\s*%/);
-  return m ? Number(m[1].replace(',', '.')) : null;
-};
 const cell = (s) => String(s ?? '').replace(/\|/g, '\\|').replace(/\n/g, ' ');
 
 // ---------- 1. Revisión de carreras ----------
-const careers = Object.entries(ALL_CAREERS_CATALOG).map(([key, c]) => {
+const careers = listCareers(data).map(({ key, career: c, facultyMismatch }) => {
   const b = c.benefits || [];
-  const semesters = c.syllabus?.semesters?.length ?? 0;
-  const discount = percent(b[0]?.highlight);
-  const base = money(b[0]?.bottomText);
-  const investment = money(b[1]?.highlight);
-  const problems = [];
-
-  if (c.semesters_count !== semesters) problems.push(`semesters_count=${c.semesters_count} pero la malla tiene ${semesters}`);
-  const semText = String(b[1]?.bottomText ?? '').match(/(\d+)\s*semestre/);
-  if (semText && Number(semText[1]) !== semesters) problems.push(`la tarjeta dice ${semText[1]} semestres y la malla tiene ${semesters}`);
-  for (const f of ['description', 'fieldOfWork']) if (!c[f]) problems.push(`falta ${f}`);
-  if (!(c.skills || []).length) problems.push('faltan competencias (skills)');
-
-  let expected = null;
-  if (discount == null) problems.push('la tarjeta de descuento no tiene porcentaje');
-  if (base == null) problems.push('no indica precio sin descuento');
-  if (investment == null) problems.push('no indica inversión por semestre');
-  if (discount != null && base != null && investment != null) {
-    expected = Math.round(base * (1 - discount / 100));
-    if (Math.abs(expected - investment) > 60) {
-      problems.push(`${discount}% de descuento sobre $${base} da ~$${expected}, no $${investment}`);
-    }
-  }
-
+  const analysis = analyzeCareer(key, c);
+  if (facultyMismatch) analysis.problems.push(facultyMismatch);
   return {
-    key, name: c.name, semesters, discount, base, investment, expected,
+    ...analysis,
+    facultyMismatch,
     claim: b[2] ? `${b[2].highlight}: ${b[2].title ?? ''} — ${b[2].bottomText ?? ''}` : '',
-    problems,
   };
 });
 
@@ -92,9 +64,12 @@ md.push('');
 md.push('| Carrera | Semestres | Descuento | Precio sin descuento | Inversión / semestre | Problemas | Tu revisión |');
 md.push('|---|---|---|---|---|---|---|');
 for (const c of careers) {
-  const flag = c.problems.length ? '⚠️ ' + c.problems.join('; ') : '—';
+  const costProblems = c.problems.filter((p) => !p.startsWith('malla') && p !== c.facultyMismatch);
+  const flag = costProblems.length ? '⚠️ ' + costProblems.join('; ') : '—';
   md.push(`| ${cell(c.name)} | ${c.semesters} | ${c.discount ?? '?'}% | ${c.base != null ? '$' + c.base : '?'} | ${c.investment != null ? '$' + c.investment : '?'} | ${cell(flag)} | |`);
 }
+md.push('');
+md.push('Mientras una carrera tenga ⚠️ en costos, Aurelio **no dará cifras** de esa carrera: derivará a Admisiones.');
 md.push('');
 md.push('**Pregunta general:** ¿es real que *todas* las carreras tienen el mismo precio sin descuento ($3950)? Si no, necesitamos el precio de cada una.');
 md.push('');
@@ -105,6 +80,24 @@ md.push('');
 md.push('| Carrera | Afirmación | Tu revisión |');
 md.push('|---|---|---|');
 for (const c of careers) md.push(`| ${cell(c.name)} | ${cell(c.claim)} | |`);
+md.push('');
+md.push('## Parte D · Facultades');
+md.push('');
+md.push('La pantalla de resultados muestra la facultad del área y no la de la carrera. ¿Cuál es la correcta? Aurelio usará la de la carrera.');
+md.push('');
+md.push('| Carrera | Diferencia | Tu revisión |');
+md.push('|---|---|---|');
+for (const c of careers.filter((x) => x.facultyMismatch)) md.push(`| ${cell(c.name)} | ${cell(c.facultyMismatch)} | |`);
+md.push('');
+md.push('## Parte E · Orden de las mallas curriculares');
+md.push('');
+md.push('Asignaturas numeradas que aparecen en un semestre anterior al de su número previo. Mientras una malla esté marcada, Aurelio mencionará sus materias **sin decir en qué semestre** se ven.');
+md.push('');
+md.push('| Carrera | Inconsistencias | Tu revisión |');
+md.push('|---|---|---|');
+for (const c of careers.filter((x) => x.inversions.length)) {
+  md.push(`| ${cell(c.name)} | ${cell(c.inversions.join('; '))} | |`);
+}
 md.push('');
 
 mkdirSync(dirname(OUT_PATH), { recursive: true });
