@@ -6,6 +6,7 @@
 import { MACROAREAS, FASE_1_QUESTIONS, DOMAIN_DATA } from './data/vocationalData.js';
 import { getAurelioContextualAnswer, queryAurelio, getLastAurelioSource } from './aurelioBot.js';
 import { formatAurelioMessage, escapeHtml } from './chatFormat.js';
+import { OFFICIAL_CAREERS } from './data/aurelioKnowledge.js';
 import { telemetry } from './telemetry.js';
 
 // --- ESTADO GLOBAL Y PERSISTENCIA (MISMAS CLAVES QUE EN REACT) ---
@@ -549,11 +550,52 @@ function calculateFinalResults() {
 }
 
 // =========================================================
+// DATOS OFICIALES DE LA PUCE (www.puce.edu.ec)
+// Se buscan por clave al dibujar, así también se corrigen los resultados guardados antes.
+// Ver scripts/puce/actualizar.py
+// =========================================================
+function officialOf(career) {
+  return (career && OFFICIAL_CAREERS[career.key]) || null;
+}
+
+const formatUsd = (n) => `$${Number(n).toLocaleString('es-EC')}`;
+
+function officialStatsHtml(official) {
+  const c = official?.costo;
+  const cells = c
+    ? [
+        { label: 'Arancel', num: formatUsd(c.precioConDescuento), sub: 'por semestre, con descuento' },
+        { label: 'Descuento', num: `${c.descuentoPct}%`, sub: `sobre ${formatUsd(c.precioReal)}` },
+      ]
+    : [{ label: 'Arancel', num: '—', sub: 'consultar con Admisiones' }, { label: 'Descuento', num: '—', sub: '' }];
+  cells.push({ label: 'Duración', num: official?.semestres ?? '—', sub: official?.duracion && !/^\d+ semestres$/.test(official.duracion) ? official.duracion : 'semestres' });
+  return cells.map(b => `
+    <div class="react-stat-cell">
+      <span class="react-stat-label">${escapeHtml(b.label)}</span>
+      <span class="react-stat-num">${escapeHtml(String(b.num))}</span>
+      <span class="react-stat-sub">${escapeHtml(b.sub)}</span>
+    </div>
+  `).join('');
+}
+
+function officialSourcesHtml(official) {
+  if (!official) return '';
+  const c = official.costo;
+  const links = [
+    official.fuentes?.pagina ? `<a href="${escapeHtml(official.fuentes.pagina)}" target="_blank" rel="noopener noreferrer">página oficial de la carrera</a>` : '',
+    official.fuentes?.brochure ? `<a href="${escapeHtml(official.fuentes.brochure)}" target="_blank" rel="noopener noreferrer">brochure</a>` : '',
+  ].filter(Boolean).join(' · ');
+  const note = c ? `Valores por semestre. ${c.nota ? escapeHtml(c.nota) + '. ' : ''}${c.matricula ? `Matrícula: ${formatUsd(c.matricula)} por período. ` : ''}` : '';
+  return `<p class="react-official-note">${note}Fuente: ${links || 'www.puce.edu.ec'}.</p>`;
+}
+
+// =========================================================
 // PANTALLA DE RESULTADOS (IDÉNTICO A REACT)
 // =========================================================
 function renderResults() {
   const activeCareer = state.rankedCareers.find(c => c.key === state.activeCareerKey) || state.rankedCareers[0];
   if (!activeCareer) return;
+  const official = officialOf(activeCareer);
 
   appContainer.innerHTML = `
     <div class="react-results-wrap">
@@ -597,7 +639,7 @@ function renderResults() {
                 </div>
                 <div>
                   <h3 class="react-podium-name">${career.name}</h3>
-                  <div class="react-podium-faculty">${career.faculty || 'PUCE'}</div>
+                  <div class="react-podium-faculty">${escapeHtml(officialOf(career)?.facultad || 'PUCE')}</div>
                 </div>
                 <button class="react-podium-btn-select" data-key="${career.key}">
                   ${isSelected ? '✓ Explorando esta carrera' : 'Ver detalle y mini-reto →'}
@@ -638,14 +680,31 @@ function renderResults() {
         <!-- MAIN VIEW (DETALLE DE CARRERA) -->
         <div class="react-results-content">
           <div class="react-detail-header">
-            <p class="react-detail-desc">${activeCareer.description}</p>
+            ${official ? `
+              <p class="react-detail-desc">
+                <strong>${escapeHtml(official.titulo || activeCareer.name)}</strong>
+                ${official.facultad ? ` · ${escapeHtml(official.facultad)}` : ''}
+                ${official.modalidad ? ` · Modalidad ${escapeHtml(official.modalidad.toLowerCase())}` : ''}
+              </p>
+              ${official.resultadosAprendizaje?.length ? `
+                <div class="react-field-box">
+                  <span style="font-size: 16px;">🎯</span>
+                  <div>
+                    <strong style="color: #003b81;">Al terminar la carrera serás capaz de:</strong>
+                    <ul class="react-official-list">
+                      ${official.resultadosAprendizaje.slice(0, 4).map(r => `<li>${escapeHtml(r)}</li>`).join('')}
+                    </ul>
+                  </div>
+                </div>
+              ` : ''}
+            ` : `<p class="react-detail-desc">${escapeHtml(activeCareer.description || '')}</p>`}
 
-            ${activeCareer.fieldOfWork ? `
+            ${official?.campoLaboral ? `
               <div class="react-field-box">
                 <span style="font-size: 16px;">💼</span>
                 <div>
-                  <strong style="color: #003b81;">Campo ocupacional & impacto:</strong>
-                  <span>${activeCareer.fieldOfWork}</span>
+                  <strong style="color: #003b81;">¿Dónde puedo trabajar?</strong>
+                  <span>${escapeHtml(official.campoLaboral)}</span>
                 </div>
               </div>
             ` : ''}
@@ -666,18 +725,9 @@ function renderResults() {
               <span class="react-stat-label">Afinidad</span>
               <span class="react-stat-num">${activeCareer.matchPct}<span style="font-size: 18px;">%</span></span>
             </div>
-            ${(activeCareer.benefits || [
-              { topText: 'Descuento', highlight: '34%', title: 'sobre aranceles' },
-              { topText: 'Inversión', highlight: '$2600', title: 'por semestre' },
-              { topText: 'Empleabilidad', highlight: '94%', title: 'alta demanda' }
-            ]).map(b => `
-              <div class="react-stat-cell">
-                <span class="react-stat-label">${b.topText}</span>
-                <span class="react-stat-num">${b.highlight}</span>
-                <span class="react-stat-sub">${b.title}</span>
-              </div>
-            `).join('')}
+            ${officialStatsHtml(official)}
           </div>
+          ${officialSourcesHtml(official)}
 
           <!-- Acciones Rápidas (Horizontal) -->
           <div class="react-action-row">
@@ -983,66 +1033,79 @@ function renderInteractiveChallenge(career) {
 function openSyllabusModal(career) {
   if (!syllabusModal) return;
 
-  const syllabus = career.syllabus;
-
+  const official = officialOf(career);
+  const malla = official?.malla;
   const modalCareerTitle = document.getElementById('syllabus-career-title');
   const modalBody = document.getElementById('syllabus-body');
 
-  if (modalCareerTitle) modalCareerTitle.textContent = career.name || 'Carrera Universitaria';
+  if (modalCareerTitle) modalCareerTitle.textContent = official?.nombre || career.name || 'Carrera Universitaria';
 
-  // Si la carrera aún no tiene su malla cargada, se avisa en lugar de mostrar
-  // una malla que no le corresponde (#21).
-  if (modalBody && !syllabus) {
+  // Solo se muestra la malla oficial (brochure de la PUCE). Si no está, se avisa (#21).
+  if (modalBody && !malla?.length) {
     modalBody.innerHTML = `
       <p style="font-size: 14px; color: #334155; line-height: 1.6; margin: 0 0 16px;">
-        Todavía estamos preparando la malla de <strong>${career.name || 'esta carrera'}</strong> en esta plataforma.
+        No tenemos la malla oficial de <strong>${escapeHtml(career.name || 'esta carrera')}</strong> en esta plataforma.
       </p>
       <p style="font-size: 14px; color: #334155; line-height: 1.6; margin: 0;">
-        Mientras tanto, puedes revisarla en el
-        <a href="https://landing.puce.edu.ec/pucegradogeneral" target="_blank" rel="noopener" style="color: #003b81; font-weight: 700;">portal de grado de la PUCE</a>
-        o preguntarle a Aurelio por las materias de primer año.
+        Puedes revisarla en el
+        <a href="https://www.puce.edu.ec/grado/" target="_blank" rel="noopener noreferrer" style="color: #003b81; font-weight: 700;">portal de grado de la PUCE</a>
+        o preguntarle a Aurelio.
       </p>
     `;
   } else if (modalBody) {
+    const shared = official.semestresCompartidos || [];
+    const levels = malla
+      .map((sem, i) => ({ sem, n: i + 1 }))
+      .filter(({ n }) => !shared.some(p => p[1] === n)) // el semestre compartido se muestra junto al anterior
+      .map(({ sem, n }) => {
+        const pair = shared.find(p => p[0] === n);
+        return { title: pair ? `Niveles ${pair[0]} y ${pair[1]}` : `Nivel ${n}`, note: pair ? 'El brochure agrupa estas materias para ambos niveles.' : '', subjects: sem };
+      });
+    (official.bloquesAdicionales || []).forEach(b => levels.push({ title: b.titulo, note: `Después del nivel ${b.despues_del_semestre}`, subjects: b.materias }));
+
     modalBody.innerHTML = `
       <p style="font-size: 13px; color: #64748b; margin-bottom: 24px;">
-        Pasa el cursor o pulsa sobre cualquier materia para conocer más información formativa.
+        ${escapeHtml(official.duracion || `${malla.length} semestres`)} · Malla oficial según el
+        <a href="${escapeHtml(official.fuentes.brochure)}" target="_blank" rel="noopener noreferrer" style="color: #003b81; font-weight: 700;">brochure de la PUCE</a>.
       </p>
       <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: 20px;">
-        ${syllabus.semesters.map((sem, sIdx) => `
+        ${levels.map(l => `
           <div style="border-bottom: 2px solid #003b81; padding-bottom: 8px;">
-            <div style="display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 8px;">
+            <div style="display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 8px; gap: 8px;">
               <h4 style="font-size: 13px; font-weight: 800; text-transform: uppercase; color: #003b81; margin: 0;">
-                Nivel ${sIdx + 1}
+                ${escapeHtml(l.title)}
               </h4>
-              <span style="font-size: 11px; color: #94a3b8;">${sem.length} materias</span>
+              <span style="font-size: 11px; color: #94a3b8; white-space: nowrap;">${l.subjects.length} materias</span>
             </div>
+            ${l.note ? `<p style="font-size: 11px; color: #94a3b8; margin: 0 0 6px;">${escapeHtml(l.note)}</p>` : ''}
             <ul style="list-style: none; padding: 0; margin: 0; font-size: 12px; line-height: 1.4;">
-              ${sem.map(subject => {
-                const desc = syllabus.subjectDetails?.[subject] || 'Asignatura orientada a desarrollar destrezas prácticas y criterio profesional.';
-                return `
-                  <li style="padding: 6px 0; border-bottom: 1px solid #f1f5f9; cursor: pointer;" title="${desc}" onclick="alert('${subject}:\\n\\n${desc.replace(/'/g, "\\'")}')">
-                    • <span style="font-weight: 500; color: #334155;">${subject}</span>
-                  </li>
-                `;
-              }).join('')}
+              ${l.subjects.map(subject => `
+                <li style="padding: 6px 0; border-bottom: 1px solid #f1f5f9;">
+                  • <span style="font-weight: 500; color: #334155;">${escapeHtml(subject)}</span>
+                </li>
+              `).join('')}
             </ul>
           </div>
         `).join('')}
       </div>
 
-      ${syllabus.itineraries && syllabus.itineraries.length > 0 ? `
+      ${official.itinerarios?.length ? `
         <div style="margin-top: 32px; border-top: 1px solid #f1f5f9; padding-top: 20px;">
-          <h4 style="font-size: 13px; font-weight: 800; color: #003b81; text-transform: uppercase; margin-bottom: 12px;">
-            Itinerarios de Especialización
+          <h4 style="font-size: 13px; font-weight: 800; color: #003b81; text-transform: uppercase; margin-bottom: 4px;">
+            Itinerarios
           </h4>
+          <p style="font-size: 12px; color: #64748b; margin: 0 0 12px;">
+            Eliges uno: sus materias ocupan las «Asignaturas de itinerario» de la malla.
+          </p>
           <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: 16px;">
-            ${syllabus.itineraries.map(iti => `
+            ${official.itinerarios.map(iti => `
               <div style="border-left: 2px solid #00a8cc; padding-left: 12px;">
-                <strong style="font-size: 13px; color: #003b81;">${iti.name}</strong>
-                <ul style="padding-left: 14px; margin: 6px 0; font-size: 12px; color: #64748b;">
-                  ${iti.subjects.map(s => `<li>${s}</li>`).join('')}
-                </ul>
+                <strong style="font-size: 13px; color: #003b81;">${escapeHtml(iti.nombre)}</strong>
+                ${iti.materias.length ? `
+                  <ul style="padding-left: 14px; margin: 6px 0; font-size: 12px; color: #64748b;">
+                    ${iti.materias.map(m => `<li>${escapeHtml(m.materia)}${m.nivel ? ` <span style="color: #94a3b8;">(nivel ${m.nivel})</span>` : ''}</li>`).join('')}
+                  </ul>
+                ` : ''}
               </div>
             `).join('')}
           </div>
