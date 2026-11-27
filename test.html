@@ -193,22 +193,22 @@
       <!-- Mensajes dinámicos -->
     </div>
     <div class="chat-suggested-queries">
-      <div class="chat-queries-label">💡 Selecciona una pregunta para Aurelio:</div>
+      <div class="chat-queries-label">💡 Elige una pregunta o escribe la tuya abajo:</div>
       <div class="chat-queries-grid">
-        <button class="query-chip">🏥 ¿Qué convenios y prácticas tiene?</button>
-        <button class="query-chip">🌍 ¿Tienen intercambios internacionales?</button>
         <button class="query-chip">💰 ¿Cuánto cuesta y qué becas hay?</button>
         <button class="query-chip">📚 ¿Qué materias veré en primer año?</button>
+        <button class="query-chip">🎓 ¿Qué título obtengo y cuánto dura?</button>
         <button class="query-chip">💼 ¿Dónde puedo trabajar?</button>
-        <button class="query-chip">⚡ ¿Es difícil la carrera?</button>
-        <button class="query-chip">🎓 ¿Cuáles son los requisitos de grado?</button>
-        <button class="query-chip">🏆 ¿Qué acreditación tiene la universidad?</button>
+        <button class="query-chip">📝 ¿Cómo me inscribo y cuándo es el examen?</button>
+        <button class="query-chip">🌍 ¿Puedo hacer un intercambio internacional?</button>
+        <button class="query-chip">🤝 ¿Qué convenios tiene la carrera?</button>
+        <button class="query-chip">🏆 ¿Por qué estudiar en la PUCE?</button>
       </div>
     </div>
-    <!-- Entrada de texto libre oculta para modo guiado (sin dañar la lógica interna) -->
-    <form id="chat-form" class="chat-form" style="display: none !important;">
-      <input id="chat-input" type="text" class="chat-input" placeholder="Escribe tu pregunta a Aurelio..." disabled>
-      <button type="submit" class="chat-send-btn" disabled>Enviar</button>
+    <!-- Pregunta libre: el estudiante puede escribir lo que quiera además de usar las sugerencias -->
+    <form id="chat-form" class="chat-form">
+      <input id="chat-input" type="text" class="chat-input" placeholder="Escribe tu pregunta a Aurelio..." maxlength="500" autocomplete="off" aria-label="Escribe tu pregunta a Aurelio">
+      <button type="submit" class="chat-send-btn">Enviar</button>
     </form>
   </div>
 
