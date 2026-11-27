@@ -668,7 +668,7 @@ function renderResults() {
         <!-- MAIN VIEW (DETALLE DE CARRERA) -->
         <div class="react-results-content">
           <div class="react-detail-header">
-            <p class="react-detail-desc">${activeCareer.description}</p>
+            ${(official ? official.descripcion : activeCareer.description) ? `<p class="react-detail-desc">${escapeHtml(official ? official.descripcion : activeCareer.description)}</p>` : ''}
 
             ${(official?.campoLaboral || activeCareer.fieldOfWork) ? `
               <div class="react-field-box">

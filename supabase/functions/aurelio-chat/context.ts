@@ -8,6 +8,7 @@ export type Career = {
   key: string;
   nombre: string;
   facultad: string | null;
+  descripcion: string | null;
   titulo: string | null;
   duracion: string | null;
   semestres: number | null;
@@ -70,6 +71,7 @@ function careerBlock(c: Career, opts: { full: boolean }) {
   const lines = [
     `Carrera: ${c.nombre}`,
     `Facultad: ${c.facultad || 'NO DISPONIBLE'}`,
+    ...(c.descripcion ? [`Descripción: ${c.descripcion}`] : []),
     `Título que otorga: ${c.titulo || 'NO DISPONIBLE'}`,
     `Duración: ${c.duracion || 'NO DISPONIBLE'}`,
     `Modalidad: ${c.modalidad || 'NO DISPONIBLE'}`,

@@ -1,6 +1,6 @@
 # Extracción de datos oficiales de la PUCE
 
-> Generado el 2026-11-26 por `scripts/puce/build_official.py` a partir de las páginas oficiales de cada carrera en www.puce.edu.ec y de los brochures PDF enlazados en ellas. No editar a mano.
+> Generado el 2026-11-27 por `scripts/puce/build_official.py` a partir de las páginas oficiales de cada carrera en www.puce.edu.ec y de los brochures PDF enlazados en ellas. No editar a mano.
 
 - Carreras revisadas: **39**
 - Con costo oficial: **39**

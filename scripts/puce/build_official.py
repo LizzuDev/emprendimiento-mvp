@@ -117,6 +117,32 @@ def resolve_faculties(names: dict, deans: dict) -> tuple[dict, dict]:
     return result, notes
 
 
+def verified_descriptions(landings: dict) -> tuple[dict, dict]:
+    """Descripciones de data/puce/descripciones.json cuyas citas aparecen todas en la página oficial."""
+    sys.path.insert(0, str(Path(__file__).resolve().parent))
+    from parse_landings import html_to_lines
+    from verify_facts import norm as vnorm
+    src = DATA / "descripciones.json"
+    if not src.exists():
+        return {}, {}
+    data = json.loads(src.read_text(encoding="utf8"))
+    ok, problems = {}, {}
+    for key, entry in data.items():
+        if key.startswith("_"):
+            continue
+        page = ROOT / ".cache" / "puce" / "landing" / f"{key}.html"
+        if not page.exists():
+            problems[key] = "descripción sin verificar: la página oficial no está descargada"
+            continue
+        text = vnorm(" ".join(html_to_lines(page.read_text(encoding="utf8", errors="replace"))))
+        missing = [c for c in entry.get("citas", []) if vnorm(c) not in text]
+        if entry.get("citas") and not missing:
+            ok[key] = entry["descripcion"]
+        else:
+            problems[key] = "descripción sin verificar, citas no encontradas: " + " | ".join(missing or ["(sin citas)"])
+    return ok, problems
+
+
 def first(*values):
     return next((v for v in values if v not in (None, "", [])), None)
 
@@ -127,6 +153,7 @@ def main():
     platform = platform_careers()
     aranceles = json.loads((DATA / "aranceles.json").read_text(encoding="utf8"))
     arancel_by_name = {norm(r["carrera"]): r for r in aranceles["carreras"].values()}
+    descriptions, description_problems = verified_descriptions(landings)
     faculties, faculty_notes = resolve_faculties(
         {k: landings.get(k, {}).get("nombre") or v["name"] for k, v in platform.items()},
         {k: landings.get(k, {}).get("decano") for k in platform},
@@ -181,6 +208,10 @@ def main():
                 issues.append(f"precio real: página ${price['precio_real']} vs tabla oficial de aranceles ${tabla['arancel_regular']:g}")
         else:
             issues.append("la carrera no aparece en la tabla oficial de aranceles (Anexo 2)")
+        if key in description_problems:
+            issues.append(description_problems[key])
+        elif key not in descriptions:
+            issues.append("no tiene descripción en data/puce/descripciones.json")
         if faculty_notes.get(key, "").startswith("facultad ambigua"):
             issues.append(faculty_notes[key])
 
@@ -189,6 +220,7 @@ def main():
             "facultad": faculties[key][0] if faculties.get(key) else None,
             "facultad_fuente": faculties[key][1] if faculties.get(key) else None,
             "nombre": first(L.get("nombre"), (B.get("nombre") or "").title()),
+            "descripcion": descriptions.get(key),
             "titulo": first(L.get("titulo"), B.get("titulo")),
             "duracion": duration,
             "semestres": len(malla) if malla else n_dur,

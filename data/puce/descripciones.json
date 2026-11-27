@@ -1,0 +1,159 @@
+{
+  "_instrucciones": "Descripción breve de cada carrera para la pantalla de resultados. Cada afirmación sale de la página oficial de la carrera: 'citas' son fragmentos copiados textualmente de ella. build_official.py solo usa la descripción si TODAS sus citas aparecen en la página descargada.",
+  "ingenieria_integral": {
+    "descripcion": "Formación con competencias científico-técnicas y empresariales: dominio de conocimientos teóricos y prácticos para analizar y desarrollar proyectos complejos, manejo ágil de herramientas y métodos de ingeniería, y liderazgo en entornos industriales o de servicios.",
+    "citas": ["Competencias científico-técnicas", "Competencias empresariales y sociales", "Dominio de conocimientos teóricos y prácticos para analizar y desarrollar proyectos complejos", "Manejo ágil de herramientas y métodos de ingeniería", "Liderazgo en entornos industriales o de servicios"]
+  },
+  "arquitectura": {
+    "descripcion": "Aprenderás a diseñar proyectos arquitectónicos y urbanos integrando contexto social, ambiental y cultural, e incorporando principios de sostenibilidad y ética en el diseño de hábitats seguros, accesibles e inclusivos.",
+    "citas": ["Diseñar proyectos arquitectónicos y urbanos integrando contexto social, ambiental y cultural", "Incorporar principios de sostenibilidad y ética en el diseño de hábitats seguros, accesibles e inclusivos"]
+  },
+  "ciencia_datos": {
+    "descripcion": "Aprenderás a analizar datos para identificar tendencias, patrones y soluciones a problemas, y a desarrollar modelos científicos descriptivos, predictivos y prescriptivos para apoyar la toma de decisiones.",
+    "citas": ["Analizar datos para identificar tendencias, patrones y soluciones a problemas", "Desarrollar modelos científicos descriptivos, predictivos y prescriptivos", "para apoyar la toma de decisiones"]
+  },
+  "diseno_grafico": {
+    "descripcion": "Aprenderás a diseñar mensajes gráficos efectivos con alto valor simbólico y a crear soluciones visuales con impacto positivo, integrando criterios de pertinencia, estética y funcionalidad.",
+    "citas": ["Diseñar mensajes gráficos efectivos con alto valor simbólico", "crear soluciones visuales con impacto positivo", "integrando criterios de pertinencia, estética y funcionalidad"]
+  },
+  "ingenieria_civil": {
+    "descripcion": "Aprenderás a planificar proyectos de ingeniería civil en especialidades como vial, estructural y sanitaria, y a diseñar soluciones de infraestructura que minimicen el impacto ambiental.",
+    "citas": ["Planificar proyectos de ingeniería civil en especialidades como vial, estructural y sanitaria", "Diseñar soluciones de infraestructura que minimicen el impacto ambiental"]
+  },
+  "sistemas_informacion": {
+    "descripcion": "Aprenderás a desarrollar sistemas informáticos aplicando pensamiento lógico, matemático y algorítmico, y a diseñar servicios de información para compartir datos en múltiples plataformas.",
+    "citas": ["Desarrollar sistemas informáticos aplicando pensamiento lógico, matemático y algorítmico", "Diseñar servicios de información", "para compartir datos en múltiples plataformas"]
+  },
+  "biologia": {
+    "descripcion": "Aprenderás a analizar procesos biológicos a nivel molecular, celular y ecosistémico, a investigar la biodiversidad y los cambios globales, y a diseñar proyectos de conservación y manejo de recursos naturales.",
+    "citas": ["Analizar procesos biológicos a nivel molecular, celular y ecosistémico", "Investigar la biodiversidad y los cambios globales", "Diseñar proyectos de conservación y manejo de recursos naturales"]
+  },
+  "quimica": {
+    "descripcion": "Formamos profesionales competentes en el análisis químico e investigación científica, con una sólida formación académica en las metodologías analíticas y amplia experiencia en el manejo de técnicas instrumentales.",
+    "citas": ["formamos profesionales competentes en el análisis químico e investigación científica con una sólida formación académica en las metodologías analíticas y amplia experiencia en el manejo de técnicas instrumentales"]
+  },
+  "medicina": {
+    "descripcion": "Aprenderás a atender integralmente las necesidades de salud de personas, familias y comunidades, aplicando principios éticos, de calidad y seguridad en la atención médica con evidencia científica actualizada.",
+    "citas": ["Atender integralmente las necesidades de salud de personas, familias y comunidades", "Aplicar principios éticos, de calidad y seguridad en la atención médica, utilizando evidencia científica actualizada"]
+  },
+  "enfermeria": {
+    "descripcion": "Aprenderás a proveer cuidado integral a personas, familias y comunidades, promoviendo su bienestar y calidad de vida, y a gestionar servicios de salud orientados a la seguridad del paciente.",
+    "citas": ["Proveer cuidado integral a personas, familias y comunidades, promoviendo su bienestar y calidad de vida", "Gestionar servicios de salud con un enfoque ético, eficiente y orientado a la seguridad del paciente"]
+  },
+  "odontologia": {
+    "descripcion": "Aprenderás a realizar evaluaciones clínicas y diagnósticos precisos para diseñar tratamientos odontológicos efectivos, aplicando técnicas especializadas en operatoria dental, endodoncia, periodoncia, ortodoncia, cirugía oral y rehabilitación.",
+    "citas": ["Realizar evaluaciones clínicas y diagnósticos precisos para diseñar tratamientos odontológicos efectivos", "Aplicar técnicas especializadas en operatoria dental, endodoncia, periodoncia, ortodoncia, cirugía oral y rehabilitación"]
+  },
+  "fisioterapia": {
+    "descripcion": "Aprenderás a diseñar programas de rehabilitación y tratamientos basados en diagnósticos fisioterapéuticos, y a liderar intervenciones en entornos clínicos, escolares, industriales o deportivos.",
+    "citas": ["Diseñar programas de rehabilitación y tratamientos basados en diagnósticos fisioterapéuticos", "Liderar intervenciones en entornos clínicos, escolares, industriales o deportivos"]
+  },
+  "nutricion": {
+    "descripcion": "Aprenderás a diseñar planes alimentario-nutricionales personalizados y a evaluar el estado nutricional de individuos y comunidades para proponer intervenciones dietoterapéuticas efectivas.",
+    "citas": ["Diseñar planes alimentario-nutricionales personalizados", "Evaluar el estado nutricional de individuos y comunidades para proponer intervenciones dietoterapéuticas efectivas"]
+  },
+  "psicologia_clinica": {
+    "descripcion": "Aprenderás a evaluar y diagnosticar trastornos psicológicos utilizando herramientas psicométricas estandarizadas, y a diseñar intervenciones clínicas que promuevan el bienestar mental.",
+    "citas": ["Evaluar y diagnosticar trastornos psicológicos utilizando herramientas psicométricas estandarizadas", "Diseñar intervenciones clínicas que promuevan el bienestar mental"]
+  },
+  "bioingenieria": {
+    "descripcion": "Aprenderás a analizar, diseñar y gestionar sistemas productivos sostenibles, y a desarrollar investigación aplicada con la biodiversidad existente para crear e innovar bienes y servicios.",
+    "citas": ["A analizar, diseñar y gestionar sistemas productivos sostenibles", "desarrollar investigación aplicada con la biodiversidad existente, para crear e innovar bienes y servicios"]
+  },
+  "ciencias_biomedicas": {
+    "descripcion": "Aprenderás a diseñar investigaciones para resolver problemas de salud, a analizar datos biomédicos y a aplicar técnicas de investigación en laboratorios públicos y privados.",
+    "citas": ["diseñar investigaciones para resolver problemas de salud", "Analizar datos biomédicos", "Aplicar técnicas de investigación de manera crítica, creativa e innovadora en laboratorios públicos y privados"]
+  },
+  "laboratorio_clinico": {
+    "descripcion": "Aprenderás a integrar conocimientos teóricos, técnicos e investigativos en la práctica del laboratorio clínico, y a administrar laboratorios clínicos con eficiencia.",
+    "citas": ["Integrar conocimientos teóricos, técnicos e investigativos en la práctica del laboratorio clínico", "Administrar laboratorios clínicos con eficiencia"]
+  },
+  "microbiologia": {
+    "descripcion": "Aprenderás a aplicar técnicas microbiológicas en la identificación, producción y control de microorganismos, y a desarrollar soluciones biotecnológicas que promuevan la salud humana, animal, vegetal y la sostenibilidad ambiental.",
+    "citas": ["Aplicar técnicas microbiológicas en la identificación, producción y control de microorganismos", "Desarrollar soluciones biotecnológicas que promuevan la salud humana, animal, vegetal y la sostenibilidad ambiental"]
+  },
+  "veterinaria": {
+    "descripcion": "Aprenderás a diagnosticar y tratar enfermedades en especies domésticas y silvestres, a aplicar técnicas quirúrgicas avanzadas y a diseñar estrategias de prevención y promoción de la salud animal integrando el concepto de One Health.",
+    "citas": ["Diagnosticar y tratar enfermedades en especies domésticas y silvestres", "Aplicar técnicas quirúrgicas avanzadas", "Diseñar estrategias de prevención y promoción de la salud animal, integrando el concepto de One Health"]
+  },
+  "derecho": {
+    "descripcion": "Aprenderás a analizar y resolver problemas jurídicos aplicando principios del Derecho, y a diseñar soluciones jurídicas fundamentadas que promuevan el diálogo, la equidad y la justicia social.",
+    "citas": ["Analizar y resolver problemas jurídicos aplicando principios del Derecho", "Diseñar soluciones jurídicas fundamentadas que promuevan el diálogo, la equidad y la justicia social"]
+  },
+  "relaciones_internacionales": {
+    "descripcion": "Aprenderás a analizar fenómenos internacionales desde dimensiones políticas, sociales, económicas, jurídicas y culturales, y a comprender problemas globales, políticas exteriores y procesos de integración regional.",
+    "citas": ["analizar fenómenos internacionales desde dimensiones políticas, sociales, económicas, jurídicas y culturales", "comprender problemas globales, políticas exteriores y procesos de integración regional"]
+  },
+  "comunicacion": {
+    "descripcion": "Aprenderás a ser generador de contenido, estratega de comunicación y storyteller, a producir contenidos periodísticos en múltiples formatos y a desenvolverte en el entorno del marketing digital y de la ciencia de datos.",
+    "citas": ["ser generadores de contenido, estrategas de comunicación y storytellers", "producir contenidos periodísticos en múltiples formatos", "desenvolverse en el entorno del marketing digital y de la ciencia de datos"]
+  },
+  "lenguas_aplicadas": {
+    "descripcion": "Aprenderás a dominar distintas lenguas, a analizar realidades globales y a manejar conocimientos de ciudadanía global, cultura de paz, relaciones públicas y cooperación intercultural para el desarrollo.",
+    "citas": ["A dominar distintas lenguas, a analizar realidades globales", "manejar conocimientos relacionados a ciudadanía global, cultura de paz, relaciones públicas y cooperación intercultural para el desarrollo"]
+  },
+  "linguistica": {
+    "descripcion": "Aprenderás a analizar la relación entre lengua, sociedad y cultura, a desarrollar competencias en traducción e interpretación y a investigar lenguas en riesgo de extinción para proponer estrategias para su revitalización.",
+    "citas": ["Analizar la relación entre lengua, sociedad y cultura", "Desarrollar competencias en traducción e interpretación", "Investigar lenguas en riesgo de extinción y proponer estrategias para su revitalización"]
+  },
+  "literatura": {
+    "descripcion": "Te formarás en la teoría literaria, el análisis y la interpretación de textos, para realizar una lectura minuciosa y atenta de los textos y de sus manifestaciones culturales.",
+    "citas": ["la teoría literaria, el análisis y la interpretación de textos", "realizar una lectura minuciosa y atenta de los textos y de sus manifestaciones culturales"]
+  },
+  "educacion_inicial": {
+    "descripcion": "Aprenderás a diseñar ambientes de aprendizaje motivadores, inclusivos e integradores, y a desarrollar investigaciones pedagógicas que respondan a las necesidades de la primera infancia.",
+    "citas": ["Diseñar ambientes de aprendizaje motivadores, inclusivos e integradores", "Desarrollar investigaciones pedagógicas y socioeducativas que respondan a las necesidades de la primera infancia"]
+  },
+  "psicologia_educativa": {
+    "descripcion": "Aprenderás a diseñar y ejecutar intervenciones y evaluaciones psicoeducativas que faciliten el desarrollo de las personas, y a planificar proyectos psicoeducativos y psicosociales en el ámbito educativo.",
+    "citas": ["diseñar y ejecutar intervenciones y evaluaciones psicoeducativas que faciliten el desarrollo de las personas", "Planificar proyectos psicoeducativos y psicosociales con responsabilidad social en el ámbito educativo"]
+  },
+  "artes_visuales": {
+    "descripcion": "Aprenderás a desarrollar prácticas artísticas innovadoras desde la investigación-creación, y a crear proyectos artísticos que respondan a contextos sociales, culturales y ambientales.",
+    "citas": ["Desarrollar prácticas artísticas innovadoras desde la investigación-creación", "Crear proyectos artísticos relevantes que respondan a contextos sociales, culturales y ambientales"]
+  },
+  "filosofia": {
+    "descripcion": "Aprenderás a analizar investigaciones y textos especializados en filosofía, a desarrollar proyectos de investigación filosófica y a aplicar la reflexión crítica y la autonomía profesional en la toma de decisiones.",
+    "citas": ["Analizar investigaciones y textos especializados en filosofía", "Desarrollar proyectos de investigación filosófica", "Aplicar la reflexión crítica y la autonomía profesional en la toma de decisiones"]
+  },
+  "teologia": {
+    "descripcion": "Aprenderás a analizar fundamentos bíblicos, teológicos y pastorales desde una perspectiva crítica y actual, y a diseñar proyectos pastorales y comunitarios.",
+    "citas": ["Analizar fundamentos bíblicos, teológicos y pastorales desde una perspectiva crítica y actual", "Diseñar proyectos pastorales y comunitarios"]
+  },
+  "administracion_empresas": {
+    "descripcion": "Aprenderás a diseñar e implementar planes estratégicos y operativos para el desarrollo y crecimiento organizacional, a liderar procesos de negociación y a elaborar proyectos de negocio, inversión y financiamiento.",
+    "citas": ["Diseñar e implementar planes estratégicos y operativos para el desarrollo y crecimiento organizacional", "Liderar procesos de negociación", "Elaborar y evaluar proyectos de negocio, inversión y financiamiento"]
+  },
+  "turismo": {
+    "descripcion": "Una formación que te acerca a los más de 100 subsectores en los que el turismo y la hospitalidad pueden desarrollarse, con giras académicas por los principales destinos turísticos del país y un viaje académico a las Islas Galápagos.",
+    "citas": ["los más de 100 subsectores en los que el turismo y la hospitalidad pueden desarrollarse", "giras académicas que permiten conocer los principales destinos turísticos del país", "realizar un viaje académico a las Islas Galápagos"]
+  },
+  "contabilidad": {
+    "descripcion": "Aprenderás a evaluar procesos contables, financieros y de auditoría aplicando normas internacionales y legislación vigente, y a generar información contable relevante para la toma de decisiones.",
+    "citas": ["Evaluar procesos contables, financieros y de auditoría aplicando normas internacionales y legislación vigente", "generar información contable relevante para la toma de decisiones"]
+  },
+  "economia_carrera": {
+    "descripcion": "Aprenderás a analizar fenómenos económicos y sociales, a aplicar herramientas estadísticas, econométricas y modelos económicos, y a diseñar políticas económicas orientadas al desarrollo sostenible.",
+    "citas": ["Analizar fenómenos económicos y sociales", "Aplicar herramientas estadísticas, econométricas y modelos económicos", "Diseñar propuestas y políticas económicas orientadas al desarrollo sostenible"]
+  },
+  "finanzas": {
+    "descripcion": "Aprenderás a gestionar recursos financieros considerando fuentes de financiamiento, riesgos y normativa, y a diseñar y ejecutar proyectos de inversión y financiamiento en mercados nacionales e internacionales.",
+    "citas": ["Gestionar recursos financieros considerando fuentes de financiamiento, riesgos, normativa", "Diseñar y ejecutar proyectos de inversión y financiamiento en mercados nacionales e internacionales"]
+  },
+  "marketing": {
+    "descripcion": "Aprenderás a diseñar estrategias de producto, precio, distribución y promoción, y a desarrollar estrategias de comercialización en entornos digitales y tradicionales.",
+    "citas": ["diseñar estrategias de producto, precio, distribución y promoción", "Desarrollar estrategias de comercialización en entornos digitales y tradicionales"]
+  },
+  "negocios_internacionales": {
+    "descripcion": "Aprenderás a liderar negociaciones y acuerdos estratégicos que vinculen mercados locales con internacionales, creando soluciones innovadoras con visión global.",
+    "citas": ["Liderar negociaciones y acuerdos estratégicos que vinculen mercados locales con internacionales", "creando soluciones innovadoras con visión global"]
+  },
+  "fpe": {
+    "descripcion": "Única carrera de grado en Ecuador que combina filosofía, política y economía. Aprenderás a analizar críticamente fenómenos políticos, económicos y sociales, y a diseñar propuestas de desarrollo y políticas públicas.",
+    "citas": ["Única carrera de grado en Ecuador que combina filosofía, política y economía", "Analizar críticamente fenómenos políticos, económicos y sociales", "Diseñar propuestas de desarrollo y políticas públicas"]
+  },
+  "psicologia_organizacional": {
+    "descripcion": "Aprenderás a aplicar estrategias de gestión humana para la planificación, organización y evaluación del talento en las empresas, y a fomentar la salud y el bienestar en las organizaciones mediante la prevención de riesgos psicosociales.",
+    "citas": ["Aplicar estrategias de gestión humana", "evaluación del talento en las empresas", "Fomentar la salud y el bienestar en las organizaciones mediante la prevención de riesgos psicosociales"]
+  }
+}

@@ -10,6 +10,7 @@ Aurelio responde **solo con datos oficiales públicos de la PUCE**, extraídos a
 | Brochure PDF de cada carrera (botón BROCHURE) | malla por semestre, internados, itinerarios con su nivel | `parse_brochures.py` |
 | Tabla oficial de aranceles 2026 (PDF en `/aranceles/`) | arancel y matrícula por carrera (Anexo 2), seguro, notas | `parse_aranceles.py` |
 | Páginas de facultad | a qué facultad pertenece cada carrera | `build_official.py` |
+| `data/puce/descripciones.json` (redactado a mano) | descripción breve de cada carrera para la pantalla de resultados; cada una con citas textuales de la página oficial, que `build_official.py` comprueba | `build_official.py` |
 | Páginas institucionales (admisiones, becas, internacionalización, biblioteca…) | 41 datos con citas textuales | `verify_facts.py` |
 
 Todo se descarga con `fetch_sources.py` (pausa de 1,5 s entre solicitudes, caché de 24 h en `.cache/puce/`, que no se sube a git) y queda registrado en `data/puce/manifest.json` con URL, fecha y sha256.

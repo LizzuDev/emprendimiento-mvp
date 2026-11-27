@@ -29,6 +29,7 @@ for (const [key, o] of Object.entries(official)) {
     key,
     nombre: o.nombre,
     facultad: o.facultad,
+    descripcion: o.descripcion || null,
     titulo: o.titulo,
     duracion: o.duracion,
     semestres: o.semestres,
