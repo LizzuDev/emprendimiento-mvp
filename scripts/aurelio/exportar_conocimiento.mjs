@@ -10,7 +10,8 @@
 //
 // Reglas: solo datos oficiales; de puce.json solo las entradas con verificado=true.
 
-import { readFileSync, writeFileSync } from 'node:fs';
+import { readFileSync, writeFileSync, copyFileSync } from 'node:fs';
+import { createHash } from 'node:crypto';
 import { dirname, resolve } from 'node:path';
 import { fileURLToPath } from 'node:url';
 
@@ -58,11 +59,19 @@ const facts = (kb.entradas || [])
   .filter((e) => e.verificado === true && String(e.texto || '').trim())
   .map(({ id, tema, texto, fuente }) => ({ id, tema, texto, fuente }));
 
+// Versión de los datos: cambia cuando cambian los datos oficiales e invalida las cachés de respuestas.
+const KB_VERSION = createHash('sha256').update(JSON.stringify(careers)).update(JSON.stringify(facts)).digest('hex').slice(0, 12);
+
 writeFileSync(CAREERS_OUT, JSON.stringify(careers, null, 1));
+writeFileSync(resolve(ROOT, 'supabase/functions/aurelio-chat/knowledge/version.json'), JSON.stringify({ version: KB_VERSION }) + '\n');
+// El analizador de preguntas es el mismo en el navegador y en la Edge Function.
+copyFileSync(resolve(ROOT, 'js/aurelioNLP.js'), resolve(ROOT, 'supabase/functions/aurelio-chat/nlp.js'));
 writeFileSync(
   BROWSER_OUT,
   `// ARCHIVO GENERADO por scripts/aurelio/exportar_conocimiento.mjs a partir de fuentes oficiales de la PUCE.
 // No editar a mano: ejecutar python3 scripts/puce/actualizar.py
+
+export const KB_VERSION = '${KB_VERSION}';
 
 export const PUCE_FACTS = ${JSON.stringify(facts, null, 1)};
 
@@ -72,5 +81,6 @@ export const OFFICIAL_CAREERS = ${JSON.stringify(careers)};
 
 const size = (p) => (readFileSync(p).length / 1024).toFixed(0) + ' KB';
 const unverified = (kb.entradas || []).filter((e) => e.verificado !== true).map((e) => e.id);
+console.log(`Versión de los datos: ${KB_VERSION}`);
 console.log(`Carreras exportadas: ${Object.keys(careers).length} (${size(CAREERS_OUT)}; navegador ${size(BROWSER_OUT)})`);
 console.log(`Datos institucionales verificados: ${facts.length}/${(kb.entradas || []).length}${unverified.length ? ` · sin verificar: ${unverified.join(', ')}` : ''}`);

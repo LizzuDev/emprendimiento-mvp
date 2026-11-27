@@ -1,14 +1,18 @@
 // =========================================================
 // AurelioBot · Orientación vocacional de la PUCE
 //
-// 1. Camino principal: Edge Function de Supabase `aurelio-chat`, que arma el contexto
-//    con datos verificados y consulta la IA (las claves viven solo en el servidor).
-// 2. Respaldo: motor local por intención. Solo usa los datos oficiales extraídos de
-//    www.puce.edu.ec (js/data/aurelioKnowledge.js); si no sabe algo, lo dice y deriva a Admisiones.
+// Para ahorrar cuota de IA, cada pregunta sigue esta ruta (ver planRoute en js/aurelioNLP.js):
+//   1. Pregunta sugerida, saludo o tema claro  -> motor local con datos oficiales (0 tokens)
+//   2. Pregunta compleja ya respondida antes   -> caché del navegador o caché compartida (0 tokens)
+//   3. Pregunta compleja nueva                 -> Edge Function `aurelio-chat` con contexto mínimo
+//   4. Si la IA falla                          -> motor local (respaldo)
+// El alcance es la carrera que el estudiante está viendo; otra carrera solo si la nombra.
+// Datos: js/data/aurelioKnowledge.js (oficiales, extraídos de www.puce.edu.ec).
 // =========================================================
 
 import { SUPABASE_FUNCTIONS_URL, SUPABASE_ANON_KEY, SUPABASE_CONFIGURED } from './supabaseClient.js';
-import { PUCE_FACTS, OFFICIAL_CAREERS } from './data/aurelioKnowledge.js';
+import { PUCE_FACTS, OFFICIAL_CAREERS, KB_VERSION } from './data/aurelioKnowledge.js';
+import { planRoute, detectIntent, fingerprint, isCacheable, INCOHERENT_REPLY } from './aurelioNLP.js';
 
 const AI_PROXY_URL = `${SUPABASE_FUNCTIONS_URL}/aurelio-chat`;
 const PROXY_TIMEOUT_MS = 20000;
@@ -18,10 +22,16 @@ try {
   if (typeof localStorage !== 'undefined') localStorage.removeItem('puce_groq_api_key');
 } catch { /* almacenamiento no disponible */ }
 
-// Último origen de respuesta: 'unknown' | 'groq' | 'gemini' | 'local'
+// Último origen de respuesta: 'unknown' | 'local' (motor local por diseño) | 'cache' | 'groq' | 'gemini'
+// | 'fallback' (la IA no respondió y respondió el motor local)
 let lastAiSource = 'unknown';
+let lastPlan = null;
 export function getLastAurelioSource() {
   return lastAiSource;
+}
+/** Ruta y motivo de la última pregunta (para telemetría y pruebas). */
+export function getLastAurelioPlan() {
+  return lastPlan ? { route: lastPlan.route, reason: lastPlan.reason, intent: lastPlan.intent, scope: lastPlan.scope } : null;
 }
 
 // =========================================================
@@ -93,49 +103,23 @@ const moreInfo = (c) => (c.page ? `\n\nMás información oficial: ${c.page}` : '
 // Se elige la intención con más puntaje (frases más largas valen más).
 // En empate gana la que aparece primero en la lista.
 // =========================================================
-const INTENTS = [
-  { id: 'admisiones', phrases: ['inscribir', 'inscribirme', 'inscribirse', 'inscribo', 'inscripcion', 'inscripciones', 'admision', 'admisiones', 'postular', 'postulacion', 'matricula', 'matricularme', 'examen', 'examen de admision', 'examen de ingreso', 'requisitos', 'requisito', 'requisitos para entrar', 'requisitos para ingresar', 'requisitos de ingreso', 'ingresar a la puce', 'entrar a la puce', 'whatsapp', 'telefono', 'numero de whatsapp', 'numero de telefono', 'numero de contacto', 'contacto', 'contactar', 'correo', 'asesor', 'cupo', 'cupos'] },
-  { id: 'costos', phrases: ['costo', 'costos', 'cuesta', 'cuestan', 'precio', 'precios', 'arancel', 'aranceles', 'pension', 'pagar', 'pago', 'cuota', 'cuotas', 'cuanto vale', 'inversion', 'descuento', 'financiamiento', 'financiar', 'diferir', 'matricula cuesta', 'valor'] },
-  { id: 'becas', phrases: ['beca', 'becas', 'ayuda economica', 'abanderado', 'abanderada', 'escolta', 'deportista', 'discapacidad', 'hermanos', 'media beca', 'beca completa'] },
-  { id: 'sueldo', phrases: ['sueldo', 'sueldos', 'salario', 'salarios', 'cuanto gana', 'cuanto ganan', 'cuanto se gana', 'remuneracion'] },
-  { id: 'convenios', phrases: ['convenio', 'convenios', 'practica', 'practicas', 'practicas preprofesionales', 'hospital', 'hospitales', 'clinica', 'clinicas', 'pasantia', 'pasantias', 'internado', 'rotacion', 'rotaciones'] },
-  { id: 'intercambios', phrases: ['intercambio', 'intercambios', 'movilidad', 'extranjero', 'otro pais', 'otros paises', 'afuera', 'ausjal', 'internacional', 'internacionales', 'espana', 'europa', 'estados unidos'] },
-  { id: 'titulacion', phrases: ['titulo', 'que titulo', 'titulo obtengo', 'titulacion', 'titularme', 'graduarme', 'graduarse', 'graduacion', 'requisitos de grado', 'requisitos para graduarme', 'tesis', 'complexivo', 'ingles', 'idioma', 'idiomas', 'requisitos'] },
-  { id: 'horarios', phrases: ['horario', 'horarios', 'jornada', 'nocturna', 'nocturno', 'en la noche', 'de noche', 'en la manana', 'en la tarde', 'virtual', 'en linea', 'online', 'a distancia', 'presencial', 'modalidad', 'trabajar y estudiar', 'estudiar y trabajar'] },
-  { id: 'ubicacion', phrases: ['donde queda', 'donde esta', 'ubicacion', 'ubicada', 'direccion', 'como llegar', 'sede', 'sedes', 'en que ciudad'] },
-  { id: 'campus', phrases: ['campus', 'instalaciones', 'deporte', 'deportes', 'gimnasio', 'piscina', 'cancha', 'canchas', 'biblioteca', 'club', 'clubes', 'cultura', 'cafeteria', 'vida universitaria', 'actividades'] },
-  { id: 'malla', phrases: ['materia', 'materias', 'malla', 'pensum', 'asignatura', 'asignaturas', 'semestre', 'semestres', 'duracion', 'cuanto dura', 'cuantos anos', 'cuantos semestres', 'plan de estudios', 'primer semestre', 'primer ano', 'que voy a estudiar'] },
-  { id: 'dificultad', phrases: ['dificil', 'dificiles', 'dificultad', 'exigente', 'complicada', 'complicado', 'pesada', 'reprobar', 'matematica', 'matematicas', 'calculo', 'miedo'] },
-  { id: 'perfil', phrases: ['que hace un', 'que hace una', 'que hacen', 'a que se dedica', 'en que consiste', 'de que trata', 'que aprendo', 'que voy a aprender', 'perfil', 'habilidades', 'competencias'] },
-  { id: 'laboral', phrases: ['trabajo', 'trabajos', 'trabajar', 'donde puedo trabajar', 'empleo', 'campo laboral', 'campo ocupacional', 'salida laboral', 'salidas', 'ejercer', 'empresa', 'empresas'] },
-  { id: 'prestigio', phrases: ['acreditacion', 'acreditada', 'acreditado', 'caces', 'ranking', 'rankings', 'prestigio', 'reputacion', 'calidad', 'reconocida'] },
-  { id: 'comparar', phrases: ['diferencia entre', 'comparar', 'compara', 'cual es mejor', 'que es mejor', 'es mejor', 'mejor que', 'otra universidad', 'otras universidades', 'no se cual', 'indeciso', 'indecisa', 'dudo', 'no estoy seguro', 'no estoy segura', 'no se que estudiar'] },
-  { id: 'ventajas', phrases: ['por que estudiar', 'por que elegir', 'vale la pena', 'ventaja', 'ventajas', 'beneficio', 'beneficios', 'conviene', 'razones'] },
-  { id: 'ajeno', phrases: ['clima', 'chiste', 'futbol', 'politica', 'receta', 'pelicula', 'cancion', 'horoscopo', 'bitcoin', 'criptomoneda', 'novia', 'novio', 'tarea de', 'resuelve'] },
-];
+// (Los temas viven en js/aurelioNLP.js, compartido con la Edge Function.)
 
-export function detectIntent(questionText) {
-  const norm = normalizeText(questionText);
-  let best = null;
-  let bestScore = 0;
-  for (const intent of INTENTS) {
-    const score = intent.phrases.reduce((acc, p) => acc + (hasPhrase(norm, p) ? normalizeText(p).split(' ').length : 0), 0);
-    if (score > bestScore) {
-      best = intent.id;
-      bestScore = score;
-    }
-  }
-  return best;
-}
+export { detectIntent };
 
 const SUGGESTIONS = 'Puedes preguntarme, por ejemplo, por:\n- Materias y duración de la carrera\n- Dónde podrías trabajar\n- Costos y becas\n- Cómo inscribirte';
 
 // =========================================================
 // Motor local de respaldo
 // =========================================================
-export function getAurelioContextualAnswer(career, questionText) {
+export function getAurelioContextualAnswer(career, questionText, plan = null) {
   if (!career) {
     return '¡Hola! Para responderte con exactitud, selecciona una carrera en tu ranking de resultados.';
+  }
+  plan = plan || planRoute(questionText, { activeKey: career.key, careers: OFFICIAL_CAREERS });
+  // Si la pregunta nombra otra carrera (y solo esa), se responde sobre esa carrera.
+  if (plan.scope?.primary && plan.scope.primary !== career.key && OFFICIAL_CAREERS[plan.scope.primary]) {
+    career = { key: plan.scope.primary, name: OFFICIAL_CAREERS[plan.scope.primary].nombre };
   }
 
   const c = careerInfo(career);
@@ -151,7 +135,20 @@ export function getAurelioContextualAnswer(career, questionText) {
   }
 
   const o = c.official;
-  switch (detectIntent(questionText)) {
+  switch (plan.intent) {
+    case 'incoherente':
+      return INCOHERENT_REPLY;
+
+    case 'materia': {
+      const subjects = plan.subjects || [];
+      if (!subjects.length) return notConfirmed('esa materia') + moreInfo(c);
+      const lines = subjects.map((m) => {
+        const where = m.itinerario ? `${m.itinerario}${m.semestre ? `, nivel ${m.semestre}` : ''}` : `semestre ${m.semestre}`;
+        return `- **${m.materia}**: ${where} de ${m.careerName}.`;
+      });
+      return `Según la malla oficial:\n${lines.join('\n')}\n\nSi quieres saber de qué trata, pregúntame por ejemplo: «¿de qué trata ${subjects[0].materia}?».`;
+    }
+
     case 'admisiones': {
       let ids = ['admisiones-examen', 'admisiones-examen-cuando', 'admisiones-requisitos', 'admisiones-inscripcion-gratuita'];
       if (/fecha|inicio|empiez|clases|cuando/.test(norm)) ids = ['admisiones-examen-cuando', 'admisiones-requisitos', 'admisiones-inscripcion-gratuita', 'admisiones-inicio-clases'];
@@ -282,6 +279,35 @@ function historyBeforeQuestion(chatHistory, questionText) {
   return last && last.sender === 'user' && last.text === questionText ? hist.slice(0, -1) : hist;
 }
 
+// Caché del navegador: preguntas complejas ya respondidas por la IA (por estudiante).
+const BROWSER_CACHE_KEY = 'aurelio_cache';
+const BROWSER_CACHE_MAX = 60;
+
+function cacheKeyFor(plan, questionText) {
+  const others = [...(plan.scope?.others || [])].sort().join(',');
+  return `${KB_VERSION}|${plan.scope?.primary || ''}|${others}|${fingerprint(questionText)}`;
+}
+
+function browserCacheGet(key) {
+  try {
+    const store = JSON.parse(localStorage.getItem(BROWSER_CACHE_KEY) || '{}');
+    return store[key]?.a || null;
+  } catch {
+    return null;
+  }
+}
+
+function browserCachePut(key, answer) {
+  try {
+    const store = JSON.parse(localStorage.getItem(BROWSER_CACHE_KEY) || '{}');
+    for (const k of Object.keys(store)) if (!k.startsWith(`${KB_VERSION}|`)) delete store[k]; // datos viejos
+    store[key] = { a: answer, t: Date.now() };
+    const keys = Object.keys(store).sort((x, y) => store[x].t - store[y].t);
+    while (keys.length > BROWSER_CACHE_MAX) delete store[keys.shift()];
+    localStorage.setItem(BROWSER_CACHE_KEY, JSON.stringify(store));
+  } catch { /* almacenamiento no disponible */ }
+}
+
 async function queryAurelioProxy(career, questionText, chatHistory) {
   if (!SUPABASE_CONFIGURED) return null; // sin proyecto Supabase: se usa el motor local
   const controller = new AbortController();
@@ -297,11 +323,10 @@ async function queryAurelioProxy(career, questionText, chatHistory) {
       body: JSON.stringify({
         question: questionText,
         careerKey: career?.key || '',
-        // Solo el nombre, para compatibilidad: la ficha completa la arma el servidor.
-        career: { key: career?.key || '', name: career?.name || '' },
-        history: historyBeforeQuestion(chatHistory, questionText).slice(-4).map((m) => ({
+        // Historial mínimo (ahorra tokens): los 2 últimos mensajes, recortados.
+        history: historyBeforeQuestion(chatHistory, questionText).slice(-2).map((m) => ({
           role: m.sender === 'user' ? 'user' : 'assistant',
-          content: String(m.text || '')
+          content: String(m.text || '').slice(0, 400)
         }))
       })
     });
@@ -311,10 +336,7 @@ async function queryAurelioProxy(career, questionText, chatHistory) {
     }
     const data = await response.json();
     const reply = typeof data?.reply === 'string' ? data.reply.trim() : '';
-    if (reply) {
-      lastAiSource = data.provider === 'gemini' ? 'gemini' : 'groq';
-      return reply;
-    }
+    if (reply) return { reply, provider: data.provider === 'cache' ? 'cache' : data.provider === 'gemini' ? 'gemini' : 'groq' };
   } catch (err) {
     console.warn('Servicio de IA no disponible:', err);
   } finally {
@@ -324,12 +346,37 @@ async function queryAurelioProxy(career, questionText, chatHistory) {
 }
 
 /**
- * Responde una pregunta del estudiante: primero con la IA del proyecto (Edge Function)
- * y, si no está disponible, con el motor local verificado.
+ * Responde una pregunta del estudiante gastando la menor cuota de IA posible.
+ * @param {object} career carrera activa (la que el estudiante está viendo)
+ * @param {string} questionText pregunta
+ * @param {Array} chatHistory historial del chat
+ * @param {{fromChip?: boolean}} [options] fromChip: la pregunta viene de una sugerencia
  */
-export async function queryAurelio(career, questionText, chatHistory = []) {
+export async function queryAurelio(career, questionText, chatHistory = [], options = {}) {
+  const plan = planRoute(questionText, { activeKey: career?.key, careers: OFFICIAL_CAREERS, fromChip: !!options.fromChip });
+  lastPlan = plan;
+
+  if (plan.route === 'local') {
+    lastAiSource = 'local';
+    return getAurelioContextualAnswer(career, questionText, plan);
+  }
+
+  const cacheable = isCacheable(questionText);
+  const key = cacheKeyFor(plan, questionText);
+  if (cacheable) {
+    const cached = browserCacheGet(key);
+    if (cached) {
+      lastAiSource = 'cache';
+      return cached;
+    }
+  }
+
   const viaProxy = await queryAurelioProxy(career, questionText, chatHistory);
-  if (viaProxy) return viaProxy;
-  lastAiSource = 'local';
-  return getAurelioContextualAnswer(career, questionText);
+  if (viaProxy) {
+    lastAiSource = viaProxy.provider;
+    if (cacheable) browserCachePut(key, viaProxy.reply);
+    return viaProxy.reply;
+  }
+  lastAiSource = 'fallback';
+  return getAurelioContextualAnswer(career, questionText, plan);
 }

@@ -1,6 +1,8 @@
 // ARCHIVO GENERADO por scripts/aurelio/exportar_conocimiento.mjs a partir de fuentes oficiales de la PUCE.
 // No editar a mano: ejecutar python3 scripts/puce/actualizar.py
 
+export const KB_VERSION = '4fe66691130b';
+
 export const PUCE_FACTS = [
  {
   "id": "admisiones-examen",

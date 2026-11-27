@@ -13,6 +13,7 @@ Orienta PUCE usa Supabase para tres cosas:
 | Archivo | Para qué |
 |---|---|
 | `supabase/migrations/20261127000000_esquema_inicial.sql` | Crea las 6 tablas, índices, funciones y permisos (RLS). |
+| `supabase/migrations/20261127150000_is_admin_solo_autenticados.sql`, `20261127170000_aurelio_cache.sql` | Ajuste de permisos y caché de respuestas de Aurelio. Ejecutarlas después de la inicial. |
 | `supabase/config.toml` | Configura la Edge Function como pública (sin JWT). |
 | `supabase/functions/aurelio-chat/index.ts`, `context.ts`, `knowledge/` | Código y datos oficiales de Aurelio. |
 | `js/supabaseClient.js` | **Aquí van la URL y la clave publicable del proyecto nuevo.** |
@@ -102,6 +103,7 @@ Completar el test se hace con la función `complete_test_session()`, que solo mo
 | `student_leads` | datos que el estudiante decide enviar en "Solicitar asesoría" |
 | `error_logs` | errores de JavaScript del navegador |
 | `admins` | usuarios autorizados a ver el panel |
+| `aurelio_cache` | respuestas de la IA reutilizables (solo la Edge Function la usa; el público no tiene acceso) |
 
 ## Si algo falla
 - **El panel dice "no está autorizado"**: falta el paso 3.2 (insertar el usuario en `admins`).
