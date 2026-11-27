@@ -1,7 +1,7 @@
 // js/telemetry.js
 // Módulo de telemetría, monitoreo directo con Supabase y sincronización multi-herramienta (Microsoft Clarity + Google Analytics)
 
-import { supabaseInsert, supabaseUpdate } from './supabaseClient.js';
+import { supabaseInsert, supabaseRpc } from './supabaseClient.js';
 
 class TelemetryTracker {
   constructor() {
@@ -134,23 +134,21 @@ class TelemetryTracker {
       duration: totalDuration
     });
 
-    const updateData = {
-      completed_at: new Date().toISOString(),
-      selected_domain: selectedDomain,
-      skills_selected: skillsSelected,
-      ranked_careers: topCareers.map(c => ({
+    // El público no puede modificar tablas: la sesión se completa con una función de la base
+    // de datos (complete_test_session), que solo acepta sesiones en curso.
+    await supabaseRpc('complete_test_session', {
+      p_session_id: this.sessionId,
+      p_selected_domain: selectedDomain || null,
+      p_skills_selected: skillsSelected,
+      p_ranked_careers: topCareers.map(c => ({
         key: c.key,
         name: c.name,
         matchPct: c.matchPct,
         score: c.score
       })),
-      top_career: topCareerName,
-      total_duration_seconds: totalDuration,
-      status: 'completed'
-    };
-
-    // Actualizar registro en test_sessions
-    await supabaseUpdate('test_sessions', 'session_id', this.sessionId, updateData);
+      p_top_career: topCareerName,
+      p_total_duration_seconds: totalDuration
+    });
 
     // Evento de telemetría de finalización
     await this.trackStep('test_completed', {
@@ -227,7 +225,9 @@ class TelemetryTracker {
   async safeInsert(tableName, data) {
     try {
       const res = await supabaseInsert(tableName, data);
-      if (res.error) {
+      // Solo se reintenta si no hubo conexión o el servidor falló (5xx).
+      // Un rechazo de la base de datos (4xx) no se reintenta: fallaría igual.
+      if (res.error && (res.status === 0 || res.status >= 500) && res.error !== 'Supabase no está configurado') {
         this.queueOffline(tableName, data);
       }
       return res;
@@ -251,7 +251,8 @@ class TelemetryTracker {
         const queueToFlush = [...this.offlineQueue];
         this.offlineQueue = [];
         for (const item of queueToFlush) {
-          await supabaseInsert(item.table, item.data);
+          const res = await supabaseInsert(item.table, item.data);
+          if (res.error && (res.status === 0 || res.status >= 500)) this.offlineQueue.push(item);
         }
         try {
           sessionStorage.removeItem('fya_offline_queue');

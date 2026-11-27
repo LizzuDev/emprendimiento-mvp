@@ -280,11 +280,12 @@
   <!-- Pantalla de Autenticación Simple -->
   <div id="auth-screen" class="auth-card" style="display: none;">
     <h2 style="font-family: 'Rubik', sans-serif; font-size: 1.25rem; color: #003865; margin-bottom: 8px;">Acceso Administrador</h2>
-    <p style="font-size: 0.85rem; color: #64748b; margin-bottom: 20px;">Ingresa la clave de acceso del equipo para visualizar la telemetría:</p>
+    <p style="font-size: 0.85rem; color: #64748b; margin-bottom: 20px;">Ingresa con tu cuenta de administrador (Supabase Auth):</p>
     <form id="admin-auth-form" style="display: flex; flex-direction: column; gap: 12px;">
-      <input type="password" id="admin-password" placeholder="Clave de acceso" required style="padding: 10px 14px; border: 1px solid #cbd5e1; border-radius: 4px; font-size: 0.9rem;">
+      <input type="email" id="admin-email" placeholder="Correo" autocomplete="username" required style="padding: 10px 14px; border: 1px solid #cbd5e1; border-radius: 4px; font-size: 0.9rem;">
+      <input type="password" id="admin-password" placeholder="Contraseña" autocomplete="current-password" required style="padding: 10px 14px; border: 1px solid #cbd5e1; border-radius: 4px; font-size: 0.9rem;">
       <button type="submit" class="btn-action" style="justify-content: center; padding: 10px;">Ingresar al Panel</button>
-      <div id="auth-error" style="color: #ef4444; font-size: 0.8rem; display: none;">Clave incorrecta. Intenta nuevamente.</div>
+      <div id="auth-error" style="color: #ef4444; font-size: 0.8rem; display: none;">Correo o contraseña incorrectos.</div>
     </form>
   </div>
 
@@ -453,10 +454,8 @@
   </main>
 
   <script type="module">
-    import { supabaseSelect } from './js/supabaseClient.js';
-
-    // Clave de acceso administrativa para el equipo
-    const ADMIN_PASS = 'fya2026';
+    import { supabaseSelect, adminSignIn, adminSignOut, adminIsAuthorized, getAdminSession, SUPABASE_CONFIGURED } from './js/supabaseClient.js';
+    import { escapeHtml } from './js/chatFormat.js';
 
     const authScreen = document.getElementById('auth-screen');
     const dashboardContent = document.getElementById('dashboard-content');
@@ -465,36 +464,72 @@
     const btnRefresh = document.getElementById('btn-refresh');
     const btnExport = document.getElementById('btn-export-csv');
 
-    // Estado local de datos cargados
+    // Datos originales (para exportar) y datos escapados (para mostrar en pantalla).
+    // Las tablas contienen texto escrito por el público: nunca se inserta en HTML sin escapar.
+    let rawSessions = [], rawEvents = [], rawQueries = [], rawLeads = [], rawErrors = [];
     let cachedSessions = [];
     let cachedEvents = [];
     let cachedQueries = [];
     let cachedLeads = [];
     let cachedErrors = [];
 
-    // Verificar si ya está autenticado en la sesión del navegador
-    function checkAuth() {
-      if (sessionStorage.getItem('fya_admin_logged') === '1') {
-        authScreen.style.display = 'none';
-        dashboardContent.style.display = 'block';
-        loadDashboardData();
-      } else {
-        authScreen.style.display = 'block';
-        dashboardContent.style.display = 'none';
+    function deepEscape(value) {
+      if (typeof value === 'string') return escapeHtml(value);
+      if (Array.isArray(value)) return value.map(deepEscape);
+      if (value && typeof value === 'object') {
+        return Object.fromEntries(Object.entries(value).map(([k, v]) => [k, deepEscape(v)]));
       }
+      return value;
     }
 
-    authForm.onsubmit = (e) => {
-      e.preventDefault();
-      const val = document.getElementById('admin-password').value;
-      if (val === ADMIN_PASS || val === 'puceadmin2026') {
-        sessionStorage.setItem('fya_admin_logged', '1');
-        authError.style.display = 'none';
-        checkAuth();
-      } else {
-        authError.style.display = 'block';
+    function showAuth(message) {
+      authScreen.style.display = 'block';
+      dashboardContent.style.display = 'none';
+      authError.textContent = message || '';
+      authError.style.display = message ? 'block' : 'none';
+    }
+
+    async function checkAuth() {
+      if (!SUPABASE_CONFIGURED) {
+        showAuth('Supabase no está configurado: revisa js/supabaseClient.js.');
+        return;
       }
+      if (!getAdminSession()) {
+        showAuth('');
+        return;
+      }
+      if (!(await adminIsAuthorized())) {
+        adminSignOut();
+        showAuth('Tu usuario no está autorizado como administrador.');
+        return;
+      }
+      authScreen.style.display = 'none';
+      dashboardContent.style.display = 'block';
+      loadDashboardData();
+    }
+
+    authForm.onsubmit = async (e) => {
+      e.preventDefault();
+      authError.style.display = 'none';
+      const email = document.getElementById('admin-email').value.trim();
+      const password = document.getElementById('admin-password').value;
+      const res = await adminSignIn(email, password);
+      document.getElementById('admin-password').value = '';
+      if (!res.ok) {
+        showAuth('Correo o contraseña incorrectos.');
+        return;
+      }
+      checkAuth();
     };
+
+    const btnLogout = document.createElement('button');
+    btnLogout.className = 'btn-action';
+    btnLogout.textContent = 'Cerrar sesión';
+    btnLogout.onclick = () => {
+      adminSignOut();
+      showAuth('');
+    };
+    btnRefresh.insertAdjacentElement('afterend', btnLogout);
 
     // Tabs
     document.querySelectorAll('.tab-btn').forEach(btn => {
@@ -527,11 +562,23 @@
           supabaseSelect('error_logs', 'order=created_at.desc&limit=200')
         ]);
 
-        cachedSessions = resSessions.data || [];
-        cachedEvents = resEvents.data || [];
-        cachedQueries = resQueries.data || [];
-        cachedLeads = resLeads.data || [];
-        cachedErrors = resErrors.data || [];
+        if ([resSessions, resEvents, resQueries, resLeads, resErrors].some(r => r.status === 401 || r.status === 403)) {
+          adminSignOut();
+          showAuth('Tu sesión venció. Vuelve a ingresar.');
+          return;
+        }
+
+        rawSessions = resSessions.data || [];
+        rawEvents = resEvents.data || [];
+        rawQueries = resQueries.data || [];
+        rawLeads = resLeads.data || [];
+        rawErrors = resErrors.data || [];
+
+        cachedSessions = deepEscape(rawSessions);
+        cachedEvents = deepEscape(rawEvents);
+        cachedQueries = deepEscape(rawQueries);
+        cachedLeads = deepEscape(rawLeads);
+        cachedErrors = deepEscape(rawErrors);
 
         renderKPIs();
         renderRankings();
@@ -741,45 +788,54 @@
     }
 
     // Exportar datos consolidado a CSV
+    // Celda CSV: comillas escapadas y sin fórmulas (=, +, -, @) que Excel pudiera ejecutar.
+    function csv(value) {
+      let v = value === null || value === undefined ? '' : String(value);
+      if (/^[=+\-@\t\r]/.test(v)) v = "'" + v;
+      return '"' + v.replace(/"/g, '""') + '"';
+    }
+
     btnExport.onclick = () => {
-      let csvContent = 'data:text/csv;charset=utf-8,';
+      let csvContent = '';
       csvContent += '--- REPORTE DE TELEMETRÍA Y USO - ORIENTA ---\r\n';
       csvContent += 'Fecha de exportación,' + new Date().toISOString() + '\r\n\r\n';
 
       csvContent += '--- SESIONES DE EVALUACIÓN ---\r\n';
       csvContent += 'Session ID,Fecha Inicio,Fecha Fin,Dispositivo,Navegador,Macroárea,Carrera Match,Duración (s),Estado\r\n';
-      cachedSessions.forEach(s => {
-        csvContent += `"${s.session_id}","${s.started_at || ''}","${s.completed_at || ''}","${s.device_type || ''}","${s.browser || ''}","${s.selected_domain || ''}","${s.top_career || ''}","${s.total_duration_seconds || 0}","${s.status || ''}"\r\n`;
+      rawSessions.forEach(s => {
+        csvContent += [s.session_id, s.started_at, s.completed_at, s.device_type, s.browser, s.selected_domain, s.top_career, s.total_duration_seconds || 0, s.status].map(csv).join(',') + '\r\n';
       });
 
       csvContent += '\r\n--- CONSULTAS A AURELIOBOT ---\r\n';
       csvContent += 'Fecha,Session ID,Carrera,Pregunta,Fuente\r\n';
-      cachedQueries.forEach(q => {
-        csvContent += `"${q.created_at || ''}","${q.session_id || ''}","${q.career_key || ''}","${(q.query_text || '').replace(/"/g, '""')}","${q.source || ''}"\r\n`;
+      rawQueries.forEach(q => {
+        csvContent += [q.created_at, q.session_id, q.career_key, q.query_text, q.source].map(csv).join(',') + '\r\n';
       });
 
       csvContent += '\r\n--- ESTUDIANTES INTERESADOS (LEADS) ---\r\n';
       csvContent += 'Fecha,Nombre,Institución,Celular,Correo,Carrera de Interés\r\n';
-      cachedLeads.forEach(l => {
-        csvContent += `"${l.created_at || ''}","${l.full_name || ''}","${l.institution || ''}","${l.phone || ''}","${l.email || ''}","${l.preferred_career || ''}"\r\n`;
+      rawLeads.forEach(l => {
+        csvContent += [l.created_at, l.full_name, l.institution, l.phone, l.email, l.preferred_career].map(csv).join(',') + '\r\n';
       });
 
       csvContent += '\r\n--- EVENTOS DE INTERACCIÓN Y CLICS (RESPALDO DE MAPA DE CALOR) ---\r\n';
       csvContent += 'Fecha,Session ID,Evento,Paso,Detalle/Botón,Coordenadas\r\n';
-      cachedEvents.forEach(ev => {
+      rawEvents.forEach(ev => {
         const p = ev.payload || {};
         const detail = p.label || p.topCareer || p.step || '-';
         const coords = (p.xPct !== undefined) ? `X:${p.xPct}% Y:${p.yPct}%` : '-';
-        csvContent += `"${ev.created_at || ''}","${ev.session_id || ''}","${ev.event_name || ''}","${ev.step || ''}","${detail.replace(/"/g, '""')}","${coords}"\r\n`;
+        csvContent += [ev.created_at, ev.session_id, ev.event_name, ev.step, detail, coords].map(csv).join(',') + '\r\n';
       });
 
-      const encodedUri = encodeURI(csvContent);
+      // Blob (no data: URI): un "#" en los datos ya no corta el archivo. BOM para que Excel lea las tildes.
+      const url = URL.createObjectURL(new Blob(['\ufeff' + csvContent], { type: 'text/csv;charset=utf-8' }));
       const link = document.createElement('a');
-      link.setAttribute('href', encodedUri);
+      link.setAttribute('href', url);
       link.setAttribute('download', `reporte_telemetria_fya_${new Date().toISOString().slice(0,10)}.csv`);
       document.body.appendChild(link);
       link.click();
       document.body.removeChild(link);
+      URL.revokeObjectURL(url);
     };
 
     // Iniciar verificación

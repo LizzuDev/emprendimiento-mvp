@@ -7,7 +7,7 @@
 //    www.puce.edu.ec (js/data/aurelioKnowledge.js); si no sabe algo, lo dice y deriva a Admisiones.
 // =========================================================
 
-import { SUPABASE_FUNCTIONS_URL, SUPABASE_ANON_KEY } from './supabaseClient.js';
+import { SUPABASE_FUNCTIONS_URL, SUPABASE_ANON_KEY, SUPABASE_CONFIGURED } from './supabaseClient.js';
 import { PUCE_FACTS, OFFICIAL_CAREERS } from './data/aurelioKnowledge.js';
 
 const AI_PROXY_URL = `${SUPABASE_FUNCTIONS_URL}/aurelio-chat`;
@@ -278,6 +278,7 @@ function historyBeforeQuestion(chatHistory, questionText) {
 }
 
 async function queryAurelioProxy(career, questionText, chatHistory) {
+  if (!SUPABASE_CONFIGURED) return null; // sin proyecto Supabase: se usa el motor local
   const controller = new AbortController();
   const timer = setTimeout(() => controller.abort(), PROXY_TIMEOUT_MS);
   try {
@@ -286,8 +287,7 @@ async function queryAurelioProxy(career, questionText, chatHistory) {
       signal: controller.signal,
       headers: {
         'Content-Type': 'application/json',
-        'apikey': SUPABASE_ANON_KEY,
-        'Authorization': `Bearer ${SUPABASE_ANON_KEY}`
+        'apikey': SUPABASE_ANON_KEY
       },
       body: JSON.stringify({
         question: questionText,

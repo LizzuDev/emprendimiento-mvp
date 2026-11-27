@@ -31,7 +31,7 @@ Luego:
 1. Revisar `docs/aurelio/extraccion_oficial.md` (diferencias y problemas detectados) y la salida de `verify_facts.py`.
 2. Si un dato institucional dejó de verificarse, revisar la fuente y corregir `texto`/`citas` en `puce.json`. Para un dato nuevo: agregar la entrada con sus citas, y si la fuente es una página nueva, agregarla a `INSTITUTIONAL_PAGES` en `fetch_sources.py`.
 3. Commit de `data/puce/`, `supabase/functions/aurelio-chat/knowledge/` y `js/data/aurelioKnowledge.js`.
-4. Desplegar la Edge Function: `supabase functions deploy aurelio-chat`.
+4. Desplegar la Edge Function: `supabase functions deploy aurelio-chat --no-verify-jwt` (guía completa en `docs/supabase/README.md`).
 
 Requisitos: Python 3, Node 22 y `pdftotext` (poppler-utils).
 
@@ -52,7 +52,7 @@ Si la Edge Function no responde, el navegador usa el motor local (`getAurelioCon
 
 ```bash
 supabase secrets set GROQ_API_KEY=... ALLOWED_ORIGINS=https://tu-app.onrender.com,https://tu-usuario.github.io
-supabase functions deploy aurelio-chat
+supabase functions deploy aurelio-chat --no-verify-jwt
 ```
 
 `GEMINI_API_KEY` es opcional (respaldo). Sin `ALLOWED_ORIGINS`, cualquier sitio puede usar la función y consumir la cuota de Groq.
