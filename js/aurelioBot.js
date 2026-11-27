@@ -94,13 +94,13 @@ const moreInfo = (c) => (c.page ? `\n\nMás información oficial: ${c.page}` : '
 // En empate gana la que aparece primero en la lista.
 // =========================================================
 const INTENTS = [
-  { id: 'admisiones', phrases: ['inscribir', 'inscribirme', 'inscribirse', 'inscribo', 'inscripcion', 'inscripciones', 'admision', 'admisiones', 'postular', 'postulacion', 'matricula', 'matricularme', 'examen de admision', 'examen de ingreso', 'requisitos', 'requisito', 'requisitos para entrar', 'requisitos para ingresar', 'requisitos de ingreso', 'ingresar a la puce', 'entrar a la puce', 'whatsapp', 'telefono', 'numero de whatsapp', 'numero de telefono', 'numero de contacto', 'contacto', 'contactar', 'correo', 'asesor', 'cupo', 'cupos'] },
+  { id: 'admisiones', phrases: ['inscribir', 'inscribirme', 'inscribirse', 'inscribo', 'inscripcion', 'inscripciones', 'admision', 'admisiones', 'postular', 'postulacion', 'matricula', 'matricularme', 'examen', 'examen de admision', 'examen de ingreso', 'requisitos', 'requisito', 'requisitos para entrar', 'requisitos para ingresar', 'requisitos de ingreso', 'ingresar a la puce', 'entrar a la puce', 'whatsapp', 'telefono', 'numero de whatsapp', 'numero de telefono', 'numero de contacto', 'contacto', 'contactar', 'correo', 'asesor', 'cupo', 'cupos'] },
   { id: 'costos', phrases: ['costo', 'costos', 'cuesta', 'cuestan', 'precio', 'precios', 'arancel', 'aranceles', 'pension', 'pagar', 'pago', 'cuota', 'cuotas', 'cuanto vale', 'inversion', 'descuento', 'financiamiento', 'financiar', 'diferir', 'matricula cuesta', 'valor'] },
   { id: 'becas', phrases: ['beca', 'becas', 'ayuda economica', 'abanderado', 'abanderada', 'escolta', 'deportista', 'discapacidad', 'hermanos', 'media beca', 'beca completa'] },
   { id: 'sueldo', phrases: ['sueldo', 'sueldos', 'salario', 'salarios', 'cuanto gana', 'cuanto ganan', 'cuanto se gana', 'remuneracion'] },
   { id: 'convenios', phrases: ['convenio', 'convenios', 'practica', 'practicas', 'practicas preprofesionales', 'hospital', 'hospitales', 'clinica', 'clinicas', 'pasantia', 'pasantias', 'internado', 'rotacion', 'rotaciones'] },
   { id: 'intercambios', phrases: ['intercambio', 'intercambios', 'movilidad', 'extranjero', 'otro pais', 'otros paises', 'afuera', 'ausjal', 'internacional', 'internacionales', 'espana', 'europa', 'estados unidos'] },
-  { id: 'titulacion', phrases: ['titulacion', 'titularme', 'graduarme', 'graduarse', 'graduacion', 'requisitos de grado', 'requisitos para graduarme', 'tesis', 'complexivo', 'ingles', 'idioma', 'idiomas', 'requisitos'] },
+  { id: 'titulacion', phrases: ['titulo', 'que titulo', 'titulo obtengo', 'titulacion', 'titularme', 'graduarme', 'graduarse', 'graduacion', 'requisitos de grado', 'requisitos para graduarme', 'tesis', 'complexivo', 'ingles', 'idioma', 'idiomas', 'requisitos'] },
   { id: 'horarios', phrases: ['horario', 'horarios', 'jornada', 'nocturna', 'nocturno', 'en la noche', 'de noche', 'en la manana', 'en la tarde', 'virtual', 'en linea', 'online', 'a distancia', 'presencial', 'modalidad', 'trabajar y estudiar', 'estudiar y trabajar'] },
   { id: 'ubicacion', phrases: ['donde queda', 'donde esta', 'ubicacion', 'ubicada', 'direccion', 'como llegar', 'sede', 'sedes', 'en que ciudad'] },
   { id: 'campus', phrases: ['campus', 'instalaciones', 'deporte', 'deportes', 'gimnasio', 'piscina', 'cancha', 'canchas', 'biblioteca', 'club', 'clubes', 'cultura', 'cafeteria', 'vida universitaria', 'actividades'] },
@@ -154,7 +154,7 @@ export function getAurelioContextualAnswer(career, questionText) {
   switch (detectIntent(questionText)) {
     case 'admisiones': {
       let ids = ['admisiones-examen', 'admisiones-examen-cuando', 'admisiones-requisitos', 'admisiones-inscripcion-gratuita'];
-      if (/fecha|inicio|empiez|clases|cuando/.test(norm)) ids = ['admisiones-inicio-clases', 'admisiones-examen-cuando', 'admisiones-examen-medicina'];
+      if (/fecha|inicio|empiez|clases|cuando/.test(norm)) ids = ['admisiones-examen-cuando', 'admisiones-requisitos', 'admisiones-inscripcion-gratuita', 'admisiones-inicio-clases'];
       if (/requisit|document/.test(norm)) ids = ['admisiones-requisitos', 'admisiones-inscripcion-gratuita'];
       if (/curso|prepar|simulador/.test(norm)) ids = ['admisiones-curso-preparacion', 'admisiones-curso-de-admision'];
       if (career?.key === 'medicina' && !ids.includes('admisiones-examen-medicina')) ids.push('admisiones-examen-medicina');
@@ -172,7 +172,12 @@ export function getAurelioContextualAnswer(career, questionText) {
       }
       const facts = factsByIds('costos-matricula', 'costos-descuento-permanente', 'costos-financiamiento');
       if (facts.length) parts.push(factsList(facts));
-      parts.push('Si te interesan las becas, pregúntame por ellas 😉');
+      if (/beca/.test(norm)) {
+        const becas = factsByIds('beca-abanderados', 'beca-excelencia', 'beca-igualdad', 'becas-como-postular');
+        if (becas.length) parts.push(`Algunas becas:\n${factsList(becas)}`);
+      } else {
+        parts.push('Si te interesan las becas, pregúntame por ellas 😉');
+      }
       return parts.join('\n\n') + moreInfo(c);
     }
 
@@ -201,7 +206,7 @@ export function getAurelioContextualAnswer(career, questionText) {
 
     case 'titulacion': {
       const parts = [];
-      if (o?.titulo) parts.push(`Al graduarte de **${c.name}** obtienes el título de **${o.titulo}**.`);
+      if (o?.titulo) parts.push(`Al graduarte de **${c.name}** obtienes el título de **${o.titulo}**${o.duracion ? `, y la carrera dura **${o.duracion}**` : ''}.`);
       const facts = factsByTopic('titulacion');
       if (facts.length) parts.push(factsList(facts));
       parts.push('Los requisitos exactos de graduación (idiomas, prácticas, titulación) los confirma tu facultad o Admisiones.');

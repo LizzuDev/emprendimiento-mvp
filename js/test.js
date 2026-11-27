@@ -67,7 +67,7 @@ const state = {
   chatHistory: getStorage('chatHistory', [
     {
       sender: 'aurelio',
-      text: '¡Hola! Soy Aurelio, orientador y mascota de la PUCE. Ahora que conoces tus carreras recomendadas, pregúntame con confianza: ¿cómo es el campo ocupacional en Ecuador?, ¿cuáles son las materias más exigentes?, ¿o qué oportunidades de becas e intercambios existen?'
+      text: '¡Hola! Soy Aurelio, orientador y mascota de la PUCE. Ahora que conoces tus carreras recomendadas, pregúntame por costos y becas, materias, título, dónde podrías trabajar o cómo inscribirte.'
     }
   ]),
   challengeState: {
@@ -1119,11 +1119,11 @@ function openChat() {
   if (chatPanel) {
     const activeCareer = state.rankedCareers.find(c => c.key === state.activeCareerKey);
     // Si el chat es nuevo o tiene el saludo genérico previo, contextualizar con la carrera activa
-    if (activeCareer && (!state.chatHistory || state.chatHistory.length === 0 || state.chatHistory[0]?.text?.includes('¿cómo es el campo ocupacional'))) {
+    if (activeCareer && (!state.chatHistory || state.chatHistory.length === 0 || /campo ocupacional|prácticas hospitalarias|conoces tus carreras recomendadas/.test(state.chatHistory[0]?.text || ''))) {
       state.chatHistory = [
         {
           sender: 'aurelio',
-          text: `¡Hola! Soy Aurelio, orientador y mascota de la PUCE. Ahora que estás explorando ${activeCareer.name}, pregúntame con confianza: convenios, prácticas hospitalarias, becas, costos, intercambios o sobre sus materias.`
+          text: `¡Hola! Soy Aurelio, orientador y mascota de la PUCE. Ahora que estás explorando ${activeCareer.name}, pregúntame con confianza por costos y becas, sus materias, el título, dónde podrías trabajar, cómo inscribirte o los intercambios.`
         }
       ];
       saveStorage('chatHistory', state.chatHistory);
