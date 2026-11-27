@@ -1,0 +1,499 @@
+{
+  "_instrucciones": "Datos institucionales de Aurelio extraídos de fuentes públicas oficiales de la PUCE. Cada entrada tiene 'citas' copiadas textualmente de su 'fuente'. El campo 'verificado' lo calcula scripts/puce/verify_facts.py: solo es true si TODAS las citas aparecen en la versión descargada de la fuente (o, si la fuente es una imagen, si la imagen no cambió desde su transcripción). No editar 'verificado' a mano.",
+  "entradas": [
+    {
+      "id": "admisiones-examen",
+      "tema": "admisiones",
+      "texto": "Para ingresar a primer nivel se aprueba el Examen de Aptitud Académica de la PUCE, que evalúa razonamiento verbal, comprensión lectora, razonamiento matemático-lógico y razonamiento abstracto.",
+      "fuente": "https://www.puce.edu.ec/admisiones/grado/examen-de-ingreso/",
+      "citas": [
+        "Ingresa directamente a primer nivel aprobando nuestro Examen de Aptitud Académica",
+        "Razonamiento verbal Comprensión lectora Razonamiento matemático-lógico Razonamiento abstracto"
+      ],
+      "verificado": true,
+      "verificado_en": "2026-11-26"
+    },
+    {
+      "id": "admisiones-examen-cuando",
+      "tema": "admisiones",
+      "texto": "En todas las carreras de grado, excepto Medicina, el examen de ingreso se puede rendir 24 horas después de registrar la inscripción, en la fecha y el horario que elija el aspirante.",
+      "fuente": "https://www.puce.edu.ec/admisiones/grado/examen-de-ingreso/",
+      "citas": [
+        "Para todas las carreras de grado — excepto Medicina — podrás rendir tu examen 24 horas después de registrar tu inscripción.",
+        "Tú eliges la fecha y el horario que mejor se adapten a tu disponibilidad"
+      ],
+      "verificado": true,
+      "verificado_en": "2026-11-26"
+    },
+    {
+      "id": "admisiones-examen-medicina",
+      "tema": "admisiones",
+      "texto": "El examen de ingreso a Medicina para el primer período 2027 es el sábado 12 de diciembre de 2026.",
+      "fuente": "https://www.puce.edu.ec/admisiones/grado/examen-de-ingreso/",
+      "citas": [
+        "FECHAS EXAMEN – CARRERA MEDICINA Primer período 2027: Sábado 12 diciembre 2026"
+      ],
+      "verificado": true,
+      "verificado_en": "2026-11-26"
+    },
+    {
+      "id": "admisiones-inicio-clases",
+      "tema": "admisiones",
+      "texto": "Las clases del primer período 2027 inician el 8 de marzo de 2027.",
+      "fuente": "https://www.puce.edu.ec/admisiones/grado/examen-de-ingreso/",
+      "citas": [
+        "Primero periodo 2027: 08 de marzo del 2027"
+      ],
+      "verificado": true,
+      "verificado_en": "2026-11-26"
+    },
+    {
+      "id": "admisiones-requisitos",
+      "tema": "admisiones",
+      "texto": "Para inscribirse se necesita la copia digital de la cédula (o pasaporte, para extranjeros) y la copia del título de bachiller o un certificado de estar cursando tercero de bachillerato.",
+      "fuente": "https://www.puce.edu.ec/admisiones/grado/examen-de-ingreso/",
+      "citas": [
+        "Copia digital de la cédula de ciudadanía o pasaporte (para aspirantes extranjeros).",
+        "Copia del título de bachiller o certificado de estar cursando tercer año de bachillerato."
+      ],
+      "verificado": true,
+      "verificado_en": "2026-11-26"
+    },
+    {
+      "id": "admisiones-inscripcion-gratuita",
+      "tema": "admisiones",
+      "texto": "La inscripción a las carreras de grado no tiene costo.",
+      "fuente": "https://www.puce.edu.ec/admisiones/grado/examen-de-ingreso/",
+      "citas": [
+        "SIN COSTO DE INSCRIPCIÓN"
+      ],
+      "verificado": true,
+      "verificado_en": "2026-11-26"
+    },
+    {
+      "id": "admisiones-curso-preparacion",
+      "tema": "admisiones",
+      "texto": "Hay un curso de preparación para el examen de ingreso que cuesta USD 150, y un simulador del examen para practicar.",
+      "fuente": "https://www.puce.edu.ec/admisiones/grado/examen-de-ingreso/",
+      "citas": [
+        "Curso de Preparación: 150.00 USD",
+        "Simulador de examen"
+      ],
+      "verificado": true,
+      "verificado_en": "2026-11-26"
+    },
+    {
+      "id": "admisiones-curso-de-admision",
+      "tema": "admisiones",
+      "texto": "Otra forma de ingreso es el Curso de Admisión, que además incluye orientación vocacional; con su aprobación y la disponibilidad de cupos se ingresa al primer nivel.",
+      "fuente": "https://www.puce.edu.ec/admisiones/grado/curso-de-admision/",
+      "citas": [
+        "El CURSO DE ADMISIÓN es una forma de ingreso a la PUCE",
+        "Con la aprobación del curso y la disponibilidad de cupos se obtiene el ingreso al primer de nivel de las carreras de grado de la PUCE."
+      ],
+      "verificado": true,
+      "verificado_en": "2026-11-26"
+    },
+    {
+      "id": "admisiones-contacto",
+      "tema": "admisiones",
+      "texto": "Admisiones PUCE Quito: WhatsApp 099 242 0103, correo admisionesquito@puce.edu.ec, teléfono (02) 2991720 ext. 1139 o 3542.",
+      "fuente": "https://www.puce.edu.ec/admisiones/grado/examen-de-ingreso/",
+      "citas": [
+        "Llamadas: (02) 2991720 ext: 1139/3542",
+        "WhatsApp: 0992420103",
+        "Correo: admisionesquito@puce.edu.ec"
+      ],
+      "verificado": true,
+      "verificado_en": "2026-11-26"
+    },
+    {
+      "id": "inscripciones-contacto",
+      "tema": "admisiones",
+      "texto": "Inscripciones: 099 715 1239 o inscripciones@puce.edu.ec.",
+      "fuente": "https://www.puce.edu.ec/landing-medicina/",
+      "citas": [
+        "099 715 1239",
+        "inscripciones@puce.edu.ec"
+      ],
+      "verificado": true,
+      "verificado_en": "2026-11-26"
+    },
+    {
+      "id": "campus-direccion",
+      "tema": "campus",
+      "texto": "El campus matriz de la PUCE está en Quito, en la Avenida 12 de Octubre 1076 y Vicente Ramón Roca; teléfono (02) 2991700.",
+      "fuente": "https://www.puce.edu.ec/landing-medicina/",
+      "citas": [
+        "Avenida 12 de Octubre 1076 y Vicente Ramón Roca",
+        "(593) (02) 2991700"
+      ],
+      "verificado": true,
+      "verificado_en": "2026-11-26"
+    },
+    {
+      "id": "sedes",
+      "tema": "campus",
+      "texto": "Además de Quito, la PUCE tiene sedes en Ambato, Esmeraldas, Santo Domingo, Ibarra, Manabí y Amazonas.",
+      "fuente": "https://www.puce.edu.ec/landing-medicina/",
+      "citas": [
+        "Sedes Sede Ambato Sede Esmeraldas Sede Santo Domingo Sede Ibarra Sede Manabí Sede Amazonas"
+      ],
+      "verificado": true,
+      "verificado_en": "2026-11-26"
+    },
+    {
+      "id": "costos-matricula",
+      "tema": "costos",
+      "texto": "La matrícula de grado cuesta USD 395 por período (en Ingeniería Integral PUCE-ICAM es USD 500, el 10 % del arancel).",
+      "fuente": "https://www.puce.edu.ec/wp-content/uploads/2026/11/Tabla_matriculas_aranceles_derechos_2026_actualizada_nov.26.pdf",
+      "citas": [
+        "MATRÍCULA ESTUDIANTES DE GRADO (Excepto Ingeniería Integral ICAM) 395,00",
+        "Q269 Ingeniería Integral 500,00 5.000,00 2.500,00"
+      ],
+      "verificado": true,
+      "verificado_en": "2026-11-26"
+    },
+    {
+      "id": "costos-adicionales",
+      "tema": "costos",
+      "texto": "Al arancel se suman la matrícula, el aporte estudiantil y el seguro médico. El seguro médico voluntario de grado presencial cuesta USD 83 por semestre.",
+      "fuente": "https://www.puce.edu.ec/wp-content/uploads/2026/11/Tabla_matriculas_aranceles_derechos_2026_actualizada_nov.26.pdf",
+      "citas": [
+        "(*) A ESTOS VALORES SE SUMA EL VALOR DE LA MATRÍCULA, VALOR APORTE ESTUDIANTIL Y SEGURO MÉDICO.",
+        "SEGURO MÉDICO VOLUNTARIO SEMESTRAL GRADO PRESENCIAL, SEMIPRESENCIAL E HÍBRIDO 83,00"
+      ],
+      "verificado": true,
+      "verificado_en": "2026-11-26"
+    },
+    {
+      "id": "costos-descuento-permanente",
+      "tema": "costos",
+      "texto": "El descuento directo de cada carrera es permanente: se aplica durante toda la carrera.",
+      "fuente": "https://www.puce.edu.ec/wp-content/uploads/2026/11/Tabla_matriculas_aranceles_derechos_2026_actualizada_nov.26.pdf",
+      "citas": [
+        "Los descuentos directos permanentes aplican para toda la carrera"
+      ],
+      "verificado": true,
+      "verificado_en": "2026-11-26"
+    },
+    {
+      "id": "costos-financiamiento",
+      "tema": "costos",
+      "texto": "Los aranceles se pueden diferir con financiamiento directo de la PUCE en hasta 5 cuotas mensuales con un interés anual del 3 %, o pagar con tarjeta de crédito.",
+      "fuente": "https://www.puce.edu.ec/financiamiento-y-becas/",
+      "citas": [
+        "ofrece el beneficio de diferimiento de Aranceles a través de un financiamiento directo, a un plazo máximo de 5 cuotas mensuales y bajo un interés del 3% anual.",
+        "la PUCE te permite diferir el valor de tu semestre con tus tarjetas de crédito favoritas."
+      ],
+      "verificado": true,
+      "verificado_en": "2026-11-26"
+    },
+    {
+      "id": "becas-como-postular",
+      "tema": "becas",
+      "texto": "Para postular a una beca primero hay que aprobar el proceso de admisión; luego llega al correo institucional una guía para postular en la plataforma de becas. Consultas: becasquito@puce.edu.ec.",
+      "fuente": "https://www.puce.edu.ec/financiamiento-y-becas/becas/",
+      "citas": [
+        "Para acceder a una de nuestras becas debes cumplir con el proceso de admisiones de la PUCE, una vez que seas admitido recibirás en tu correo institucional una guía para que puedas postular a la beca que deseas acceder a través de nuestra plataforma.",
+        "BECASQUITO@puce.edu.ec"
+      ],
+      "verificado": true,
+      "verificado_en": "2026-11-26"
+    },
+    {
+      "id": "beca-abanderados",
+      "tema": "becas",
+      "texto": "Beca para abanderados y mejores egresados: 50 % de descuento en aranceles; escoltas: 40 %. Aplica a colegios nacionales e internacionales y dura toda la carrera, según sus condiciones.",
+      "fuente": "https://www.puce.edu.ec/financiamiento-y-becas/becas/abanderados-mejores-egresados-y-escoltas/",
+      "citas": [
+        "La PUCE proporciona un descuento en aranceles del 50% a abanderados y mejores egresados; y, 40% a escoltas, de todos los colegios nacionales e internacionales, con duración para toda la carrera"
+      ],
+      "verificado": true,
+      "verificado_en": "2026-11-26"
+    },
+    {
+      "id": "beca-excelencia",
+      "tema": "becas",
+      "texto": "Beca de Excelencia Académica: 50 % de descuento en aranceles para el mejor promedio del período en cada carrera.",
+      "fuente": "https://www.puce.edu.ec/financiamiento-y-becas/becas/excelencia-academica/",
+      "citas": [
+        "La PUCE incentiva a sus mejores estudiantes otorgándoles un descuento del 50% en los aranceles.",
+        "Haber obtenido el mejor promedio académico del periodo en la carrera o programa."
+      ],
+      "verificado": true,
+      "verificado_en": "2026-11-26"
+    },
+    {
+      "id": "beca-deportistas",
+      "tema": "becas",
+      "texto": "Beca para deportistas de alto rendimiento: del 50 % al 100 % de los aranceles, con certificación del Comité Olímpico Ecuatoriano o de una federación deportiva.",
+      "fuente": "https://www.puce.edu.ec/financiamiento-y-becas/becas/deportistas-de-alto-rendimiento/",
+      "citas": [
+        "con una beca del 50% hasta el 100% en aranceles en las distintas disciplinas.",
+        "Informe del Comité Olímpico Ecuatoriano o Certificado de la Federación Deportiva Nacional o Provincial"
+      ],
+      "verificado": true,
+      "verificado_en": "2026-11-26"
+    },
+    {
+      "id": "beca-cultural",
+      "tema": "becas",
+      "texto": "Beca Cultural: 20 % de descuento en aranceles para quienes obtienen los mejores resultados en las actividades culturales de la PUCE.",
+      "fuente": "https://www.puce.edu.ec/financiamiento-y-becas/becas/beca-cultural-puce/",
+      "citas": [
+        "evalúa a los mejores puntuados en las distintas actividades culturales y los incentiva con un descuento del 20% sobre el valor de sus aranceles."
+      ],
+      "verificado": true,
+      "verificado_en": "2026-11-26"
+    },
+    {
+      "id": "beca-igualdad",
+      "tema": "becas",
+      "texto": "Beca San Ignacio de Igualdad de Oportunidades: cubre hasta el 80 % de los aranceles de toda la carrera para bachilleres de hogares de escasos recursos que obtengan al menos 34 puntos en la prueba de ingreso. No aplica para Medicina.",
+      "fuente": "https://www.puce.edu.ec/financiamiento-y-becas/becas/beca-igualdad-de-oportunidades/",
+      "citas": [
+        "Pertenecer a un hogar de escasos recursos económicos.",
+        "Obtener en la prueba de ingreso a la Universidad una calificación mínima de 34 puntos.",
+        "Los ganadores se harán acreedores a una beca que cubre hasta el 80% del valor total de aranceles por toda la carrera seleccionada*.",
+        "*No aplica para la carrera de Medicina."
+      ],
+      "verificado": true,
+      "verificado_en": "2026-11-26"
+    },
+    {
+      "id": "beca-discapacidad",
+      "tema": "becas",
+      "texto": "Beca Discapacidad: para personas con una discapacidad superior al 30 %, presentando la cédula donde conste el tipo y porcentaje.",
+      "fuente": "https://www.puce.edu.ec/financiamiento-y-becas/becas/beca-discapacidad/",
+      "citas": [
+        "las personas que posean una discapacidad superior al 30%",
+        "presentar la cédula actualizada en la que conste el tipo y porcentaje de discapacidad."
+      ],
+      "verificado": true,
+      "verificado_en": "2026-11-26"
+    },
+    {
+      "id": "beca-pueblos",
+      "tema": "becas",
+      "texto": "Beca Pueblos y Nacionalidades: para personas que pertenecen a un pueblo o nacionalidad del Ecuador, con certificado del Consejo Nacional para la Igualdad de Pueblos y Nacionalidades.",
+      "fuente": "https://www.puce.edu.ec/financiamiento-y-becas/becas/beca-pueblos-y-nacionalidades/",
+      "citas": [
+        "las personas que pertenezcan a un pueblo o nacionalidad del Ecuador que deseen iniciar o estén cursando estudios de tercer nivel en la PUCE Sede Matriz Quito."
+      ],
+      "verificado": true,
+      "verificado_en": "2026-11-26"
+    },
+    {
+      "id": "beca-hermanos",
+      "tema": "becas",
+      "texto": "Beca Hermanos: 10 % sobre los aranceles si tienes uno o más hermanos matriculados en la PUCE.",
+      "fuente": "https://www.puce.edu.ec/financiamiento-y-becas/becas/becas-hermanos/",
+      "citas": [
+        "la PUCE ofrece una beca del 10% sobre los aranceles para postulantes o estudiantes que posean uno o más hermanos matriculados"
+      ],
+      "verificado": true,
+      "verificado_en": "2026-11-26"
+    },
+    {
+      "id": "beca-solidaridad",
+      "tema": "becas",
+      "texto": "Beca Solidaridad: apoyo económico adicional sobre los aranceles ante situaciones como la pérdida de empleo o el fallecimiento de un padre o representante, o gastos médicos graves de la familia.",
+      "fuente": "https://www.puce.edu.ec/financiamiento-y-becas/becas/beca-solidaridad-grado/",
+      "citas": [
+        "la universidad proporciona un apoyo económico adicional sobre el valor de los aranceles a través de la Beca de Solidaridad.",
+        "Pérdida de empleo en los últimos 3 años del estudiante o, de uno de los padres o representantes"
+      ],
+      "verificado": true,
+      "verificado_en": "2026-11-26"
+    },
+    {
+      "id": "intercambios-requisitos",
+      "tema": "intercambios",
+      "texto": "Pueden hacer intercambio académico internacional los estudiantes de grado, excepto Medicina, con promedio de 40/50, al menos 3 semestres aprobados, sin deudas ni antecedentes disciplinarios y con nivel B1/B2 en el idioma del país de destino.",
+      "fuente": "https://www.puce.edu.ec/internacionalizacion-universitaria/estudiantes-puce/",
+      "citas": [
+        "Estudiantes de grado a excepción de Medicina.",
+        "Mantener un promedio general académico de 40/50",
+        "Haber aprobado al menos 3 semestres de carrera",
+        "Nivel B1/B2 en el idioma local del país de destino según corresponda."
+      ],
+      "verificado": true,
+      "verificado_en": "2026-11-26"
+    },
+    {
+      "id": "intercambios-costos",
+      "tema": "intercambios",
+      "texto": "Durante el intercambio pagas el semestre en la PUCE con 75 % de descuento (Beca de Intercambio) y no pagas matrícula ni aranceles en la universidad extranjera; los gastos de viaje y de vida corren por tu cuenta.",
+      "fuente": "https://www.puce.edu.ec/internacionalizacion-universitaria/estudiantes-puce/",
+      "citas": [
+        "El semestre de intercambio se cancela en la universidad de origen con el 75% de descuento en aranceles correspondiente a la Beca de Intercambio.",
+        "El estudiante no debe pagar matrícula y aranceles en la universidad internacional.",
+        "Costos de vida, transporte internacional y local, visado, alimentación y otros gastos personales corren por cuenta de cada estudiante."
+      ],
+      "verificado": true,
+      "verificado_en": "2026-11-26"
+    },
+    {
+      "id": "intercambios-beca-ausjal",
+      "tema": "intercambios",
+      "texto": "La Beca AUSJAL cubre el 100 % de los aranceles para estudiantes con perfil académico destacado que no podrían costear una estancia internacional de otro modo.",
+      "fuente": "https://www.puce.edu.ec/financiamiento-y-becas/becas/ausjal/",
+      "citas": [
+        "cuyos recursos no les permitan una estancia internacional salvo con la asignación de esta beca",
+        "Con un descuento sobre el valor de aranceles del 100%."
+      ],
+      "verificado": true,
+      "verificado_en": "2026-11-26"
+    },
+    {
+      "id": "intercambios-redes",
+      "tema": "intercambios",
+      "texto": "La PUCE forma parte de redes internacionales como AUSJAL (universidades jesuitas de América Latina), IAJU (universidades jesuitas del mundo), FIUC (universidades católicas), ODUCAL y UNESCO-UNEVOC.",
+      "fuente": "https://www.puce.edu.ec/internacionalizacion-universitaria/convenios-y-redes-internacionales/",
+      "citas": [
+        "AUSJAL: Asociación de Universidades confiadas a la Compañía de Jesús en América Latina",
+        "IAJU: Asociación Internacional de Universidades Jesuitas",
+        "FIUC: Federación Internacional de Universidades Católicas",
+        "ODUCAL: Organización de Universidades Católicas de América Latina y El Caribe",
+        "UNESCO-UNEVOC"
+      ],
+      "verificado": true,
+      "verificado_en": "2026-11-26"
+    },
+    {
+      "id": "intercambios-contacto",
+      "tema": "intercambios",
+      "texto": "Para intercambios escribe a outgoingpuce@puce.edu.ec.",
+      "fuente": "https://www.puce.edu.ec/internacionalizacion-universitaria/estudiantes-puce/",
+      "citas": [
+        "outgoingpuce@puce.edu.ec"
+      ],
+      "verificado": true,
+      "verificado_en": "2026-11-26"
+    },
+    {
+      "id": "prestigio-qs",
+      "tema": "prestigio",
+      "texto": "La PUCE es #1 en Empleabilidad y en Redes Internacionales de Investigación según el Ranking QS.",
+      "fuente": "https://www.puce.edu.ec/wp-content/uploads/2025/10/Indicador-QS.png",
+      "tipo": "imagen",
+      "transcripcion": "#1 EMPLEABILIDAD / REDES INTERNACIONALES DE INVESTIGACIÓN / según el Ranking QS",
+      "sha256_transcrito": "a499996ce882a35855f00649a17f022b8043d74d35b22bb8979dc2afc6df1f5b",
+      "verificado": true,
+      "verificado_en": "2026-11-26"
+    },
+    {
+      "id": "prestigio-cifras",
+      "tema": "prestigio",
+      "texto": "La PUCE tiene 28.000 estudiantes y 80.000 graduados a nivel nacional, 7 sedes y 14 campus, y es parte de las 100 mejores universidades de América Latina.",
+      "fuente": "https://www.puce.edu.ec/wp-content/uploads/2025/03/MENSAJES-CLAVE-2025@2x.png",
+      "tipo": "imagen",
+      "transcripcion": "28.000 estudiantes a nivel nacional / 7 sedes / 14 campus / Somos parte de las 100 mejores universidades de América Latina / 80.000 graduados a nivel nacional",
+      "sha256_transcrito": "5b2861cdbd054aea3fc0ca51746ded5ff10ac65994e1b9d834b100119cd2e08c",
+      "verificado": true,
+      "verificado_en": "2026-11-26"
+    },
+    {
+      "id": "prestigio-medicina-wfme",
+      "tema": "prestigio",
+      "texto": "La carrera de Medicina tiene la acreditación internacional de la Federación Mundial de Educación Médica (WFME), vigente hasta 2033.",
+      "fuente": "https://www.puce.edu.ec/",
+      "citas": [
+        "La carrera de Medicina de la Pontificia Universidad Católica del Ecuador (PUCE) obtuvo la acreditación internacional y el sello de calidad de la Federación Mundial de Educación Médica (WFME).",
+        "Este reconocimiento, vigente hasta 2033"
+      ],
+      "verificado": true,
+      "verificado_en": "2026-11-26"
+    },
+    {
+      "id": "apoyo-tutorias",
+      "tema": "apoyo-academico",
+      "texto": "Los docentes dan tutorías fuera de clase para reforzar contenidos, y cada estudiante tiene un tutor de acompañamiento asignado por su facultad para dificultades académicas o personales.",
+      "fuente": "https://www.puce.edu.ec/bienestar-universitario/acompanamiento-integral/",
+      "citas": [
+        "Son impartidas por todos tus docentes a nivel presencial o virtual, individual o grupal, por fuera del espacio de clase.",
+        "Durante la carrera, tu Facultad te asignará un tutor de acompañamiento"
+      ],
+      "verificado": true,
+      "verificado_en": "2026-11-26"
+    },
+    {
+      "id": "campus-biblioteca",
+      "tema": "campus",
+      "texto": "La Biblioteca General PUCE abre de lunes a viernes de 07h00 a 21h00 y los sábados de 08h00 a 16h00, y tiene hemeroteca y biblioteca virtual con bases de datos.",
+      "fuente": "https://www.puce.edu.ec/biblioteca/nosotros/",
+      "citas": [
+        "Lunes a viernes de 07h00 a 21h00 | Sábado de 08h00 a 16h00",
+        "Además cuenta con una Hemeroteca y Biblioteca Virtual que contienen importantes bases de datos multidisciplinarias y especializadas"
+      ],
+      "verificado": true,
+      "verificado_en": "2026-11-26"
+    },
+    {
+      "id": "campus-puce-activa",
+      "tema": "campus",
+      "texto": "PUCE Activa ofrece actividades artísticas, culturales, deportivas y recreativas, con gimnasio y clubes como ajedrez, andinismo y kendo.",
+      "fuente": "https://www.puce.edu.ec/bienestar-universitario/puce-activa/",
+      "citas": [
+        "podrás encontrar nuestra oferta de actividades artísticas, culturales, deportivas y recreativas",
+        "Gimnasio",
+        "Club de Ajedrez",
+        "Club de Andinismo",
+        "Club de Kendo"
+      ],
+      "verificado": true,
+      "verificado_en": "2026-11-26"
+    },
+    {
+      "id": "salud-centro-simulacion",
+      "tema": "convenios-salud",
+      "texto": "El Centro de Simulación Clínica de la PUCE es un espacio de entrenamiento para estudiantes de salud de grado y posgrado, con escenarios como reanimación cardiopulmonar, atención de partos y manejo de pacientes politraumatizados.",
+      "fuente": "https://www.puce.edu.ec/centro-de-simulacion/",
+      "citas": [
+        "El Centro de Simulación Clínica de Pontificia Universidad Católica del Ecuador, es un espacio de entrenamiento en el área de la salud",
+        "Reanimación cardiopulmonar básica y avanzada",
+        "Atención de partos eutócicos y distócicos",
+        "Manejo de pacientes politraumatizados"
+      ],
+      "verificado": true,
+      "verificado_en": "2026-11-26"
+    },
+    {
+      "id": "derecho-consultorio-juridico",
+      "tema": "convenios-sociales",
+      "texto": "Los estudiantes de Jurisprudencia hacen prácticas preprofesionales en el Consultorio Jurídico Gratuito de la PUCE, que da asesoría y patrocinio legal gratuitos.",
+      "fuente": "https://www.puce.edu.ec/servicios/consultorios-juridicos-gratuitos/",
+      "citas": [
+        "cuenta con la colaboración de las y los estudiantes de la Facultad de Jurisprudencia que se encuentran realizando sus prácticas pre – profesionales",
+        "Todas las asesorías y patrocinios son gratuitos."
+      ],
+      "verificado": true,
+      "verificado_en": "2026-11-26"
+    },
+    {
+      "id": "ciencias-estacion-yasuni",
+      "tema": "convenios-sostenibilidad",
+      "texto": "La PUCE administra la Estación Científica Yasuní, dentro del Parque Nacional Yasuní (Orellana), creada en 1994 y entregada a la Escuela de Ciencias Biológicas de la PUCE.",
+      "fuente": "https://www.puce.edu.ec/estacion-cientifica-yasuni/",
+      "citas": [
+        "La Estación Científica Yasuní (ECY) fue creada por el Estado Ecuatoriano en 1994",
+        "Esta fue entregada para su administración a la Escuela de Ciencias Biológicas de la PUCE.",
+        "Está situada dentro del Parque Nacional Yasuní (PNY), Provincia de Orellana"
+      ],
+      "verificado": true,
+      "verificado_en": "2026-11-26"
+    },
+    {
+      "id": "idiomas-suficiencia",
+      "tema": "titulacion",
+      "texto": "La PUCE ofrece un Examen de Suficiencia B1 y B2 de idiomas que cuesta USD 80.",
+      "fuente": "https://www.puce.edu.ec/admisiones/idiomas/",
+      "citas": [
+        "Examen de Suficiencia B1 y B2: 80.00 USD"
+      ],
+      "verificado": true,
+      "verificado_en": "2026-11-26"
+    }
+  ]
+}

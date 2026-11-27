@@ -1,0 +1,8 @@
+# Configuración de la CLI de Supabase para este proyecto.
+# Se usa con: supabase link --project-ref <ref>  y  supabase functions deploy aurelio-chat
+
+[functions.aurelio-chat]
+# La función es pública (la usa cualquier visitante del chat) y no necesita un usuario:
+# se protege con ALLOWED_ORIGINS y el límite de consultas por minuto (ver index.ts).
+# Las claves publicables nuevas (sb_publishable_...) no son JWT, por eso no se verifica JWT.
+verify_jwt = false

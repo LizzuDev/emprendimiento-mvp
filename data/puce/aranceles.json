@@ -1,0 +1,400 @@
+{
+ "fuente": "https://www.puce.edu.ec/wp-content/uploads/2026/11/Tabla_matriculas_aranceles_derechos_2026_actualizada_nov.26.pdf",
+ "pagina": "https://www.puce.edu.ec/aranceles/",
+ "fecha_descarga": "2026-11-26T21:57:04+00:00",
+ "sha256": "d328d080cc95273a40d4c6ccdbccd7fa9b37cb5079bf1d67c21d934c600414a5",
+ "actualizado": "24 de noviembre de 2026",
+ "alcance": "Estudiantes que ingresan en carreras repotenciadas desde 2023-02, modalidad presencial y semipresencial (Anexo 2). Valores por semestre en USD.",
+ "generales": {
+  "matricula_grado": 395.0,
+  "seguro_medico_voluntario_semestral_grado": 83.0,
+  "aporte_asociaciones_escuela_grado": 10.0,
+  "curso_idiomas": 225.0
+ },
+ "nota_inscripcion": "No se realizará cobro de inscripción para Grado y Posgrados (De acuerdo a la Resolución R.015 del 10 de enero 2022) y para Formación Técnica y Tecnológica.",
+ "notas": [
+  "A ESTOS VALORES SE SUMA EL VALOR DE LA MATRÍCULA, VALOR APORTE ESTUDIANTIL Y SEGURO MÉDICO.",
+  "Los idiomas se pagarán como Educación Continua $225",
+  "Los descuentos directos permanentes aplican para toda la carrera y se rigen por la \"Norma de gestión interna de aplicación de descuentos\ndirectos permanentes de la Sede Quito\"."
+ ],
+ "carreras": {
+  "Q348": {
+   "codigo": "Q348",
+   "carrera": "Ciencias Políticas",
+   "matricula": 395.0,
+   "arancel_regular": 3950.0,
+   "arancel_no_regular": 1975.0
+  },
+  "Q349": {
+   "codigo": "Q349",
+   "carrera": "Gestión Social y Desarrollo",
+   "matricula": 395.0,
+   "arancel_regular": 3950.0,
+   "arancel_no_regular": 1975.0
+  },
+  "Q350": {
+   "codigo": "Q350",
+   "carrera": "Relaciones Internacionales",
+   "matricula": 395.0,
+   "arancel_regular": 3950.0,
+   "arancel_no_regular": 1975.0
+  },
+  "Q351": {
+   "codigo": "Q351",
+   "carrera": "Sociología",
+   "matricula": 395.0,
+   "arancel_regular": 3950.0,
+   "arancel_no_regular": 1975.0
+  },
+  "Q364": {
+   "codigo": "Q364",
+   "carrera": "Derecho",
+   "matricula": 395.0,
+   "arancel_regular": 3950.0,
+   "arancel_no_regular": 1975.0
+  },
+  "Q393": {
+   "codigo": "Q393",
+   "carrera": "Derecho (semipresencial)",
+   "matricula": 395.0,
+   "arancel_regular": 3950.0,
+   "arancel_no_regular": 1975.0
+  },
+  "Q357": {
+   "codigo": "Q357",
+   "carrera": "Enfermería",
+   "matricula": 395.0,
+   "arancel_regular": 3950.0,
+   "arancel_no_regular": 1975.0
+  },
+  "Q358": {
+   "codigo": "Q358",
+   "carrera": "Nutrición y Dietética",
+   "matricula": 395.0,
+   "arancel_regular": 3950.0,
+   "arancel_no_regular": 1975.0
+  },
+  "Q359": {
+   "codigo": "Q359",
+   "carrera": "Fisioterapia",
+   "matricula": 395.0,
+   "arancel_regular": 3950.0,
+   "arancel_no_regular": 1975.0
+  },
+  "Q366": {
+   "codigo": "Q366",
+   "carrera": "Laboratorio Clínico",
+   "matricula": 395.0,
+   "arancel_regular": 3950.0,
+   "arancel_no_regular": 1975.0
+  },
+  "Q367": {
+   "codigo": "Q367",
+   "carrera": "Psicología Clínica",
+   "matricula": 395.0,
+   "arancel_regular": 3950.0,
+   "arancel_no_regular": 1975.0
+  },
+  "Q371": {
+   "codigo": "Q371",
+   "carrera": "Psicología",
+   "matricula": 395.0,
+   "arancel_regular": 3950.0,
+   "arancel_no_regular": 1975.0
+  },
+  "Q374": {
+   "codigo": "Q374",
+   "carrera": "Psicología Educativa",
+   "matricula": 395.0,
+   "arancel_regular": 3950.0,
+   "arancel_no_regular": 1975.0
+  },
+  "Q375": {
+   "codigo": "Q375",
+   "carrera": "Psicología Organizacional",
+   "matricula": 395.0,
+   "arancel_regular": 3950.0,
+   "arancel_no_regular": 1975.0
+  },
+  "Q386": {
+   "codigo": "Q386",
+   "carrera": "Odontología",
+   "matricula": 395.0,
+   "arancel_regular": 5500.0,
+   "arancel_no_regular": 2750.0
+  },
+  "Q382": {
+   "codigo": "Q382",
+   "carrera": "Veterinaria",
+   "matricula": 395.0,
+   "arancel_regular": 3950.0,
+   "arancel_no_regular": 1975.0
+  },
+  "Q365": {
+   "codigo": "Q365",
+   "carrera": "Medicina",
+   "matricula": 395.0,
+   "arancel_regular": 5500.0,
+   "arancel_no_regular": 2750.0
+  },
+  "Q328": {
+   "codigo": "Q328",
+   "carrera": "Administración de Empresas",
+   "matricula": 395.0,
+   "arancel_regular": 3950.0,
+   "arancel_no_regular": 1975.0
+  },
+  "Q329": {
+   "codigo": "Q329",
+   "carrera": "Contabilidad y Auditoría",
+   "matricula": 395.0,
+   "arancel_regular": 3950.0,
+   "arancel_no_regular": 1975.0
+  },
+  "Q330": {
+   "codigo": "Q330",
+   "carrera": "Finanzas",
+   "matricula": 395.0,
+   "arancel_regular": 3950.0,
+   "arancel_no_regular": 1975.0
+  },
+  "Q331": {
+   "codigo": "Q331",
+   "carrera": "Marketing",
+   "matricula": 395.0,
+   "arancel_regular": 3950.0,
+   "arancel_no_regular": 1975.0
+  },
+  "Q332": {
+   "codigo": "Q332",
+   "carrera": "Negocios Internacionales",
+   "matricula": 395.0,
+   "arancel_regular": 3950.0,
+   "arancel_no_regular": 1975.0
+  },
+  "Q372": {
+   "codigo": "Q372",
+   "carrera": "Administración en Turismo y Hospitalidad",
+   "matricula": 395.0,
+   "arancel_regular": 3950.0,
+   "arancel_no_regular": 1975.0
+  },
+  "Q356": {
+   "codigo": "Q356",
+   "carrera": "Economía",
+   "matricula": 395.0,
+   "arancel_regular": 3950.0,
+   "arancel_no_regular": 1975.0
+  },
+  "Q335": {
+   "codigo": "Q335",
+   "carrera": "Microbiología",
+   "matricula": 395.0,
+   "arancel_regular": 3950.0,
+   "arancel_no_regular": 1975.0
+  },
+  "Q336": {
+   "codigo": "Q336",
+   "carrera": "Química",
+   "matricula": 395.0,
+   "arancel_regular": 3950.0,
+   "arancel_no_regular": 1975.0
+  },
+  "Q334": {
+   "codigo": "Q334",
+   "carrera": "Biología",
+   "matricula": 395.0,
+   "arancel_regular": 3950.0,
+   "arancel_no_regular": 1975.0
+  },
+  "Q338": {
+   "codigo": "Q338",
+   "carrera": "Ciencias Biomédicas",
+   "matricula": 395.0,
+   "arancel_regular": 3950.0,
+   "arancel_no_regular": 1975.0
+  },
+  "Q339": {
+   "codigo": "Q339",
+   "carrera": "Bioingeniería",
+   "matricula": 395.0,
+   "arancel_regular": 3950.0,
+   "arancel_no_regular": 1975.0
+  },
+  "Q337": {
+   "codigo": "Q337",
+   "carrera": "Ciencia de Datos",
+   "matricula": 395.0,
+   "arancel_regular": 3950.0,
+   "arancel_no_regular": 1975.0
+  },
+  "Q340": {
+   "codigo": "Q340",
+   "carrera": "Educación Inicial",
+   "matricula": 395.0,
+   "arancel_regular": 3950.0,
+   "arancel_no_regular": 1975.0
+  },
+  "Q342": {
+   "codigo": "Q342",
+   "carrera": "Educación Inicial - semipresencial",
+   "matricula": 395.0,
+   "arancel_regular": 3950.0,
+   "arancel_no_regular": 1975.0
+  },
+  "Q341": {
+   "codigo": "Q341",
+   "carrera": "Educación Básica - semipresencial",
+   "matricula": 395.0,
+   "arancel_regular": 3950.0,
+   "arancel_no_regular": 1975.0
+  },
+  "Q343": {
+   "codigo": "Q343",
+   "carrera": "Pedagogía Musical - semipresencial",
+   "matricula": 395.0,
+   "arancel_regular": 3950.0,
+   "arancel_no_regular": 1975.0
+  },
+  "Q344": {
+   "codigo": "Q344",
+   "carrera": "Pedagogía de las Artes y las Humanidades - semipresencial",
+   "matricula": 395.0,
+   "arancel_regular": 3950.0,
+   "arancel_no_regular": 1975.0
+  },
+  "Q369": {
+   "codigo": "Q369",
+   "carrera": "Filosofía",
+   "matricula": 395.0,
+   "arancel_regular": 3950.0,
+   "arancel_no_regular": 1975.0
+  },
+  "Q370": {
+   "codigo": "Q370",
+   "carrera": "Teología",
+   "matricula": 395.0,
+   "arancel_regular": 3950.0,
+   "arancel_no_regular": 1975.0
+  },
+  "Q394": {
+   "codigo": "Q394",
+   "carrera": "Filosofía, Política y Economía",
+   "matricula": 395.0,
+   "arancel_regular": 3950.0,
+   "arancel_no_regular": 1975.0
+  },
+  "Q345": {
+   "codigo": "Q345",
+   "carrera": "Antropología",
+   "matricula": 395.0,
+   "arancel_regular": 3950.0,
+   "arancel_no_regular": 1975.0
+  },
+  "Q346": {
+   "codigo": "Q346",
+   "carrera": "Arqueología",
+   "matricula": 395.0,
+   "arancel_regular": 3950.0,
+   "arancel_no_regular": 1975.0
+  },
+  "Q347": {
+   "codigo": "Q347",
+   "carrera": "Historia",
+   "matricula": 395.0,
+   "arancel_regular": 3950.0,
+   "arancel_no_regular": 1975.0
+  },
+  "Q352": {
+   "codigo": "Q352",
+   "carrera": "Comunicación",
+   "matricula": 395.0,
+   "arancel_regular": 3950.0,
+   "arancel_no_regular": 1975.0
+  },
+  "Q354": {
+   "codigo": "Q354",
+   "carrera": "Lenguas Aplicadas a los Estudios Globales",
+   "matricula": 395.0,
+   "arancel_regular": 3950.0,
+   "arancel_no_regular": 1975.0
+  },
+  "Q353": {
+   "codigo": "Q353",
+   "carrera": "Lingüística",
+   "matricula": 395.0,
+   "arancel_regular": 3950.0,
+   "arancel_no_regular": 1975.0
+  },
+  "Q355": {
+   "codigo": "Q355",
+   "carrera": "Literatura",
+   "matricula": 395.0,
+   "arancel_regular": 3950.0,
+   "arancel_no_regular": 1975.0
+  },
+  "Q323": {
+   "codigo": "Q323",
+   "carrera": "Arquitectura",
+   "matricula": 395.0,
+   "arancel_regular": 3950.0,
+   "arancel_no_regular": 1975.0
+  },
+  "Q325": {
+   "codigo": "Q325",
+   "carrera": "Diseño de Productos",
+   "matricula": 395.0,
+   "arancel_regular": 3950.0,
+   "arancel_no_regular": 1975.0
+  },
+  "Q324": {
+   "codigo": "Q324",
+   "carrera": "Artes Visuales",
+   "matricula": 395.0,
+   "arancel_regular": 3950.0,
+   "arancel_no_regular": 1975.0
+  },
+  "Q326": {
+   "codigo": "Q326",
+   "carrera": "Diseño Gráfico",
+   "matricula": 395.0,
+   "arancel_regular": 3950.0,
+   "arancel_no_regular": 1975.0
+  },
+  "Q362": {
+   "codigo": "Q362",
+   "carrera": "Ingeniería Ambiental",
+   "matricula": 395.0,
+   "arancel_regular": 3950.0,
+   "arancel_no_regular": 1975.0
+  },
+  "Q360": {
+   "codigo": "Q360",
+   "carrera": "Ingeniería Civil",
+   "matricula": 395.0,
+   "arancel_regular": 3950.0,
+   "arancel_no_regular": 1975.0
+  },
+  "Q361": {
+   "codigo": "Q361",
+   "carrera": "Sistemas de Información",
+   "matricula": 395.0,
+   "arancel_regular": 3950.0,
+   "arancel_no_regular": 1975.0
+  },
+  "Q395": {
+   "codigo": "Q395",
+   "carrera": "Ingeniería en Diseño Industrial",
+   "matricula": 395.0,
+   "arancel_regular": 3950.0,
+   "arancel_no_regular": 1975.0
+  },
+  "Q269": {
+   "codigo": "Q269",
+   "carrera": "Ingeniería Integral",
+   "matricula": 500.0,
+   "arancel_regular": 5000.0,
+   "arancel_no_regular": 2500.0
+  }
+ }
+}

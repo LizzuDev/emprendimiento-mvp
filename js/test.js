@@ -4,8 +4,9 @@
 // =========================================================
 
 import { MACROAREAS, FASE_1_QUESTIONS, DOMAIN_DATA } from './data/vocationalData.js';
-import { getAurelioContextualAnswer, queryGroqAurelio, getLastAurelioSource } from './aurelioBot.js';
+import { getAurelioContextualAnswer, queryAurelio, getLastAurelioSource } from './aurelioBot.js';
 import { formatAurelioMessage, escapeHtml } from './chatFormat.js';
+import { OFFICIAL_CAREERS } from './data/aurelioKnowledge.js';
 import { telemetry } from './telemetry.js';
 
 // --- ESTADO GLOBAL Y PERSISTENCIA (MISMAS CLAVES QUE EN REACT) ---
@@ -549,11 +550,40 @@ function calculateFinalResults() {
 }
 
 // =========================================================
+// DATOS OFICIALES DE LA PUCE (www.puce.edu.ec)
+// Se buscan por clave al dibujar, así también se corrigen los resultados guardados antes.
+// Ver scripts/puce/actualizar.py
+// =========================================================
+function officialOf(career) {
+  return (career && OFFICIAL_CAREERS[career.key]) || null;
+}
+
+// Tarjetas de cifras con la misma forma que antes ({ topText, highlight, title }), con datos oficiales.
+function officialBenefits(official) {
+  if (!official) return null;
+  const cards = [];
+  const c = official.costo;
+  if (c) {
+    cards.push({ topText: 'Descuento', highlight: `${c.descuentoPct}%`, title: 'sobre aranceles' });
+    cards.push({ topText: 'Inversión', highlight: `$${c.precioConDescuento}`, title: 'por semestre' });
+  }
+  // Tercera cifra: los convenios que publica la PUCE para la carrera; si no hay, la duración.
+  const conv = (official.porQueEstudiar || '').match(/(\d+)\s+convenios\s+(nacionales e internacionales|internacionales)?/i);
+  if (conv) {
+    cards.push({ topText: 'Convenios', highlight: conv[1], title: (conv[2] || 'convenios').toLowerCase() });
+  } else if (official.semestres) {
+    cards.push({ topText: 'Duración', highlight: String(official.semestres), title: 'semestres' });
+  }
+  return cards;
+}
+
+// =========================================================
 // PANTALLA DE RESULTADOS (IDÉNTICO A REACT)
 // =========================================================
 function renderResults() {
   const activeCareer = state.rankedCareers.find(c => c.key === state.activeCareerKey) || state.rankedCareers[0];
   if (!activeCareer) return;
+  const official = officialOf(activeCareer);
 
   appContainer.innerHTML = `
     <div class="react-results-wrap">
@@ -597,7 +627,7 @@ function renderResults() {
                 </div>
                 <div>
                   <h3 class="react-podium-name">${career.name}</h3>
-                  <div class="react-podium-faculty">${career.faculty || 'PUCE'}</div>
+                  <div class="react-podium-faculty">${escapeHtml(officialOf(career)?.facultad || 'PUCE')}</div>
                 </div>
                 <button class="react-podium-btn-select" data-key="${career.key}">
                   ${isSelected ? '✓ Explorando esta carrera' : 'Ver detalle y mini-reto →'}
@@ -638,14 +668,14 @@ function renderResults() {
         <!-- MAIN VIEW (DETALLE DE CARRERA) -->
         <div class="react-results-content">
           <div class="react-detail-header">
-            <p class="react-detail-desc">${activeCareer.description}</p>
+            ${(official ? official.descripcion : activeCareer.description) ? `<p class="react-detail-desc">${escapeHtml(official ? official.descripcion : activeCareer.description)}</p>` : ''}
 
-            ${activeCareer.fieldOfWork ? `
+            ${(official?.campoLaboral || activeCareer.fieldOfWork) ? `
               <div class="react-field-box">
                 <span style="font-size: 16px;">💼</span>
                 <div>
                   <strong style="color: #003b81;">Campo ocupacional & impacto:</strong>
-                  <span>${activeCareer.fieldOfWork}</span>
+                  <span>${escapeHtml(official?.campoLaboral || activeCareer.fieldOfWork)}</span>
                 </div>
               </div>
             ` : ''}
@@ -666,15 +696,11 @@ function renderResults() {
               <span class="react-stat-label">Afinidad</span>
               <span class="react-stat-num">${activeCareer.matchPct}<span style="font-size: 18px;">%</span></span>
             </div>
-            ${(activeCareer.benefits || [
-              { topText: 'Descuento', highlight: '34%', title: 'sobre aranceles' },
-              { topText: 'Inversión', highlight: '$2600', title: 'por semestre' },
-              { topText: 'Empleabilidad', highlight: '94%', title: 'alta demanda' }
-            ]).map(b => `
+            ${(officialBenefits(official) || activeCareer.benefits || []).map(b => `
               <div class="react-stat-cell">
-                <span class="react-stat-label">${b.topText}</span>
-                <span class="react-stat-num">${b.highlight}</span>
-                <span class="react-stat-sub">${b.title}</span>
+                <span class="react-stat-label">${escapeHtml(b.topText)}</span>
+                <span class="react-stat-num">${escapeHtml(b.highlight)}</span>
+                <span class="react-stat-sub">${escapeHtml(b.title)}</span>
               </div>
             `).join('')}
           </div>
@@ -983,65 +1009,72 @@ function renderInteractiveChallenge(career) {
 function openSyllabusModal(career) {
   if (!syllabusModal) return;
 
-  const syllabus = career.syllabus;
-
+  const official = officialOf(career);
+  const malla = official?.malla;
   const modalCareerTitle = document.getElementById('syllabus-career-title');
   const modalBody = document.getElementById('syllabus-body');
 
-  if (modalCareerTitle) modalCareerTitle.textContent = career.name || 'Carrera Universitaria';
+  if (modalCareerTitle) modalCareerTitle.textContent = official?.nombre || career.name || 'Carrera Universitaria';
 
-  // Si la carrera aún no tiene su malla cargada, se avisa en lugar de mostrar
-  // una malla que no le corresponde (#21).
-  if (modalBody && !syllabus) {
+  // Solo se muestra la malla oficial (brochure de la PUCE). Si no está, se avisa (#21).
+  if (modalBody && !malla?.length) {
     modalBody.innerHTML = `
       <p style="font-size: 14px; color: #334155; line-height: 1.6; margin: 0 0 16px;">
-        Todavía estamos preparando la malla de <strong>${career.name || 'esta carrera'}</strong> en esta plataforma.
+        No tenemos la malla oficial de <strong>${escapeHtml(career.name || 'esta carrera')}</strong> en esta plataforma.
       </p>
       <p style="font-size: 14px; color: #334155; line-height: 1.6; margin: 0;">
-        Mientras tanto, puedes revisarla en el
-        <a href="https://landing.puce.edu.ec/pucegradogeneral" target="_blank" rel="noopener" style="color: #003b81; font-weight: 700;">portal de grado de la PUCE</a>
-        o preguntarle a Aurelio por las materias de primer año.
+        Puedes revisarla en el
+        <a href="https://www.puce.edu.ec/grado/" target="_blank" rel="noopener noreferrer" style="color: #003b81; font-weight: 700;">portal de grado de la PUCE</a>
+        o preguntarle a Aurelio.
       </p>
     `;
   } else if (modalBody) {
+    // Mismo diseño de siempre ("Nivel N"), con la malla oficial del brochure.
+    const shared = official.semestresCompartidos || [];
+    const levels = malla
+      .map((sem, i) => ({ sem, n: i + 1 }))
+      .filter(({ n }) => !shared.some(pair => pair[1] === n))
+      .map(({ sem, n }) => {
+        const pair = shared.find(pr => pr[0] === n);
+        return { title: pair ? `Nivel ${pair[0]} y ${pair[1]}` : `Nivel ${n}`, subjects: sem };
+      });
+    (official.bloquesAdicionales || []).forEach(bl => levels.push({ title: bl.titulo, subjects: bl.materias }));
+
     modalBody.innerHTML = `
       <p style="font-size: 13px; color: #64748b; margin-bottom: 24px;">
-        Pasa el cursor o pulsa sobre cualquier materia para conocer más información formativa.
+        Malla oficial según el <a href="${escapeHtml(official.fuentes.brochure)}" target="_blank" rel="noopener noreferrer" style="color: #003b81; font-weight: 700;">brochure de la PUCE</a>.
       </p>
       <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: 20px;">
-        ${syllabus.semesters.map((sem, sIdx) => `
+        ${levels.map(l => `
           <div style="border-bottom: 2px solid #003b81; padding-bottom: 8px;">
             <div style="display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 8px;">
               <h4 style="font-size: 13px; font-weight: 800; text-transform: uppercase; color: #003b81; margin: 0;">
-                Nivel ${sIdx + 1}
+                ${escapeHtml(l.title)}
               </h4>
-              <span style="font-size: 11px; color: #94a3b8;">${sem.length} materias</span>
+              <span style="font-size: 11px; color: #94a3b8;">${l.subjects.length} materias</span>
             </div>
             <ul style="list-style: none; padding: 0; margin: 0; font-size: 12px; line-height: 1.4;">
-              ${sem.map(subject => {
-                const desc = syllabus.subjectDetails?.[subject] || 'Asignatura orientada a desarrollar destrezas prácticas y criterio profesional.';
-                return `
-                  <li style="padding: 6px 0; border-bottom: 1px solid #f1f5f9; cursor: pointer;" title="${desc}" onclick="alert('${subject}:\\n\\n${desc.replace(/'/g, "\\'")}')">
-                    • <span style="font-weight: 500; color: #334155;">${subject}</span>
-                  </li>
-                `;
-              }).join('')}
+              ${l.subjects.map(subject => `
+                <li style="padding: 6px 0; border-bottom: 1px solid #f1f5f9;">
+                  • <span style="font-weight: 500; color: #334155;">${escapeHtml(subject)}</span>
+                </li>
+              `).join('')}
             </ul>
           </div>
         `).join('')}
       </div>
 
-      ${syllabus.itineraries && syllabus.itineraries.length > 0 ? `
+      ${official.itinerarios && official.itinerarios.length > 0 ? `
         <div style="margin-top: 32px; border-top: 1px solid #f1f5f9; padding-top: 20px;">
           <h4 style="font-size: 13px; font-weight: 800; color: #003b81; text-transform: uppercase; margin-bottom: 12px;">
             Itinerarios de Especialización
           </h4>
           <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: 16px;">
-            ${syllabus.itineraries.map(iti => `
+            ${official.itinerarios.map(iti => `
               <div style="border-left: 2px solid #00a8cc; padding-left: 12px;">
-                <strong style="font-size: 13px; color: #003b81;">${iti.name}</strong>
+                <strong style="font-size: 13px; color: #003b81;">${escapeHtml(iti.nombre)}</strong>
                 <ul style="padding-left: 14px; margin: 6px 0; font-size: 12px; color: #64748b;">
-                  ${iti.subjects.map(s => `<li>${s}</li>`).join('')}
+                  ${iti.materias.map(m => `<li>${escapeHtml(m.materia)}</li>`).join('')}
                 </ul>
               </div>
             `).join('')}
@@ -1069,12 +1102,8 @@ function closeLeadModal() {
 function updateChatAiStatus() {
   const subEl = document.getElementById('chat-header-sub');
   if (!subEl) return;
-  const hasKey = typeof localStorage !== 'undefined' && !!(localStorage.getItem('puce_groq_api_key') || (typeof window !== 'undefined' && window.GROQ_API_KEY));
   const src = getLastAurelioSource();
-  if (hasKey) {
-    subEl.innerHTML = 'Llama 3.3 70B Activo <span style="color: #4ade80;">●</span>';
-    subEl.title = 'Conectado a Groq Cloud AI con tu clave personal';
-  } else if (src === 'groq' || src === 'gemini') {
+  if (src === 'groq' || src === 'gemini') {
     subEl.innerHTML = 'Asistente con IA <span style="color: #4ade80;">●</span>';
     subEl.title = 'Respondiendo con inteligencia artificial';
   } else if (src === 'local') {
@@ -1200,8 +1229,7 @@ async function sendAurelioQuestion(questionText) {
   const activeCareer = state.rankedCareers.find(c => c.key === state.activeCareerKey);
 
   try {
-    // Si la pregunta coincide con preguntas clave o si Groq está activo, resuelve
-    const reply = await queryGroqAurelio(activeCareer, userQuery, state.chatHistory);
+    const reply = await queryAurelio(activeCareer, userQuery, state.chatHistory);
 
     const existingTyping = document.getElementById('chat-typing-indicator');
     if (existingTyping) existingTyping.remove();
@@ -1347,31 +1375,6 @@ function setupModalEvents() {
         resetTest();
         if (typeof sessionStorage !== 'undefined') sessionStorage.clear();
         alert('✅ Tus datos locales han sido eliminados de este dispositivo.');
-      }
-    };
-  }
-
-  const configGroqBtn = document.getElementById('btn-config-groq');
-  if (configGroqBtn) {
-    configGroqBtn.onclick = () => {
-      const currentKey = localStorage.getItem('puce_groq_api_key') || '';
-      const newKey = prompt(
-        'Configurar Groq Cloud AI (Llama 3.3 70B):\n\n' +
-        'Pega tu API Key de Groq (ej: gsk_...):\n' +
-        '(Si lo dejas en blanco, Aurelio funcionará con el Motor Experto PUCE local sin consumir saldo)',
-        currentKey
-      );
-      if (newKey !== null) {
-        if (newKey.trim()) {
-          localStorage.setItem('puce_groq_api_key', newKey.trim());
-          if (typeof window !== 'undefined') window.GROQ_API_KEY = newKey.trim();
-          alert('✅ Clave de Groq configurada. Aurelio Bot responderá con IA en tiempo real.');
-        } else {
-          localStorage.removeItem('puce_groq_api_key');
-          if (typeof window !== 'undefined') delete window.GROQ_API_KEY;
-          alert('⚡ Clave eliminada. Aurelio Bot utilizará el Motor Experto PUCE local verificado.');
-        }
-        updateChatAiStatus();
       }
     };
   }
