@@ -1567,27 +1567,3 @@ body.test-body {
   }
   .chat-msg { max-width: 92%; }
 }
-
-/* Datos oficiales de la PUCE en la ficha de resultados */
-.react-official-list {
-  margin: 6px 0 0;
-  padding-left: 18px;
-  color: #334155;
-}
-
-.react-official-list li {
-  margin: 2px 0;
-}
-
-.react-official-note {
-  font-size: 12px;
-  color: #64748b;
-  margin: 10px 0 0;
-  padding: 0 4px;
-  line-height: 1.5;
-}
-
-.react-official-note a {
-  color: #003b81;
-  font-weight: 600;
-}
