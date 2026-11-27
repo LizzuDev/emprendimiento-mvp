@@ -1106,7 +1106,10 @@ function updateChatAiStatus() {
   if (src === 'groq' || src === 'gemini') {
     subEl.innerHTML = 'Asistente con IA <span style="color: #4ade80;">●</span>';
     subEl.title = 'Respondiendo con inteligencia artificial';
-  } else if (src === 'local') {
+  } else if (src === 'local' || src === 'cache') {
+    subEl.innerHTML = 'Datos oficiales PUCE <span style="color: #4ade80;">●</span>';
+    subEl.title = 'Respuesta con los datos oficiales publicados por la PUCE';
+  } else if (src === 'fallback') {
     subEl.innerHTML = 'Modo básico <span style="color: #facc15;">⚡</span>';
     subEl.title = 'El servicio de IA no respondió; se usa el motor local con datos de la PUCE.';
   } else {
@@ -1201,7 +1204,7 @@ function renderChatMessages({ scroll = 'bottom', animateLast = false } = {}) {
   }
 }
 
-async function sendAurelioQuestion(questionText) {
+async function sendAurelioQuestion(questionText, options = {}) {
   if (!questionText || !questionText.trim()) return;
 
   const userQuery = questionText.trim();
@@ -1229,7 +1232,7 @@ async function sendAurelioQuestion(questionText) {
   const activeCareer = state.rankedCareers.find(c => c.key === state.activeCareerKey);
 
   try {
-    const reply = await queryAurelio(activeCareer, userQuery, state.chatHistory);
+    const reply = await queryAurelio(activeCareer, userQuery, state.chatHistory, options);
 
     const existingTyping = document.getElementById('chat-typing-indicator');
     if (existingTyping) existingTyping.remove();
@@ -1240,7 +1243,8 @@ async function sendAurelioQuestion(questionText) {
     renderChatMessages({ scroll: 'reply-start', animateLast: true });
 
     const src = getLastAurelioSource();
-    telemetry.trackAurelioQuery(activeCareer?.key || 'general', userQuery, reply, src === 'local' ? 'local_fallback' : src === 'gemini' ? 'gemini_ai' : 'groq_ai');
+    const SOURCE_LABELS = { local: 'local_engine', cache: 'cache', groq: 'groq_ai', gemini: 'gemini_ai', fallback: 'local_fallback' };
+    telemetry.trackAurelioQuery(activeCareer?.key || 'general', userQuery, reply, SOURCE_LABELS[src] || 'local_engine');
   } catch (err) {
     console.error('Error al generar respuesta en AurelioBot:', err);
     const existingTyping = document.getElementById('chat-typing-indicator');
@@ -1394,7 +1398,8 @@ function setupModalEvents() {
 
   document.querySelectorAll('.query-chip').forEach(btn => {
     btn.onclick = () => {
-      sendAurelioQuestion(btn.textContent.trim());
+      // Las sugerencias se responden siempre con el motor local (datos oficiales, sin gastar IA).
+      sendAurelioQuestion(btn.textContent.replace(/^[^¿A-Za-zÁÉÍÓÚáéíóúÑñ]+/, '').trim(), { fromChip: true });
     };
   });
 }

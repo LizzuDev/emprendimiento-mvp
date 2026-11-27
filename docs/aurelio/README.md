@@ -35,18 +35,23 @@ Luego:
 
 Requisitos: Python 3, Node 22 y `pdftotext` (poppler-utils).
 
-## Flujo de una pregunta
+## Flujo de una pregunta (ahorro de cuota de IA)
 
-```
-Navegador (js/aurelioBot.js) ── pregunta + clave de la carrera + últimos 4 mensajes ──►
-Edge Function aurelio-chat (context.ts arma el CONTEXTO):
-   - ficha oficial completa de la carrera activa (malla, costos, título, campo laboral…)
-   - ficha corta de otras carreras nombradas en la pregunta
-   - solo los datos institucionales del tema de la pregunta (+ contacto de Admisiones)
-──► Groq (gpt-oss-120b → gpt-oss-20b; configurable con GROQ_MODELS) → Gemini (respaldo)
-```
+Cada pregunta pasa por `planRoute()` de `js/aurelioNLP.js` (el mismo archivo lo usa la Edge Function como `nlp.js`):
 
-Si la Edge Function no responde, el navegador usa el motor local (`getAurelioContextualAnswer`), que detecta la intención y responde con los mismos datos oficiales.
+1. **Análisis:** se normaliza, se quitan palabras vacías, se reduce cada palabra a su raíz (stemming) y se aplican sinónimos. "¿Cuánto cuesta?", "precio" y "valor de la pensión" dan la misma raíz `cost`.
+2. **Alcance:** solo la carrera que el estudiante está viendo. Otra carrera entra únicamente si la pregunta la nombra ("¿y Enfermería cuánto cuesta?"), y entonces solo esa. Las materias se buscan solo en la malla de las carreras del alcance.
+3. **Ruta:**
+   | Caso | Quién responde | Tokens de IA |
+   |---|---|---|
+   | Pregunta sugerida, saludo o tema claro (costos, becas, malla, inscripción, campo laboral...) | motor local con datos oficiales | 0 |
+   | "¿En qué semestre veo X?" | motor local (índice de materias) | 0 |
+   | Pregunta compleja ya respondida (mismas raíces, misma carrera, misma versión de datos) | caché del navegador o caché compartida `aurelio_cache` | 0 |
+   | Pregunta compleja nueva: contenido de una materia, comparar carreras, pedir consejo, tema no reconocido, varios temas | IA con contexto mínimo | ~400–1.100 |
+4. **Contexto mínimo** (`context.ts`): reglas fijas primero (Groq guarda ese prefijo en caché y no cuenta para el límite) y solo la parte de la ficha del tema (p. ej. una materia, su semestre y las materias vecinas).
+5. **Caché compartida:** la función guarda la respuesta de la IA; otro estudiante con una pregunta equivalente la recibe sin gastar cuota. Se invalida sola cuando cambian los datos (`KB_VERSION`).
+
+Si la Edge Function no responde, el motor local responde con los mismos datos oficiales ("Modo básico").
 
 ## Despliegue de la Edge Function
 

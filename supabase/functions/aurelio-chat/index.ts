@@ -1,15 +1,16 @@
 // Supabase Edge Function: aurelio-chat
-// Aurelio responde SOLO con datos verificados (RAG estructurado):
-//   1. Se identifica la carrera activa (y otras carreras mencionadas en la pregunta).
-//   2. Se arma el contexto con su ficha oficial (knowledge/careers.json) y los datos
-//      institucionales verificados (knowledge/puce.json, verificado=true). Ver context.ts.
-//   3. El modelo redacta la respuesta usando únicamente ese contexto.
+// Aurelio responde SOLO con datos verificados, gastando la menor cuota de IA posible:
+//   1. Analiza la pregunta (nlp.js): tema, carreras nombradas y materias, dentro del ALCANCE
+//      (carrera activa; otra carrera solo si se nombra).
+//   2. Caché compartida (tabla aurelio_cache): si ya se respondió una pregunta equivalente
+//      para esa carrera y esa versión de los datos, responde sin llamar a la IA.
+//   3. Contexto mínimo (context.ts): solo la parte de la ficha del tema detectado.
+//   4. Groq (gpt-oss-120b -> gpt-oss-20b, configurable con GROQ_MODELS) y Gemini como respaldo.
 // Las claves del proveedor viven SOLO aquí (secrets), nunca en el navegador.
-// Proveedores: Groq (gpt-oss-120b -> gpt-oss-20b) y, si hay clave, Gemini como respaldo.
 // Groq retiró llama-3.3-70b-versatile y llama-3.1-8b-instant el 16/08/2026 (console.groq.com/docs/deprecations).
-// Modelos de Groq configurables con el secreto GROQ_MODELS (separados por coma).
 
-import { buildSystemPrompt, cut, findActiveCareer, mentionedCareers, type Msg } from './context.ts';
+import { buildContext, cut, findActiveCareer, KB_VERSION, planFor, RULES, type Msg } from './context.ts';
+import { fingerprint, isCacheable } from './nlp.js';
 
 const GROQ_API_KEY = Deno.env.get('GROQ_API_KEY') ?? '';
 const GEMINI_API_KEY = Deno.env.get('GEMINI_API_KEY') ?? '';
@@ -26,6 +27,11 @@ const GROQ_MAX_COMPLETION_TOKENS = 1500;
 const TEMPERATURE = 0.3;
 const PROVIDER_TIMEOUT_MS = 12_000;
 const RATE_LIMIT = { windowMs: 60_000, max: 12 }; // por IP, por instancia (mejor esfuerzo)
+
+// Caché compartida de respuestas (tabla public.aurelio_cache, solo accesible con la clave de servicio).
+const SUPABASE_URL = Deno.env.get('SUPABASE_URL') ?? '';
+const SERVICE_KEY = Deno.env.get('SUPABASE_SERVICE_ROLE_KEY') ?? '';
+const CACHE_TTL_MS = 30 * 24 * 3600 * 1000; // 30 días (además se invalida al cambiar los datos)
 const hits = new Map<string, number[]>();
 
 // ---------------------------------------------------------------------------
@@ -91,6 +97,55 @@ async function callGroq(messages: { role: string; content: string }[]) {
   return null;
 }
 
+// ---------------------------------------------------------------------------
+// Caché compartida
+// ---------------------------------------------------------------------------
+function serviceHeaders(extra: Record<string, string> = {}) {
+  const h: Record<string, string> = { apikey: SERVICE_KEY, 'Content-Type': 'application/json', ...extra };
+  if (!SERVICE_KEY.startsWith('sb_')) h.Authorization = `Bearer ${SERVICE_KEY}`; // clave legacy (JWT)
+  return h;
+}
+
+async function sha256(text: string) {
+  const digest = await crypto.subtle.digest('SHA-256', new TextEncoder().encode(text));
+  return [...new Uint8Array(digest)].map((b) => b.toString(16).padStart(2, '0')).join('');
+}
+
+async function cacheGet(key: string): Promise<string | null> {
+  if (!SUPABASE_URL || !SERVICE_KEY) return null;
+  try {
+    const since = encodeURIComponent(new Date(Date.now() - CACHE_TTL_MS).toISOString());
+    const res = await fetch(`${SUPABASE_URL}/rest/v1/aurelio_cache?select=answer&key=eq.${key}&created_at=gte.${since}&limit=1`, {
+      headers: serviceHeaders(),
+      signal: AbortSignal.timeout(3000),
+    });
+    if (!res.ok) {
+      console.warn(`caché (lectura) -> ${res.status}`);
+      return null;
+    }
+    const rows = await res.json();
+    return rows?.[0]?.answer ?? null;
+  } catch (err) {
+    console.warn('caché (lectura) falló:', err instanceof Error ? err.message : err);
+    return null;
+  }
+}
+
+async function cachePut(row: Record<string, unknown>) {
+  if (!SUPABASE_URL || !SERVICE_KEY) return;
+  try {
+    const res = await fetch(`${SUPABASE_URL}/rest/v1/aurelio_cache?on_conflict=key`, {
+      method: 'POST',
+      headers: serviceHeaders({ Prefer: 'resolution=merge-duplicates,return=minimal' }),
+      body: JSON.stringify({ ...row, created_at: new Date().toISOString() }),
+      signal: AbortSignal.timeout(3000),
+    });
+    if (!res.ok) console.warn(`caché (escritura) -> ${res.status}`);
+  } catch (err) {
+    console.warn('caché (escritura) falló:', err instanceof Error ? err.message : err);
+  }
+}
+
 async function callGemini(system: string, history: Msg[], question: string) {
   if (!GEMINI_API_KEY) return null;
   // Gemini exige que la conversación empiece con el usuario: se descartan los mensajes iniciales del asistente.
@@ -149,24 +204,52 @@ Deno.serve(async (req) => {
   const question = cut(body.question, 600).trim();
   if (!question) return json({ error: 'Falta la pregunta' }, 400);
 
+  // Historial mínimo: los 2 últimos mensajes, recortados (cada token cuenta para el límite de Groq).
   const history: Msg[] = (Array.isArray(body.history) ? body.history : [])
-    .slice(-4)
+    .slice(-2)
     .map((m: { role?: string; content?: string }) => ({
       role: m?.role === 'user' ? 'user' as const : 'assistant' as const,
-      content: cut(m?.content, 1200),
+      content: cut(m?.content, 400),
     }))
     .filter((m) => m.content);
 
   const active = findActiveCareer(body);
-  const others = mentionedCareers(question, active?.key);
-  const system = buildSystemPrompt(active, others, question, history);
-  const messages = [{ role: 'system', content: system }, ...history, { role: 'user', content: question }];
+  const plan = planFor(question, active);
+  const meta = { career: plan.scope.primary || null, intent: plan.intent, route: plan.reason };
+
+  // 1. Caché compartida
+  const cacheable = isCacheable(question);
+  const key = cacheable
+    ? await sha256(`${KB_VERSION}|${plan.scope.primary}|${[...plan.scope.others].sort().join(',')}|${fingerprint(question)}`)
+    : null;
+  if (key) {
+    const hit = await cacheGet(key);
+    if (hit) return json({ reply: hit, provider: 'cache', ...meta });
+  }
+
+  // 2. IA con contexto mínimo. Las reglas fijas van primero (prefijo que Groq guarda en caché).
+  const context = buildContext(plan);
+  const messages = [
+    { role: 'system', content: RULES },
+    { role: 'system', content: context },
+    ...history,
+    { role: 'user', content: question },
+  ];
+
+  const save = (reply: string, model: string) =>
+    key ? cachePut({ key, answer: reply, model, kb_version: KB_VERSION, career_key: plan.scope.primary || null, intent: plan.intent }) : Promise.resolve();
 
   const groq = await callGroq(messages);
-  if (groq) return json({ reply: groq.text, provider: 'groq', model: groq.model, career: active?.key ?? null });
+  if (groq) {
+    await save(groq.text, groq.model);
+    return json({ reply: groq.text, provider: 'groq', model: groq.model, ...meta });
+  }
 
-  const gemini = await callGemini(system, history, question);
-  if (gemini) return json({ reply: gemini.text, provider: 'gemini', model: gemini.model, career: active?.key ?? null });
+  const gemini = await callGemini(`${RULES}\n\n${context}`, history, question);
+  if (gemini) {
+    await save(gemini.text, gemini.model);
+    return json({ reply: gemini.text, provider: 'gemini', model: gemini.model, ...meta });
+  }
 
   return json({ error: 'Servicio de IA no disponible' }, 503);
 });
