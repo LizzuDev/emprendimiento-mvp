@@ -1,0 +1,42 @@
+# Palabras comunes y jerga juvenil que complementan el vocabulario de los datos oficiales.
+# Las usa el filtro de preguntas incoherentes (js/aurelioNLP.js): una pregunta pasa si al menos
+# 1 de cada 3 palabras es conocida. Una palabra por línea o separadas por espacios; sin tildes no hace falta.
+
+# Jerga, abreviaturas y muletillas
+q k xq xk pq porq xfa porfa plis pls please info u uni ing lic mates profe profes cole colegio
+ok okey vale listo bueno buena dale chevere bacan genial super ya va oye mira emm ehh mmm ah oh ay ai
+xd jaja jeje jsjs hola holi ola chao adios gracias grax thx sorry perdon disculpa ayuda ayudame
+nose nosé tmb tambien igual osea o sea tipo onda que tal porfavor favor
+
+# Personas y lugares
+doctor doctora medico medica enfermero enfermera abogado abogada ingeniero ingeniera arquitecto
+arquitecta psicologo psicologa profesor profesora maestro maestra veterinario veterinaria nutricionista
+dentista odontologo contador contadora economista periodista diseñador diseñadora artista biologo quimico
+papa papas mama mamas padres familia hermano hermana amigo amiga amigos novio novia estudiante estudiantes
+bachiller bachillerato colegio escuela universidad facultad campus quito ecuador ambato ibarra cuenca
+guayaquil loja manta esmeraldas santo domingo pais ciudad casa trabajo empresa hospital clinica
+
+# Verbos frecuentes (infinitivo y formas comunes)
+ser soy eres es somos son era fui estar estoy esta estan estaba tener tengo tienes tiene tienen tenia
+hacer hago haces hace hacen hice ir voy vas va vamos van poder puedo puedes puede pueden podria podre
+querer quiero quieres quiere queria quisiera saber se sabes sabe sabia conocer conozco decir digo dice
+dime ver veo ves ve vi dar doy da dan estudiar estudio estudias estudia estudiando estudiaria trabajar
+trabajo trabajas trabaja trabajando gustar gusta gustan gusto encanta encantan interesa interesan
+dibujar dibujo pintar escribir leer cantar bailar jugar ayudar ayudo cuidar curar enseñar aprender
+aprendo entender entiendo pensar pienso creo creer sentir siento elegir escoger escojo decidir decido
+pagar pago cuesta cuestan costar ganar gano gana ganan entrar ingresar inscribir inscribirme postular
+graduar graduarme terminar empezar empiezo comenzar durar dura viajar vivir vivo necesito necesitar
+buscar busco preguntar pregunta preguntas responder recomendar recomiendas recomiendan conviene
+preocupa preocupan miedo odio odiar amo amar prefiero preferir parece parecen sirve servir
+
+# Sustantivos y adjetivos frecuentes
+carrera carreras materia materias clase clases curso cursos semestre semestres año años nota notas
+examen examenes prueba pruebas beca becas plata dinero precio costo valor pension cuota mensualidad
+horario horarios mañana tarde noche lunes sabado fin semana tiempo futuro sueño sueños vocacion
+mates matematica matematicas fisica quimica biologia historia ingles idioma idiomas arte musica deporte
+deportes futbol computacion computadora programacion tecnologia internet redes animales plantas
+naturaleza salud cuerpo mente personas gente niños ayuda opcion opciones duda dudas problema problemas
+mejor peor facil dificil dificiles caro cara barato barata bueno malo grande pequeño nuevo largo corto
+importante interesante aburrido divertido rapido lento mucho poco muchos pocos todo todos nada algo
+cual cuales cuanto cuanta cuantos cuantas donde cuando como porque por que quien quienes
+si no tal vez quizas talvez seguro segura claro obvio

@@ -5,7 +5,8 @@
 // 2. Quita palabras vacías ("quiero", "saber", "la", "de"...).
 // 3. Reduce cada palabra a su raíz (stemming ligero en español): "bases" -> "bas", "datos" -> "dat".
 // 4. Aplica sinónimos: "precio", "cuesta", "pension" -> "costo".
-// 5. Resuelve el ALCANCE de la búsqueda: carrera activa -> su Top 3 -> otra carrera solo si se nombra.
+// 5. Filtra preguntas incoherentes ("??????", "asdfgh", "qwertyuiop") con reglas de forma y un vocabulario.
+// 6. Resuelve el ALCANCE de la búsqueda: carrera activa -> su Top 3 -> otra carrera solo si se nombra.
 //    Las materias se buscan solo dentro de ese alcance, nunca en toda la base.
 //
 // Archivo canónico: js/aurelioNLP.js. scripts/aurelio/exportar_conocimiento.mjs lo copia a la Edge Function.
@@ -205,8 +206,10 @@ export const INTENTS = [
   { id: 'ajeno', phrases: ['clima', 'chiste', 'futbol', 'politica', 'receta', 'pelicula', 'cancion', 'horoscopo', 'bitcoin', 'criptomoneda', 'novia', 'novio', 'tarea de', 'resuelve'] },
 ];
 
+// Comparación por palabras completas y en forma fonética: tolera faltas ("kuanto kuesta" = "cuanto cuesta").
+const phoneticText = (t) => t.split(' ').map((w) => phonetic(w)).join(' ');
 function hasPhrase(normText, phrase) {
-  return ` ${normText} `.includes(` ${normalize(phrase)} `);
+  return ` ${phoneticText(normText)} `.includes(` ${phoneticText(normalize(phrase))} `);
 }
 
 /** Puntaje de cada tema para la pregunta, de mayor a menor (solo los que puntúan). */
@@ -252,7 +255,76 @@ export const INCOHERENT_REPLY =
   'No logré entender tu pregunta 🤔 ¿Podrías escribirla con otras palabras?\n\n' +
   'Por ejemplo:\n- ¿Cuánto cuesta la carrera?\n- ¿Qué materias veré en primer año?\n- ¿Dónde puedo trabajar?\n- ¿Cómo me inscribo?';
 
-const LAUGH_RE = /^(j[aeiou]){2,}j?$|^(js){2,}j?$|^(ha){2,}h?$|^(je){2,}j?$|^x+d+$|^lol$/;
+const LAUGH_RE = /^(j[aeiou]){2,}j?$|^(js){2,}j?$|^(ha){2,}h?$|^(je){2,}j?$|^(e?h[aeiou]){2,}h?$|^(eh){2,}e?$|^x+d+$|^lol$/;
+
+// Forma fonética para tolerar faltas de ortografía: "kuanto" = "cuanto", "kiero" = "quiero", "vecas" = "becas".
+export function phonetic(word) {
+  return word
+    .replace(/h/g, '')
+    .replace(/qu/g, 'k')
+    .replace(/c([ei])/g, 's$1')
+    .replace(/z/g, 's')
+    .replace(/c/g, 'k')
+    .replace(/v/g, 'b')
+    .replace(/ll/g, 'y')
+    .replace(/(.)\1+/g, '$1');
+}
+
+// Vocabulario conocido (palabras de los datos oficiales + palabras comunes y jerga).
+// Lo carga quien usa el módulo con setVocabulary(); sin vocabulario, solo se aplican las reglas de forma.
+let VOCAB_WORDS = null;
+let VOCAB_STEMS = null;
+export function setVocabulary(words) {
+  const all = [...words];
+  for (const intent of INTENTS) for (const phrase of intent.phrases) all.push(...normalize(phrase).split(' '));
+  for (const aliases of Object.values(CAREER_ALIASES)) for (const a of aliases) all.push(...a.split(' '));
+  VOCAB_WORDS = new Set();
+  VOCAB_STEMS = new Set();
+  for (const w of all) {
+    const n = normalize(w);
+    if (!n || n.includes(' ')) continue;
+    VOCAB_WORDS.add(phonetic(n));
+    VOCAB_STEMS.add(phonetic(stem(n)));
+  }
+}
+
+function knownWord(w, acronyms) {
+  if (STOPWORDS.has(w) || /^\d+$/.test(w) || acronyms.has(w)) return true;
+  return VOCAB_WORDS.has(phonetic(w)) || (w.length > 3 && VOCAB_STEMS.has(phonetic(stem(w))));
+}
+
+// ¿Una palabra DESCONOCIDA parece tecleada al azar? (las palabras reales poco comunes, como
+// "robotica" o "criminologia", no cumplen ninguna de estas condiciones y pasan)
+const KEYBOARD_ROWS = ['qwertyuiop', 'asdfghjklñ', 'zxcvbnm'];
+const ALPHABET = 'abcdefghijklmnopqrstuvwxyz';
+// Pares de consonantes que existen en español (dentro de una palabra o entre sílabas).
+const VALID_CC = new Set(('bl br cl cr dr fl fr gl gr pl pr tr ch ll rr nt nd mp mb ns st sc sp ct pt rt rd rn rm rc rg rb rl rs rp rf rv rz ' +
+  'lt ld lm lc lg lb ls lp lf lv lz nc ng nf nv nz nm nl nr ns nq sm sn sl sb sd sf sg sq sr bs bt bj cc cn dm dv ds gn mn ps tl tm tn ' +
+  'xp xt xc yl yn ys sh th ph gh ck tz').split(' '));
+const CONSONANT = /[bcdfghjklmnñpqrstvwxz]/;
+
+function hasRun(word, sequences, minLen) {
+  for (const seq of sequences) {
+    for (const s of [seq, [...seq].reverse().join('')]) {
+      for (let i = 0; i + minLen <= s.length; i++) if (word.includes(s.slice(i, i + minLen))) return true;
+    }
+  }
+  return false;
+}
+
+export function looksRandom(w) {
+  if (w.length <= 3) return true;                                        // "uwu", "asd" (si no es conocida)
+  if (/^(.{1,4})\1+.{0,3}$/.test(w)) return true;                        // "asdasd", "blablabla", "lalala"
+  if (hasRun(w, KEYBOARD_ROWS, 4)) return true;                          // "qwerty", "poiuy", "asdf"
+  if (hasRun(w, [ALPHABET], 4)) return true;                             // "abcdefg"
+  if (/^[aeiou]{4,}$/.test(w)) return true;                              // "aeiou"
+  let invalid = 0;
+  for (let i = 0; i + 1 < w.length; i++) {
+    const a = w[i], b = w[i + 1];
+    if (CONSONANT.test(a) && CONSONANT.test(b) && !VALID_CC.has(a + b)) invalid++;
+  }
+  return invalid >= 2;                                                   // "kjasdhaksjd": kj, dh, ks, sj
+}
 
 // ¿Parece una palabra? (tiene vocal, sin 4+ consonantes seguidas ni 3+ letras iguales seguidas)
 function plausibleWord(w) {
@@ -279,7 +351,14 @@ export function incoherenceReason(text) {
   if (words.length >= 4 && new Set(words).size / words.length < 0.35) return 'repetición'; // spam
   const plausible = words.filter(plausibleWord).length;
   if (plausible / words.length < 0.5) return 'palabras sin sentido'; // "asdfghjk qwerty"
-  if (words.length === 1 && words[0].length >= 6 && !/[aeiou].*[aeiou]/.test(words[0])) return 'palabras sin sentido';
+  if (words.length === 1 && words[0].length >= 6 && !/[aeiouy].*[aeiouy]/.test(words[0])) return 'palabras sin sentido';
+  if (VOCAB_WORDS) {
+    // Una palabra es "basura" si NO es conocida Y además parece tecleada al azar.
+    // Siglas en mayúsculas ("SQL", "UX", "CCNA") cuentan como conocidas.
+    const acronyms = new Set((raw.match(/\b[A-ZÁÉÍÓÚÑ]{2,6}\b/g) || []).map((a) => normalize(a)));
+    const junk = words.filter((w) => !knownWord(w, acronyms) && looksRandom(w)).length;
+    if (junk / words.length > 0.5) return 'palabras sin sentido';
+  }
   return null;
 }
 

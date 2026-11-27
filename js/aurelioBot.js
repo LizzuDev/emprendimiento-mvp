@@ -11,8 +11,10 @@
 // =========================================================
 
 import { SUPABASE_FUNCTIONS_URL, SUPABASE_ANON_KEY, SUPABASE_CONFIGURED } from './supabaseClient.js';
-import { PUCE_FACTS, OFFICIAL_CAREERS, KB_VERSION } from './data/aurelioKnowledge.js';
-import { planRoute, detectIntent, fingerprint, isCacheable, INCOHERENT_REPLY } from './aurelioNLP.js';
+import { PUCE_FACTS, OFFICIAL_CAREERS, KB_VERSION, VOCAB } from './data/aurelioKnowledge.js';
+import { planRoute, detectIntent, fingerprint, isCacheable, INCOHERENT_REPLY, setVocabulary } from './aurelioNLP.js';
+
+setVocabulary(VOCAB); // filtro de preguntas incoherentes
 
 const AI_PROXY_URL = `${SUPABASE_FUNCTIONS_URL}/aurelio-chat`;
 const PROXY_TIMEOUT_MS = 20000;

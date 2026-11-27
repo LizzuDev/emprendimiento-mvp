@@ -9,7 +9,10 @@
 import careersData from './knowledge/careers.json' with { type: 'json' };
 import puceData from './knowledge/puce.json' with { type: 'json' };
 import versionData from './knowledge/version.json' with { type: 'json' };
-import { planRoute } from './nlp.js';
+import vocabData from './knowledge/vocab.json' with { type: 'json' };
+import { planRoute, setVocabulary } from './nlp.js';
+
+setVocabulary(vocabData as string[]); // filtro de preguntas incoherentes
 
 export type Career = {
   key: string;

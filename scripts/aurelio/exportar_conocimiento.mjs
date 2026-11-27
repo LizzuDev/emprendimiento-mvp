@@ -59,6 +59,23 @@ const facts = (kb.entradas || [])
   .filter((e) => e.verificado === true && String(e.texto || '').trim())
   .map(({ id, tema, texto, fuente }) => ({ id, tema, texto, fuente }));
 
+// Vocabulario para el filtro de preguntas incoherentes: palabras de los datos oficiales + lista común.
+const normWord = (w) => w.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '').replace(/[^a-z0-9ñ]/g, '');
+const vocab = new Set();
+const collect = (v) => {
+  if (typeof v === 'string') {
+    if (!v.startsWith('http')) for (const w of v.split(/[\s,.;:()\/"'¿?¡!–-]+/)) { const n = normWord(w); if (n.length >= 2 && !/^\d+$/.test(n)) vocab.add(n); }
+  } else if (Array.isArray(v)) v.forEach(collect);
+  else if (v && typeof v === 'object') Object.values(v).forEach(collect);
+};
+collect(careers);
+collect(facts.map((f) => f.texto));
+const commonList = readFileSync(resolve(ROOT, 'scripts/aurelio/vocabulario_comun.txt'), 'utf8')
+  .split('\n').filter((l) => !l.trim().startsWith('#')).join(' ').split(/\s+/).map(normWord).filter(Boolean);
+commonList.forEach((w) => vocab.add(w));
+const VOCAB = [...vocab].sort();
+writeFileSync(resolve(ROOT, 'supabase/functions/aurelio-chat/knowledge/vocab.json'), JSON.stringify(VOCAB));
+
 // Versión de los datos: cambia cuando cambian los datos oficiales e invalida las cachés de respuestas.
 const KB_VERSION = createHash('sha256').update(JSON.stringify(careers)).update(JSON.stringify(facts)).digest('hex').slice(0, 12);
 
@@ -73,6 +90,9 @@ writeFileSync(
 
 export const KB_VERSION = '${KB_VERSION}';
 
+// Vocabulario del filtro de preguntas incoherentes (${VOCAB.length} palabras).
+export const VOCAB = ${JSON.stringify(VOCAB.join(' '))}.split(' ');
+
 export const PUCE_FACTS = ${JSON.stringify(facts, null, 1)};
 
 export const OFFICIAL_CAREERS = ${JSON.stringify(careers)};
@@ -81,6 +101,6 @@ export const OFFICIAL_CAREERS = ${JSON.stringify(careers)};
 
 const size = (p) => (readFileSync(p).length / 1024).toFixed(0) + ' KB';
 const unverified = (kb.entradas || []).filter((e) => e.verificado !== true).map((e) => e.id);
-console.log(`Versión de los datos: ${KB_VERSION}`);
+console.log(`Versión de los datos: ${KB_VERSION} · vocabulario: ${VOCAB.length} palabras`);
 console.log(`Carreras exportadas: ${Object.keys(careers).length} (${size(CAREERS_OUT)}; navegador ${size(BROWSER_OUT)})`);
 console.log(`Datos institucionales verificados: ${facts.length}/${(kb.entradas || []).length}${unverified.length ? ` · sin verificar: ${unverified.join(', ')}` : ''}`);
