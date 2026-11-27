@@ -5,7 +5,9 @@
 //      institucionales verificados (knowledge/puce.json, verificado=true). Ver context.ts.
 //   3. El modelo redacta la respuesta usando únicamente ese contexto.
 // Las claves del proveedor viven SOLO aquí (secrets), nunca en el navegador.
-// Proveedores: Groq (llama-3.3-70b -> llama-3.1-8b) y, si hay clave, Gemini como respaldo.
+// Proveedores: Groq (gpt-oss-120b -> gpt-oss-20b) y, si hay clave, Gemini como respaldo.
+// Groq retiró llama-3.3-70b-versatile y llama-3.1-8b-instant el 16/08/2026 (console.groq.com/docs/deprecations).
+// Modelos de Groq configurables con el secreto GROQ_MODELS (separados por coma).
 
 import { buildSystemPrompt, cut, findActiveCareer, mentionedCareers, type Msg } from './context.ts';
 
@@ -16,8 +18,11 @@ const GEMINI_MODEL = Deno.env.get('GEMINI_MODEL') ?? 'gemini-2.0-flash';
 // Localhost siempre se permite. Si está vacío se acepta cualquier origen (solo para desarrollo).
 const ALLOWED_ORIGINS = (Deno.env.get('ALLOWED_ORIGINS') ?? '').split(',').map((s) => s.trim()).filter(Boolean);
 
-const GROQ_MODELS = ['llama-3.3-70b-versatile', 'llama-3.1-8b-instant'];
+const GROQ_MODELS = (Deno.env.get('GROQ_MODELS') ?? 'openai/gpt-oss-120b,openai/gpt-oss-20b').split(',').map((s) => s.trim()).filter(Boolean);
 const MAX_TOKENS = 600;
+// Los modelos gpt-oss razonan antes de responder y ese razonamiento consume tokens de salida:
+// se pide esfuerzo bajo, sin devolver el razonamiento, y un margen mayor para la respuesta.
+const GROQ_MAX_COMPLETION_TOKENS = 1500;
 const TEMPERATURE = 0.3;
 const PROVIDER_TIMEOUT_MS = 12_000;
 const RATE_LIMIT = { windowMs: 60_000, max: 12 }; // por IP, por instancia (mejor esfuerzo)
@@ -64,7 +69,13 @@ async function callGroq(messages: { role: string; content: string }[]) {
         method: 'POST',
         signal: AbortSignal.timeout(PROVIDER_TIMEOUT_MS),
         headers: { 'Content-Type': 'application/json', Authorization: `Bearer ${GROQ_API_KEY}` },
-        body: JSON.stringify({ model, messages, temperature: TEMPERATURE, max_tokens: MAX_TOKENS }),
+        body: JSON.stringify({
+          model,
+          messages,
+          temperature: TEMPERATURE,
+          max_completion_tokens: GROQ_MAX_COMPLETION_TOKENS,
+          ...(model.startsWith('openai/gpt-oss') ? { reasoning_effort: 'low', include_reasoning: false } : {}),
+        }),
       });
       if (!res.ok) {
         console.warn(`Groq ${model} -> ${res.status}`);

@@ -69,6 +69,7 @@ supabase functions deploy aurelio-chat --no-verify-jwt
 ```
 - `GROQ_API_KEY`: se crea gratis en https://console.groq.com/keys.
 - `GEMINI_API_KEY` (opcional): respaldo si Groq falla.
+- `GROQ_MODELS` (opcional): modelos de Groq separados por coma; por defecto `openai/gpt-oss-120b,openai/gpt-oss-20b`. Si Groq retira un modelo (ver https://console.groq.com/docs/deprecations), se cambia este secreto sin tocar el código.
 - `ALLOWED_ORIGINS`: los dominios donde está publicada la app, separados por coma, sin `/` al final. Sin esto, cualquier sitio podría usar tu cuota de IA.
 
 ### 6. Verificar
@@ -104,5 +105,6 @@ Completar el test se hace con la función `complete_test_session()`, que solo mo
 
 ## Si algo falla
 - **El panel dice "no está autorizado"**: falta el paso 3.2 (insertar el usuario en `admins`).
+- **Los logs de la función dicen `Groq <modelo> -> 404`**: Groq retiró ese modelo; actualiza el secreto `GROQ_MODELS`.
 - **Aurelio responde siempre en "Modo básico"**: la función no está desplegada, falta `GROQ_API_KEY`, o el dominio no está en `ALLOWED_ORIGINS` (Edge Functions → aurelio-chat → Logs).
 - **Los inserts devuelven 401**: la clave en `js/supabaseClient.js` no es la publicable/anon del proyecto nuevo.

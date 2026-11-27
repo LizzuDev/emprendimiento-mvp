@@ -43,7 +43,7 @@ Edge Function aurelio-chat (context.ts arma el CONTEXTO):
    - ficha oficial completa de la carrera activa (malla, costos, título, campo laboral…)
    - ficha corta de otras carreras nombradas en la pregunta
    - solo los datos institucionales del tema de la pregunta (+ contacto de Admisiones)
-──► Groq (llama-3.3-70b → llama-3.1-8b) → Gemini (respaldo)
+──► Groq (gpt-oss-120b → gpt-oss-20b; configurable con GROQ_MODELS) → Gemini (respaldo)
 ```
 
 Si la Edge Function no responde, el navegador usa el motor local (`getAurelioContextualAnswer`), que detecta la intención y responde con los mismos datos oficiales.
