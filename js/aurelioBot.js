@@ -12,7 +12,7 @@
 
 import { SUPABASE_FUNCTIONS_URL, SUPABASE_ANON_KEY, SUPABASE_CONFIGURED } from './supabaseClient.js';
 import { PUCE_FACTS, OFFICIAL_CAREERS, KB_VERSION } from './data/aurelioKnowledge.js';
-import { planRoute, detectIntent, fingerprint, isCacheable } from './aurelioNLP.js';
+import { planRoute, detectIntent, fingerprint, isCacheable, INCOHERENT_REPLY } from './aurelioNLP.js';
 
 const AI_PROXY_URL = `${SUPABASE_FUNCTIONS_URL}/aurelio-chat`;
 const PROXY_TIMEOUT_MS = 20000;
@@ -136,6 +136,9 @@ export function getAurelioContextualAnswer(career, questionText, plan = null) {
 
   const o = c.official;
   switch (plan.intent) {
+    case 'incoherente':
+      return INCOHERENT_REPLY;
+
     case 'materia': {
       const subjects = plan.subjects || [];
       if (!subjects.length) return notConfirmed('esa materia') + moreInfo(c);

@@ -10,7 +10,7 @@
 // Groq retiró llama-3.3-70b-versatile y llama-3.1-8b-instant el 16/08/2026 (console.groq.com/docs/deprecations).
 
 import { buildContext, cut, findActiveCareer, KB_VERSION, planFor, RULES, type Msg } from './context.ts';
-import { fingerprint, isCacheable } from './nlp.js';
+import { fingerprint, INCOHERENT_REPLY, isCacheable } from './nlp.js';
 
 const GROQ_API_KEY = Deno.env.get('GROQ_API_KEY') ?? '';
 const GEMINI_API_KEY = Deno.env.get('GEMINI_API_KEY') ?? '';
@@ -216,6 +216,9 @@ Deno.serve(async (req) => {
   const active = findActiveCareer(body);
   const plan = planFor(question, active);
   const meta = { career: plan.scope.primary || null, intent: plan.intent, route: plan.reason };
+
+  // 0. Preguntas incoherentes ("??????", "asdfgh"): mensaje fijo, sin caché ni IA.
+  if (plan.intent === 'incoherente') return json({ reply: INCOHERENT_REPLY, provider: 'filtro', ...meta });
 
   // 1. Caché compartida
   const cacheable = isCacheable(question);

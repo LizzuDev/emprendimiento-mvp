@@ -245,6 +245,44 @@ export function isCacheable(text) {
   return a.stems.length >= 2 && !FOLLOW_UP_RE.test(a.norm);
 }
 
+// ---------------------------------------------------------
+// Preguntas incoherentes: se responden con un mensaje fijo, sin motor ni IA (0 tokens)
+// ---------------------------------------------------------
+export const INCOHERENT_REPLY =
+  'No logré entender tu pregunta 🤔 ¿Podrías escribirla con otras palabras?\n\n' +
+  'Por ejemplo:\n- ¿Cuánto cuesta la carrera?\n- ¿Qué materias veré en primer año?\n- ¿Dónde puedo trabajar?\n- ¿Cómo me inscribo?';
+
+const LAUGH_RE = /^(j[aeiou]){2,}j?$|^(js){2,}j?$|^(ha){2,}h?$|^(je){2,}j?$|^x+d+$|^lol$/;
+
+// ¿Parece una palabra? (tiene vocal, sin 4+ consonantes seguidas ni 3+ letras iguales seguidas)
+function plausibleWord(w) {
+  if (w.length > 25) return false;
+  if (/^\d+$/.test(w)) return true; // números sueltos ("semestre 4") son válidos dentro de una frase
+  if (!/[aeiouy]/.test(w)) return w.length <= 2; // "y", "o" ya son palabras vacías; "xd", "kk" no
+  if (/[bcdfghjklmnñpqrstvwxz]{5,}/.test(w)) return false;
+  if (/(.)\1\1/.test(w)) return false;
+  return true;
+}
+
+/**
+ * ¿La pregunta es incoherente? Devuelve el motivo o null.
+ * Conservador: ante la duda NO bloquea (mejor responder de más que rechazar una pregunta real).
+ */
+export function incoherenceReason(text) {
+  const raw = String(text || '').trim();
+  const norm = normalize(raw);
+  const letters = norm.replace(/[^a-zñ]/g, '');
+  if (!letters.length) return 'sin letras';                      // "??????", "123", "😂😂"
+  if (letters.length < 2) return 'demasiado corta';               // "a", "x?"
+  const words = norm.split(' ').filter(Boolean);
+  if (words.every((w) => LAUGH_RE.test(w))) return 'risa';        // "jajaja", "jsjsjs"
+  if (words.length >= 4 && new Set(words).size / words.length < 0.35) return 'repetición'; // spam
+  const plausible = words.filter(plausibleWord).length;
+  if (plausible / words.length < 0.5) return 'palabras sin sentido'; // "asdfghjk qwerty"
+  if (words.length === 1 && words[0].length >= 6 && !/[aeiou].*[aeiou]/.test(words[0])) return 'palabras sin sentido';
+  return null;
+}
+
 /**
  * Decide cómo responder una pregunta.
  * @param {string} text pregunta del estudiante
@@ -265,6 +303,8 @@ export function planRoute(text, { activeKey, careers, fromChip = false }) {
   const plan = { intent, scope, subjects, analysis, scores };
 
   if (fromChip) return { ...plan, route: 'local', reason: 'pregunta sugerida' };
+  const incoherent = incoherenceReason(text);
+  if (incoherent) return { ...plan, intent: 'incoherente', route: 'local', reason: `pregunta incoherente (${incoherent})` };
   if (analysis.words.length <= 6 && GREETING_RE.test(analysis.norm)) return { ...plan, intent: 'saludo', route: 'local', reason: 'saludo' };
   if (scope.others.length) return { ...plan, route: 'ai', reason: 'compara carreras' };
   if (intent === 'materia') {
