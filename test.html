@@ -193,7 +193,7 @@
       <!-- Mensajes dinámicos -->
     </div>
     <div class="chat-suggested-queries">
-      <div class="chat-queries-label">💡 Selecciona una pregunta para Aurelio:</div>
+      <div class="chat-queries-label">💡 Elige una pregunta o escribe la tuya abajo:</div>
       <div class="chat-queries-grid">
         <button class="query-chip">💰 ¿Cuánto cuesta y qué becas hay?</button>
         <button class="query-chip">📚 ¿Qué materias veré en primer año?</button>
@@ -205,10 +205,10 @@
         <button class="query-chip">🏆 ¿Por qué estudiar en la PUCE?</button>
       </div>
     </div>
-    <!-- Entrada de texto libre oculta para modo guiado (sin dañar la lógica interna) -->
-    <form id="chat-form" class="chat-form" style="display: none !important;">
-      <input id="chat-input" type="text" class="chat-input" placeholder="Escribe tu pregunta a Aurelio..." disabled>
-      <button type="submit" class="chat-send-btn" disabled>Enviar</button>
+    <!-- Pregunta libre: el estudiante puede escribir lo que quiera además de usar las sugerencias -->
+    <form id="chat-form" class="chat-form">
+      <input id="chat-input" type="text" class="chat-input" placeholder="Escribe tu pregunta a Aurelio..." maxlength="500" autocomplete="off" aria-label="Escribe tu pregunta a Aurelio">
+      <button type="submit" class="chat-send-btn">Enviar</button>
     </form>
   </div>
 
