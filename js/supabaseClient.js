@@ -10,8 +10,8 @@
 //   - SUPABASE_PUBLISHABLE_KEY: la clave publicable (sb_publishable_...) o la clave "anon" (legacy).
 // Ambas son PÚBLICAS: pueden ir en el navegador. NUNCA pongas aquí la clave secreta / service_role.
 // =========================================================
-const SUPABASE_URL = 'https://TU-PROYECTO.supabase.co';
-const SUPABASE_PUBLISHABLE_KEY = 'TU_CLAVE_PUBLICABLE';
+const SUPABASE_URL = 'https://hjfugitdbhlsdsbzvgzc.supabase.co';
+const SUPABASE_PUBLISHABLE_KEY = 'sb_publishable_kBqK1ESGmZrZeTGMsCzhwA_pnvYJP0n';
 
 export const SUPABASE_FUNCTIONS_URL = `${SUPABASE_URL}/functions/v1`;
 export const SUPABASE_ANON_KEY = SUPABASE_PUBLISHABLE_KEY; // nombre anterior, usado por aurelioBot.js
